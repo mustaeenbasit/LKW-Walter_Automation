@@ -1,0 +1,149 @@
+{
+	"testDocumentation":{
+		"testName":"readUpdateMe",
+		"testDescription":"Verifies the Get and Put of /me"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Read Update Me",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"me/",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"current_user":{
+								"full_name":"Administrator",
+								"user_name":"admin",
+								"preferences":{
+									"timezone":"America/Los_Angeles",
+									"tz_offset":"-0700",
+									"tz_offset_sec":-25200,
+									"datepref":"m/d/Y",
+									"timepref":"h:ia",
+									"default_teams":[
+										{
+											"id":"1",
+											"display_name":"Global",
+											"name":"Global",
+											"name_2":"",
+											"primary":true
+										}
+										
+									]
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"me",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"last_name":"Changed Administrator"
+					},
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"me/",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"current_user":{
+								"full_name":"Changed Administrator",
+								"user_name":"admin",
+								"preferences":{
+									"timezone":"America/Los_Angeles",
+									"tz_offset":"-0700",
+									"tz_offset_sec":-25200,
+									"datepref":"m/d/Y",
+									"timepref":"h:ia"
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"me",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"last_name":"Administrator"
+					},
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"me/",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"current_user":{
+								"full_name":"Administrator",
+								"user_name":"admin",
+								"preferences":{
+									"timezone":"America/Los_Angeles",
+									"tz_offset":"-0700",
+									"tz_offset_sec":-25200,
+									"datepref":"m/d/Y",
+									"timepref":"h:ia"
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

@@ -1,0 +1,64 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "deleteDefaultRole",
+      "testDescription": "Deletes the Default Custom Role created during a session"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Delete the Custom Role",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "ACLRoles?filter[0][name][$starts]=myNewRoleXYZ",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "module": "ACLRoles/",
+                  "value": 
+                  {
+                     "name": "myNewRoleXYZ"
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "ACLRoles/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "ACLRoles",
+                     "index": 999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

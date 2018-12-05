@@ -1,0 +1,250 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudAccounts",
+      "testDescription": "Verifies the basic smoke test for the tags filter using in not_in empty and not empty"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD Accounts",
+         "requests": 
+         [
+            {
+               "requestDescription": "Create an Account with tag1",
+               "requestUser": "admin",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "assigned_user_id": "1",
+                  "tag": 
+                  [
+                     {
+                        "id": "tag1",
+                        "name": "tag1",
+                        "encodedValue": "tag1"
+                     }
+                  ],
+
+                  "industry": "",
+                  "account_type": "",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "myaccounttag1"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myaccounttag1"
+                  }
+               }
+            },
+
+            {
+               "requestDescription": "Create an Account with tag2",
+               "requestUser": "admin",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "assigned_user_id": "1",
+                  "tag": 
+                  [
+                     {
+                        "id": "tag2",
+                        "name": "tag2",
+                        "encodedValue": "tag2"
+                     }
+                  ],
+
+                  "industry": "",
+                  "account_type": "",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "myaccounttag2"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myaccounttag2"
+                  }
+               }
+            },
+
+            {
+               "requestDescription": "Create an Account with no tag",
+               "requestUser": "admin",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "assigned_user_id": "1",
+                  "industry": "",
+                  "account_type": "",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "myaccountnotag"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myaccountnotag"
+                  }
+               }
+            },
+
+            {
+               "requestDescription": "Filter in tag1 and tag2",
+               "requestUser": "admin",
+               "requestURL": "Accounts/filter",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "filter": 
+                  [
+                     {
+                        "tag": 
+                        {
+                           "$in": 
+                           [
+                              "Tag1",
+                              "Tag2"
+                           ]
+                        }
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "name": "myaccounttag2"
+                     },
+
+                     {
+                        "name": "myaccounttag1"
+                     }
+                  ]
+               }
+            },
+
+            {
+               "requestDescription": "Filter not in tag1 and tag2",
+               "requestUser": "admin",
+               "requestURL": "Accounts/filter",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "filter": 
+                  [
+                     {
+                        "tag": 
+                        {
+                           "$not_in": 
+                           [
+                              "Tag1",
+                              "Tag2"
+                           ]
+                        }
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 1,
+                  "records": 
+                  [
+                     {
+                        "name": "myaccountnotag"
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      }
+   ]
+}

@@ -1,0 +1,2 @@
+timeZone1,filter,querytext1,querytext2
+"America/Chicago (GMT",Today,"WHERE \(\(\(cases.date_entered \>\= '","' AND cases.date_entered \<\= '"

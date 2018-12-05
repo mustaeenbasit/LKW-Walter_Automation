@@ -1,0 +1,339 @@
+{
+	"testDocumentation":{
+		"testName":"collectionEvents",
+		"testDescription":"Verifies the Collection Events endpoint"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Collection events",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Calls/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+					],
+					"requestBody":{
+						"name":"Left a message",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"duration_hours":0,
+						"duration_minutes":30,
+						"date_start":"2018-05-25T09:30:00-07:00",
+						"status":"Planned",
+						"direction":"Outbound",
+						"reminder_checked":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"-1",
+						"email_reminder_sent":false,
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Left a message"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Calls/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+					],
+					"requestBody":{
+						"name":"Left another message",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"duration_hours":0,
+						"duration_minutes":30,
+						"date_start":"2018-06-25T09:30:00-07:00",
+						"status":"Planned",
+						"direction":"Outbound",
+						"reminder_checked":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"-1",
+						"email_reminder_sent":false,
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Left another message"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+					],
+					"requestBody":{
+						"name":"Demo Meeting",
+						"description":"Meeting to discuss project plan and hash out the details of implementation",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"duration_hours":1,
+						"duration_minutes":"15",
+						"date_start":"2018-05-14T08:00:00-07:00",
+						"status":"Not Held",
+						"type":"Sugar",
+						"direction":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"600",
+						"email_reminder_sent":false,
+						"repeat_interval":1,
+						"repeat_count":null,
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Demo Meeting",
+							"description":"Meeting to discuss project plan and hash out the details of implementation"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+					],
+					"requestBody":{
+						"name":"Another Demo Meeting",
+						"description":"Another Meeting to discuss project plan and hash out the details of implementation",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"duration_hours":1,
+						"duration_minutes":"15",
+						"date_start":"2018-06-14T08:00:00-07:00",
+						"status":"Not Held",
+						"type":"Sugar",
+						"direction":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"600",
+						"email_reminder_sent":false,
+						"repeat_interval":1,
+						"repeat_count":null,
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Another Demo Meeting",
+							"description":"Another Meeting to discuss project plan and hash out the details of implementation"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Send a follow-up letter",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":1,
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"status":"New",
+						"date_due_flag":false,
+						"date_due":"2018-10-03T05:00:00-07:00",
+						"time_due":"",
+						"date_start_flag":false,
+						"date_start":null,
+						"priority":"High",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Send a follow-up letter"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Send another follow-up letter",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":1,
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"status":"New",
+						"date_due_flag":false,
+						"date_due":"2018-10-03T05:00:00-07:00",
+						"time_due":"",
+						"date_start_flag":false,
+						"date_start":null,
+						"priority":"High",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Send another follow-up letter"
+						}			
+					}					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"collection/events?order_by=name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":6,
+						"records":[
+							{
+								"name": "Another Demo Meeting"
+							},
+							{
+								 "name": "Demo Meeting"
+							},
+							{
+								  "name": "Left a message"
+							},
+							{
+								 "name": "Left another message"
+							},
+							{
+								 "name": "Send a follow-up letter"
+							},
+							{
+								  "name": "Send another follow-up letter"
+							}		
+						]
+						
+					}				
+				}
+			]
+		}
+	],
+	"modules_used":[
+		{
+			"module":"Calls"
+		},
+		{
+			"module":"Meetings"
+		},
+		{
+			"module":"Tasks"
+		}
+	]
+}

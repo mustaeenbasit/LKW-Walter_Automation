@@ -1,0 +1,4 @@
+data_type,m_field_name
+Currency,mycurrency
+Float,myfloat
+TextField,myformula

@@ -1,0 +1,7 @@
+field,oldValue,newValue
+Assigned User Id,admin,qauser
+Teams,Global,qauser
+Account ID,Aperture Laboratories,testAccount
+"Start Date:","01/01/2010",06/10/2015
+"End Date:","02/02/2010",08/10/2015
+"Status:",Not Started,In Progress

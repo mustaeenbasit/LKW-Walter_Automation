@@ -1,0 +1,2 @@
+name,status,type,date_start,template_id,inbound_email_id,from_name,from_addr,newsletter_type
+test1,Active,Email,08/27/2014,System-generated password email,SugarCRM,testmkt,testmkt@test1.com,Newsletter

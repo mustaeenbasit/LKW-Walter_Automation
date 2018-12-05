@@ -1,0 +1,415 @@
+{
+	"testDocumentation":{
+		"testName":"productBundles",
+		"testDescription":"Verifies the Creation, Update and Delete of Bundled products"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Product Bundles",
+			"requests":[
+				{
+					"requestDescription":"Create an Account",
+					"requestUser":"admin",
+					"requestURL":"Accounts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Cloud Cover Trust",
+						"description":"Cloud Cover description in text",
+						"deleted":false,
+						"website":"www.supportphone.tw",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"email":[
+							{
+								"email_address":"section.kid.section@example.cn",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							},
+							{
+								"email_address":"sugar.hr@example.info",
+								"primary_address":false,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+						],
+						"email1":"section.kid.section@example.cn",
+						"email2":"",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"email_addresses_non_primary":"",
+						"account_type":"Customer",
+						"industry":"Electronics",
+						"billing_address_street":"48920 San Carlos Ave",
+						"billing_address_street_2":"",
+						"billing_address_street_3":"",
+						"billing_address_street_4":"",
+						"billing_address_city":"Persistance",
+						"billing_address_state":"NY",
+						"billing_address_postalcode":"46691",
+						"billing_address_country":"USA",
+						"rating":"",
+						"phone_office":"(777) 954-2070",
+						"phone_alternate":"",
+						"ownership":"",
+						"employees":"",
+						"ticker_symbol":"",
+						"shipping_address_street":"48920 San Carlos Ave",
+						"shipping_address_street_2":"",
+						"shipping_address_street_3":"",
+						"shipping_address_street_4":"",
+						"shipping_address_city":"Persistance",
+						"shipping_address_state":"NY",
+						"shipping_address_postalcode":"46691",
+						"shipping_address_country":"USA",
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Cloud Cover Trust"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"billing_account_id"
+						}
+					],
+					"requestBody":{
+						"name":"Test Quote 5",
+						"description":"Quote description in full",
+						"assigned_user_id":"1",
+						"date_quote_expected_closed":"2018-07-31",
+						"billing_account_id":"24c56a0c-09d3-e3a0-dfe5-53d7f70247c6",
+						"show_line_numbers":1,
+						"calc_grand_total":1
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Test Quote 5",
+							"description":"Quote description in full"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProductBundles/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"quote_id"
+						}
+					],
+					"requestBody":{
+						"quote_id":"tobereplaced",
+						"stage":"",
+						"description":"Test Bundle Description",
+						"name":"Test Bundle",
+						"position":1,
+						"shipping":"100.00",
+						"items":[
+							{
+								"position":1,
+								"module":"Products",
+								"tax_class":"Taxable",
+								"quantity":1000,
+								"name":"Test Product 1",
+								"description":"My Test Product",
+								"mft_part_num":"mft100012021",
+								"cost_price":"100.00",
+								"list_price":"200.00",
+								"discount_price":"275.00",
+								"discount_amount":"0.00",
+								"discount_select":0,
+								"product_template_id":"",
+								"type_id":"",
+								"status":"Quotes",
+								"deleted":0
+							},
+							{
+								"position":2,
+								"module":"Products",
+								"tax_class":"Taxable",
+								"quantity":10,
+								"name":"Test Product 2",
+								"description":"My Test Product 2",
+								"mft_part_num":"mft100012022",
+								"cost_price":"10.00",
+								"list_price":"20.00",
+								"discount_price":"27.00",
+								"discount_amount":"0.00",
+								"discount_select":0,
+								"product_template_id":"",
+								"type_id":"",
+								"status":"Quotes",
+								"deleted":0
+							},
+							{
+								"position":3,
+								"module":"ProductBundleNotes",
+								"description":"This is my Product Bundle Notes",
+								"deleted":0
+							}
+						]
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Test Bundle",
+							"description":"Test Bundle Description"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Test Quote 5",
+							"description":"Quote description in full",
+							"subtotal":"275270.000000",
+							"total":"275370.000000"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProductBundles?filter[0][name][$starts]=Test Bundle",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"ProductBundles/",
+						"value":{
+							"name":"Test Bundle"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Products?filter[0][name][$starts]=Test Product 1",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"Products/",
+						"value":{
+							"name":"Test Product 1"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProductBundleNotes?filter[0][description][$starts]=This is my",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"ProductBundleNotes/",
+						"value":{
+							"description":"This is my Product Bundle Notes"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProductBundles/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ProductBundles",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestBody",
+							"fromString":"quoteid"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Products",
+							"index":999999,
+							"destination":"requestBody",
+							"fromString":"productidvalue"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"ProductBundleNotes",
+							"index":999999,
+							"destination":"requestBody",
+							"fromString":"productbundlenotesid"
+						}
+					],
+					"requestBody":{
+						"quote_id":"quoteid",
+						"stage":"",
+						"description":"Test Bundle Description changed",
+						"name":"Test Bundle Changed",
+						"position":1,
+						"shipping":"160.00",
+						"items":[
+							{
+								"id":"productidvalue",
+								"module":"Products",
+								"tax_class":"Taxable",
+								"quantity":1,
+								"name":"Test Product",
+								"description":"",
+								"mft_part_num":"",
+								"cost_price":"100.00",
+								"list_price":"200.00",
+								"discount_price":"275.00",
+								"discount_amount":"0.00",
+								"discount_select":1,
+								"product_template_id":"",
+								"type_id":"",
+								"status":"Quotes",
+								"deleted":0
+							},
+							{
+								"id":"productbundlenotesid",
+								"module":"ProductBundleNotes",
+								"description":"This is a changed pb notes",
+								"deleted":0
+							}
+						]
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Test Bundle Changed",
+							"description":"Test Bundle Description changed"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProductBundleNotes/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ProductBundleNotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"description":"This is a changed pb notes"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Test Quote 5",
+							"description":"Quote description in full",
+							"subtotal":"545.000000",
+							"total":"705.000000"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		{
+			"module":"Quotes"
+		},
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"Products"
+		},
+		{
+			"module":"ProductBundles"
+		},
+		{
+			"module":"ProductBundleNotes"
+		}
+	]
+}

@@ -1,0 +1,390 @@
+{
+	"testDocumentation":{
+		"testName":"mobileModifyAndResetAccountTypeDomRB",
+		"testDescription":"Verify the Account Type DOM can be modified in Admin DropDown Editor for a given Role with Mobile user"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Modify Account Type DropDown for Role myNewRoleABC",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"index.php?to_pdf=1&sugar_body_only=1",
+					"requestType":"postForm",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"replaceStringID",
+							"module":"Roles",
+							"index":99999,
+							"destination":"requestBody",
+							"fromString":"MYROLEID"
+						}
+						
+					],
+					"requestBody":{
+						"formParameters":[
+							{
+								"name":"module",
+								"value":"ModuleBuilder"
+							},
+							{
+								"name":"action",
+								"value":"saveroledropdownfilter"
+							},
+							{
+								"name":"to_pdf",
+								"value":"true"
+							},
+							{
+								"name":"view_module",
+								"value":""
+							},
+							{
+								"name":"view_package",
+								"value":"studio"
+							},
+							{
+								"name":"dropdown_role",
+								"value":"MYROLEID"
+							},
+							{
+								"name":"list_value",
+								"value":"[[\"-blank-\",\"\"],[\"Analyst\",\"Analyst\"],[\"Competitor\",\"Competitor\"],[\"Customer\",\"Customer\"],[\"Integrator\",\"Integrator\"],[\"Investor\",\"Investor\"],[\"Partner\",\"Partner\"],[\"Press\",\"Press\"],[\"Prospect\",\"Prospect\"],[\"Reseller\",\"Reseller\"],[\"Other\",\"Other\"]]"
+							},
+							{
+								"name":"dropdown_role",
+								"value":"MYROLEID"
+							},
+							{
+								"name":"dropdown_name",
+								"value":"account_type_dom"
+							},
+							{
+								"name":"dropdown_lang",
+								"value":"en_us"
+							},
+							{
+								"name":"dropdown_keys[-blank-]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[-blank-]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Analyst]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Competitor]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Competitor]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Customer]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Customer]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Integrator]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Integrator]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Investor]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Investor]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Partner]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Partner]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Press]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Press]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Prospect]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Prospect]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Reseller]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Reseller]",
+								"value":"1"
+							},
+							{
+								"name":"dropdown_keys[Other]",
+								"value":"0"
+							},
+							{
+								"name":"dropdown_keys[Other]",
+								"value":"1"
+							}
+							
+						]
+						
+					},
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"cache/api/metadata/lang_en_us_base_ordered.json",
+					"requestType":"getURL",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"app_list_strings":{
+								"account_type_dom":[
+									[
+										"",
+										""
+									],
+									[
+										"Analyst",
+										"Analyst"
+									],
+									[
+										"Competitor",
+										"Competitor"
+									],
+									[
+										"Customer",
+										"Customer"
+									],
+									[
+										"Integrator",
+										"Integrator"
+									],
+									[
+										"Investor",
+										"Investor"
+									],
+									[
+										"Partner",
+										"Partner"
+									],
+									[
+										"Press",
+										"Press"
+									],
+									[
+										"Prospect",
+										"Prospect"
+									],
+									[
+										"Reseller",
+										"Reseller"
+									],
+									[
+										"Other",
+										"Other"
+									]
+									
+								]
+								
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesRep2",
+					"requestURL":"metadata&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"editable_dropdown_filters":[
+								
+							]
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"metadata&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"editable_dropdown_filters":{
+								"account_type_dom":[
+									[
+										"",
+										true
+									],
+									[
+										"Analyst",
+										false
+									],
+									[
+										"Competitor",
+										true
+									],
+									[
+										"Customer",
+										true
+									],
+									[
+										"Integrator",
+										true
+									],
+									[
+										"Investor",
+										true
+									],
+									[
+										"Partner",
+										true
+									],
+									[
+										"Press",
+										true
+									],
+									[
+										"Prospect",
+										true
+									],
+									[
+										"Reseller",
+										true
+									],
+									[
+										"Other",
+										true
+									]
+									
+								]
+								
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles/roleid/link/users/userid",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Roles",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"roleid"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"userid"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"metadata&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"editable_dropdown_filters":[
+								
+							]
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesRep2",
+					"requestURL":"metadata&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"editable_dropdown_filters":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

@@ -1,0 +1,7 @@
+data_type,field_name,field_len,field_precision,field_default,field_min,field_max,field_default1,field_min1,field_max1,field_default2,field_min2,field_max2
+TextField,"<aaa_aaa>",,,,,,,,,,,
+Integer,aaa,3,,600,200,500,100,200,500,100,500,200
+Decimal,aaa,2,1,"234242424.1",,,,,,,,
+Checkbox,,,,,,,,,,,,
+DropDown,,,,,,,,,,,,
+Datetime,,,,,,,,,,,,

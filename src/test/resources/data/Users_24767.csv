@@ -1,0 +1,2 @@
+cssAttribute,cssValue,notificationNumber,errorMsg
+"background-color","rgba(230, 23, 24, 1)",1,"Note: To send record assignment notifications, an SMTP server must be configured in Email Settings."

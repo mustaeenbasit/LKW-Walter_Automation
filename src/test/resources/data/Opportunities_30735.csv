@@ -1,0 +1,4 @@
+name,rli_name,rli_expected_closed_date,rli_likely,rli_stage,warningMessage
+Opp1,RLI1,11/04/2020,500,Prospecting,Warning One or more of the selected records has a status of Closed Won or Closed Lost and cannot be deleted.
+Opp2,RLI2,11/04/2020,600,Closed Won
+Opp3,RLI3,11/04/2020,700,Closed Lost

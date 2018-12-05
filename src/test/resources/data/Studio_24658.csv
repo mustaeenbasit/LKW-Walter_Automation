@@ -1,0 +1,3 @@
+module_field_name,display_name,dependent
+myfield1,myfield1_c,"-None-"
+myfield2,myfield2_c,"Parent Dropdown"

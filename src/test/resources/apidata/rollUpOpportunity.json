@@ -1,0 +1,408 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "rollUpOpportunity",
+      "testDescription": "Verifies the Revenue Line Item value can roll up into Opportunity"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Roll Up Opportunity",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myAccount"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myAccount"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+                  {
+                            "type": "replaceStringID",
+                            "module": "UIID",
+                            "index": 1,
+                            "destination": "requestBody",
+                            "fromString": "MYUID1"
+                        }
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "sales_stage": "Prospecting",
+                  "sales_status": "New",
+                  "mkto_sync": false,
+                  "currency_id": "-99",
+                  "assigned_user_id": "1",
+                  "base_rate": "1.000000",
+                  "revenuelineitems": 
+                  {
+                     "rollupMax": 
+                     {
+                        "date_closed_timestamp_values": 
+                        {
+                           "MYUID1": 1487404800
+                        },
+
+                        "date_closed_timestamp": 1487404800
+                     },
+
+                     "count": 1,
+                     "maxRelatedDate": 
+                     {
+                        "date_closed": "2017-02-18",
+                        "date_closed_values": 
+                        {
+                           "MYUID1": "2017-02-18"
+                        }
+                     },
+
+                     "rollupConditionalSum": 
+                     {
+                        "best_case": "1200.000001",
+                        "worst_case": "800.000001",
+                        "likely_case": "1000.000001"
+                     },
+
+                     "create": 
+                     [
+                        {
+                           "deleted": false,
+                           "status": "",
+                           "quantity": 1,
+                           "commit_stage": "exclude",
+                           "sales_stage": "Prospecting",
+                           "currency_id": "-99",
+                           "id": "MYUID1",
+                           "assigned_user_id": "1",
+                           "assigned_user_name": "Administrator",
+                           "probability": "10",
+                           "base_rate": "1.000000",
+                           "name": "rl99",
+                           "date_closed": "2017-02-18",
+                           "date_closed_timestamp": 1487404800,
+                           "likely_case": "1000.000001",
+                           "discount_price": "1000.000001",
+                           "total_amount": "1000.000001",
+                           "best_case": "1200.000001",
+                           "worst_case": "800.000001",
+                           "discount_usdollar": "1000.000001"
+                        }
+                     ]
+                  },
+
+                  "probability": "10",
+                  "commit_stage": "exclude",
+                  "total_revenue_line_items": 1,
+                  "tag": 
+                  [
+                     
+                  ],
+
+                  "opportunity_type": "",
+                  "lead_source": "",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true,
+                        "selected": false
+                     }
+                  ],
+
+                  "name": "my big Opportunity",
+                  "account_id": "account_id",
+                  "date_closed_timestamp": 1487404800,
+                  "date_closed": "2017-02-18",
+                  "best_case": "1200.000001",
+                  "worst_case": "800.000001",
+                  "amount": "1000.000001",
+                  "amount_usdollar": "1000.000001"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "my big Opportunity"
+                  }
+               }
+            },
+
+            
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "1000.000001",
+                     "best_case": "1200.000001",
+                     "worst_case": "800.000001"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "RevenueLineItems",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "opportunity_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myRLIA",
+                  "account_id": "7e953a9f-0ac4-5839-2dea-539a2639a924",
+                  "total_amount": "0.000001",
+                  "best_case": "1400.000001",
+                  "likely_case": "1100.000001",
+                  "worst_case": "700.000001",
+                  "date_closed": "2017-07-25",
+                  "date_closed_timestamp": 1406327019,
+                  "commit_stage": "exclude",
+                  "sales_stage": "Prospecting",
+                  "probability": 10,
+                  "opportunity_id": "7849f406-70ce-6346-c169-539a27939b23",
+                  "opportunity_name": "myOpportunity",
+                  "account_name": "myAccount"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myRLIA"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "2100.000002",
+                     "best_case": "2600.000002",
+                     "worst_case": "1500.000002"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "RevenueLineItems/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "RevenueLineItems",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "best_case": "1300.000001",
+                  "likely_case": "1000.000001",
+                  "worst_case": "600.000001"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "best_case": "1300.000001",
+                     "likely_case": "1000.000001",
+                     "worst_case": "600.000001"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "2000.000002",
+                     "best_case": "2500.000002",
+                     "worst_case": "1400.000002"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "RevenueLineItems/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "RevenueLineItems",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "1000.000001",
+                     "best_case": "1200.000001",
+                     "worst_case": "800.000001"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Opportunities"
+      },
+
+      {
+         "module": "Accounts"
+      },
+
+      {
+         "module": "RevenueLineItems"
+      }
+   ]
+}

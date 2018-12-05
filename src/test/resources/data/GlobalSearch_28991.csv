@@ -1,0 +1,2 @@
+heading1,heading2,description
+"Full Text Search Configuration","Legacy Global Search Configuration","Full text search will be used to return results for a global search in the desktop application. In order for results to return for a particular module, it must be enabled below. Make sure to perform a full system index after enabling modules for full text search. Individual module fields can be enabled for full text search via Studio."

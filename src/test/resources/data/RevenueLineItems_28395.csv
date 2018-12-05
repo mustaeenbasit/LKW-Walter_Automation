@@ -1,0 +1,2 @@
+roleName,roleDescription,permission,userName,probabilityValue,salesStage1,salesStage2,date_closed
+"Testing Role","Role for Testing purpose","None",qauser,"No access", "Qualification","Needs Analysis",05/19/2015

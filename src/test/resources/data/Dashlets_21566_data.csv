@@ -1,0 +1,5 @@
+opp_name,rli_name,rli_likely,rli_stage,verify_dashlet_shows,verifyAmount
+opp1,rli1,100,Prospecting,1,"$100"
+opp2,rli2,200,Prospecting,2,"$300"
+opp3,rli3,300,Closed Won,1,"$300"
+opp3,rli3,400,Closed Lost,1,"$0"

@@ -1,0 +1,7 @@
+name,status,error,errorText,langLabel,langCode,date_entered_date,date_entered_time,date_modified_date,date_modified_time
+KB_1,Draft,error,"Error. The Publish Date must occur on a later date than today's date.",French,fr,09/10/2015,11:00pm,09/10/2015,11:00pm
+KB_2,Approved,,,Italian,it,09/10/2015,11:10pm,09/10/2015,11:10pm
+KB_3,Published,,,,,09/10/2015,11:20pm,09/10/2015,11:20pm
+KB_4,,,,,,09/10/2015,11:30pm,09/10/2015,11:30pm
+KB_5,,,,,,09/10/2015,11:40pm,09/10/2015,11:40pm
+KB_6,,,,,,09/10/2015,11:50pm,09/10/2015,11:50pm

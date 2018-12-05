@@ -1,0 +1,4 @@
+module_field_name,display_name,expected_formula,record_name,myfield
+myfield,myfield_c,related($test1_test_contacts_1,"myfield_c")
+newfield,newfield_c
+,,,MS,This is custom field

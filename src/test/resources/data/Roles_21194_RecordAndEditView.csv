@@ -1,0 +1,3 @@
+roleName,roleDescription,noAccess,caseTeam,requiredField
+"Permission None","None permission for all the fields other than Required","No access","Global","*"
+"Permission Read/Write","Read/Write permission for all the fields",,,,

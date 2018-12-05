@@ -1,0 +1,2 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password,timeZone
+PrivateUser,"",PrivateUser,PrivateUser@abctest.com,PrivateUser!1,PrivateUser!1,PrivateUser!1,"America/Los Angeles (GMT-7:00)"

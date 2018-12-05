@@ -1,0 +1,211 @@
+{
+	"testDocumentation":{
+		"testName":"forecastsAdjustLikelyBasic1",
+		"testDescription":"Verify a change of likely adjust without commit cannot seen by the manager"
+	},
+	"testCases":[
+		{
+			"testCaseName":"manager updates adjusted without commit",
+			"requests":[
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets&order_by=name:desc?max_num=1",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"ForecastManagerWorksheets/",
+						"value":{
+							"name":"Sales2 Rep2",
+							"likely_case_adjusted":"1100.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"manager",
+						"currency_id":"-99",
+						"forecast_type":"Rollup",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"manager"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ForecastManagerWorksheets",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"likely_case_adjusted":"900.000001"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"likely_case_adjusted":"900.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"groupMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=UID&timeperiod_id=TPID&order_by=name:desc&max_num=1",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"UID"
+						},
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"TPID"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"name":"Sales2 Rep2",
+							"likely_case_adjusted":"1100.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"manager",
+						"currency_id":"-99",
+						"forecast_type":"Rollup",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"manager"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"groupMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=UID&timeperiod_id=TPID&order_by=name:desc&max_num=1",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"UID"
+						},
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"TPID"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"name":"Sales2 Rep2",
+							"likely_case_adjusted":"900.000001"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Opportunities"
+		},
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"RevenueLineItems"
+		},
+		{
+			"module":"TimePeriods"
+		}
+		
+	]
+}

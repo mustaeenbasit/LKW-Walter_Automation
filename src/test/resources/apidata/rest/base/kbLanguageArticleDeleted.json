@@ -1,0 +1,47 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudKBContents",
+      "testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for KBContents"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Verify deleted KBContents",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "next_offset": -1,
+                     "records": 
+                     [
+                        
+                     ]
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "KBContents"
+      }
+   ]
+}

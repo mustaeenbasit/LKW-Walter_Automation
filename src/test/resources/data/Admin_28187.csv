@@ -1,0 +1,2 @@
+dataType,fieldName,data,roundOffData
+Decimal,decimalField,"0.1234567891","0.12345679"

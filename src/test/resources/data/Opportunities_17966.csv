@@ -1,0 +1,2 @@
+closed_sales_stage,non_closed_sales_stage,error_msg
+Closed Won,Prospecting,"You cannot delete records that have a closed sales stage."

@@ -1,0 +1,7 @@
+name,forecastValueInclude,warningMessage
+"Opp1","Include","This record was included in a Forecast. It will be removed and you will need to re-commit your Forecast."
+"Opp2",,
+"Opp3",,
+"Opp4",,
+"Opp5",,
+"Opp6",,

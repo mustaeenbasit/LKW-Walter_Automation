@@ -1,0 +1,2 @@
+relAssignedTo,roleName,roleDescription,AccountType
+Administrator,Admin Role,"user can access to all the records in a module while the module access type is set to be Admin",Admin

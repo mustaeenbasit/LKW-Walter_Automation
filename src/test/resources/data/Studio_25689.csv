@@ -1,0 +1,2 @@
+"Data Type","Field Name","Field Label","Help Text",Audit,"Duplicate Merge",html_value
+html,html_editor,HTML Editor,HTML editor Help,true,Disabled,"<h1>This is HTML text</h1>"

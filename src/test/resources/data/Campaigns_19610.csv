@@ -1,0 +1,4 @@
+targetlistName,listType,description
+FirstTargetList,Default,Campaigns_19610 Subscription List
+SecondTargetList,Suppression List - By Id,Campaigns_19610 Unsubscription List
+ThirdTargetList,Test,Campaigns_19610 Test List

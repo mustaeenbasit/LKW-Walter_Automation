@@ -1,0 +1,2 @@
+filterFieldName,operator,filterName,punctuation
+Last Name,exactly matches,Custom,~!@#$%^&*()_+-=[]{}|;:<>,./?

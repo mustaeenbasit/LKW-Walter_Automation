@@ -1,0 +1,4 @@
+[09-27-2012 14:18:51:192] com.sugarcrm.library.VoodooUtils getLogger
+INFO: Example message #1
+[09-27-2012 14:18:51:195] com.sugarcrm.library.VoodooUtils getLogger
+SEVERE: Example message #2

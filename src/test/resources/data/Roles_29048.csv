@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,set_access,set_access_type
+newRole,Set 'Edit and 'Delete' actions to NONE for Accounts module,qauser,Disabled,"Admin & Developer"

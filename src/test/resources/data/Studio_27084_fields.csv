@@ -1,0 +1,3 @@
+module_field_name,data_type
+myfield1,DropDown
+myfield2,MultiSelect

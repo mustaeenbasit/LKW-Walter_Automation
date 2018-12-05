@@ -1,0 +1,16 @@
+moduleName,moduleIcon,flag
+Calls,Cl,true
+Meetings,Me,true
+Tasks,Ts,true
+Notes,Nt,true
+"Member Organizations",Ac,true
+Emails,Em,false
+Contacts,Co,true
+Opportunities,Op,false
+Leads,Le,true
+Cases,Cs,false
+"Revenue Line Items",RL,false
+Documents,Do,false
+"Quotes (Bill To)",Qu,false
+"Quotes (Ship To)",Qu,false
+Campaign Log,CL,false

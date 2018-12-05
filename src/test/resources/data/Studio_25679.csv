@@ -1,0 +1,13 @@
+Dataset,"Data Type","Field Name","Drop Down List","Default Value","Max Size",Reportable,"Duplicate Merge"
+"Dataset 1 - Text",varchar,property_name,,,50,Checked,Disabled
+"Dataset 2 - Integer",int,property_id,,,11,Checked,Disabled
+"Dataset 3 - Decimal",decimal,property_cost,,,11,Checked,Disabled
+"Dataset 4 - Checkbox",bool,property_owner_occupied,,,,Checked,Disabled
+"Dataset 5  Drop Down",enum,property_resources,"Leave as default","Leave as default",,Checked,Disabled
+"Dataset 6 - Date",date,date_property,,,,Checked,Disabled
+"Dataset 7  Multiple Select",multienum,property_ms,"Leave as default","Leave as default",,Checked,Disabled
+"Dataset 8  Phone",phone,property_phone,,"Leave as default",,Checked,Disabled
+"Dataset 9  Currency",currency,property_currency,,"Leave as default",,Checked,Disabled
+"Dataset 11  HTML",html,property_html,,"Leave as default",,Checked,Disabled
+"Dataset 12  Radio",radioenum,property_radio,"Leave as default","Leave as default",,Checked,Disabled
+"Dataset 13  Address",address,property_address,,"ShangHai PuDoing",25,Checked,Enabled

@@ -1,0 +1,11 @@
+sugarField,restName,type,defaultValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue
+pr_number,,,,div,css,.list.fld_cas_id div
+pr_definition,,,,div,css,.list.fld_pro_title div
+pr_name,,,,div,css,.list.fld_task_name div
+rec_name,,,,div,css,.list.fld_cas_title div
+pr_user,,,,div,css,.list.fld_cas_user_id_full_name div
+pr_owner,,,,div,css,.list.fld_prj_user_id_full_name div
+date_modified,,,,div,css,.list.fld_date_modified div
+date_created,,,,div,css,.list.fld_cas_create_date div
+status,,,,span,css,.list.fld_cas_status
+assigned_to,,,,div,css,.list.fld_assigned_user_name div

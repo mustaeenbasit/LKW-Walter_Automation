@@ -1,0 +1,30 @@
+{
+  "testDocumentation": {
+    "testName": "opportunitiesRLIConfig",
+    "testDescription": "A common json to Configure Opportunities without Revenue Line Items"
+  },
+  "testCases": [
+    {
+      "testCaseName": "Config Opportunities without RLI",
+      "requests": [
+        {
+          "requestUser": "admin",
+          "requestURL": "Opportunities/config/",
+          "requestType": "post",
+          "requestStatus": 200,
+          "substitute": [],
+          "requestBody": {
+            "opps_view_by": "Opportunities"
+          },
+          "validation": {
+            "type": "single",
+            "value": {
+              "opps_view_by": "Opportunities"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "modules_used": []
+}

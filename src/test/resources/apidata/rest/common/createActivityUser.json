@@ -1,0 +1,71 @@
+{
+	"testDocumentation":{
+		"testName":"createActivityUser",
+		"testDescription":"Create a specific one off user to test Activity logging"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Create the Activity User",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Users/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"user_name":"activityUser",
+						"user_hash":"activityUser",
+						"system_generated_password":false,
+						"authenticate_id":"",
+						"sugar_login":true,
+						"picture":"",
+						"first_name":"Activity",
+						"last_name":"User",
+						"full_name":"Activity User",
+						"name":"Activity User",
+						"is_admin":false,
+						"external_auth_only":false,
+						"receive_notifications":true,
+						"description":"",
+						"status":"Active",
+						"default_team":"1",
+						"team_count":"",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"deleted":false,
+						"portal_only":false,
+						"show_on_employees":true,
+						"employee_status":"Active",
+						"email":[
+							{
+								"email_address":"activityuser@sugarcrm.com",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+						]
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"user_name":"activityUser"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

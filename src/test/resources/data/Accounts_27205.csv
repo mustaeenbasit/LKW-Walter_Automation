@@ -1,0 +1,6 @@
+filterName,field,operator,value
+filter1,City,exactly matches,Madrid
+filter2,City,starts with,cupertino
+,Name,starts with,Aperture
+,Type,is any of,
+,Industry,is any of,

@@ -1,0 +1,175 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudKBCategories",
+      "testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for KBCategories"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD KBCategories",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "id",
+                  "module": "Categories/",
+                  "value": 
+                  {
+                     "name": "KBContentCategory"
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/append/id",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Software"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Software"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                      "name": "Software"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "SoftwareABC"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                      "name": "SoftwareABC"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/id",
+               "requestType": "get",
+               "requestStatus": 404,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

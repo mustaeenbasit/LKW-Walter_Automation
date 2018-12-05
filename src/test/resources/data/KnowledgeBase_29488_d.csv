@@ -1,0 +1,2 @@
+status,warningMessage,errorMessage,firstDay
+Approved,"Schedule this article to be published by specifying the Publish Date. Do you wish to continue without updating a Publish Date?","Error The Expiration Date must occur on a date after the Publish Date.","01"

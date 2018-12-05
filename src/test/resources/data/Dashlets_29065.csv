@@ -1,0 +1,4 @@
+listView,filterField,filterOperator,filterValue,filterName,dashboardTitle
+List View,Status,is any of,New,my open opp,My Dashboard
+,Status,,In Progress
+,Assigned to,,Administrator

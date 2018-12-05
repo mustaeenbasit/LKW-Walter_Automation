@@ -1,0 +1,3 @@
+userName,emailAddress,password,from_name,from_address,trash_folder
+DemoMail,qa.user.suga@gmail.com,Nerdapp123,"","",[Gmail]/Trash
+SugarQA3,qa.user.smtp@gmail.com,smtp@123,email_accounts_edit_from_name_2,qa.user.smtp@gmail.com,[Gmail]/Trash

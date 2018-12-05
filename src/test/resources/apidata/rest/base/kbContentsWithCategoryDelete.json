@@ -1,0 +1,205 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "kbContentsWithCategoryDelete",
+      "testDescription": "Verifies delete of a Category that is related to an existing KB Article"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Delete an Article with Category",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "id",
+                  "module": "Categories/",
+                  "value": 
+                  {
+                     "name": "KBContentCategory"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/append/id",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Software"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Software"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "fromString": "categoryID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "draft",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontent",
+                  "kbdocument_body": "Here is the kbcontent body",
+                  "category_id": "categoryID",
+                  "category_name": "Software"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent",
+                     "category_name": "Software"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent",
+                     "category_name": "",
+                     "kbdocument_body": "Here is the kbcontent body"
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "Categories/id",
+               "requestType": "get",
+               "requestStatus": 404,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Categories",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "KBContents"
+      }
+   ]
+}

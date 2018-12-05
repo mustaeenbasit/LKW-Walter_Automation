@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,roleOwner,roleAll,roleNotSet,roleNone,roleRead/Write,roleRead/OwnerWrite,roleReadOnly,roleOwnerRead/OwnerWrite
+myRole,Role define permissions for qauser such as what kinds of records they can access and what level of access they are allowed,qauser,Owner,All,Not Set,None,Read/Write,Read/Owner Write,Read Only,Owner Read/Owner Write

@@ -1,0 +1,7 @@
+name,status
+"Case1","New"
+"Case2","Assigned"
+"Case3","Pending Input"
+"Case4","Closed"
+"Case5","Rejected"
+"Case6","Duplicate"

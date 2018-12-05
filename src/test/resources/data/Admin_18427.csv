@@ -1,0 +1,2 @@
+pack_name,key,mod_name,label,sin_label,data_module,import_vcard,import_msg
+pack67,aa,per,Persons,Person,aa_per,Import Person vCard,Automatically create a new Person record by importing a vCard from your file system.

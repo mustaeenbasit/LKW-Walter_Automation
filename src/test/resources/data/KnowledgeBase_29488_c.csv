@@ -1,0 +1,2 @@
+status,errorMessagePublishDate,errorMessageExpirationDate
+Approved,"Error The Publish Date must occur on a later date than today's date.","Error The Expiration Date must occur on a date after the Publish Date."

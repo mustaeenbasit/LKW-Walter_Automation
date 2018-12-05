@@ -1,0 +1,2 @@
+relRelatedToModule,relRelatedToValue,dataType1,fieldName1,dataType2,fieldName2,formula,dropDownValue,testFieldValue
+Account,Aperture Laboratories,DropDown,test_dropdown,Integer,test_field,"equal($test_dropdown_c,\"Customer\")",Customer,999

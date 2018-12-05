@@ -1,0 +1,2 @@
+currencyName,ISOcode,conversionRate,currencySymbol,likelyCase,bestCase,worstCase,likelyCaseInDoller,bestCaseInDoller,worstCaseInDoller
+Euro,EUR,0.9,€,100.00,100.00,100.00,$111.11,$111.11,$111.11

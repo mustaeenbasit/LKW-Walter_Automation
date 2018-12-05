@@ -1,0 +1,2 @@
+dataTypeDate,dataTypeText,fieldNameDate,fieldNameText,fieldLabelDate,fieldLabelText,formulaValue,customRequired,customDisabled,subjectName
+Date,TextField,custom_date,custom_text,custom date,custom text,"equal($priority,\"High\")",required,disabled,TestSubject

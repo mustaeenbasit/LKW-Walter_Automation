@@ -1,0 +1,2 @@
+name,date_end,marketingEmailName,status,date_start,template_id,from_name,from_address,protocol,inbound_email_id,moduleTitle,campaignSummary,campaignLog
+Test1,07/28/2015,DemoMailAccount1,Active,07/28/2015,System-generated password email,test1,abc1@test.com,IMAP,SugarCRM,Edit Campaign: Test1,Campaign Summary,Campaign Log

@@ -1,0 +1,45 @@
+{
+	"testDocumentation":{
+		"testName":"currencyEnum",
+		"testDescription":"Verifies the enum currency_name and symbol endpoints"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Currency Enum",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/enum/currency_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"-99":"US Dollar"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/enum/currency_symbol",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"-99":"$"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[	
+	]
+}

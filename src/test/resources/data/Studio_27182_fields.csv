@@ -1,0 +1,5 @@
+module_field_name,data_type,formula
+mydate,Date,NA
+mydatetime,Datetime,NA
+hoursuntil_d,TextField,"hoursUntil\(\$mydate_c\)"
+hoursuntil_dt,TextField,"hoursUntil\(\$mydatetime_c\)"

@@ -1,0 +1,2 @@
+firstName,lastName,email,title,department,phone,description,street,city,state,zipcode,country,IMName,status
+test,employee20120,aaa@sugarcrm.com,title abc,dep abc,1234567890,employee create test,123 street,cupertino,CA,95014,US,,

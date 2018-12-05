@@ -1,0 +1,4 @@
+userName,firstName,lastName,fullName,emailAddress,newPassword,confirmPassword,password,timeZone
+sally,Sally,Smith,Sally Smith,Sallysmith@example.com,Sally123,Sally123,Sally123,"America/Los Angeles (GMT-7:00)"
+jim,Jim,Jones,Jim Jones,JimJones@example.com,Jim123,Jim123,Jim123,"America/Los Angeles (GMT-7:00)"
+jack,Jack,Davies,Jack Davies,JackDavies@example.com,Jack123,Jack123,Jack123,"America/Los Angeles (GMT-7:00)"

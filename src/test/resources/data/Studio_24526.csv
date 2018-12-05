@@ -1,0 +1,2 @@
+fieldName,formula,accountName
+Number,"average($number0_c,$number1_c,$number2_c,$number3_c)",DemoAccount

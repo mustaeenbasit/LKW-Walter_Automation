@@ -1,0 +1,4 @@
+module_field_name,display_name,formula,valid_date,invalid_date,record_name
+field1,field1_c,dayofweek($field1_c),07/28/2014,13/32/2014,Sharma
+field2,field2_c,dayofweek($field2_c),08/09/2014,11/34/2014
+description2,description2_c

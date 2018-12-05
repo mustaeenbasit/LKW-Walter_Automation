@@ -1,0 +1,2 @@
+roleName,roleDescription,access,userName,user2,oppName,noAccess,likelyValue
+myRole,For opportunity module likely field is set as owner read/owner write,Owner Read/Owner Write,qauser,admin2,newOpp,No access,"$10,000.00"

@@ -1,0 +1,4 @@
+name,status,type,relAssignedTo,priority
+App is broken,Assigned,Feature,admin2,Urgent
+Cannot save data,Closed,Feature,Administrator,Low
+User logged out,Rejected,Defect,qauser,High

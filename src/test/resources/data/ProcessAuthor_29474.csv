@@ -1,0 +1,2 @@
+warningText,status1,status2
+"There are active processes running against this Process Definition. Updating it could impact these processes. Do you still want to disable this Process Definition?",Enabled,Disabled

@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sug="http://www.sugarcrm.com/sugarcrm" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sug:set_entry soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <session xsi:type="xsd:string">mySessionID</session>
+         <module_name xsi:type="xsd:string">Users</module_name>
+         <name_value_list xsi:type="sug:name_value_list" soapenc:arrayType="sug:name_value[]">
+            <item xsi:type="tns:name_value">
+               <name xsi:type="xsd:string">id</name>
+               <value xsi:type="xsd:string">seed_jim_id</value>
+            </item>
+            <item xsi:type="tns:name_value">
+               <name xsi:type="xsd:string">reports_to_id</name>
+               <value xsi:type="xsd:string">seed_will_id</value>
+            </item>
+         </name_value_list>
+      </sug:set_entry>
+   </soapenv:Body>
+</soapenv:Envelope>

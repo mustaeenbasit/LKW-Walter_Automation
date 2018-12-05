@@ -1,0 +1,23 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+name,name,,Quote for Aperture's order,span,id,name,input,id,name,null,null,null,a,css,td:nth-child(5) a,null,null,null,null,null,null
+opportunityName,null,bwcrelate,,span,id,opportunity_id,button,id,btn_opportunity_name,null,null,null,null,null,null,null,null,null,null,null,null
+quoteNumber,quote_num,,,span,id,quote_num,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+quoteStage,quote_stage,,,td,css,table#LBL_QUOTE_INFORMATION tbody tr:nth-of-type(2) td:nth-of-type(4),select,id,quote_stage,null,null,null,td,css,td:nth-child(7),null,null,null,select,id,mass_quote_stage
+purchaseOrderNum,purchase_order_num,,,span,id,purchase_order_num,input,id,purchase_order_num,null,null,null,null,null,null,null,null,null,null,null,null
+date_quote_expected_closed,date_quote_expected_closed,,12/01/2020,span,id,date_quote_expected_closed,input,id,date_quote_expected_closed,null,null,null,td,css,td:nth-child(10),null,null,null,input,id,date_quote_expected_closedjscal_field
+paymentTerms,payment_terms,,,td,css,table#LBL_QUOTE_INFORMATION tbody tr:nth-of-type(4) td:nth-of-type(2),select,id,payment_terms,null,null,null,null,null,null,null,null,null,select,id,mass_payment_terms
+date_original_po,original_po_date,,,span,id,original_po_date,input,id,original_po_date,null,null,null,null,null,null,null,null,null,input,id,original_po_datejscal_field
+billingAccountName,null,bwcrelate,Aperture Laboratories,span,id,billing_account_id,button,id,btn_billing_account_name,null,null,null,a,css,td:nth-child(6) a,null,null,null,select,id,mass_billing_account_name
+shippingAccountName,null,bwcrelate,,span,id,shipping_account_id,button,id,btn_shipping_account_name,null,null,null,null,null,null,null,null,null,select,id,mass_shipping_account_name
+billingContactName,null,bwcrelate,,span,id,billing_contact_id,button,id,btn_billing_contact_name,null,null,null,null,null,null,null,null,null,select,id,mass_billing_contact_name
+shippingContactName,null,bwcrelate,,span,id,shipping_contact_id,button,id,btn_shipping_contact_name,null,null,null,null,null,null,null,null,null,input,id,mass_shipping_contact_name
+billTo,null,,,td,css,table#LBL_QUOTE_INFORMATION tbody tr:nth-of-type(7) td:nth-of-type(2),null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+shipTo,null,,,td,css,table#LBL_QUOTE_INFORMATION tbody tr:nth-of-type(7) td:nth-of-type(4),null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+billingStreet,billing_address_street,,,null,null,null,textarea,id,billing_address_street,null,null,null,null,null,null,null,null,null,null,null,null
+billingCity,billing_address_city,,,null,null,null,input,id,billing_address_city,null,null,null,null,null,null,null,null,null,null,null,null
+billingState,billing_address_state,,,null,null,null,input,id,billing_address_state,null,null,null,null,null,null,null,null,null,null,null,null
+billingPostalCode,billing_address_postalcode,,,null,null,null,input,id,billing_address_postalcode,null,null,null,null,null,null,null,null,null,null,null,null
+billingCountry,billing_address_country,,,null,null,null,input,id,billing_address_country,null,null,null,null,null,null,null,null,null,null,null,null
+description,description,,Final quotes for Candy Inc.,span,id,description,textarea,id,description,null,null,null,null,null,null,null,null,null,null,null,null
+assignedTo,null,bwcrelate,,span,id,assigned_user_id,button,id,btn_assigned_user_name,null,null,null,a,css,td:nth-child(11) a,null,null,null,button,id,mass_assigned_user_name_btn
+teams,null,bwcrelate,,td,css,table#LBL_PANEL_ASSIGNMENT tbody tr:nth-of-type(2) td:nth-of-type(2),button,id,teamSelect,null,null,null,null,null,null,null,null,null,button,name,teamSelect

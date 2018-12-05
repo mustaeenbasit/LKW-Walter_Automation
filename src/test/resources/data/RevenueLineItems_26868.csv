@@ -1,0 +1,6 @@
+likelyCase,unitPrice,quantity,discountPrice,calcRLIAmount,name,assert_error
+11.00,11.00
+0.00,0.00
+100.00,0.00
+,500.00,0.00,100.00,,,Error. The value of this field must be greater than 0.
+41.00,15.00,3.00,4.00,41.00,Laptop

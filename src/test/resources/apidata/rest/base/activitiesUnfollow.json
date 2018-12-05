@@ -1,0 +1,281 @@
+{
+	"testDocumentation":{
+		"testName":"activitiesUnfollow",
+		"testDescription":"Verifies the various Acivities updates are not Tracked if record is Un-followed"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Do not log Activities Un-follow",
+			"requests":[
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Accounts/id/unsubscribe",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						
+					},
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Accounts/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"following":false
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Accounts/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Changed Next one Industries Account after Un-follow"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Changed Next one Industries Account after Un-follow"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Accounts/Activities?order_by=activity_type",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":3,
+						"records":[
+							{
+								"data":{
+									"subject":{
+										"name":"my big Opportunity",
+										"type":"Opportunity",
+										"module":"Opportunities"
+									}
+									
+								}
+								
+							},
+							{
+								"data":{
+									"changes":{
+										"name":{
+											"field_name":"name",
+											"data_type":"name",
+											"before":"Cloud Cover Trust",
+											"after":"Changed Next one Industries Account"
+										}
+										
+									}
+									
+								}
+								
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Cloud Cover Trust",
+										"type":"Account",
+										"module":"Accounts"
+									}
+									
+								}
+								
+							}
+							
+						]
+						
+					}
+					
+				},
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Accounts/id/subscribe",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"following":true
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Accounts/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Changed Next one Industries Account after Follow"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Changed Next one Industries Account after Follow"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"activityUser",
+					"requestURL":"Activities?order_by=activity_type",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"none",
+						"count":5,
+						"records":[
+							{
+								"data":{
+									"object":{
+										"name":"Changed Next one Industries Account after Follow",
+										"type":"Account",
+										"module":"Accounts"
+									}
+									
+								}
+								
+							},
+							{
+								"data":{
+									"object":{
+										"name":"my big Opportunity",
+										"type":"Opportunity",
+										"module":"Opportunities"
+									}
+									
+								}
+								
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Changed Next one Industries Account",
+										"type":"Account",
+										"module":"Accounts"
+									}
+									
+								}
+								
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Changed Next one Industries Account",
+										"type":"Account",
+										"module":"Accounts"
+									}
+									
+								}
+								
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Cloud Cover Trust",
+										"type":"Account",
+										"module":"Accounts"
+									}
+									
+								}
+								
+							}
+							
+						]
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"Opportunities"
+		}
+		
+	]
+}

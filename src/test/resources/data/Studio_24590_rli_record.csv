@@ -1,0 +1,2 @@
+name,relOpportunityName,salesStage,probability,date_closed,unitPrice,bestCase,worstCase,likelyCase
+RLI1,Opp1,Prospecting,10,07/24/2015,1000,1300,700,1000

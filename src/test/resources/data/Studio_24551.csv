@@ -1,0 +1,2 @@
+formula_field,greater_than_formula_name,subtract_formula_name,add_formula_name,int_value,currency_value,float_value,decimal_value,success,failure,modified_int_value,hash_char,ampersand_char,exclamation_char,percentage_char
+my_formula,greaterThan,subtract,add,13,8.6,4.2,2.4,true,false,1,#,&,!,%

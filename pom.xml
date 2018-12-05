@@ -1,0 +1,284 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sugarcrm.library</groupId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>grimoire</name>
+	<artifactId>grimoire_audi</artifactId>
+
+	<properties>
+			<!-- Allure specific variables -->
+			<allure.version>1.4.15</allure.version>
+			<aspectj.version>1.7.4</aspectj.version>
+			<compiler.version>1.7</compiler.version>
+			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12.3</version>
+					<configuration>
+						<testFailureIgnore>false</testFailureIgnore>
+						<argLine>
+							-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+						</argLine>
+						<properties>
+							<property>
+								<name>listener</name>
+								<value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
+							</property>
+						</properties>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjweaver</artifactId>
+							<version>${aspectj.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<show>private</show>
+						<nohelp>true</nohelp>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>ru.yandex.qatools.allure</groupId>
+			<artifactId>allure-junit-adaptor</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sugarcrm</groupId>
+			<artifactId>candybean</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>xml-path</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<!-- dependency> <groupId>com.opera</groupId> <artifactId>operadriver</artifactId>
+			<version>0.14</version> </dependency> <dependency> <groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId> <version>2.3</version> </dependency -->
+	</dependencies>
+	<profiles>
+		<profile>
+			<id>sugar</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/test/*/*.java</include>
+							</includes>
+							<excludes>
+								<exclude>**/test/api/</exclude>
+								<exclude>**/test/grimoire/</exclude>
+								<exclude>**/test/tutorial/</exclude>
+							</excludes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>api</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/test/api/*.java</include>
+							</includes>
+							<excludes>
+							</excludes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>debug</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/test/grimoire/*.java</include>
+							</includes>
+							<excludes>
+							</excludes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>grimoire</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/test/grimoire/*.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>cruds</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>**/*_create.java</include>
+                                <include>**/*_update.java</include>
+                                <include>**/*_delete.java</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+		<!-- Default Profile: Empty profile for running no tests -->
+		<profile>
+			<id>null</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/test/null/Null.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>bvt</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/RevenueLineItems_create.java</include> <!-- Create/Read/Search -->
+								<include>**/Cases_update.java</include> <!-- Update -->
+								<include>**/Opportunities_delete.java</include> <!-- Delete -->
+								<include>**/Campaigns_create.java</include> <!-- BWC Create/Read/Search -->
+								<include>**/Quotes_update.java</include> <!-- BWC Update -->
+								<include>**/Contracts_delete.java</include> <!-- BWC Delete -->
+								<include>**/Leads_26515.java</include> <!-- Subpanel Link Existing -->
+								<include>**/Emails_26689.java</include> <!-- Send Email -->
+								<include>**/Contacts_23512.java</include> <!-- Mass Update -->
+								<include>**/Accounts_23258.java</include> <!-- Subpanel Create -->
+								<include>**/Users_create.java</include> <!-- Admin, User Create -->
+								<include>**/Calls_19080.java</include> <!-- Activities -->
+								<include>**/Portal_21713.java</include> <!-- Portal -->
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- profile> <id>smoke</id> <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId> <configuration> <includes>
+			<include>**/smoke/**/Test*.java</include> </includes> </configuration> </plugin>
+			</plugins> </build> </profile -->
+	</profiles>
+	<reporting>
+		<excludeDefaults>true</excludeDefaults>
+		<plugins>
+			<plugin>
+				<groupId>ru.yandex.qatools.allure</groupId>
+				<artifactId>allure-maven-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<outputName>Sugar_Automation</outputName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>ru.yandex.qatools.allure</groupId>
+				<artifactId>allure-maven-plugin</artifactId>
+				<version>${allure.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

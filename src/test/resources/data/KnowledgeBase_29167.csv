@@ -1,0 +1,2 @@
+languageKey,languageValue,warningMessage
+de,Deutsch,"Unable to create a new localization as a localization version exists for all available languages."

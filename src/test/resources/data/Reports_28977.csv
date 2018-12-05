@@ -1,0 +1,2 @@
+name,customQuery
+customQuery,"select * from users"

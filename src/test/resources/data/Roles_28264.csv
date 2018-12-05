@@ -1,0 +1,11 @@
+dropdownValues,roleName,userName,fieldType,fieldName,roleNameWithAsterisk
+Analyst,firstRole,firstUser,DropDown,testfield,"* firstRole"
+Competitor,secondRole,secondUser,,,"* secondRole"
+Customer,,,,,
+Integrator,,,,,
+Investor,,,,,
+Partner,,,,,
+Press,,,,,
+Prospect,,,,,
+Reseller,,,,,
+Other,,,,,

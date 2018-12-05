@@ -1,0 +1,149 @@
+{
+	"testDocumentation":{
+		"testName":"verify MobileAccountsRecordlayout",
+		"testDescription":"verify the default Mobile Account edit layout"
+	},
+	"testCases":[
+		{
+			"testCaseName":"verify  mobile Account record layout",
+			"requests":[
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"metadata?module_filter=Accounts&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"modules":{
+								"Accounts":{
+									"views":{
+										"edit":{
+											"meta":{
+												"panels":[
+													{
+														"label":"LBL_PANEL_DEFAULT",
+														"fields":[
+															{
+																"name":"name",
+																"displayParams":{
+																	"required":true,
+																	"wireless_edit_only":true
+																}
+																
+															},
+															"phone_office",
+															{
+																"name":"website",
+																"displayParams":{
+																	"type":"link"
+																}
+																
+															},
+															"email",
+															"billing_address_street",
+															"billing_address_city",
+															"billing_address_state",
+															"billing_address_postalcode",
+															"billing_address_country",
+															"assigned_user_name",
+															"team_name"
+														]
+														
+													}
+													
+												]
+												
+											}
+											
+										}
+										
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesRep2",
+					"requestURL":"metadata?module_filter=Accounts&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"modules":{
+								"Accounts":{
+									"views":{
+										"edit":{
+											"meta":{
+												"panels":[
+													{
+														"label":"LBL_PANEL_DEFAULT",
+														"fields":[
+															{
+																"name":"name",
+																"displayParams":{
+																	"required":true,
+																	"wireless_edit_only":true
+																}
+																
+															},
+															"phone_office",
+															{
+																"name":"website",
+																"displayParams":{
+																	"type":"link"
+																}
+																
+															},
+															"email",
+															"billing_address_street",
+															"billing_address_city",
+															"billing_address_state",
+															"billing_address_postalcode",
+															"billing_address_country",
+															"assigned_user_name",
+															"team_name"
+														]
+														
+													}
+													
+												]
+												
+											}
+											
+										}
+										
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

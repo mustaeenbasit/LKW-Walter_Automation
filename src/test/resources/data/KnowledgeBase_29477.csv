@@ -1,0 +1,2 @@
+date_expiration,date_publish,status,approved,alertError,alertError1,redColor,newdate_publish,newdate_expiration,alert,exp_alert,exp_alert_popup
+07/01/2014,07/01/2014,Status,Approved,"The publish date should be more than current date.","The Publish Date must occur on a later date than today's date.","rgba(230, 23, 24, 1)","07/02/2015","07/02/2015","The expiration date can not be before date of publishing.","Error The Expiration Date must occur on a date after the Publish Date.","Error. The Expiration Date must occur on a date after the Publish Date."

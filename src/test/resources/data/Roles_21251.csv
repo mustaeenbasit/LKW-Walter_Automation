@@ -1,0 +1,2 @@
+roleName,roleDescription,read_only,userName
+myRole,Set View role to be Owner,Read Only,qauser

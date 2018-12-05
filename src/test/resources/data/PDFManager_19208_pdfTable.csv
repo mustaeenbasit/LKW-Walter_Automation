@@ -1,0 +1,3 @@
+column1,column2,column3,name,author
+Name,Type,Shipping City,My Custom Pdf,Abc
+{$fields.name},{$fields.account_type},{$fields.shipping_address_city}

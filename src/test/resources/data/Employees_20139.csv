@@ -1,0 +1,3 @@
+status,firstName,lastName,email,title,department,phone,description,street,city,active_status
+Terminated,test,employee20119,aaa@sugarcrm.com,title abc,dep abc,1234567890,employee create test,123 street,cupertino,Active
+

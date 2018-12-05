@@ -1,0 +1,2 @@
+date_expiration,newStatus,alertError1,alertError2,toolTipError
+03/16/2016,Published,"Error The Expiration Date must occur on a date after the Publish Date.","Please resolve any errors before proceeding","Error. The Expiration Date must occur on a date after the Publish Date."

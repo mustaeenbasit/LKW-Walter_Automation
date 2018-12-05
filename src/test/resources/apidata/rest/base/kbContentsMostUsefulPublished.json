@@ -1,0 +1,518 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "kbContentsUsefulAndNotUseful",
+      "testDescription": "Verifies the marking a KBContents record as useful and not useful by multiple users"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "useful and not useful KBContents",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "published",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontentA",
+                  "kbdocument_body": "Here is the kbcontent body for A"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontentA"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "published",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontentB",
+                  "kbdocument_body": "Here is the kbcontent body for B"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontentB"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "published",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontentC",
+                  "kbdocument_body": "Here is the kbcontent body for C"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontentC"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 1,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 2,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 3,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesMgr1",
+               "requestURL": "KBContents/id/notuseful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 3,
+                     "notuseful": 1
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 2,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 1,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 2,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 2,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesMgr1",
+               "requestURL": "KBContents/id/notuseful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 2,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 2,
+                     "notuseful": 1
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 3,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 1,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 3,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 2,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "KBContents/id/useful",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 3,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "useful": 3,
+                     "notuseful": 0
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents?order_by=useful:desc,notuseful:asc,viewcount:desc,date_entered:desc&mostUseful=true&fields=id,name,date_entered,created_by,created_by_name&max_num=3&filter[0][active_rev][$equals]=1&filter[0][useful][$gt][$field]=notuseful&filter[0][status][$equals]=published",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 3,
+                  "records": 
+                  [
+                     {
+                        "name": "mykbcontentC"
+                     },
+
+                     {
+                        "name": "mykbcontentA"
+                     },
+
+                     {
+                        "name": "mykbcontentB"
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "KBContents"
+      }
+   ]
+}

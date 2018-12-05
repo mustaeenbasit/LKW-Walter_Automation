@@ -1,0 +1,16 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+name,name,,Buy our Stuff!,span,id,name,input,id,name,null,null,null,a,css,td:nth-child(4) a,null,null,null,null,null,null
+status,status,,Planning,td,css,table#LBL_CAMPAIGN_INFORMATION tbody tr td:nth-of-type(4),select,id,status,null,null,null,td,css,td:nth-child(5),null,null,null,select,id,mass_status
+type,campaign_type,,Telesales,td,css,table#LBL_CAMPAIGN_INFORMATION tbody tr:nth-of-type(2) td:nth-of-type(4),select,id,campaign_type,null,null,null,td,css,td:nth-child(6),null,null,null,select,id,mass_campaign_type
+date_start,start_date,,12/01/2020,span,id,start_date,input,id,start_date,null,null,null,null,null,null,null,null,null,input,id,start_datejscal_field
+date_end,end_date,,12/31/2020,span,id,end_date,input,id,end_date,null,null,null,td,css,td:nth-child(7),null,null,null,input,id,end_datejscal_field
+frequency,frequency,,,div,id,freq_field,select,name,frequency,null,null,null,null,null,null,null,null,null,select,id,mass_frequency
+impressions,impressions,,,span,id,impressions,input,id,impressions,null,null,null,null,null,null,null,null,null,null,null,null
+budget,budget,,,span,id,budget,input,id,budget,null,null,null,null,null,null,null,null,null,null,null,null
+expectedCost,expected_cost,,,span,id,expected_cost,input,id,expected_cost,null,null,null,null,null,null,null,null,null,null,null,null
+actualCost,actual_cost,,,span,id,actual_cost,input,id,actual_cost,null,null,null,null,null,null,null,null,null,null,null,null
+expectedRevenue,expected_revenue,,,span,id,expected_revenue,input,id,expected_revenue,null,null,null,null,null,null,null,null,null,null,null,null
+objective,objective,,,span,id,objective,textarea,id,objective,null,null,null,null,null,null,null,null,null,null,null,null
+description,description,,,span,id,content,textarea,id,content,null,null,null,null,null,null,null,null,null,null,null,null
+assignedTo,null,bwcrelate,,span,id,assigned_user_id,button,id,btn_assigned_user_name,null,null,null,a,css,td:nth-child(8) a,null,null,null,button,id,mass_assigned_user_name_btn
+teams,null,bwcrelate,,td,css,table#LBL_PANEL_ASSIGNMENT tbody tr:nth-of-type(2) td:nth-of-type(2),button,id,teamSelect,null,null,null,null,null,null,null,null,null,button,name,teamSelect

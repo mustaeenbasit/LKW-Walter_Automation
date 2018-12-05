@@ -1,0 +1,2 @@
+script,message,linkToHome,atHomePage
+<<SCRIPT>alert("XSS");//<</SCRIPT>,Bad data passed in; Return to Home,Return to Home,My Dashboard

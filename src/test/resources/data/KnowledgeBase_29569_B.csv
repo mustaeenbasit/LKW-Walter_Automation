@@ -1,0 +1,7 @@
+name,status,date_publish,tooltipText
+KB1,"Approved","09/09/2000","Error. The Publish Date must occur on a later date than today's date."
+KB2,"Published","09/09/2050",
+KB3,,,
+KB4,,"09/09/2000",
+KB5,,"09/09/2050",
+KB6,,,

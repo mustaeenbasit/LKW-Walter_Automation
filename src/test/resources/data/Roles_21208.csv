@@ -1,0 +1,5 @@
+massUpdateField,massUpdateValue,roleName,roleDescription,access,userName
+Assigned to,Administrator,myRole,Set all field permissions to Read/Owner Write,Read/Owner Write,qauser
+Teams,qauser
+Type,Integrator
+Industry,Energy

@@ -1,0 +1,5 @@
+name,status,date_start,template_id,inbound_email_id,from_name,from_address
+DemoMailAccount1,Active,06/20/2014,System-generated password email,SugarCRM,test1,abc1@test.com
+DemoMailAccount2,Active,06/20/2014,System-generated password email,SugarCRM,test2,abc2@test.com
+DemoMailAccount3,Active,06/20/2014,System-generated password email,SugarCRM,test3,abc3@test.com
+DemoMailAccount4,Active,06/20/2014,System-generated password email,SugarCRM,test4,abc4@test.com

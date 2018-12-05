@@ -1,0 +1,2 @@
+module_name,module_field_name,formula
+studiolink_Bugs,bug_field,"strlen\(\$name\)"

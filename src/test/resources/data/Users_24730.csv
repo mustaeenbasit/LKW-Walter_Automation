@@ -1,0 +1,3 @@
+userName,firstName,lastName,fullName,emailAddress,newPassword,confirmPassword,password,timeZone
+user1,user1,1,user1 1,mss@sugarcrm.com,Test11,Test11,Test11,"America/Los Angeles (GMT-7:00)"
+user2,user2,2,user2 2,pkd@sugarcrm.com,Demo11,Demo11,Demo11,"America/Los Angeles (GMT-7:00)"

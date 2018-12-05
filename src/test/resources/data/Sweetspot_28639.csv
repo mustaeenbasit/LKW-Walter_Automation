@@ -1,0 +1,2 @@
+package_name,key,module_name,plural_label,singular_label,new_custom_record
+TestPackage,TestP,TestModule,TestModules,TestModule,"myTest"

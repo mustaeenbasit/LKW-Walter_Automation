@@ -1,0 +1,49 @@
+{
+	"testDocumentation":{
+		"testName":"adminDnBSetUp",
+		"testDescription":"Verify the admin the DnB GET Competitors endpoint"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Set up DnB connection paramters",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"connector/dnb/competitors/168338536",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"SAP SE"
+								},
+								{
+									"string":"ORACLE CORPORATION"
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

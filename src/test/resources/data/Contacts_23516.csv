@@ -1,0 +1,2 @@
+firstName,lastName,filterName,operator,filter_field1,filter_field2
+Ashish,Jabble,Test,starts with,First Name,Last Name

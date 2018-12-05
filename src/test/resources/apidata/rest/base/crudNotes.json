@@ -1,0 +1,147 @@
+{
+	"testDocumentation":{
+		"testName":"crudNotes",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Notes"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Notes",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Notes/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"More Account Information",
+						"description":"This account could turn into a 3,000-user opportunity.",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"East",
+								"name":"East",
+								"name_2":"",
+								"primary":true
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"More Account Information",
+							"description":"This account could turn into a 3,000-user opportunity."
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Notes/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Notes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"More Account Information",
+							"description":"This account could turn into a 3,000-user opportunity."
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Notes/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Notes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"requestBody":{
+						"description":"Changed This account could turn into a 3,000-user opportunity."
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"More Account Information",
+							"description":"Changed This account could turn into a 3,000-user opportunity."
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Notes/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Notes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Notes/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Notes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		{
+			"module":"Notes"
+		}
+	]
+}

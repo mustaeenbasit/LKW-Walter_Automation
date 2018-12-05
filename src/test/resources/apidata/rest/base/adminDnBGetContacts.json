@@ -1,0 +1,48 @@
+{
+	"testDocumentation":{
+		"testName":"adminDnBSetUp",
+		"testDescription":"Verify the admin set up of the DnB connector"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Set up DnB connection paramters",
+			"requests":[
+				{
+					"requestDescription":"Search DnB Contacts",
+					"requestUser":"admin",
+					"requestURL":"connector/dnb/Contacts/bal",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"qdata":{
+							"DUNSNumber-1":"168338536",
+							"contactType":"Contacts",
+							"CandidatePerPageMaximumQuantity":20,
+							"CandidateDisplayStartSequenceNumber":1
+						}
+					},
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"SugarCRM"
+								}
+							],
+							"notcontains":[
+								
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

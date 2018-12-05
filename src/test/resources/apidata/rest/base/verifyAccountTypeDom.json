@@ -1,0 +1,153 @@
+{
+	"testDocumentation":{
+		"testName":"verifyAccountAccountTypeDom",
+		"testDescription":"Verifies the initial and default Account Type DOM record layout"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Verify the initial Account Type DOM layout",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"cache/api/metadata/lang_en_us_base_ordered.json",
+					"requestType":"getURL",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"app_list_strings":{
+								"account_type_dom":[
+									[
+										"",
+										""
+									],
+									[
+										"Analyst",
+										"Analyst"
+									],
+									[
+										"Competitor",
+										"Competitor"
+									],
+									[
+										"Customer",
+										"Customer"
+									],
+									[
+										"Integrator",
+										"Integrator"
+									],
+									[
+										"Investor",
+										"Investor"
+									],
+									[
+										"Partner",
+										"Partner"
+									],
+									[
+										"Press",
+										"Press"
+									],
+									[
+										"Prospect",
+										"Prospect"
+									],
+									[
+										"Reseller",
+										"Reseller"
+									],
+									[
+										"Other",
+										"Other"
+									]
+									
+								]
+								
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"cache/api/metadata/lang_en_us_mobile_ordered.json",
+					"requestType":"getURL",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"app_list_strings":{
+								"account_type_dom":[
+									[
+										"",
+										""
+									],
+									[
+										"Analyst",
+										"Analyst"
+									],
+									[
+										"Competitor",
+										"Competitor"
+									],
+									[
+										"Customer",
+										"Customer"
+									],
+									[
+										"Integrator",
+										"Integrator"
+									],
+									[
+										"Investor",
+										"Investor"
+									],
+									[
+										"Partner",
+										"Partner"
+									],
+									[
+										"Press",
+										"Press"
+									],
+									[
+										"Prospect",
+										"Prospect"
+									],
+									[
+										"Reseller",
+										"Reseller"
+									],
+									[
+										"Other",
+										"Other"
+									]
+									
+								]
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

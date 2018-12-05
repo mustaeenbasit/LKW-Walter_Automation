@@ -1,0 +1,21 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+name,name,,HalfBrain Contract,span,id,name,input,id,name,null,null,null,a,css,td:nth-child(4) a,null,null,null,null,null,null
+status,status,,Not Started,td,css,table#LBL_CONTRACT_INFORMATION tbody tr td:nth-of-type(4),select,id,status,null,null,null,td,css,td:nth-child(6),null,null,null,select,id,mass_status
+reference_code,reference_code,,,span,id,reference_code,input,id,reference_code,null,null,null,null,null,null,null,null,null,null,null,null
+account_name,null,bwcrelate,Aperture Laboratories,span,id,account_id,button,id,btn_account_name,null,null,null,a,css,td:nth-child(5) a,null,null,null,input,id,mass_account_name
+date_start,start_date,,,span,id,start_date,input,id,start_date,null,null,null,td,css,td:nth-child(7),null,null,null,input,id,start_datejscal_field
+date_end,end_date,,,span,id,end_date,input,id,end_date,null,null,null,td,css,td:nth-child(8),null,null,null,input,id,end_datejscal_field
+opportunity,,bwcrelate,,span,id,opportunity_id,button,id,btn_opportunity_name,null,null,null,null,null,null,null,null,null,null,null,null
+type,,,,td,css,table#LBL_CONTRACT_INFORMATION tbody tr:nth-of-type(5) td:nth-of-type(2),select,id,type,null,null,null,null,null,null,null,null,null,select,id,mass_type
+contract_term,,,,span,id,contract_term,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+currency,,,,null,null,null,select,id,currency_id_select,null,null,null,null,null,null,null,null,null,select,id,currency_name_select
+contract_value,total_contract_value,,,span,id,total_contract_value,input,id,total_contract_value,null,null,null,null,null,null,null,null,null,null,null,null
+date_company_signed,company_signed_date,,,span,id,company_signed_date,input,id,company_signed_date,null,null,null,null,null,null,null,null,null,input,id,company_signed_datejscal_field
+date_expiration_notice_date,expiration_notice,,,span,id,expiration_notice,input,id,expiration_notice_date,null,null,null,null,null,null,null,null,null,null,null,null
+date_expiration_notice_hours,null,,null,null,null,null,select,id,expiration_notice_hours,null,null,null,null,null,null,null,null,null,null,null,null
+date_expiration_notice_minutes,null,,null,null,null,null,select,id,expiration_notice_minutes,null,null,null,null,null,null,null,null,null,null,null,null
+date_expiration_notice_meridiem,null,,null,null,null,null,select,id,expiration_notice_meridiem,null,null,null,null,null,null,null,null,null,null,null,null
+date_customer_signed,customer_signed_date,,,span,id,customer_signed_date,input,id,customer_signed_date,null,null,null,null,null,null,null,null,null,input,id,customer_signed_datejscal_field
+description,description,,This is a valuable contract,span,id,description,textarea,id,description,null,null,null,null,null,null,null,null,null,null,null,null
+assignedTo,null,bwcrelate,,span,id,assigned_user_id,button,id,btn_assigned_user_name,null,null,null,a,css,td:nth-child(9) a,null,null,null,button,id,mass_assigned_user_name_btn
+teams,null,bwcrelate,,td,css,table#LBL_PANEL_ASSIGNMENT tbody tr:nth-of-type(2) td:nth-of-type(2),button,id,teamSelect,null,null,null,null,null,null,null,null,null,button,name,teamSelect

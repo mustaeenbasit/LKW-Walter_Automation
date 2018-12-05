@@ -1,0 +1,4 @@
+name,status,warningMessage,statusApproved
+Expired KB,Expired,"Schedule this article to be published by specifying the Publish Date. Do you wish to continue without updating a Publish Date?",Approved
+In Review,In Review,,
+Draft KB,Draft,,

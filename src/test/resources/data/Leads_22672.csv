@@ -1,0 +1,2 @@
+from,to,message,status,dashboard,count,no_record_count,required_class_name
+cnn@from.com,abc@to.com,No data available,Archived,My Dashboard,1,0,required

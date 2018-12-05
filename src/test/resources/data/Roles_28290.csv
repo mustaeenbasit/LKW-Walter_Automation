@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,dataType,dom,depTypeSelect,parent_dd,customer,reseller,value
+myRole,Set Accounts module "Access" Level to "Disabled",qauser,DropDown,campaign_type_dom,Parent Dropdown,Type,Customer,Reseller,Email

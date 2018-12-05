@@ -1,0 +1,227 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudTeams",
+      "testDescription": "Verify the CRUD of a Teams using BWC calls to HTTP Forms"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Create a Team",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "index.php",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "record",
+                        "value": ""
+                     },
+
+                     {
+                        "name": "return_id",
+                        "value": ""
+                     },
+
+                     {
+                        "name": "module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "Save"
+                     },
+
+                     {
+                        "name": "isduplicate",
+                        "value": ""
+                     },
+
+                     {
+                        "name": "return_module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "button",
+                        "value": "Save"
+                     },
+
+                     {
+                        "name": "name",
+                        "value": "myTeam"
+                     },
+
+                     {
+                        "name": "description",
+                        "value": "myTeam decription"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Teams?filter[0][name][$starts]=myTeam",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "module": "Teams/",
+                  "value": 
+                  {
+                     "name": "myTeam"
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "index.php?sugar_body_only=1&module=Teams&subpanel=users&action=SubPanelViewer&inline=1&record=TEAMID",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Teams",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "TEAMID"
+                  },
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 1,
+                     "destination": "requestBody",
+                     "fromString": "MYUSERID"
+                  },
+                  {
+                     "type": "replaceStringID",
+                     "module": "Teams",
+                     "index": 999,
+                     "destination": "requestBody",
+                     "fromString": "TEAMID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "subpanel_id",
+                        "value": "MYUSERID"
+                     },
+
+                     {
+                        "name": "value",
+                        "value": "DetailView"
+                     },
+
+                     {
+                        "name": "module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "http_method",
+                        "value": "get"
+                     },
+
+                     {
+                        "name": "return_module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "return_id",
+                        "value": "TEAMID"
+                     },
+
+                     {
+                        "name": "record",
+                        "value": "TEAMID"
+                     },
+
+                     {
+                        "name": "isDuplicate",
+                        "value": "false"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "Save2"
+                     },
+
+                     {
+                        "name": "inline",
+                        "value": "1"
+                     },
+
+                     {
+                        "name": "select_entire_list",
+                        "value": "0"
+                     },
+
+                     {
+                        "name": "child_field",
+                        "value": "users"
+                     },
+
+                     {
+                        "name": "subpanel_field_name",
+                        "value": "users"
+                     },
+
+                     {
+                        "name": "subpanel_module_name",
+                        "value": "users"
+                     },
+
+                     {
+                        "name": "refresh_page",
+                        "value": "0"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

@@ -1,0 +1,8 @@
+fieldName,customFieldValue,operator,rangeValue
+customfield,11,is equal to,11
+,12,is not equal to,14
+,13,is greater than,13
+,14,is less than,14
+,,is greater than or equal to,11
+,,is less than or equal to,12
+,,is between

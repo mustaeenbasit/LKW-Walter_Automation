@@ -1,0 +1,589 @@
+module,name,displayLabel,type
+studiolink_Accounts,deleted,Deleted,Checkbox
+studiolink_Accounts,date_entered,Date Created,Datetime
+studiolink_Accounts,date_modified,Date Modified,Datetime
+studiolink_Accounts,account_type,Type,DropDown
+studiolink_Accounts,industry,Industry,DropDown
+studiolink_Accounts,name,Name,Name
+studiolink_Accounts,phone_fax,Fax,Phone
+studiolink_Accounts,phone_office,Office Phone,Phone
+studiolink_Accounts,phone_alternate,Alternate Phone,Phone
+studiolink_Accounts,description,Description,TextArea
+studiolink_Accounts,billing_address_street,Billing Street,TextArea
+studiolink_Accounts,shipping_address_street,Shipping Street,TextArea
+studiolink_Accounts,email,Email,Email
+studiolink_Accounts,facebook,Facebook Account,TextField
+studiolink_Accounts,twitter,Twitter Account,TextField
+studiolink_Accounts,googleplus,Google Plus ID,TextField
+studiolink_Accounts,annual_revenue,Annual Revenue,TextField
+studiolink_Accounts,billing_address_city,Billing City,TextField
+studiolink_Accounts,billing_address_state,Billing State,TextField
+studiolink_Accounts,billing_address_postalcode,Billing Postal Code,TextField
+studiolink_Accounts,billing_address_country,Billing Country,TextField
+studiolink_Accounts,rating,Rating,TextField
+studiolink_Accounts,ownership,Ownership,TextField
+studiolink_Accounts,employees,Employees,TextField
+studiolink_Accounts,ticker_symbol,Ticker Symbol,TextField
+studiolink_Accounts,shipping_address_city,Shipping City,TextField
+studiolink_Accounts,shipping_address_state,Shipping State,TextField
+studiolink_Accounts,shipping_address_postalcode,Shipping Postal Code,TextField
+studiolink_Accounts,shipping_address_country,Shipping Country,TextField
+studiolink_Accounts,sic_code,SIC Code,TextField
+studiolink_Accounts,duns_num,DUNS,TextField
+studiolink_Accounts,website,Website,URL
+studiolink_Bugs,deleted,Deleted,Checkbox
+studiolink_Bugs,portal_viewable,Show in Portal,Checkbox
+studiolink_Bugs,date_entered,Date Created,Datetime
+studiolink_Bugs,date_modified,Date Modified,Datetime
+studiolink_Bugs,type,Type,DropDown
+studiolink_Bugs,status,Status,DropDown
+studiolink_Bugs,priority,Priority,DropDown
+studiolink_Bugs,resolution,Resolution,DropDown
+studiolink_Bugs,found_in_release,Found in Release,DropDown
+studiolink_Bugs,fixed_in_release,Fixed in Release,DropDown
+studiolink_Bugs,source,Source,DropDown
+studiolink_Bugs,product_category,Category,DropDown
+studiolink_Bugs,bug_number,Number,Integer
+studiolink_Bugs,system_id,System ID,Integer
+studiolink_Bugs,name,Subject,Name
+studiolink_Bugs,description,Description,TextArea
+studiolink_Bugs,work_log,Work Log,TextArea
+studiolink_Calls,deleted,Deleted,Checkbox
+studiolink_Calls,date_entered,Date Created,Datetime
+studiolink_Calls,date_modified,Date Modified,Datetime
+studiolink_Calls,date_start,Start Date,Datetime
+studiolink_Calls,date_end,End Date,Datetime
+studiolink_Calls,status,Status,DropDown
+studiolink_Calls,direction,Direction,DropDown
+studiolink_Calls,reminder_time,Reminder Time,DropDown
+studiolink_Calls,email_reminder_time,Email Reminder Time,DropDown
+studiolink_Calls,name,Subject,Name
+studiolink_Calls,parent_name,Related to,Parent
+studiolink_Calls,parent_type,Parent Type,Parent_type
+studiolink_Calls,description,Description,TextArea
+studiolink_Campaigns,deleted,Deleted,Checkbox
+studiolink_Campaigns,budget,Budget,Currency
+studiolink_Campaigns,expected_cost,Expected Cost,Currency
+studiolink_Campaigns,actual_cost,Actual Cost,Currency
+studiolink_Campaigns,expected_revenue,Expected Revenue,Currency
+studiolink_Campaigns,start_date,Start Date,Date
+studiolink_Campaigns,end_date,End Date,Date
+studiolink_Campaigns,date_entered,Date Created,Datetime
+studiolink_Campaigns,date_modified,Date Modified,Datetime
+studiolink_Campaigns,status,Status,DropDown
+studiolink_Campaigns,campaign_type,Type,DropDown
+studiolink_Campaigns,frequency,Frequency,DropDown
+studiolink_Campaigns,tracker_key,Tracker,Integer
+studiolink_Campaigns,tracker_count,Tracker Count,Integer
+studiolink_Campaigns,impressions,Impressions,Integer
+studiolink_Campaigns,name,Name,Name
+studiolink_Campaigns,objective,Objective,TextArea
+studiolink_Campaigns,content,Description,TextArea
+studiolink_Campaigns,refer_url,Tracker Redirect URL,TextField
+studiolink_Campaigns,tracker_text,Tracker Link Text,TextField
+studiolink_Cases,deleted,Deleted,Checkbox
+studiolink_Cases,portal_viewable,Show in Portal,Checkbox
+studiolink_Cases,date_entered,Date Created,Datetime
+studiolink_Cases,date_modified,Date Modified,Datetime
+studiolink_Cases,type,Type,DropDown
+studiolink_Cases,status,Status,DropDown
+studiolink_Cases,priority,Priority,DropDown
+studiolink_Cases,source,Source,DropDown
+studiolink_Cases,case_number,Number,Integer
+studiolink_Cases,system_id,System ID,Integer
+studiolink_Cases,name,Subject,Name
+studiolink_Cases,description,Description,TextArea
+studiolink_Cases,resolution,Resolution,TextArea
+studiolink_Cases,work_log,Work Log,TextArea
+studiolink_Contacts,deleted,Deleted,Checkbox
+studiolink_Contacts,do_not_call,Do Not Call,Checkbox
+studiolink_Contacts,portal_active,Portal Active,Checkbox
+studiolink_Contacts,mkto_sync,Sync to Marketo®,Checkbox
+studiolink_Contacts,birthdate,Birthdate,Date
+studiolink_Contacts,date_entered,Date Created,Datetime
+studiolink_Contacts,date_modified,Date Modified,Datetime
+studiolink_Contacts,salutation,Salutation,DropDown
+studiolink_Contacts,lead_source,Lead Source,DropDown
+studiolink_Contacts,preferred_language,Language Preference,DropDown
+studiolink_Contacts,picture,Avatar,Image
+studiolink_Contacts,mkto_id,Marketo Lead ID,Integer
+studiolink_Contacts,mkto_lead_score,Lead Score,Integer
+studiolink_Contacts,portal_password,Password,Password
+studiolink_Contacts,phone_home,Home,Phone
+studiolink_Contacts,phone_mobile,Mobile,Phone
+studiolink_Contacts,phone_work,Office Phone,Phone
+studiolink_Contacts,phone_other,Other Phone,Phone
+studiolink_Contacts,phone_fax,Fax,Phone
+studiolink_Contacts,assistant_phone,Assistant Phone,Phone
+studiolink_Contacts,description,Description,TextArea
+studiolink_Contacts,primary_address_street,Primary Address Street,TextArea
+studiolink_Contacts,alt_address_street,Alternate Address Street,TextArea
+studiolink_Contacts,email,Email,Email
+studiolink_Contacts,first_name,First Name,TextField
+studiolink_Contacts,last_name,Last Name,TextField
+studiolink_Contacts,title,Title,TextField
+studiolink_Contacts,facebook,Facebook Account,TextField
+studiolink_Contacts,twitter,Twitter Account,TextField
+studiolink_Contacts,googleplus,Google Plus ID,TextField
+studiolink_Contacts,department,Department,TextField
+studiolink_Contacts,primary_address_city,Primary Address City,TextField
+studiolink_Contacts,primary_address_state,Primary Address State,TextField
+studiolink_Contacts,primary_address_postalcode,Primary Address Postal Code,TextField
+studiolink_Contacts,primary_address_country,Primary Address Country,TextField
+studiolink_Contacts,alt_address_city,Alternate Address City,TextField
+studiolink_Contacts,alt_address_state,Alternate Address State,TextField
+studiolink_Contacts,alt_address_postalcode,Alternate Address Postal Code,TextField
+studiolink_Contacts,alt_address_country,Alternate Address Country,TextField
+studiolink_Contacts,assistant,Assistant,TextField
+studiolink_Contacts,dnb_principal_id,D&B Principal Id,TextField
+studiolink_Contacts,portal_name,Portal Name,Username
+studiolink_Contacts,portal_app,Portal Application,TextField
+studiolink_Contracts,deleted,Deleted,Checkbox
+studiolink_Contracts,total_contract_value,Contract Value,Currency
+studiolink_Contracts,total_contract_value_usdollar,Contract Value (USD),Currency
+studiolink_Contracts,start_date,Start Date,Date
+studiolink_Contracts,end_date,End Date,Date
+studiolink_Contracts,customer_signed_date,Customer Signed Date,Date
+studiolink_Contracts,company_signed_date,Company Signed Date,Date
+studiolink_Contracts,date_entered,Date Created,Datetime
+studiolink_Contracts,date_modified,Date Modified,Datetime
+studiolink_Contracts,expiration_notice,Expiration Notice,Datetime
+studiolink_Contracts,status,Status,DropDown
+studiolink_Contracts,type,Type,DropDown
+studiolink_Contracts,name,Contract Name,Name
+studiolink_Contracts,description,Description,TextArea
+studiolink_Contracts,reference_code,Reference Code,TextField
+studiolink_Documents,deleted,Deleted,Checkbox
+studiolink_Documents,is_template,Is a Template,Checkbox
+studiolink_Documents,active_date,Publish Date,Date
+studiolink_Documents,exp_date,Expiration Date,Date
+studiolink_Documents,date_entered,Date Created,Datetime
+studiolink_Documents,date_modified,Date Modified,Datetime
+studiolink_Documents,doc_type,Source,DropDown
+studiolink_Documents,category_id,Category,DropDown
+studiolink_Documents,subcategory_id,Sub Category,DropDown
+studiolink_Documents,template_type,Document Type,DropDown
+studiolink_Documents,description,Description,TextArea
+studiolink_Documents,document_name,Document Name,TextField
+studiolink_Employees,system_generated_password,System Generated Password,Checkbox
+studiolink_Employees,sugar_login,Is Sugar User,Checkbox
+studiolink_Employees,is_admin,Is Administrator,Checkbox
+studiolink_Employees,external_auth_only,External Authentication,Checkbox
+studiolink_Employees,deleted,Deleted,Checkbox
+studiolink_Employees,portal_only,Portal API User,Checkbox
+studiolink_Employees,show_on_employees,Display Employee Record,Checkbox
+studiolink_Employees,is_group,Group User,Checkbox
+studiolink_Employees,pwd_last_changed,Password Last Changed,Datetime
+studiolink_Employees,date_entered,Date Entered,Datetime
+studiolink_Employees,date_modified,Date Modified,Datetime
+studiolink_Employees,last_login,last login,Datetime
+studiolink_Employees,employee_status,Employee Status,DropDown
+studiolink_Employees,messenger_type,IM Type,DropDown
+studiolink_Employees,preferred_language,Language Preference,DropDown
+studiolink_Employees,picture,Avatar,Image
+studiolink_Employees,first_name,First Name,Name
+studiolink_Employees,last_name,Last Name,Name
+studiolink_Employees,user_hash,Password,Password
+studiolink_Employees,phone_home,Home Phone,Phone
+studiolink_Employees,phone_mobile,Mobile,Phone
+studiolink_Employees,phone_work,Work Phone,Phone
+studiolink_Employees,phone_other,Other,Phone
+studiolink_Employees,phone_fax,Fax,Phone
+studiolink_Employees,description,Description,TextArea
+studiolink_Employees,address_street,Address Street,TextArea
+studiolink_Employees,authenticate_id,Authentication Id,TextField
+studiolink_Employees,title,Title,TextField
+studiolink_Employees,department,Department,TextField
+studiolink_Employees,address_city,Address City,TextField
+studiolink_Employees,address_state,Address State,TextField
+studiolink_Employees,address_country,Address Country,TextField
+studiolink_Employees,address_postalcode,Address Postal Code,TextField
+studiolink_Employees,messenger_id,IM Name,TextField
+studiolink_Employees,email,Email,Email
+studiolink_Employees,user_name,User Name,Username
+studiolink_KBContents,name,Name,Name
+studiolink_KBContents,date_entered,Date Created,Datetime
+studiolink_KBContents,date_modified,Date Modified,Datetime
+studiolink_KBContents,description,Description,TextArea
+studiolink_KBContents,deleted,Deleted,Checkbox
+studiolink_KBContents,kbdocument_body,Body,Htmleditable_tinymce
+studiolink_KBContents,active_date,Publish Date,Date
+studiolink_KBContents,exp_date,Expiration Date,Date
+studiolink_KBContents,status,Status,DropDown
+studiolink_KBContents,viewcount,View Count,Integer
+studiolink_KBContents,revision,Revision,Integer
+studiolink_KBContents,active_rev,Active Revision,Tinyint
+studiolink_KBContents,is_external,External Article,Checkbox
+studiolink_KBContents,kbsapprover_name,Approved By,Relate
+studiolink_KBContents,kbscase_name,Related Case,Relate
+studiolink_KBContents,category_name,Category,Nestedset
+studiolink_Leads,deleted,Deleted,Checkbox
+studiolink_Leads,do_not_call,Do Not Call,Checkbox
+studiolink_Leads,converted,Converted,Checkbox
+studiolink_Leads,mkto_sync,Sync to Marketo®,Checkbox
+studiolink_Leads,birthdate,Birthdate,Date
+studiolink_Leads,date_entered,Date Created,Datetime
+studiolink_Leads,date_modified,Date Modified,Datetime
+studiolink_Leads,salutation,Salutation,DropDown
+studiolink_Leads,lead_source,Lead Source,DropDown
+studiolink_Leads,status,Status,DropDown
+studiolink_Leads,preferred_language,Language Preference,DropDown
+studiolink_Leads,picture,Avatar,Image
+studiolink_Leads,mkto_id,Marketo Lead ID,Integer
+studiolink_Leads,mkto_lead_score,Lead Score,Integer
+studiolink_Leads,phone_home,Home Phone,Phone
+studiolink_Leads,phone_mobile,Mobile,Phone
+studiolink_Leads,phone_work,Office Phone,Phone
+studiolink_Leads,phone_other,Other Phone,Phone
+studiolink_Leads,phone_fax,Fax,Phone
+studiolink_Leads,assistant_phone,Assistant Phone,Phone
+studiolink_Leads,description,Description,TextArea
+studiolink_Leads,primary_address_street,Primary Address Street,TextArea
+studiolink_Leads,alt_address_street,Alt Address Street,TextArea
+studiolink_Leads,lead_source_description,Lead Source Description,TextArea
+studiolink_Leads,status_description,Status Description,TextArea
+studiolink_Leads,account_description,Account Description,TextArea
+studiolink_Leads,email,Email,Email
+studiolink_Leads,first_name,First Name,TextField
+studiolink_Leads,last_name,Last Name,TextField
+studiolink_Leads,title,Title,TextField
+studiolink_Leads,facebook,Facebook Account,TextField
+studiolink_Leads,twitter,Twitter Account,TextField
+studiolink_Leads,googleplus,Google Plus ID,TextField
+studiolink_Leads,department,Department,TextField
+studiolink_Leads,primary_address_city,Primary Address City,TextField
+studiolink_Leads,primary_address_state,Primary Address State,TextField
+studiolink_Leads,primary_address_postalcode,Primary Address Postal Code,TextField
+studiolink_Leads,primary_address_country,Primary Address Country,TextField
+studiolink_Leads,alt_address_city,Alt Address City,TextField
+studiolink_Leads,alt_address_state,Alt Address State,TextField
+studiolink_Leads,alt_address_postalcode,Alt Address Postal Code,TextField
+studiolink_Leads,alt_address_country,Alt Address Country,TextField
+studiolink_Leads,assistant,Assistant,TextField
+studiolink_Leads,refered_by,Referred By,TextField
+studiolink_Leads,dnb_principal_id,D&B Principal Id,TextField
+studiolink_Leads,account_name,Account Name,TextField
+studiolink_Leads,opportunity_name,Opportunity Name,TextField
+studiolink_Leads,opportunity_amount,Opportunity Amount,TextField
+studiolink_Leads,website,Website,URL
+studiolink_Meetings,deleted,Deleted,Checkbox
+studiolink_Meetings,date_entered,Date Created,Datetime
+studiolink_Meetings,date_modified,Date Modified,Datetime
+studiolink_Meetings,date_start,Start Date,Datetime
+studiolink_Meetings,date_end,End Date,Datetime
+studiolink_Meetings,status,Status,DropDown
+studiolink_Meetings,type,Meeting Type,DropDown
+studiolink_Meetings,reminder_time,Reminder Time,DropDown
+studiolink_Meetings,email_reminder_time,Email Reminder Time,DropDown
+studiolink_Meetings,name,Subject,Name
+studiolink_Meetings,parent_name,Related to,Parent
+studiolink_Meetings,parent_type,Parent Type,Parent_type
+studiolink_Meetings,description,Description,TextArea
+studiolink_Meetings,location,Location,TextField
+studiolink_Meetings,password,Meeting Password,TextField
+studiolink_Meetings,displayed_url,Display URL,URL
+studiolink_Notes,deleted,Deleted,Checkbox
+studiolink_Notes,portal_flag,Display in Portal?,Checkbox
+studiolink_Notes,embed_flag,Embed in email?,Checkbox
+studiolink_Notes,date_entered,Date Created,Datetime
+studiolink_Notes,date_modified,Date Modified,Datetime
+studiolink_Notes,filename,Attachment,File
+studiolink_Notes,name,Subject,Name
+studiolink_Notes,parent_name,Related To,Parent
+studiolink_Notes,parent_type,Parent Type,Parent_type
+studiolink_Notes,description,Description,TextArea
+studiolink_Notes,file_mime_type,Mime Type,TextField
+studiolink_Opportunities,deleted,Deleted,Checkbox
+studiolink_Opportunities,mkto_sync,Sync to Marketo®,Checkbox
+studiolink_Opportunities,amount,Likely,Currency
+studiolink_Opportunities,amount_usdollar,Converted Amount,Currency
+studiolink_Opportunities,best_case,Best,Currency
+studiolink_Opportunities,worst_case,Worst,Currency
+studiolink_Opportunities,date_closed,Expected Close Date,Date
+studiolink_Opportunities,date_entered,Date Created,Datetime
+studiolink_Opportunities,date_modified,Date Modified,Datetime
+studiolink_Opportunities,opportunity_type,Type,DropDown
+studiolink_Opportunities,lead_source,Lead Source,DropDown
+studiolink_Opportunities,sales_status,Status,DropDown
+studiolink_Opportunities,mkto_id,Marketo Lead ID,Integer
+studiolink_Opportunities,name,Opportunity Name,Name
+studiolink_Opportunities,description,Description,TextArea
+studiolink_Opportunities,next_step,Next Step,TextField
+studiolink_ProductTemplates,name,Product Name,Name
+studiolink_ProductTemplates,date_entered,Date Created,Datetime
+studiolink_ProductTemplates,date_modified,Date Modified,Datetime
+studiolink_ProductTemplates,description,Description,TextArea
+studiolink_ProductTemplates,deleted,Deleted,Checkbox
+studiolink_ProductTemplates,mft_part_num,Mft Part Number,TextField
+studiolink_ProductTemplates,vendor_part_num,Vendor Part Number,TextField
+studiolink_ProductTemplates,date_cost_price,Date-Cost-Price,Date
+studiolink_ProductTemplates,cost_price,Cost,Currency
+studiolink_ProductTemplates,discount_price,Unit Price,Currency
+studiolink_ProductTemplates,list_price,List Price,Currency
+studiolink_ProductTemplates,cost_usdollar,Cost USD,Currency
+studiolink_ProductTemplates,discount_usdollar,Discount Price USD,Currency
+studiolink_ProductTemplates,list_usdollar,List USD,Currency
+studiolink_ProductTemplates,status,Availability,DropDown
+studiolink_ProductTemplates,tax_class,Tax Class,DropDown
+studiolink_ProductTemplates,date_available,Date Available,Date
+studiolink_ProductTemplates,website,Product URL,TextField
+studiolink_ProductTemplates,weight,Weight,Decimal
+studiolink_ProductTemplates,qty_in_stock,Quantity in Stock,Integer
+studiolink_ProductTemplates,support_name,Support Name,TextField
+studiolink_ProductTemplates,support_description,Support Desc,TextField
+studiolink_ProductTemplates,support_contact,Support Contact,TextField
+studiolink_ProductTemplates,support_term,Support Term,DropDown
+studiolink_ProductTemplates,pricing_formula,Default Pricing Formula,Pricing-formula
+studiolink_ProductTemplates,pricing_factor,Pricing Factor,Decimal
+studiolink_ProductTemplates,base_rate,Base Rate,TextArea
+studiolink_ProjectTask,milestone_flag,Milestone,Checkbox
+studiolink_ProjectTask,deleted,Deleted,Checkbox
+studiolink_ProjectTask,date_start,Start Date,Date
+studiolink_ProjectTask,date_finish,Finish Date,Date
+studiolink_ProjectTask,date_due,Due Date,Date
+studiolink_ProjectTask,date_entered,Date Created,Datetime
+studiolink_ProjectTask,date_modified,Date Modified,Datetime
+studiolink_ProjectTask,status,Status,DropDown
+studiolink_ProjectTask,priority,Priority,DropDown
+studiolink_ProjectTask,project_task_id,Project Task Id,Integer
+studiolink_ProjectTask,time_start,Start Time,Integer
+studiolink_ProjectTask,time_finish,Finish Time,Integer
+studiolink_ProjectTask,duration,Duration,Integer
+studiolink_ProjectTask,actual_duration,Actual Duration,Integer
+studiolink_ProjectTask,percent_complete,% Complete,Integer
+studiolink_ProjectTask,parent_task_id,Parent Task Id,Integer
+studiolink_ProjectTask,order_number,Order,Integer
+studiolink_ProjectTask,task_number,Task Number,Integer
+studiolink_ProjectTask,estimated_effort,Estimated Effort (hrs),Integer
+studiolink_ProjectTask,actual_effort,Actual Effort (hrs),Integer
+studiolink_ProjectTask,utilization,Utilization (%),Integer
+studiolink_ProjectTask,name,Name,Name
+studiolink_ProjectTask,description,Description,TextArea
+studiolink_ProjectTask,resource_id,Resource ID,TextArea
+studiolink_ProjectTask,predecessors,Predecessors,TextArea
+studiolink_ProjectTask,duration_unit,Duration Unit,TextArea
+studiolink_ProjectTask,time_due,Due Time,Time
+studiolink_Project,deleted,Deleted,Checkbox
+studiolink_Project,is_template,Is Template,Checkbox
+studiolink_Project,estimated_start_date,Start Date,Date
+studiolink_Project,estimated_end_date,End Date,Date
+studiolink_Project,date_entered,Date Created,Datetime
+studiolink_Project,date_modified,Date Modified,Datetime
+studiolink_Project,status,Status,DropDown
+studiolink_Project,priority,Priority,DropDown
+studiolink_Project,name,Name,Name
+studiolink_Project,description,Description,TextArea
+studiolink_Products,deleted,Deleted,Checkbox
+studiolink_Products,discount_select,Discount in %,Checkbox
+studiolink_Products,total_amount,Calculated Quoted Line Item Amount,Currency
+studiolink_Products,cost_price,Cost,Currency
+studiolink_Products,discount_price,Unit Price,Currency
+studiolink_Products,discount_amount_usdollar,Discount Rate (US Dollar),Currency
+studiolink_Products,deal_calc,Discount Total,Currency
+studiolink_Products,deal_calc_usdollar,Discount (US Dollar),Currency
+studiolink_Products,list_price,List Price,Currency
+studiolink_Products,cost_usdollar,Cost (US Dollar),Currency
+studiolink_Products,discount_usdollar,Unit Price (US Dollar),Currency
+studiolink_Products,list_usdollar,List Price (US Dollar),Currency
+studiolink_Products,book_value,Book Value,Currency
+studiolink_Products,book_value_usdollar,Book Value (US Dollar),Currency
+studiolink_Products,date_purchased,Purchased,Date
+studiolink_Products,date_support_expires,Support Expires,Date
+studiolink_Products,date_support_starts,Support Starts,Date
+studiolink_Products,book_value_date,Book Value Date,Date
+studiolink_Products,date_closed,Expected Close Date,Date
+studiolink_Products,date_entered,Date Created,Datetime
+studiolink_Products,date_modified,Date Modified,Datetime
+studiolink_Products,discount_rate_percent,Discount Rate,Decimal
+studiolink_Products,weight,Weight,Decimal
+studiolink_Products,quantity,Quantity,Decimal
+studiolink_Products,discount_amount,Discount Amount,Discount
+studiolink_Products,status,Status,DropDown
+studiolink_Products,tax_class,Tax Class,DropDown
+studiolink_Products,pricing_factor,Pricing Factor,Integer
+studiolink_Products,name,Name,Name
+studiolink_Products,description,Description,TextArea
+studiolink_Products,mft_part_num,Mft Part Number,TextField
+studiolink_Products,vendor_part_num,Vendor Part Number,TextField
+studiolink_Products,website,Product URL,TextField
+studiolink_Products,support_name,Support Title,TextField
+studiolink_Products,support_description,Support Desc,TextField
+studiolink_Products,support_contact,Support Contact,TextField
+studiolink_Products,support_term,Support Term,TextField
+studiolink_Products,pricing_formula,Pricing Formula,TextField
+studiolink_Products,serial_number,Serial Number,TextField
+studiolink_Products,asset_number,Asset Number,TextField
+studiolink_Products,next_step,Next Step,TextField
+studiolink_Quotes,deleted,Deleted,Checkbox
+studiolink_Quotes,show_line_nums,Display Line Numbers,Checkbox
+studiolink_Quotes,calc_grand_total,Display Grand Total,Checkbox
+studiolink_Quotes,subtotal,Subtotal,Currency
+studiolink_Quotes,subtotal_usdollar,Subtotal (US Dollar),Currency
+studiolink_Quotes,shipping,Shipping,Currency
+studiolink_Quotes,shipping_usdollar,Shipping (US Dollar),Currency
+studiolink_Quotes,discount,Discount,Currency
+studiolink_Quotes,deal_tot,Discount Total,Currency
+studiolink_Quotes,deal_tot_usdollar,Discount Total (US Dollar),Currency
+studiolink_Quotes,new_sub,Discounted Subtotal,Currency
+studiolink_Quotes,new_sub_usdollar,Discounted Subtotal,Currency
+studiolink_Quotes,tax,Tax,Currency
+studiolink_Quotes,tax_usdollar,Tax (US Dollar),Currency
+studiolink_Quotes,total,Total,Currency
+studiolink_Quotes,total_usdollar,Total (US Dollar),Currency
+studiolink_Quotes,date_quote_expected_closed,Valid Until,Date
+studiolink_Quotes,original_po_date,Original P.O. Date,Date
+studiolink_Quotes,date_quote_closed,Actual Close Date,Date
+studiolink_Quotes,date_order_shipped,Actual Close,Date
+studiolink_Quotes,date_entered,Date Created,Datetime
+studiolink_Quotes,date_modified,Date Modified,Datetime
+studiolink_Quotes,payment_terms,Payment Terms,DropDown
+studiolink_Quotes,order_stage,Order Stage,DropDown
+studiolink_Quotes,quote_stage,Quote Stage,DropDown
+studiolink_Quotes,quote_num,Quote Number,Integer
+studiolink_Quotes,system_id,System ID,Integer
+studiolink_Quotes,name,Quote Subject,Name
+studiolink_Quotes,description,Description,TextArea
+studiolink_Quotes,billing_address_street,Billing Address,TextArea
+studiolink_Quotes,shipping_address_street,Shipping Address,TextArea
+studiolink_Quotes,quote_type,Quote Type,Radio
+studiolink_Quotes,purchase_order_num,Purchase Order Num,TextField
+studiolink_Quotes,billing_address_city,Billing City,TextField
+studiolink_Quotes,billing_address_state,Billing State,TextField
+studiolink_Quotes,billing_address_postalcode,Billing Postal Code,TextField
+studiolink_Quotes,billing_address_country,Billing Country,TextField
+studiolink_Quotes,shipping_address_city,Shipping City,TextField
+studiolink_Quotes,shipping_address_state,Shipping State,TextField
+studiolink_Quotes,shipping_address_postalcode,Shipping Postal Code,TextField
+studiolink_Quotes,shipping_address_country,Shipping Country,TextField
+studiolink_RevenueLineItems,deleted,Deleted,Checkbox
+studiolink_RevenueLineItems,total_amount,Calculated Revenue Line Item Amount,Currency
+studiolink_RevenueLineItems,cost_price,Cost,Currency
+studiolink_RevenueLineItems,discount_price,Unit Price,Currency
+studiolink_RevenueLineItems,discount_amount,Total Discount Amount,Currency
+studiolink_RevenueLineItems,deal_calc,Discount Total,Currency
+studiolink_RevenueLineItems,deal_calc_usdollar,Discount (US Dollar),Currency
+studiolink_RevenueLineItems,list_price,List Price,Currency
+studiolink_RevenueLineItems,cost_usdollar,Cost (US Dollar),Currency
+studiolink_RevenueLineItems,discount_usdollar,Unit Price (US Dollar),Currency
+studiolink_RevenueLineItems,list_usdollar,List Price (US Dollar),Currency
+studiolink_RevenueLineItems,book_value,Book Value,Currency
+studiolink_RevenueLineItems,book_value_usdollar,Book Value (US Dollar),Currency
+studiolink_RevenueLineItems,best_case,Best,Currency
+studiolink_RevenueLineItems,likely_case,Likely,Currency
+studiolink_RevenueLineItems,worst_case,Worst,Currency
+studiolink_RevenueLineItems,date_purchased,Purchased,Date
+studiolink_RevenueLineItems,date_support_expires,Support Expires,Date
+studiolink_RevenueLineItems,date_support_starts,Support Starts,Date
+studiolink_RevenueLineItems,book_value_date,Book Value Date,Date
+studiolink_RevenueLineItems,date_closed,Expected Close Date,Date
+studiolink_RevenueLineItems,date_entered,Date Created,Datetime
+studiolink_RevenueLineItems,date_modified,Date Modified,Datetime
+studiolink_RevenueLineItems,discount_rate_percent,Discount in %,Decimal
+studiolink_RevenueLineItems,discount_amount_usdollar,Discount Rate (US Dollar),Decimal
+studiolink_RevenueLineItems,weight,Weight,Decimal
+studiolink_RevenueLineItems,quantity,Quantity,Decimal
+studiolink_RevenueLineItems,status,Status,DropDown
+studiolink_RevenueLineItems,tax_class,Tax Class,DropDown
+studiolink_RevenueLineItems,commit_stage,Forecast,DropDown
+studiolink_RevenueLineItems,sales_stage,Sales Stage,DropDown
+studiolink_RevenueLineItems,lead_source,Lead Source,DropDown
+studiolink_RevenueLineItems,product_type,Type,DropDown
+studiolink_RevenueLineItems,pricing_factor,Pricing Factor,Integer
+studiolink_RevenueLineItems,probability,Probability (%),Integer
+studiolink_RevenueLineItems,name,Revenue Line Item,Name
+studiolink_RevenueLineItems,description,Description,TextArea
+studiolink_RevenueLineItems,mft_part_num,Mft Part Number,TextField
+studiolink_RevenueLineItems,vendor_part_num,Vendor Part Number,TextField
+studiolink_RevenueLineItems,website,Product URL,TextField
+studiolink_RevenueLineItems,support_name,Support Title,TextField
+studiolink_RevenueLineItems,support_description,Support Desc,TextField
+studiolink_RevenueLineItems,support_contact,Support Contact,TextField
+studiolink_RevenueLineItems,support_term,Support Term,TextField
+studiolink_RevenueLineItems,pricing_formula,Pricing Formula,TextField
+studiolink_RevenueLineItems,serial_number,Serial Number,TextField
+studiolink_RevenueLineItems,asset_number,Asset Number,TextField
+studiolink_RevenueLineItems,next_step,Next Step,TextField
+studiolink_Prospects,deleted,Deleted,Checkbox
+studiolink_Prospects,do_not_call,Do Not Call,Checkbox
+studiolink_Prospects,birthdate,Birthdate,Date
+studiolink_Prospects,date_entered,Date Created,Datetime
+studiolink_Prospects,date_modified,Date Modified,Datetime
+studiolink_Prospects,salutation,Salutation,DropDown
+studiolink_Prospects,picture,Avatar,Image
+studiolink_Prospects,tracker_key,Tracker Key,Integer
+studiolink_Prospects,phone_home,Home,Phone
+studiolink_Prospects,phone_mobile,Mobile,Phone
+studiolink_Prospects,phone_work,Office Phone,Phone
+studiolink_Prospects,phone_other,Other Phone,Phone
+studiolink_Prospects,phone_fax,Fax,Phone
+studiolink_Prospects,assistant_phone,Assistant Phone,TextField
+studiolink_Prospects,description,Description,TextArea
+studiolink_Prospects,primary_address_street,Primary Address Street,TextArea
+studiolink_Prospects,alt_address_street,Alternate Address Street,TextArea
+studiolink_Prospects,email,Email,Email
+studiolink_Prospects,first_name,First Name,TextField
+studiolink_Prospects,last_name,Last Name,TextField
+studiolink_Prospects,title,Title,TextField
+studiolink_Prospects,facebook,Facebook Account,TextField
+studiolink_Prospects,twitter,Twitter Account,TextField
+studiolink_Prospects,googleplus,Google Plus ID,TextField
+studiolink_Prospects,department,Department,TextField
+studiolink_Prospects,primary_address_city,Primary Address City,TextField
+studiolink_Prospects,primary_address_state,Primary Address State,TextField
+studiolink_Prospects,primary_address_postalcode,Primary Address Postal Code,TextField
+studiolink_Prospects,primary_address_country,Primary Address Country,TextField
+studiolink_Prospects,alt_address_city,Alternate Address City,TextField
+studiolink_Prospects,alt_address_state,Alternate Address State,TextField
+studiolink_Prospects,alt_address_postalcode,Alternate Address Postal Code,TextField
+studiolink_Prospects,alt_address_country,Alternate Address Country,TextField
+studiolink_Prospects,assistant,Assistant,TextField
+studiolink_Prospects,account_name,Account Name,TextField
+studiolink_Prospects,dnb_principal_id,D&B Principal Id,TextField
+studiolink_Tasks,deleted,Deleted,Checkbox
+studiolink_Tasks,date_entered,Date Created,Datetime
+studiolink_Tasks,date_modified,Date Modified,Datetime
+studiolink_Tasks,date_due,Due Date,Datetime
+studiolink_Tasks,date_start,Start Date,Datetime
+studiolink_Tasks,status,Status,DropDown
+studiolink_Tasks,priority,Priority,DropDown
+studiolink_Tasks,name,Subject,Name
+studiolink_Tasks,parent_name,Related to,Parent
+studiolink_Tasks,parent_type,Parent Type,Parent_type
+studiolink_Tasks,description,Description,TextArea
+studiolink_Users,system_generated_password,System Generated Password,Checkbox
+studiolink_Users,sugar_login,Is Sugar User,Checkbox
+studiolink_Users,is_admin,Is Administrator,Checkbox
+studiolink_Users,external_auth_only,External Authentication,Checkbox
+studiolink_Users,deleted,Deleted,Checkbox
+studiolink_Users,portal_only,Portal API User,Checkbox
+studiolink_Users,show_on_employees,Display Employee Record,Checkbox
+studiolink_Users,is_group,Group User,Checkbox
+studiolink_Users,pwd_last_changed,Password Last Changed,Datetime
+studiolink_Users,date_entered,Date Entered,Datetime
+studiolink_Users,date_modified,Date Modified,Datetime
+studiolink_Users,last_login,last login,Datetime
+studiolink_Users,status,Status,DropDown
+studiolink_Users,employee_status,Employee Status,DropDown
+studiolink_Users,messenger_type,IM Type,DropDown
+studiolink_Users,preferred_language,Language Preference,DropDown
+studiolink_Users,picture,Avatar,Image
+studiolink_Users,first_name,First Name,Name
+studiolink_Users,last_name,Last Name,Name
+studiolink_Users,user_hash,Password,Password
+studiolink_Users,phone_home,Home Phone,Phone
+studiolink_Users,phone_mobile,Mobile,Phone
+studiolink_Users,phone_work,Work Phone,Phone
+studiolink_Users,phone_other,Other Phone,Phone
+studiolink_Users,phone_fax,Fax,Phone
+studiolink_Users,description,Description,TextArea
+studiolink_Users,address_street,Address Street,TextArea
+studiolink_Users,authenticate_id,Authentication Id,TextField
+studiolink_Users,title,Title,TextField
+studiolink_Users,department,Department,TextField
+studiolink_Users,address_city,Address City,TextField
+studiolink_Users,address_state,Address State,TextField
+studiolink_Users,address_country,Address Country,TextField
+studiolink_Users,address_postalcode,Address Postal Code,TextField
+studiolink_Users,messenger_id,IM Name,TextField
+studiolink_Users,email,Email,Email
+studiolink_Users,user_name,User Name,Username

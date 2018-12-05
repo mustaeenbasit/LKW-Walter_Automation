@@ -1,0 +1,2 @@
+roleName,roleDescription,devPermission,processesString,processDefString,processRuleString,processEmailString
+"DevAccessAccounts","Developer Access to only accounts module","Developer","Processes","Process Definitions","Process Business Rules","Process Email Templates"

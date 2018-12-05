@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,access,access_type
+myRole,"Opportunities is granted only for System Admin and Opportunities Developer roles",qauser,Enabled,Developer

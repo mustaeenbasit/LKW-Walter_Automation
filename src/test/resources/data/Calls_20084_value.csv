@@ -1,0 +1,2 @@
+data_type,field_name,field_label,field_operator,field_value_1,field_value_2,field_value_3,field_value_4,field_value_5,field_value_min,field_value_max
+Integer,my_int,my int,is between,1,2,3,4,5,2,4

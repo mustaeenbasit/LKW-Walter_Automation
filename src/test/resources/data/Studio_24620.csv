@@ -1,0 +1,2 @@
+name,field_name,formula_string,average,average_one
+test1,TestField,"rollupAve\(\$opportunities\,\"amount\"\)",750,1000

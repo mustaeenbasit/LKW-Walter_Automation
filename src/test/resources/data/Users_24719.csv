@@ -1,0 +1,2 @@
+name,customQuery,advancedReportsMenu,tag,option,heading
+customQuery,"select * from users","Create Custom Query",a,"Run Query","Query Result"

@@ -1,0 +1,102 @@
+{
+	"testDocumentation":{
+		"testName":"createRecurringMeetings",
+		"testDescription":"Verifies the basic Create for Recuring Meetings"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Create 10 Recurring Meetings",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Demo Meeting",
+						"description":"Meeting to discuss project plan and hash out the details of implementation",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"duration_hours":1,
+						"duration_minutes":"15",
+						"date_start":"2016-05-14T08:00:00-07:00",
+						"status":"Not Held",
+						"type":"Sugar",
+						"direction":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"600",
+						"email_reminder_sent":false,
+						"repeat_interval":1,
+						"repeat_count":10,
+						"repeat_type":"Weekly",
+						"repeat_dow":"2",
+						"users":{
+							"add":[
+								"1"
+							]
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Demo Meeting",
+							"description":"Meeting to discuss project plan and hash out the details of implementation"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":10,
+						"value":{
+							"name":"Demo Meeting",
+							"description":"Meeting to discuss project plan and hash out the details of implementation",
+							"duration_hours":1,
+							"duration_minutes":15
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Meetings"
+		}
+		
+	]
+}

@@ -1,0 +1,50 @@
+{
+  "testDocumentation": {
+    "testName": "sortTeamNameCleanUp",
+    "testDescription": "Deletes the Teams needed for the main test"
+  },
+  "testCases": [
+    {
+      "testCaseName": "Delete Teams",
+      "requests": [
+        {
+          "requestUser": "admin",
+          "requestURL": "Teams/id",
+          "requestType": "delete",
+          "requestStatus": 200,
+          "substitute": [
+            {
+              "type": "id",
+              "module": "Teams",
+              "index": 1,
+              "destination": "requestURL",
+              "field": "id"
+            }
+          ],
+          "validation": {
+            "type": "none"
+          }
+        },
+        {
+          "requestUser": "admin",
+          "requestURL": "Teams/id",
+          "requestType": "delete",
+          "requestStatus": 200,
+          "substitute": [
+            {
+              "type": "id",
+              "module": "Teams",
+              "index": 2,
+              "destination": "requestURL",
+              "field": "id"
+            }
+          ],
+          "validation": {
+            "type": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "modules_used": []
+}

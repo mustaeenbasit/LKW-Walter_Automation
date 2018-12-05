@@ -1,0 +1,8 @@
+to,subject,body,subject_to_assert,email_from,assigned_to,year_from
+ak@abc.com,Photo,This is test body of email1.,Photo,qa.sugar.qa.79@gmail.com,Administrator,2000
+ak@abc.com,Photos,This is test body of email2.,Phot%
+ak@abc.com,Photograghs,This is test body of email3.,P%s
+ak@abc.com,00190,This is test body of email4.,00190
+ak@abc.com,00560,This is test body of email5.,00%0
+ak@abc.com,????,This is test body of email6.,????
+ak@abc.com,??5?,This is test body of email7.,??%?

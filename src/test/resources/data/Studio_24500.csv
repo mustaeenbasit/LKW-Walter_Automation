@@ -1,0 +1,11 @@
+data_type,module_field_name
+TextField,my_text
+Integer,my_integer
+Float,my_float
+Encrypt,my_encrypt
+TextArea,my_textarea
+Decimal,my_decimal
+Currency,my_currency
+Phone,my_phone
+Date,my_date
+Datetime,my_datetime

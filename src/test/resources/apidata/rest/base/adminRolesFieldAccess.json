@@ -1,0 +1,224 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminRolesLinkUsers",
+      "testDescription": "Verify a User Can be associated with a Role"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Associated User to a Role",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "index.php",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Roles",
+                     "index": 99999,
+                     "destination": "requestBody",
+                     "fromString": "MYROLEID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "record",
+                        "value": "MYROLEID"
+                     },
+
+                     {
+                        "name": "module",
+                        "value": "ACLRoles"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "Save"
+                     },
+
+                     {
+                        "name": "return_record",
+                        "value": "MYROLEID"
+                     },
+
+                     {
+                        "name": "return_action",
+                        "value": "DetailView"
+                     },
+
+                     {
+                        "name": "return_module",
+                        "value": "ACLRoles"
+                     },
+
+                     {
+                        "name": "flc_module",
+                        "value": "Accounts"
+                     },
+
+                     {
+                        "name": "flc_guiddescription",
+                        "value": "40"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Need to purchase additional licenses"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Need to purchase additional licenses"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "_acl": 
+                     {
+                        "fields": 
+                        {
+                           "description": 
+                           {
+                              "read": "no",
+                              "write": "no",
+                              "create": "no"
+                           }
+                        }
+                     }
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "description": "Allowed to change"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "description": "Allowed to change"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 403,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "description": "Cannot change"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "error": "not_authorized",
+                     "error_message": "Not allowed to edit field description in module: Accounts"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      },
+
+      {
+         "module": "Contacts"
+      },
+
+      {
+         "module": "Cases"
+      }
+   ]
+}

@@ -1,0 +1,2 @@
+roleName,roleDescription,fileSuffixContacts,fileSuffixAccounts,devPermission
+"DevAccessAccounts","Developer Access to only accounts module","_Contacts","_Accounts","Developer"

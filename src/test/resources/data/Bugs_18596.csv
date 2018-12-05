@@ -1,0 +1,3 @@
+name,description,priority,type,status,source,category,resolution,work_log,relAssignedTo,relTeam,found_in_release,fixed_in_release
+"My first bug","The App is broken in three places",Urgent,Defect,New,NULL,NULL,NULL,"A short entry in the work log",Administrator,Global,NULL,"ascending"
+"The worst bug","The App is broken in three places",Urgent,Defect,New,NULL,NULL,NULL,"A short entry in the work log",Administrator,Global,NULL,"descending"

@@ -1,0 +1,2 @@
+defaultFormula
+maxRelatedDate($revenuelineitems,"date_closed")

@@ -1,0 +1,6 @@
+module_name,help_text
+accounts,The Accounts module consists of companies
+contacts,The Contacts module consists of individual people
+leads,The Leads module consists of individual prospects who may be interested in a product
+targets,The Target module consists of individual people
+cases,The Cases module is used to track and manage product or service related

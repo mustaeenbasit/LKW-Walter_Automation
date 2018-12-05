@@ -1,0 +1,2 @@
+module_field_name,data_type,formula,display_name,name,description
+myfield,TextArea,"related\($accounts\,\"description\"\)",myfield_c,Raj Thakur,This is test only

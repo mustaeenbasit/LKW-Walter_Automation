@@ -1,0 +1,57 @@
+{
+	"testDocumentation":{
+		"testName":"getTimePeriods",
+		"testDescription":"Verifies Get Current TimePeriod"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Read Current time period by filtering todays date",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"TimePeriods?filter[0][end_date][$gte]:=today&filter[1][start_date][$lte]:=today&filter[0][type][$contains]=Quarter",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"justdate",
+							"value":"now",
+							"destination":"requestURL",
+							"field":"today"
+						}
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"TimePeriods/",
+						"value":{
+							"type":"Quarter"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"TimePeriods/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

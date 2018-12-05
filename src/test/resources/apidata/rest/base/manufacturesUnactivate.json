@@ -1,0 +1,125 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "createSearchManufacturers",
+		"testDescription": "Creates Manufacturers to be searched"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Create Manufacturers",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "Manufacturers/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"name": "abcd factory inc",
+						"status": "Active"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "abcd factory inc"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Manufacturers/",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"value": 
+						{
+							"name": "abcd factory inc"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Manufacturers/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"name": "xyz factory inc",
+						"status": "Inactive"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "xyz factory inc"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Manufacturers&order_by=name:desc",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arraymany",
+						"count": 2,
+						"records": 
+						[
+							{
+								"name": "xyz factory inc",
+								"status": "Inactive"
+							},
+
+							{
+								"name": "abcd factory inc",
+								"status": "Active"
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		{
+			"module": "Manufacturers"
+		}
+	]
+}

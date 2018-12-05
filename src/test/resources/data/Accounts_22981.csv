@@ -1,0 +1,4 @@
+lastName,phoneWork,emailAddress,relAssignedTo,leadSource
+Lead_1,12345,abc@abc.abc,admin2,Cold Call
+Lead_2,34567,pqr@pqr.pqr,Administrator,Partner
+Lead_3,67812,xyz@xyz.xyz,qauser,Self Generated

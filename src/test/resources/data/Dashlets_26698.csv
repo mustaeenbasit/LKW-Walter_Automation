@@ -1,0 +1,2 @@
+toAddress,subject,emailBody,status,statusForTask
+"qa.user.suga@gmail.com",testing,"This is the email body message...",Held,Completed

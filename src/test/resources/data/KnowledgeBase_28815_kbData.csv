@@ -1,0 +1,4 @@
+name,isExternal,category,status
+article1,false,Cat1,Published
+article2,true,Cat1,Published
+excluded,true,Cat1,Published

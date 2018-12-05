@@ -1,0 +1,163 @@
+{
+	"testDocumentation":{
+		"testName":"crudProspects",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Prospects"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Prospects",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Prospects/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Joe Smith",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"first_name":"Joe",
+						"last_name":"Smith",
+						"full_name":"Joe Smith",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Joe Smith"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Prospects/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Prospects",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Joe Smith",
+							"team_name":[
+								{
+									"id":1,
+									"name":"Global",
+									"name_2":"",
+									"primary":true
+								}
+							],
+							"first_name":"Joe",
+							"last_name":"Smith"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Prospects/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Prospects",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"first_name":"Joey"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"first_name":"Joey",
+							"last_name":"Smith"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Prospects/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Prospects",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Prospects/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Prospects",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Prospects"
+		}
+		
+	]
+}

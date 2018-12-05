@@ -1,0 +1,2 @@
+protocol,name,status,date_start,template_id,inbound_email_id,closed,newsletter,listType
+IMAP,DemoMailAccount,Active,06/20/2014,"System-generated password email",SugarCRM,closed,Newsletter,Test

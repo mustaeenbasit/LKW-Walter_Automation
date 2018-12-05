@@ -1,0 +1,2 @@
+firstFieldName,secondFieldName,firstFieldDataType,secondFieldDataType,formula,currencyData,noAccess
+firsttestfield,secondtestfield,Checkbox,Currency,"$firsttestfield_c",9,No access

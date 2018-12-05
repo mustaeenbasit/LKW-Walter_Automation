@@ -1,0 +1,4 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password
+Sally,Sally,Sally,sally@abc.com,Sally@1234,Sally@1234,Sally@1234
+jim,J,jim,j@gmail.com,User@123,User@123,User@123
+max,M,max,m@gmail.com,User@123,User@123,User@123

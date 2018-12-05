@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,access,access_type
+myRole,"Accounts, Contacts and Leads set to Access enabled and Access type = Developer",qauser,Enabled,Developer

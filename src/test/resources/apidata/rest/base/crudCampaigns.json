@@ -1,0 +1,171 @@
+{
+	"testDocumentation":{
+		"testName":"crudCalls",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Campaigns"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Campaigns",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Campaigns/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"The big Campaign",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"tracker_key":1,
+						"tracker_count":0,
+						"refer_url":"http://www.google.com",
+						"tracker_text":"",
+						"start_date":"",
+						"end_date":"2016-06-04",
+						"status":"Planning",
+						"impressions":0,
+						"currency_id":"-99",
+						"base_rate":1,
+						"budget":"",
+						"expected_cost":"",
+						"actual_cost":"",
+						"expected_revenue":"",
+						"campaign_type":"Mail",
+						"objective":"",
+						"content":"",
+						"frequency":"",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"The big Campaign"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Campaigns/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Campaigns",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"refer_url":"http://www.google.com",
+							"campaign_type":"Mail",
+							"name":"The big Campaign"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Campaigns/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Campaigns",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"refer_url":"http://www.yahoo.com"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"The big Campaign",
+							"refer_url":"http://www.yahoo.com"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Campaigns/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Campaigns",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Campaigns/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Campaigns",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Campaigns"
+		}
+		
+	]
+}

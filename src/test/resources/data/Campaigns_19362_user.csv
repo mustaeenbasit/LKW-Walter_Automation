@@ -1,0 +1,2 @@
+userName,firstName,lastName,fullName,emailAddress,newPassword,confirmPassword,password,timeZone
+Jim,Jim,Curry,Jim Curry,qa.user.suga@gmail.com,Jim@1234,Jim@1234,Jim@1234,"America/Los Angeles (GMT-7:00)"

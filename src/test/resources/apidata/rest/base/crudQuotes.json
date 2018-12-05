@@ -1,0 +1,192 @@
+{
+	"testDocumentation":{
+		"testName":"crudQuotes",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Quotes"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Quotes",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Computers for Income Free Investing LP",
+						"description":"Quote description in full",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+						],
+						"currency_id":"-99",
+						"base_rate":1,
+						"taxrate_id":"",
+						"show_line_nums":true,
+						"calc_grand_total":true,
+						"quote_type":"Quotes",
+						"date_quote_expected_closed":"2016-04-30",
+						"payment_terms":"Net 30",
+						"quote_stage":"Draft",
+						"purchase_order_num":"6011842",
+						"quote_num":1,
+						"subtotal":"4200.000000",
+						"subtotal_usdollar":"4200.000000",
+						"shipping":"0.000000",
+						"shipping_usdollar":"0.000000",
+						"discount":"",
+						"deal_tot":"4200.00",
+						"deal_tot_usdollar":"4200.00",
+						"new_sub":"4200.000000",
+						"new_sub_usdollar":"4200.000000",
+						"tax":"0.000000",
+						"tax_usdollar":"0.000000",
+						"total":"4200.000000",
+						"total_usdollar":"4200.000000",
+						"billing_address_street":"123 Anywhere Street",
+						"billing_address_city":"San Francisco",
+						"billing_address_state":"NY",
+						"billing_address_postalcode":"33774",
+						"billing_address_country":"USA",
+						"shipping_address_street":"123 Anywhere Street",
+						"shipping_address_city":"San Francisco",
+						"shipping_address_state":"NY",
+						"shipping_address_postalcode":"33774",
+						"shipping_address_country":"USA",
+						"system_id":1,
+						"shipping_account_name":"Income Free Investing LP",
+						"shipping_account_id":"",
+						"shipping_contact_name":"",
+						"shipping_contact_id":"",
+						"account_name":"Income Free Investing LP",
+						"account_id":"",
+						"billing_account_name":"Income Free Investing LP",
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Computers for Income Free Investing LP",
+							"description":"Quote description in full"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"billing_address_street":"123 Anywhere Street",
+							"billing_address_city":"San Francisco",
+							"billing_address_state":"NY",
+							"billing_address_postalcode":"33774",
+							"billing_address_country":"USA",
+							"shipping_address_street":"123 Anywhere Street",
+							"shipping_address_city":"San Francisco",
+							"shipping_address_state":"NY",
+							"shipping_address_postalcode":"33774",
+							"shipping_address_country":"USA"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"requestBody":{
+						"billing_address_state":"CA",
+						"billing_address_postalcode":"33778",
+						"billing_address_country":"USA",
+						"shipping_address_street":"144 Anywhere Street",
+						"shipping_address_city":"San Jose"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"billing_address_state":"CA",
+							"billing_address_postalcode":"33778",
+							"billing_address_country":"USA",
+							"shipping_address_street":"144 Anywhere Street",
+							"shipping_address_city":"San Jose"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Quotes/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Quotes",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		{
+			"module":"Quotes"
+		}
+	]
+}

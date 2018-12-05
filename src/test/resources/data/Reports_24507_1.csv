@@ -1,0 +1,2 @@
+name,report_module_plural_name,account_name,myformula_val,myfloat_val,mycurrency_val,formula
+My custom Report,Reports,Demo Account,12,12.00000000,$12.00,"strlen\(\$name)"

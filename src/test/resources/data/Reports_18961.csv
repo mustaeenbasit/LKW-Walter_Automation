@@ -1,0 +1,2 @@
+module_plural_name,query_name,query,advance_report_name,report_name,data_format_name
+Reports,Custom Query,"select name from accounts",ReportMaker,Advance Report,Custom data format

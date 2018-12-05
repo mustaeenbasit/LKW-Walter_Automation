@@ -1,0 +1,6 @@
+opp_name,rli_name,stage,expected_closed_date,likely
+Opp1,RLI Lost1,Closed Lost,04/21/2014,23
+Opp2,RLI Lost2,Closed Lost,04/25/2014,300
+Opp3,RLI Won,Closed Won,04/29/2014,12
+,RLI Prospect,Prospecting,04/23/2014,45
+,RLI Analysis,Perception Analysis,04/26/2014,56

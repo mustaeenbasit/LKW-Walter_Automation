@@ -1,0 +1,2 @@
+calculator_field,int_field,decimal_field,currency_field,float_field,on_edit_calc_output,after_save_calc_output,zero_val
+myformula,10000,5.5,10,7.07,443.066017,443.066017,"0.000000"

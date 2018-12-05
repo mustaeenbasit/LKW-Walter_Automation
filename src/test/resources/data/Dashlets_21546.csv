@@ -1,0 +1,3 @@
+module_name,fieldName1,fieldName2,fieldName3,listView
+My Accounts,Name,City,Billing Country,"List View"
+My Calls,Subject,Related to,Start Date

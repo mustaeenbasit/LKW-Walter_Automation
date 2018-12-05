@@ -1,0 +1,2 @@
+marketingEmailName,status,date_start,template_id,from_name,from_address,protocol,inbound_email_id,targetListType,emailAddress
+DemoMailAccount1,Active,07/28/2015,System-generated password email,test1,abc1@test.com,IMAP,SugarCRM,Test,"testacc425@gmail.com"

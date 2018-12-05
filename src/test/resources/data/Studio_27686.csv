@@ -1,0 +1,3 @@
+module_field_name,display_name,dependent,option_value1,option_value2,drop_down_value
+drop1,drop1_c,"-None-",,,account_type_dom
+drop2,drop2_c,"Parent Dropdown",Analyst,Competitor

@@ -1,0 +1,91 @@
+{
+	"testDocumentation":{
+		"testName":"adminRolesCreate",
+		"testDescription":"Verify the Create and Read of a Role with Default access"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Create a Role",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"index.php",
+					"requestType":"postForm",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"formParameters":[
+							{
+								"name":"record",
+								"value":""
+							},
+							{
+								"name":"module",
+								"value":"ACLRoles"
+							},
+							{
+								"name":"action",
+								"value":"Save"
+							},
+							{
+								"name":"isduplicate",
+								"value":""
+							},
+							{
+								"name":"return_record",
+								"value":""
+							},
+							{
+								"name":"return_action",
+								"value":"index"
+							},
+							{
+								"name":"return_module",
+								"value":"ACLRoles"
+							},
+							{
+								"name":"button",
+								"value":"Save"
+							},
+							{
+								"name":"name",
+								"value":"myNewRoleABC"
+							},
+							{
+								"name":"description",
+								"value":"This is a Default role"
+							}
+						]
+					},
+					"validation":{
+						"type":"none"
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles?filter[0][name][$starts]=myNewRoleABC",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"Roles/",
+						"value":{
+							"name":"myNewRoleABC",
+							"description":"This is a Default role"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

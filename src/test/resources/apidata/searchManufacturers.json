@@ -1,0 +1,57 @@
+{
+	"testDocumentation":{
+		"testName":"searchManufacturers",
+		"testDescription":"Verifies the q serach for manufacturers"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Search Manufacturers",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"search?q=abcd&fields=name%2C+id&module_list=&max_num=5",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"_module": "Manufacturers"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"search?q=abcd&module_list=Manufacturers",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"name":"abcd factory inc"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Manufacturers"
+		}	
+	]
+}

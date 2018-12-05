@@ -1,0 +1,4 @@
+filterField,operator,value,filterName
+"Name","exactly matches","Tag2","Filter_exact_match"
+"Name","starts with","Tag3St","Filter_starts_with"
+"Name","starts with","Tag3Up","Filter_starts_with"

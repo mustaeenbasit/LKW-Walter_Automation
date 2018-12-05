@@ -1,0 +1,856 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "forecastsRollup",
+      "testDescription": "Verify RLIs from 2 sales reps are rolled up to the manager"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Rollup Forecast",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "TimePeriods?filter[0][end_date][$gte]:=today&filter[1][start_date][$lte]:=today&filter[0][type][$contains]=Quarter",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "justdate",
+                     "value": "now",
+                     "destination": "requestURL",
+                     "field": "today"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "module": "TimePeriods/",
+                  "value": 
+                  {
+                     "type": "Quarter"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myAccount",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myAccount"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Opportunities/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "my big Opportunity",
+                  "account_id": "c410185d-ca5d-2fa6-a74e-539a202e70c5",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "my big Opportunity"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "RevenueLineItems",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "date",
+                     "value": "now",
+                     "destination": "requestBody",
+                     "field": "date_closed"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "opportunity_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myRLI",
+                  "account_id": "7e953a9f-0ac4-5839-2dea-539a2639a924",
+                  "total_amount": "0.000001",
+                  "best_case": "1200.000001",
+                  "likely_case": "1000.000001",
+                  "worst_case": "800.000001",
+                  "date_closed": "2017-07-25",
+                  "commit_stage": "include",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e",
+                  "sales_stage": "Negotiation/Review",
+                  "probability": 80,
+                  "opportunity_id": "7849f406-70ce-6346-c169-539a27939b23"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myRLI"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "1000.000001",
+                     "best_case": "1200.000001",
+                     "worst_case": "800.000001"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "RevenueLineItems",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "date",
+                     "value": "now",
+                     "destination": "requestBody",
+                     "field": "date_closed"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "opportunity_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myRLIA",
+                  "account_id": "7e953a9f-0ac4-5839-2dea-539a2639a924",
+                  "total_amount": "0.000001",
+                  "best_case": "1400.000001",
+                  "likely_case": "1100.000001",
+                  "worst_case": "700.000001",
+                  "date_closed": "2017-07-25",
+                  "sales_stage": "Prospecting",
+                  "probability": 10,
+                  "opportunity_id": "7849f406-70ce-6346-c169-539a27939b23",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myRLIA"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "2100.000002",
+                     "best_case": "2600.000002",
+                     "worst_case": "1500.000002"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "ForecastWorksheets?user_id=ida&order_by=name:desc",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestURL",
+                     "field": "ida"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "commit_stage": "exclude",
+                        "likely_case": "1100.000001",
+                        "best_case": "1400.000001",
+                        "worst_case": "700.000001",
+                        "name": "myRLIA"
+                     },
+
+                     {
+                        "likely_case": "1000.000001",
+                        "best_case": "1200.000001",
+                        "worst_case": "800.000001",
+                        "commit_stage": "include",
+                        "name": "myRLI"
+                     }
+                  ]
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Forecasts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "TimePeriods",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "timeperiod_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "closed_amount": "0",
+                  "commit_type": "sales_rep",
+                  "currency_id": "-99",
+                  "forecast_type": "Direct",
+                  "pipeline_amount": "0",
+                  "pipeline_opp_count": "0",
+                  "timeperiod_id": "2f0c6738-6377-ba4e-64d1-5412125c0413"
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "value": 
+                  {
+                     "commit_type": "sales_rep"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myAccount salesRep2",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myAccount salesRep2"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Opportunities/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "my big Opportunity salesRep2",
+                  "account_id": "c410185d-ca5d-2fa6-a74e-539a202e70c5",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "my big Opportunity salesRep2"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "RevenueLineItems",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "date",
+                     "value": "now",
+                     "destination": "requestBody",
+                     "field": "date_closed"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "opportunity_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myRLI salesRep2",
+                  "account_id": "7e953a9f-0ac4-5839-2dea-539a2639a924",
+                  "total_amount": "0.000001",
+                  "best_case": "1300.000001",
+                  "likely_case": "1100.000001",
+                  "worst_case": "900.000001",
+                  "date_closed": "2017-07-25",
+                  "commit_stage": "include",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e",
+                  "sales_stage": "Negotiation/Review",
+                  "probability": 80,
+                  "opportunity_id": "7849f406-70ce-6346-c169-539a27939b23"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myRLI salesRep2"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "1100.000001",
+                     "best_case": "1300.000001",
+                     "worst_case": "900.000001"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "RevenueLineItems",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "account_id"
+                  },
+
+                  {
+                     "type": "date",
+                     "value": "now",
+                     "destination": "requestBody",
+                     "field": "date_closed"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "opportunity_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "field": "assigned_user_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "myRLIA salesRep2",
+                  "account_id": "7e953a9f-0ac4-5839-2dea-539a2639a924",
+                  "total_amount": "0.000001",
+                  "best_case": "1500.000002",
+                  "likely_case": "1200.000001",
+                  "worst_case": "800.000001",
+                  "date_closed": "2017-07-25",
+                  "sales_stage": "Prospecting",
+                  "probability": 10,
+                  "opportunity_id": "7849f406-70ce-6346-c169-539a27939b23",
+                  "assigned_user_id": "2d808b9f-5acd-1538-f1b4-540f80afea6e"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myRLIA salesRep2"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Opportunities/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Opportunities",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "amount": "2300.000002",
+                     "best_case": "2800.000003",
+                     "worst_case": "1700.000002"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "ForecastWorksheets?user_id=ida&order_by=name:desc",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestURL",
+                     "field": "ida"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "commit_stage": "exclude",
+                        "likely_case": "1100.000001",
+                        "best_case": "1400.000001",
+                        "worst_case": "700.000001",
+                        "name": "myRLIA"
+                     },
+
+                     {
+                        "likely_case": "1000.000001",
+                        "best_case": "1200.000001",
+                        "worst_case": "800.000001",
+                        "commit_stage": "include",
+                        "name": "myRLI"
+                     }
+                  ]
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "ForecastWorksheets?user_id=ida&order_by=name:desc",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestURL",
+                     "field": "ida"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "commit_stage": "exclude",
+                        "likely_case": "1200.000001",
+                        "best_case": "1500.000002",
+                        "worst_case": "800.000001",
+                        "name": "myRLIA salesRep2"
+                     },
+
+                     {
+                        "likely_case": "1100.000001",
+                        "best_case": "1300.000001",
+                        "worst_case": "900.000001",
+                        "commit_stage": "include",
+                        "name": "myRLI salesRep2"
+                     }
+                  ]
+               }
+            },
+
+            {
+               "requestUser": "salesMgr1",
+               "requestURL": "ForecastManagerWorksheets?user_id=ida&order_by=name:desc",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 3,
+                     "destination": "requestURL",
+                     "field": "ida"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 1,
+                  "records": 
+                  [
+                     {
+                        "name": "Sales1 Rep1",
+                        "best_case": "1200.000001",
+                        "best_case_adjusted": "1200.000001",
+                        "likely_case": "1000.000001",
+                        "likely_case_adjusted": "1000.000001",
+                        "worst_case": "800.000001",
+                        "worst_case_adjusted": "800.000001"
+                     }
+                  ]
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Forecasts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "TimePeriods",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "field": "timeperiod_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "closed_amount": "0",
+                  "commit_type": "sales_rep",
+                  "currency_id": "-99",
+                  "forecast_type": "Direct",
+                  "pipeline_amount": "0",
+                  "pipeline_opp_count": "0",
+                  "timeperiod_id": "2f0c6738-6377-ba4e-64d1-5412125c0413"
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "value": 
+                  {
+                     "commit_type": "sales_rep"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesMgr1",
+               "requestURL": "ForecastManagerWorksheets?user_id=ida&order_by=name:desc",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 3,
+                     "destination": "requestURL",
+                     "field": "ida"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "name": "Sales2 Rep2",
+                        "best_case": "1300.000001",
+                        "best_case_adjusted": "1300.000001",
+                        "likely_case": "1100.000001",
+                        "likely_case_adjusted": "1100.000001",
+                        "worst_case": "900.000001",
+                        "worst_case_adjusted": "900.000001"
+                     },
+
+                     {
+                        "name": "Sales1 Rep1",
+                        "best_case": "1200.000001",
+                        "best_case_adjusted": "1200.000001",
+                        "likely_case": "1000.000001",
+                        "likely_case_adjusted": "1000.000001",
+                        "worst_case": "800.000001",
+                        "worst_case_adjusted": "800.000001"
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Opportunities"
+      },
+
+      {
+         "module": "Accounts"
+      },
+
+      {
+         "module": "RevenueLineItems"
+      },
+
+      {
+         "module": "TimePeriods"
+      }
+   ]
+}

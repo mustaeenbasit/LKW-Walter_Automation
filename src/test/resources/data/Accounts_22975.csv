@@ -1,0 +1,3 @@
+filter_name,display_name,operator,value
+newFilter,City,starts with,Cupertino
+,Name,exactly matches,

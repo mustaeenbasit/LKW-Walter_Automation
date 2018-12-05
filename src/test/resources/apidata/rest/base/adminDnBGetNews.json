@@ -1,0 +1,49 @@
+{
+	"testDocumentation":{
+		"testName":"adminDnBSetUp",
+		"testDescription":"Verify the admin the DnB GET News endpoint"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Set up DnB connection paramters",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"connector/dnb/news/168338536",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"NEWS_MDA"
+								},
+								{
+									"string":"CM000"
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

@@ -1,0 +1,93 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminConflictingRoleTeamSelected",
+      "testDescription": "Verify a User with conflicting Roles has most restrictive"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Verify a User with conflicting Roles has most restrictive",
+         "requests": 
+         [
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "now a non owner without  the role can update the record"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "now a non owner without  the role can update the record"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "and the owner can still update"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "and the owner can still update"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      },
+
+      {
+         "module": "Contacts"
+      },
+
+      {
+         "module": "Cases"
+      }
+   ]
+}

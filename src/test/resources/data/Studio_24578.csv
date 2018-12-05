@@ -1,0 +1,4 @@
+module_field_name,formula,field_data,field_invalid_value
+mybase,,10,a
+mynumber,,100,b
+mylog,"log\(number\(\$mynumber_c)\,number(\$mybase_c\)\)",2,""

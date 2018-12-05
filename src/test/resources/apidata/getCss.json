@@ -1,0 +1,44 @@
+{
+	"testDocumentation":{
+		"testName":"getCss",
+		"testDescription":"Verifies Get Css"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Read css endpoint",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"css",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"bootstrap"
+								},
+								{
+									"string":"cache"
+								},
+								{
+									"string":"sugar"
+								}
+							],
+							"notcontains":[
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

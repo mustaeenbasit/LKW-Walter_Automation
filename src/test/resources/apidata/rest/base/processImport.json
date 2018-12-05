@@ -1,0 +1,52 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "processImport",
+      "testDescription": "Verifies the basic Import of a Process Definition"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Import Proces Definition",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project",
+               "requestType": "postImportProcessDefinition",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "fileLocation": "src/test/resources/apidata/processdefinitions/processimport.bpm"
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "value": 
+                  {
+                     "name": "mypd"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Contracts"
+      },
+
+      {
+         "module": "Accounts"
+      }
+   ]
+}

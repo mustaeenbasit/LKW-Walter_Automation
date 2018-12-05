@@ -1,0 +1,2 @@
+int_val,float_val,decimal_val,currency_val,special_char,formula
+5,4.2,2.4,15.08,#,"add\(\$my_int_c\,multiply\(\$my_float_c\,\$my_decimal_c\)\)"

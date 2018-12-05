@@ -1,0 +1,2 @@
+filterField,filterOperator,filterValueClosedWon,filterValueClosedLost,status
+Status,"is not any of","Closed Won","Closed Lost","In Progress"

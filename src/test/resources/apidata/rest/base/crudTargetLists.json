@@ -1,0 +1,137 @@
+{
+	"testDocumentation":{
+		"testName":"crudProspects",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for ProspectLists"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD ProspectLists",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"ProspectLists/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"The target list",
+						"list_type":"default"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"The target list"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProspectLists/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ProspectLists",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"The target list",
+							"list_type":"default"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProspectLists/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ProspectLists",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"The Changed target list",
+						"list_type":"default"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"The Changed target list",
+							"list_type":"default"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProspectLists/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ProspectLists",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ProspectLists/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ProspectLists",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"ProspectLists"
+		}
+		
+	]
+}

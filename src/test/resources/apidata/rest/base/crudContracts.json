@@ -1,0 +1,178 @@
+{
+	"testDocumentation":{
+		"testName":"crudContracts",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Contracts"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Contracts",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Contracts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"IT Tech Support for UK Datacenter",
+						"description":"This is a sub-contract for a very large project.",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"reference_code":"EMP-9802",
+						"start_date":"2010-05-15",
+						"end_date":"2020-05-15",
+						"currency_id":"-99",
+						"base_rate":1,
+						"currency_name":"",
+						"total_contract_value":"500600.010000",
+						"total_contract_value_usdollar":"500600.010000",
+						"status":"signed",
+						"customer_signed_date":"2010-03-16",
+						"company_signed_date":"2010-03-15",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"IT Tech Support for UK Datacenter",
+							"description":"This is a sub-contract for a very large project."
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contracts/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contracts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"IT Tech Support for UK Datacenter",
+							"description":"This is a sub-contract for a very large project.",
+							"deleted":false,
+							"team_name":[
+								{
+									"id":1,
+									"name":"Global",
+									"name_2":"",
+									"primary":true
+								}
+								
+							],
+							"reference_code":"EMP-9802",
+							"start_date":"2010-05-15",
+							"end_date":"2020-05-15"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contracts/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contracts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"description":"Changed This is a sub-contract for a very large project."
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"IT Tech Support for UK Datacenter",
+							"description":"Changed This is a sub-contract for a very large project."
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contracts/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contracts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contracts/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contracts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Contracts"
+		}
+		
+	]
+}

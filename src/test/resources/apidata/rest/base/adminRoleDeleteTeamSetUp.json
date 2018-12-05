@@ -1,0 +1,63 @@
+{
+	"roleFormParameters":[
+		{
+			"name":"record",
+			"value":""
+		},
+		{
+			"name":"module",
+			"value":"ACLRoles"
+		},
+		{
+			"name":"action",
+			"value":"Save"
+		},
+		{
+			"name":"isduplicate",
+			"value":""
+		},
+		{
+			"name":"return_record",
+			"value":""
+		},
+		{
+			"name":"return_action",
+			"value":"index"
+		},
+		{
+			"name":"return_module",
+			"value":"ACLRoles"
+		},
+		{
+			"name":"button",
+			"value":"Save"
+		},
+		{
+			"name":"name",
+			"value":"myNewRoleABC"
+		},
+		{
+			"name":"description",
+			"value":"This is a Default role"
+		}
+		
+	],
+	"roleAccessformParameters":[
+		{
+			"name":"accountsDelete",
+			"value":"Owner & Selected Teams"
+		},
+		{
+			"name":"accountsEdit",
+			"value":"Owner & Selected Teams"
+		},
+		{
+            "name":"contractsDelete",
+            "value":"Owner & Selected Teams"
+        },
+        {
+            "name":"contractsEdit",
+            "value":"Owner & Selected Teams"
+        }
+	]
+}

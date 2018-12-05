@@ -1,0 +1,2 @@
+error_msg1,error_msg2,confirm_msg
+"Missing required field: Directory","Missing required field: Filename","Settings confirmed. Press backup to perform the backup."

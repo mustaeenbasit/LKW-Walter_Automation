@@ -1,0 +1,2 @@
+name,date_quote_expected_closed,billingAccountName,product_name,cost_price,list_price,unit_price,discount_price,percent_check,discountAmount
+testQuote,12/30/2014,Aperture Laboratories,Test Product,3.870,00,3.870,00,3.870,00,45,true,$1.741,50

@@ -1,0 +1,2 @@
+filterField,filterOperator,filterValueClosed,filterValueRejected,filterValueDuplicate
+Status,is not any of,Closed,Rejected,Duplicate

@@ -1,0 +1,4 @@
+type,fieldName,name,formula
+Currency,mycurrency,Computer,"strlen\(\$name)"
+Float,myfloat,Laptop,
+TextField,myformula,Tablet,

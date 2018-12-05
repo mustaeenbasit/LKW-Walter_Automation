@@ -1,0 +1,43 @@
+{
+	"testDocumentation":{
+		"testName":"readUpdateMe",
+		"testDescription":"Verifies the Get of non admin /me"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Read Update Me",
+			"requests":[
+				{
+					"requestUser":"qauser01",
+					"requestURL":"me/?type_filter=module_list",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"current_user":{
+								"acl":{
+									"Users": {	
+									"admin":"no",
+									"developer":"no",
+									"edit":"no",
+									"delete":"no",
+									"import":"no",
+									"massupdate":"no",
+									"create":"no"
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

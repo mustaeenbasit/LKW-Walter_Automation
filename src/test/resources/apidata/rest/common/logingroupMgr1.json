@@ -1,0 +1,8 @@
+{
+	"grant_type":"password",
+	"username":"groupMgr1",
+	"password":"groupMgr1",
+	"client_id":"sugar",
+	"client_secret":"",
+	"platform":"base"
+}

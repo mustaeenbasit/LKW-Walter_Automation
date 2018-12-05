@@ -1,0 +1,3 @@
+roleName,roleDescription,userName,access
+myRole1,Access role of Cases module is enabled for user,qauser,Enabled
+myRole2,Access role of Cases module is not set for user,qauser,Not Set

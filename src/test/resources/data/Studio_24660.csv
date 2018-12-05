@@ -1,0 +1,4 @@
+data_type,module_field_name,drop_down_list,field_formula_part1,field_formula_part2,default
+DropDown,first_dropdown,call_status_dom,'','',Held
+DropDown,second_dropdown,case_status_dom,"equal($first_dropdown_c,",Planned
+TextField,custom_textarea,'',"equal($second_dropdown_c,",Assigned

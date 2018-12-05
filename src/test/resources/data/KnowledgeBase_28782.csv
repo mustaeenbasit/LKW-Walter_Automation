@@ -1,0 +1,2 @@
+roleName,roleDescription,permission,status,listViewDashlet1,listViewDashlet2,recordViewDashlet1
+customRole,Role created for User,None,published,"Knowledge Base Categories & Published Articles","Most Useful Published Knowledge Base Articles","Usefulness for Articles"

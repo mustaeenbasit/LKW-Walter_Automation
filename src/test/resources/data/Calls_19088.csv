@@ -1,0 +1,5 @@
+name,assignedTo,relatedToParentName,teams,status,direction
+Call1,qauser,Account1,Global,Canceled,Outbound
+Call2,admin2,Account2,qauser,Scheduled,Outbound
+Call3,Administrator,Account3,Administrator,Scheduled,Outbound
+Call4,admin2,Account4,Administrator,Held,Inbound

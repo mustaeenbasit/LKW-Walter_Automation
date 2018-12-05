@@ -1,0 +1,2 @@
+name,website,workPhone,fax,emailAddress,billingAddressStreet,billingAddressCity,billingAddressState,billingAddressPostalCode,billingAddressCountry,industry,type,description
+testAccount1,http://sugarcrm.com,+375172111111,+375172111111,sugarqa65@gmail.com,18 Kalvarijskaya str.,Minsk,Minskaya obl.,220000,Belarus,Energy,Reseller,Quotes_24259 description

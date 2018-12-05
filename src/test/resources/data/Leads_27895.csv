@@ -1,0 +1,2 @@
+script,field_name,display_name
+<script>alert("hello")</script>,myfield,myfield_c

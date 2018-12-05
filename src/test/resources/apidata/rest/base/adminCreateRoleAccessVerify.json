@@ -1,0 +1,35 @@
+{
+	"testDocumentation":{
+		"testName":"adminCreateRoleAccessVerify",
+		"testDescription":"Verify the Creation of the default Role created with adminCreateRoleAccess "
+	},
+	"testCases":[
+		{
+			"testCaseName":"Verify the created Role",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles?filter[0][name][$starts]=myNewRoleABC",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"Roles/",
+						"value":{
+							"name":"myNewRoleABC",
+							"description":"This is a Default role"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

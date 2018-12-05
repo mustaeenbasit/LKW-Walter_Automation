@@ -1,0 +1,52 @@
+{
+	"testDocumentation":{
+		"testName":"delete2DefaultRoles",
+		"testDescription":"Deletes 2 Default Custom Roles created during a session"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Delete 2 Roles",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Roles",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Roles",
+							"index":2,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

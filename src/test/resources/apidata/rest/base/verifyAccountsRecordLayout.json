@@ -1,0 +1,46 @@
+{
+	"testDocumentation":{
+		"testName":"verifyAccountsRecordlayout",
+		"testDescription":"Verifies the initial Accounts record layout"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Verify the initial Account record default layout",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"metadata?module_filter=Accounts&platform=base",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"\"fields\":[\"website\",\"industry\",\"parent_name\",\"account_type\",\"assigned_user_name\",\"phone_office\","
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

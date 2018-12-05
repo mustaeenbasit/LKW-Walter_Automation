@@ -1,0 +1,14 @@
+sugarField,value
+relatedToParentType,Task
+relatedToParentName,"Account status review"
+remindersPopup,"2 hours prior"
+remindersEmail,"2 hours prior"
+name,"An Important Meeting"
+status,Held
+date_end_date,06/12/2015
+date_start_time,10:00pm
+date_end_time,10:30pm
+date_start_date,06/12/2015
+description,"The description for an important Meeting_Edited"
+assignedTo,Administrator
+location,CupertinoX

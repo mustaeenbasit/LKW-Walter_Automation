@@ -1,0 +1,2 @@
+roleName,roleDescription,access,userName,administrator,lastName,disabled,noAccess
+myRole,Set Team field permissions to Owner Read/Owner Write,Owner Read/Owner Write,qauser,admin,testContact,disabled,No access

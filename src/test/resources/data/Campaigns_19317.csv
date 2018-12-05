@@ -1,0 +1,2 @@
+email_module,trash,sent,inbox,subject_msg,smtp_username,smtp_password
+Emails,[Gmail]/Trash,[Gmail]/Sent Mail,INBOX,"Shared Campaign Buy our Stuff! from SugarCRM",qa.user.smtp@gmail.com,smtp@123

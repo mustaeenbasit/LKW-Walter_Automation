@@ -1,0 +1,5 @@
+name,stage,expected_closed_date,likely
+RLI1,Closed Won,04/29/2014,12
+RLI2,Closed Lost,04/21/2014,23
+RLI3,Prospecting,04/23/2014,45
+RLI4,Qualification,04/26/2014,56

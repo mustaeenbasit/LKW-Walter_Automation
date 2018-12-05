@@ -1,0 +1,2 @@
+roleName,roleDescription,access,processDefinitions,processes,processBusinessRules,processEmailTemplates,studio,admin
+myRole,testRole,Developer,Process Definitions,Processes,Process Business Rules,Process Email Templates,Studio,admin

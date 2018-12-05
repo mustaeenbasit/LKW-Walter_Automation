@@ -1,0 +1,2 @@
+int_val,float_val,decimal_val,currency_val,result,special_char,formula
+5,4.2,2.4,7.08,"21.000000",#,"valueAt\(1\,enum\(add\(\$my_decimal_c\,\$my_currency_c\)\,multiply\(\$my_float_c\,\$my_int_c\)\)\)"

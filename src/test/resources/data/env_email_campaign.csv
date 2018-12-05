@@ -1,0 +1,2 @@
+userName,password,fromName,fromAddress,smtpServer,smtpAuth,smtpPort,smtpssl,emailsPerRun,trackingLocationType,trackingLocation,emailCopy
+qa.sugar.qa.77@gmail.com,sugarcrm,fromname,sugartest@gmail.com,smtp.gmail.com,null,100,TLS,199,2,http://www.google.com,2

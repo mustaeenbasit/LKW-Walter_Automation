@@ -1,0 +1,18 @@
+name,publishDateFilterOperator,filterField
+KB1,is equal to,Publish Date
+KB2,before
+KB3,after
+KB4,yesterday
+KB5,today
+KB6,tomorrow
+KB7,last 7 days
+,next 7 days
+,last 30 days
+,next 30 days
+,last month
+,this month
+,next month
+,last year
+,this year
+,next year
+,is between

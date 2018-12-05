@@ -1,0 +1,2 @@
+roleName,roleDescription,access,userName,administrator
+myRole,Set few field permissions to Read Only,Read Only,qauser,admin

@@ -1,0 +1,3 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password,timeZone
+Manager,Manager,Manager,ab@sugarcrm.com,Ab123!,Ab123!,Ab123!,America/Los Angeles (GMT-8:00)
+SalesRep,SalesRep,SalesRep,ab@sugarcrm.com,Ab123!,Ab123!,Ab123!,America/Los Angeles (GMT-8:00)

@@ -1,0 +1,2 @@
+languageCode,languageLabel,alertText,errorMessage
+fr,French,"It is not allowed to add language with the key that duplicates existing one.","Error Please resolve any errors before proceeding."

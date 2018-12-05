@@ -1,0 +1,3 @@
+allowAllUsers,mail_account_name,trash_folder,outgoing_from_name,outgoing_from_address,subject,bodyText
+true,rajan,[Gmail]/Trash,SugarCRM,qa.user.suga@gmail.com,Testing one,This is test only!!
+,,,,,Testing two,Test multiple emails!!

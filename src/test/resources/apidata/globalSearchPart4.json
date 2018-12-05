@@ -1,0 +1,151 @@
+{
+	"testDocumentation":{
+		"testName":"globalSearchPart3",
+		"testDescription":"Verifies the globalsearch with max num and offsets"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Global search with request body",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Account&module_list=Cases,Contacts&max_num=5",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":-1,
+							"total":0
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Case&module_list=Cases,Contacts&max_num=5",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":5,
+							"total":24
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Account&module_list=Accounts,Contacts&max_num=5",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":5,
+						"value":{
+							"description":"Cloud Cover description in text"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Account&module_list=Accounts,Contacts&max_num=9&offset=15",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":-1,
+							"total":24
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Account&module_list=Accounts,Contacts&max_num=9&offset=15",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":9,
+						"value":{
+							"description":"Cloud Cover description in text"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Account&module_list=Accounts,Contacts&max_num=10&offset=15",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":-1,
+							"total":24
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=Account&module_list=Accounts,Contacts&max_num=10&offset=15",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":9,
+						"value":{
+							"description":"Cloud Cover description in text"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"Cases"
+		}
+		
+	]
+}

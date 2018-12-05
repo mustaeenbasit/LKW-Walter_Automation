@@ -1,0 +1,5 @@
+firstName,lastName,email1,email2,email3
+Lead,1,Lead1@optout.com,"",""
+Lead,2,Lead2@invalid.com,Lead2@optout.com,Lead2@sugar.com
+Lead,3,"","",""
+Lead,4,Lead4@primary.com,Lead4@valid.com,""

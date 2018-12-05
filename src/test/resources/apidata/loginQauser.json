@@ -1,0 +1,8 @@
+{
+	"grant_type":"password",
+	"username":"qauser01",
+	"password":"QAuser1",
+	"client_id":"sugar",
+	"client_secret":"",
+	"platform":"base"
+}

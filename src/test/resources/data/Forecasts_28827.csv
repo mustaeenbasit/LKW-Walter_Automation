@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,disabled,enabled,error
+myRole,My new Role.,qauser,Disabled,Enabled,Forecasts Access Error: You do not have access to the Forecasts module's records.

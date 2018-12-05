@@ -1,0 +1,144 @@
+{
+	"testDocumentation":{
+		"testName":"meetingsCreateCollection",
+		"testDescription":"Verifies the Collectio api format can be used to Create a Meeting with Contacts, Users and Leads"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Read Meetings using collection API",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/meetingID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=0&offset[leads]=0&offset[users]=0&max_num=10&order_by=full_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"meetingID"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":{
+								"contacts":-1,
+								"leads":-1,
+								"users":-1
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/meetingID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=0&offset[leads]=0&offset[users]=0&max_num=3&order_by=full_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"meetingID"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":{
+								"contacts":0,
+								"leads":-1,
+								"users":1
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/meetingID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=0&offset[leads]=-1&offset[users]=1&max_num=3&order_by=full_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"meetingID"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":{
+								"contacts":1,
+								"leads":-1,
+								"users":-1
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/meetingID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=1&offset[leads]=-1&offset[users]=-1&max_num=3&order_by=full_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"meetingID"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"next_offset":{
+								"contacts":-1,
+								"leads":-1,
+								"users":-1
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Meetings"
+		},
+		{
+			"module":"Contacts"
+		},
+		{
+			"module":"Leads"
+		}
+		
+	]
+}

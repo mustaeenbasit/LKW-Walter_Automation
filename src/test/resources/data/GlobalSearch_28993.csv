@@ -1,0 +1,2 @@
+link,description
+"Full Text Search Configuration","Legacy global search will only be used to return results in SugarCRM Mobile or Sugar Portal global searches. In order for legacy global search to perform a search on a particular module, it must be enabled below."

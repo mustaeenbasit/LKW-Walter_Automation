@@ -1,0 +1,2 @@
+filterName,fieldName,operatorValue,filterValue,searchString,allContacts,relatedAll
+LastNameFilter,Last Name,starts with,Amy,Jack,All Contacts,All

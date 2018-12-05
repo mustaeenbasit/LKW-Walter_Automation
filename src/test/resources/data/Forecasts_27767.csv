@@ -1,0 +1,2 @@
+timePeriodType,forecast,bestCase,worstCase,scenario1,scenario2
+Yearly (Quarterly sub-periods),Include,2000,500,Best,Worst

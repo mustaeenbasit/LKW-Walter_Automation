@@ -1,0 +1,72 @@
+{
+	"testDocumentation":{
+		"testName":"adminRestoreAccountTypeDom",
+		"testDescription":"Restore the Account Type DOM to its default settings"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Modify Account Type DropDown",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"index.php?to_pdf=1&sugar_body_only=1",
+					"requestType":"postForm",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"formParameters":[
+							{
+								"name":"module",
+								"value":"ModuleBuilder"
+							},
+							{
+								"name":"action",
+								"value":"savedropdown"
+							},
+							{
+								"name":"to_pdf",
+								"value":"true"
+							},
+							{
+								"name":"view_module",
+								"value":""
+							},
+							{
+								"name":"view_package",
+								"value":"studio"
+							},
+							{
+								"name":"list_value",
+								"value":"[[\"-blank-\",\"\"],[\"Analyst\",\"Analyst\"],[\"Competitor\",\"Competitor\"],[\"Customer\",\"Customer\"],[\"Integrator\",\"Integrator\"],[\"Investor\",\"Investor\"],[\"Partner\",\"Partner\"],[\"Press\",\"Press\"],[\"Prospect\",\"Prospect\"],[\"Reseller\",\"Reseller\"],[\"Other\",\"Other\"]]"
+							},
+							{
+								"name":"dropdown_name",
+								"value":"account_type_dom"
+							},
+							{
+								"name":"dropdown_lang",
+								"value":"en_us"
+							},
+							{
+								"name":"drop_name",
+								"value":""
+							},
+							{
+								"name":"drop_value",
+								"value":""
+							}
+						]
+					},
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

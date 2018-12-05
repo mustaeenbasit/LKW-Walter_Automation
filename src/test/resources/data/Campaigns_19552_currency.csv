@@ -1,0 +1,2 @@
+rate,symbol,code,opp_name,default_currency_name,default_currency_symbol,impressions,budget,actual_cost,expected_cost,expected_revenue,new_budget,new_actual_cost,new_expected_cost,new_expected_revenue
+2,R,RMB,TestOpportunity,"US Dollar",$,100,100,90,80,10,200.00,180.00,160.00,20.00

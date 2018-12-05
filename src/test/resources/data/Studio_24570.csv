@@ -1,0 +1,5 @@
+module_field_name,formula
+mynum1,""
+mynum2,""
+mynum3,""
+maxnum,"max\(number\(\$mynum1_c)\, number\(\$mynum2_c\)\, number\(\$mynum3_c\)\)"

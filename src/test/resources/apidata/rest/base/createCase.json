@@ -1,0 +1,67 @@
+{
+	"testDocumentation":{
+		"testName":"createCases",
+		"testDescription":"Creates a basic CASE"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CREATE A CASE",
+			"requests":[
+				{
+					"requestDescription":"Create a Case",
+					"requestUser":"admin",
+					"requestURL":"Cases/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"milliseconds",
+							"prefix":"Case",
+							"destination":"requestBody",
+							"field":"name"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Need to purchase additional licenses",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"type":"User",
+						"status":"New",
+						"priority":"P2",
+						"system_id":1,
+						"work_log":"",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"type":"User"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

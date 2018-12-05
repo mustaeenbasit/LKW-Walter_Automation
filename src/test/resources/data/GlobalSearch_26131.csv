@@ -1,0 +1,4 @@
+name,billingAddressStreet,description,boostValue
+Account1,testaccount,,1
+Account2,medium,"testaccount",
+,,,0.35

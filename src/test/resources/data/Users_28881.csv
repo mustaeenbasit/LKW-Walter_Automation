@@ -1,0 +1,2 @@
+badRequestURL,dataNotAvailable,doNotHavePermissionMsg,pleaseTryAgainMsg,goBackToPreviousPageMsg,badDataMsg,returnToHomeMsg,myDashboard
+"AND IF(version() like ‘5%’, sleep(10), ‘false’))--","Data not available","Page does not exist or you do not have permission to access this page.","Please try again. If the error persists, please contact your Sugar Administrator.","Go back to previous page.","Bad data passed in; ","Return to Home","My Dashboard"

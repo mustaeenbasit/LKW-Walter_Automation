@@ -1,0 +1,43 @@
+{
+  "testDocumentation": {
+    "testName": "getNonAdminUserEmail",
+    "testDescription": "Verifies that a non-admin user can get their own emal"
+  },
+  "testCases": [
+    {
+      "testCaseName": "get email for the logged on user",
+      "requests": [
+        {
+          "requestUser": "bob",
+          "requestURL": "Users/id/?fields=first_name,last_name,email,phone_work",
+          "requestType": "get",
+          "requestStatus": 200,
+          "substitute": [
+            {
+              "type": "id",
+              "module": "Users",
+              "index": 1,
+              "destination": "requestURL",
+              "field": "id"
+            }
+          ],
+          "validation": {
+            "type": "single",
+            "value": {
+              "email": [
+                {
+                  "email_address": "bobbo@sugarcrm.com",
+                  "primary_address": true,
+                  "reply_to_address": false,
+                  "invalid_email": false,
+                  "opt_out": false
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "modules_used": []
+}

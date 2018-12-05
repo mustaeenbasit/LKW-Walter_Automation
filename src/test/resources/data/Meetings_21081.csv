@@ -1,0 +1,2 @@
+selectStartDate,wrongStartDate,message
+Start Date,12.12.1234,"Error. This field is required."

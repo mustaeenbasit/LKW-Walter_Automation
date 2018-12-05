@@ -1,0 +1,4 @@
+name,relAccountName,priority,status,relAssignedTo
+ACases,Cases_23282_0,High,Assigned,admin2
+BCases,Cases_23282_1,Medium,Closed,Administrator
+CCases,Cases_23282_2,Low,Duplicate,qauser

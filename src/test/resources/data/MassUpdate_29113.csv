@@ -1,0 +1,2 @@
+fieldName,formula,massUpdateField,massUpdateValue
+testfield,"equal\(related\(\$accounts\,\"industry\"\)\,\"test\"\)",Status,Assigned

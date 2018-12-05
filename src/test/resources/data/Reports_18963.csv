@@ -1,0 +1,2 @@
+after,date_c,chart_type,report_name,call_name,status,date_start_date,date_start_time,durationHours,durationMinutes,status_header,duration_hours_header,duration_mins_header,count_header,total_header,call_header,totalCount
+After,10/28/2013,Horizontal Bar,Calls summation  report,New Call,Held,10/28/2014,4:00am,1,15,Status,Duration Hours,Duration Minutes,Count,Grand Total,Subject,2

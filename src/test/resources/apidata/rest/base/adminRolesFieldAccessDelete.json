@@ -1,0 +1,93 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminRolesLinkUsers",
+      "testDescription": "Verify a User Can be associated with a Role"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Associated User to a Role",
+         "requests": 
+         [
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "description": "Allowed to change"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "description": "Allowed to change"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "description": "Also now allowed to change"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "description": "Also now allowed to change"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      },
+
+      {
+         "module": "Contacts"
+      },
+
+      {
+         "module": "Cases"
+      }
+   ]
+}

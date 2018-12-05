@@ -1,0 +1,34 @@
+{
+	"testDocumentation":{
+		"testName":"deleteDefaultEmployee",
+		"testDescription":"Deletes the Default Employee created during a session"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Delete the Default Employee",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Employees/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

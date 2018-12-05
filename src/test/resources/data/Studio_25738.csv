@@ -1,0 +1,2 @@
+relationship_name,primary_module,relationship_type,related_module,default_relationship
+accounts_cases_1*,Accounts,One to Many,Cases,Accounts_cases

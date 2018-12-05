@@ -1,0 +1,2 @@
+name,date_publish,massUpdateField,massUpdateValue,warningMessage
+KB1,"09/01/2000","Status","Approved","Error. The Publish Date must occur on a later date than today's date."

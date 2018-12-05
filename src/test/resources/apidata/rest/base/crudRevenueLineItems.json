@@ -1,0 +1,174 @@
+{
+	"testDocumentation":{
+		"testName":"crudRevenueLineItems",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for RevenueLineItems"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Revenue Line Items",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"RevenueLineItems/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Trait Institute Inc",
+						"team_name":[
+							{
+								"id":"East",
+								"name":"East",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"best_case":"1116.000001",
+						"likely_case":"767.000001",
+						"worst_case":"418.000001",
+						"date_closed":"2016-06-21",
+						"date_closed_timestamp":1403370405,
+						"commit_stage":"exclude",
+						"sales_stage":"Qualification",
+						"probability":20,
+						"lead_source":"Trade Show",
+						"campaign_id":"",
+						"campaign_name":"",
+						"currency_name":"Euro",
+						"quote_name":"",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Trait Institute Inc"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"RevenueLineItems/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"RevenueLineItems",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"best_case":"1116.000001",
+							"likely_case":"767.000001",
+							"worst_case":"418.000001",
+							"date_closed":"2016-06-21"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"RevenueLineItems/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"RevenueLineItems",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"best_case":"1126.000001",
+						"likely_case":"789.000001"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"best_case":"1126.000001",
+							"likely_case":"789.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"RevenueLineItems/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"RevenueLineItems",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"RevenueLineItems/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"RevenueLineItems",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"RevenueLineItems"
+		}
+		
+	]
+	
+}

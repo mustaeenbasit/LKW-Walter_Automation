@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,accessType
+myRole,user can only edit own records while the module edit role is set to Owner,qauser,Owner

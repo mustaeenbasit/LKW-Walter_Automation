@@ -1,0 +1,7 @@
+mod_name,name,label,singular_label,expected_close_date,amount
+basic,myBasic,Basics,Basic
+company,myCompany,Companies,Company
+file,myFile,Files,File
+issue,myIssue,Issues,Issue
+person,myPerson,Persons,Person
+sale,mySale,Sales,Sale,12/12/2025,1000

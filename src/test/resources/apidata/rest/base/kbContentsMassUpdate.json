@@ -1,0 +1,194 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "kbContentsMassUpdate",
+      "testDescription": "Verifies the basic Mass update for KBContents"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Mass update KBContents",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "draft",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontent",
+                  "kbdocument_body": "Here is the kbcontent body"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "draft",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontentabc",
+                  "kbdocument_body": "Here is the kbcontent body for abc"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontentabc"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/MassUpdate",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestBody",
+                     "fromString": "kbContentsID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "KBContents",
+                     "index": 2,
+                     "destination": "requestBody",
+                     "fromString": "kbContentsID2"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "massupdate_params": 
+                  {
+                     "uid": 
+                     [
+                        "kbContentsID1",
+                        "kbContentsID2"
+                     ],
+
+                     "status": "published"
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "failed": 0,
+                     "status": "done"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "status": "published"
+                     },
+                     {
+                        "status": "published"
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "KBContents"
+      }
+   ]
+}

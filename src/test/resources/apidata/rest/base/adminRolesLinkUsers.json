@@ -1,0 +1,141 @@
+{
+	"testDocumentation":{
+		"testName":"adminRolesLinkUsers",
+		"testDescription":"Verify a User Can be associated with a Role"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Associated User to a Role",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"index.php",
+					"requestType":"postForm",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"replaceStringID",
+							"module":"Users",
+							"index":99999,
+							"destination":"requestBody",
+							"fromString":"USERID"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Roles",
+							"index":99999,
+							"destination":"requestBody",
+							"fromString":"MYROLEID"
+						}
+						
+					],
+					"requestBody":{
+						"formParameters":[
+							{
+								"name":"subpanel_id",
+								"value":"USERID"
+							},
+							{
+								"name":"value",
+								"value":"DetailView"
+							},
+							{
+								"name":"module",
+								"value":"ACLRoles"
+							},
+							{
+								"name":"http_method",
+								"value":"get"
+							},
+							{
+								"name":"return_module",
+								"value":"ACLRoles"
+							},
+							{
+								"name":"return_id",
+								"value":"MYROLEID"
+							},
+							{
+								"name":"record",
+								"value":"MYROLEID"
+							},
+							{
+								"name":"isDuplicate",
+								"value":"false"
+							},
+							{
+								"name":"action",
+								"value":"Save2"
+							},
+							{
+								"name":"inline",
+								"value":"1"
+							},
+							{
+								"name":"select_entire_list",
+								"value":"0"
+							},
+							{
+								"name":"child_field",
+								"value":"Users"
+							},
+							{
+								"name":"return_url",
+								"value":"index.php?module=ACLRoles&action=SubPanelViewer&subpanel=Users&record=MYROLEID&sugar_body_only=1"
+							},
+							{
+								"name":"subpanel_field_name",
+								"value":"users"
+							},
+							{
+								"name":"subpanel_module_name",
+								"value":"Users"
+							},
+							{
+								"name":"refresh_page",
+								"value":"1"
+							}
+							
+						]
+						
+					},
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles/id/link/users",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Roles",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"user_name":"salesRep1"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

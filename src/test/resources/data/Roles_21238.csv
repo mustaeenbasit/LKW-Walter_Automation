@@ -1,0 +1,12 @@
+fields,permissions,verify_text
+"last_namelink","flc_guidlast_name",noaccess
+"first_namelink","flc_guidfirst_name"
+"primary_addresslink","flc_guidprimary_address"
+"accept_status_callslink","flc_guidaccept_status_calls"
+"assigned_user_namelink","flc_guidassigned_user_name"
+"email2link","flc_guidemail2"
+"followinglink","flc_guidfollowing"
+"modified_by_namelink","flc_guidmodified_by_name"
+"phone_faxlink","flc_guidphone_fax"
+"phone_worklink","flc_guidphone_work"
+"created_by_namelink","flc_guidcreated_by_name"

@@ -1,0 +1,4 @@
+data_type,module_field_name
+Decimal,my_decimal
+Float,my_float
+Integer,my_int

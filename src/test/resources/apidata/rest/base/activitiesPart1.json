@@ -1,0 +1,93 @@
+{
+	"testDocumentation":{
+		"testName":"activitiesPart1",
+		"testDescription":"Verifies the various Acivities updates"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Log Activities Part 1",
+			"requests":[
+				{
+                    "requestUser":"na",
+                    "requestURL":"na",
+                    "requestType":"wait",
+                    "requestStatus":200,
+                    "substitute":[
+                        
+                    ],
+                    "requestBody":{
+                        "name":"na"
+                    },
+                    "validation":{
+                        "type":"none"          
+                    }
+                    
+                },
+                {
+					"requestUser":"activityUser",
+					"requestURL":"Activities?order_by=parent_type",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":4,
+						"records":[
+							{
+								"data":{
+									"object":{
+										"name":"my big Opportunity",
+										"type":"Opportunity",
+										"module":"Opportunities"
+									}
+								}
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Changed Next one Industries Account",
+										"type":"Account",
+										"module":"Accounts"
+									},
+									"subject":{
+										"name":"my big Opportunity",
+										"type":"Opportunity",
+										"module":"Opportunities"
+									}
+								}
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Changed Next one Industries Account",
+										"type":"Account",
+										"module":"Accounts"
+									}
+								}
+							},
+							{
+								"data":{
+									"object":{
+										"name":"Cloud Cover Trust",
+										"type":"Account",
+										"module":"Accounts"
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"Opportunities"
+		}
+	]
+}

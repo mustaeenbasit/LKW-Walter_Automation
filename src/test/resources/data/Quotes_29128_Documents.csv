@@ -1,0 +1,6 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password,timeZone
+,,admin2
+,,Administrator
+,,qauser
+sachin,sachin,tendulkar,ab@sugarcrm.com,Ab123!,Ab123!,Ab123!,America/Los Angeles (GMT-7:00)
+virat,virat,kholi,ab@sugarcrm.com,Ab123!,Ab123!,Ab123!,America/Los Angeles (GMT-7:00)

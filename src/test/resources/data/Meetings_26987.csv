@@ -1,0 +1,9 @@
+internal_column_name,header_name
+name,Subject
+status,Status
+date_start,Start Date
+assigned_user_name,User
+date_entered,Date Created
+date_end,End Date
+team_name,Team
+parent_name,Related to

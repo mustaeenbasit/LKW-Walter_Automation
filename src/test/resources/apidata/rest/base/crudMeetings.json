@@ -1,0 +1,317 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudMeetings",
+      "testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for Meetings"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD Meetings",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "date",
+                     "value": "now",
+                     "destination": "requestBody",
+                     "field": "date_start"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Demo Meeting",
+                  "users": 
+                  {
+                     "add": 
+                     [
+                        "1"
+                     ]
+                  },
+
+                  "description": "Meeting to discuss project plan and hash out the details of implementation",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     },
+
+                     {
+                        "id": "East",
+                        "name": "East",
+                        "name_2": "",
+                        "primary": true
+                     },
+
+                     {
+                        "id": "West",
+                        "name": "West",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "duration_hours": 1,
+                  "duration_minutes": "15",
+                  "date_start": "2016-05-14T08:00:00-07:00",
+                  "status": "Not Held",
+                  "type": "Sugar",
+                  "direction": "",
+                  "reminder_time": "-1",
+                  "email_reminder_checked": "",
+                  "email_reminder_time": "600",
+                  "email_reminder_sent": false,
+                  "repeat_interval": 1,
+                  "repeat_count": null,
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Demo Meeting",
+                     "description": "Meeting to discuss project plan and hash out the details of implementation"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Meetings",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Demo Meeting",
+                     "description": "Meeting to discuss project plan and hash out the details of implementation",
+                     "duration_hours": 1,
+                     "duration_minutes": 15
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/id/link/users",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Meetings",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "value": 
+                  {
+                     "user_name": "admin"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Meetings",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "description": "Chenged project plan and hash out the details of implementation",
+                  "reminder_time": "-1",
+                  "email_reminder_time": "-1",
+                  "duration_hours": 2
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "description": "Chenged project plan and hash out the details of implementation",
+                     "duration_hours": 2,
+                     "duration_minutes": 15,
+                     "reminder_checked": false,
+                     "email_reminder_checked": false
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Meetings",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/id",
+               "requestType": "get",
+               "requestStatus": 404,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Meetings",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Meetings/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Demo Meeting with No minutes",
+                  "description": "Meeting With No Minutes",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     },
+
+                     {
+                        "id": "East",
+                        "name": "East",
+                        "name_2": "",
+                        "primary": true
+                     },
+
+                     {
+                        "id": "West",
+                        "name": "West",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "duration_hours": 1,
+                  "duration_minutes": "15",
+                  "date_start": "2018-05-14T08:00:00-07:00",
+                  "status": "Not Held",
+                  "type": "Sugar",
+                  "direction": "",
+                  "reminder_time": "-1",
+                  "email_reminder_checked": "",
+                  "email_reminder_time": "600",
+                  "email_reminder_sent": false,
+                  "repeat_interval": 1,
+                  "repeat_count": null,
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Demo Meeting with No minutes",
+                     "description": "Meeting With No Minutes",
+                     "date_start": "2018-05-14T08:00:00-07:00"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Meetings"
+      }
+   ]
+}

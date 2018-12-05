@@ -1,0 +1,132 @@
+{
+	"testDocumentation":{
+		"testName":"forecastsEditRLINoAdjustDirectReport",
+		"testDescription":"Verify Managers forecast likely adjusted changes when direct report edits the RLI"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Likely adjusted is automatically updated for direct",
+			"requests":[
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"RevenueLineItems/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"RevenueLineItems",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"likely_case":"1100.000001"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"likely_case":"1100.000001"
+						}
+						
+					}
+					
+				},		
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"sales_rep",
+						"currency_id":"-99",
+						"forecast_type":"Direct",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"sales_rep"
+						}
+						
+					}				
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=ida&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"ida"
+						}
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":2,
+						"records":[
+							{
+								"name":"Sales2 Rep2",
+								"best_case":"1300.000001",
+								"best_case_adjusted":"1300.000001",
+								"likely_case":"1100.000001",
+								"likely_case_adjusted":"1100.000001",
+								"worst_case":"900.000001",
+								"worst_case_adjusted":"900.000001"
+							},
+							{
+								"name":"Sales1 Rep1",
+								"best_case":"1200.000001",
+								"best_case_adjusted":"1200.000001",
+								"likely_case":"1100.000001",
+								"likely_case_adjusted":"1100.000001",
+								"worst_case":"800.000001",
+								"worst_case_adjusted":"800.000001"
+							}
+							
+						]
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Opportunities"
+		},
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"RevenueLineItems"
+		},
+		{
+			"module":"TimePeriods"
+		}	
+	]
+}

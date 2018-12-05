@@ -1,0 +1,157 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "globalSearchSpecialCharacters",
+      "testDescription": "Verifies the globalsearch with the request Body for GET and POST"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "globalSearchSpecialCharacters",
+         "requests": 
+         [
+            {
+               "requestDescription": "Create an Account",
+               "requestUser": "admin",
+               "requestURL": "Accounts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "A's \"new\" Inc",
+                  "description": "Cloud Cover description in text",
+                  "deleted": false,
+                  "website": "www.supportphone.tw",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "email": 
+                  [
+                     {
+                        "email_address": "section.kid.section@example.cn",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     },
+
+                     {
+                        "email_address": "sugar.hr@example.info",
+                        "primary_address": false,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "email1": "section.kid.section@example.cn",
+                  "email2": "",
+                  "invalid_email": false,
+                  "email_opt_out": false,
+                  "email_addresses_non_primary": "",
+                  "account_type": "Customer",
+                  "industry": "Electronics",
+                  "billing_address_street": "48920 San Carlos Ave",
+                  "billing_address_street_2": "",
+                  "billing_address_street_3": "",
+                  "billing_address_street_4": "",
+                  "billing_address_city": "Persistance",
+                  "billing_address_state": "NY",
+                  "billing_address_postalcode": "46691",
+                  "billing_address_country": "USA",
+                  "rating": "",
+                  "phone_office": "(777) 954-2070",
+                  "phone_alternate": "",
+                  "ownership": "",
+                  "employees": "",
+                  "ticker_symbol": "",
+                  "shipping_address_street": "48920 San Carlos Ave",
+                  "shipping_address_street_2": "",
+                  "shipping_address_street_3": "",
+                  "shipping_address_street_4": "",
+                  "shipping_address_city": "Persistance",
+                  "shipping_address_state": "NY",
+                  "shipping_address_postalcode": "46691",
+                  "shipping_address_country": "USA",
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "A's \"new\" Inc"
+                  }
+               }
+            },
+            {
+               "requestUser": "na",
+               "requestURL": "na",
+               "requestType": "wait",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "na"
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "globalsearch?q=A's&module_list=Accounts,Contacts",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "value": 
+                  {
+                     "name": "A's \"new\" Inc"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      }
+   ]
+}

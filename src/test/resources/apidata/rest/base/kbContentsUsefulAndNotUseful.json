@@ -1,0 +1,146 @@
+{
+	"testDocumentation":{
+		"testName":"kbContentsUsefulAndNotUseful",
+		"testDescription":"Verifies the marking a KBContents record as useful and not useful by multiple users"
+	},
+	"testCases":[
+		{
+			"testCaseName":"useful and not useful KBContents",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"KBContents/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"doc_owner":"",
+						"user_favorites":"",
+						"deleted":false,
+						"viewcount":0,
+						"revision":"0",
+						"useful":"0",
+						"notuseful":"0",
+						"active_rev":0,
+						"is_external":0,
+						"status":"draft",
+						"language":"en",
+						"team_name":[
+							{
+								"id":"1",
+								"display_name":"Global",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"name":"mykbcontent",
+						"kbdocument_body":"Here is the kbcontent body"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"mykbcontent"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"KBContents/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"KBContents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"mykbcontent",
+							"kbdocument_body":"Here is the kbcontent body",
+							"useful":0,
+							"notuseful":0
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"KBContents/id/useful",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"KBContents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"useful":1,
+							"notuseful":0
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"KBContents/id/notuseful",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"KBContents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"useful":1,
+							"notuseful":1
+						}
+						
+					}
+					
+				}			
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"KBContents"
+		}
+		
+	]
+}

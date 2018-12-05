@@ -1,0 +1,157 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudKBContents",
+      "testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for KBTemplates"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD KBTemplates",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContentTemplates/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "name": "mytemplate",
+                  "body": "This is the template body"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mytemplate",
+                     "body": "This is the template body"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContentTemplates/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContentTemplates",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mytemplate",
+                     "body": "This is the template body"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContentTemplates/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContentTemplates",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "body": "This is the UPDATED template body"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "body": "This is the UPDATED template body"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContentTemplates/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContentTemplates",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContentTemplates/id",
+               "requestType": "get",
+               "requestStatus": 404,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContentTemplates",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "KBContents"
+      },
+
+      {
+         "module": "KBContentTemplates"
+      }
+   ]
+}

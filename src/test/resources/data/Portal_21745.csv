@@ -1,0 +1,4 @@
+name,priority,status,type
+Case1,High,New,Administration
+Case2,Medium,Duplicate,Product
+Case3,Low,Assigned,User

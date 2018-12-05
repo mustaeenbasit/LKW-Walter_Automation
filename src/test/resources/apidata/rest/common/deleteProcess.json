@@ -1,0 +1,66 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "deleteProcess",
+      "testDescription": "Deletes the Default Process created during a session"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Delete the Process",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "module": "pmse_Project/",
+                  "value": 
+                  {
+                       "modified_by_name": "Administrator"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Project",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

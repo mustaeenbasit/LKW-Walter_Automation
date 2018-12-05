@@ -1,0 +1,2 @@
+sugarTaxTitle,sugarTaxRate,unitPrice,inactiveTaxRate,tax,unitPriceTwo,subTotalAmount
+newTaxRate,5,100,Inactive,"0.00",200,300

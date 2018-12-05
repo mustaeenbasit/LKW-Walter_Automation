@@ -1,0 +1,551 @@
+{
+	"testDocumentation":{
+		"testName":"meetingsCreateCollection",
+		"testDescription":"Verifies the Collectio api format can be used to Update by Adding and Deleting Contacts, Users and Leads"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Update Meetings using collection API",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Sam",
+						"description":"Sam descriptive text",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"email":[
+							{
+								"email_address":"Sam.D'Souza@ca.sugarcrm.com",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							},
+							{
+								"email_address":"Sam@example.info",
+								"primary_address":false,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":true
+							}
+							
+						],
+						"email1":"Sam.D'Souza@ca.sugarcrm.com",
+						"email2":"Sam@example.info",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"email_addresses_non_primary":"",
+						"salutation":"",
+						"first_name":"Sam",
+						"last_name":"Ruffnerc",
+						"full_name":"Sam Ruffnerc",
+						"title":"VP Sales",
+						"do_not_call":false,
+						"phone_home":"(029) 625-4659",
+						"phone_mobile":"(907) 041-9060",
+						"phone_work":"(730) 047-4587",
+						"primary_address_street":"67321 West Siam St.",
+						"primary_address_street_2":"",
+						"primary_address_street_3":"",
+						"primary_address_city":"San Jose",
+						"primary_address_state":"CA",
+						"primary_address_postalcode":"43054",
+						"primary_address_country":"USA",
+						"lead_source":"Employee",
+						"account_name":"Davenport Investing",
+						"portal_name":"SamRuffner1",
+						"portal_active":true,
+						"portal_password":true,
+						"portal_password1":null,
+						"sync_contact":false,
+						"mkto_sync":false,
+						"mkto_id":null,
+						"mkto_lead_score":null,
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"first_name":"Sam",
+							"last_name":"Ruffnerc",
+							"full_name":"Sam Ruffnerc",
+							"email1":"Sam.D'Souza@ca.sugarcrm.com"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Leads/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Mike Larkc",
+						"description":"A good lead for opportunity xyz",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"email":[
+							{
+								"email_address":"Mike.phone@example.tv",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"email1":"Mike.phone@example.tv",
+						"email2":"",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"salutation":"",
+						"first_name":"Mike",
+						"last_name":"Larkc",
+						"full_name":"Mike Larkc",
+						"title":"VP Operations",
+						"do_not_call":false,
+						"phone_home":"(324) 553-9061",
+						"phone_mobile":"(093) 486-3528",
+						"phone_work":"(350) 090-6361",
+						"phone_other":"",
+						"phone_fax":"",
+						"primary_address_street":"48920 San Carlos Ave",
+						"primary_address_street_2":"",
+						"primary_address_street_3":"",
+						"primary_address_city":"San Mateo",
+						"primary_address_state":"NY",
+						"primary_address_postalcode":"63677",
+						"primary_address_country":"USA",
+						"converted":false,
+						"refered_by":"",
+						"lead_source":"Conference",
+						"lead_source_description":"",
+						"status":"In Process",
+						"webtolead_email1":[
+							{
+								"email_address":"Mike.phone@example.tv",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"webtolead_email2":[
+							{
+								"email_address":"Mike.phone@example.tv",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Mike Larkc",
+							"description":"A good lead for opportunity xyz"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Leads/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Dave Larkd",
+						"description":"A good lead for opportunity xyz",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"email":[
+							{
+								"email_address":"Dave.phone@example.tv",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"email1":"Dave.phone@example.tv",
+						"email2":"",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"salutation":"",
+						"first_name":"Dave",
+						"last_name":"Larkd",
+						"full_name":"Dave Larkd",
+						"title":"VP Operations",
+						"do_not_call":false,
+						"phone_home":"(324) 553-9061",
+						"phone_mobile":"(093) 486-3528",
+						"phone_work":"(350) 090-6361",
+						"phone_other":"",
+						"phone_fax":"",
+						"primary_address_street":"48920 San Carlos Ave",
+						"primary_address_street_2":"",
+						"primary_address_street_3":"",
+						"primary_address_city":"San Mateo",
+						"primary_address_state":"NY",
+						"primary_address_postalcode":"63677",
+						"primary_address_country":"USA",
+						"converted":false,
+						"refered_by":"",
+						"lead_source":"Conference",
+						"lead_source_description":"",
+						"status":"In Process",
+						"webtolead_email1":[
+							{
+								"email_address":"Dave.phone@example.tv",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"webtolead_email2":[
+							{
+								"email_address":"Dave.phone@example.tv",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Dave Larkd",
+							"description":"A good lead for opportunity xyz"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/id?fields=name,leads,contacts",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Contacts",
+							"index":3,
+							"destination":"requestBody",
+							"fromString":"contactsID3"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Leads",
+							"index":3,
+							"destination":"requestBody",
+							"fromString":"leadsID3"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Leads",
+							"index":4,
+							"destination":"requestBody",
+							"fromString":"leadsID4"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Demo Meeting Changed",
+						"contacts":{
+							"add":[
+								"contactsID3"
+							]
+							
+						},
+						"leads":{
+							"add":[
+								"leadsID3",
+								"leadsID4"
+							]
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Demo Meeting Changed"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/meetingID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=0&offset[leads]=0&offset[users]=0&max_num=20&order_by=full_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"meetingID"
+						}
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":10,
+						"records":[
+							{
+								"full_name":"Administrator",
+								"_module":"Users"
+							},
+							{
+								"full_name":"Irvin Larka",
+								"_module":"Leads"
+							},
+							{
+								"full_name":"Ian Larkb",
+								"_module":"Leads"
+							},
+							{
+								"full_name":"Mike Larkc",
+								"_module":"Leads"
+							},
+							{
+								"full_name":"Dave Larkd",
+								"_module":"Leads"
+							},
+							{
+								"full_name":"Group Mgr1",
+								"_module":"Users"
+							},
+							{
+								"full_name":"Sales3 Rep3",
+								"_module":"Users"
+							},
+							{
+								"full_name":"Marlene Ruffnera",
+								"_module":"Contacts"
+							},
+							{
+								"full_name":"Michael Ruffnerb",
+								"_module":"Contacts"
+							},
+							{
+								"full_name":"Sam Ruffnerc",
+								"_module":"Contacts"
+							}
+							
+						]
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/id?fields=name,leads,contacts",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Contacts",
+							"index":1,
+							"destination":"requestBody",
+							"fromString":"contactsID1"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Leads",
+							"index":1,
+							"destination":"requestBody",
+							"fromString":"leadsID1"
+						},
+						{
+							"type":"replaceStringID",
+							"module":"Leads",
+							"index":2,
+							"destination":"requestBody",
+							"fromString":"leadsID2"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Demo Meeting Changed for delete",
+						"contacts":{
+							"delete":[
+								"contactsID1"
+							]
+							
+						},
+						"leads":{
+							"delete":[
+								"leadsID1",
+								"leadsID2"
+							]
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Demo Meeting Changed for delete"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/meetingID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=0&offset[leads]=0&offset[users]=0&max_num=20&order_by=full_name",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Meetings",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"meetingID"
+						}
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":7,
+						"records":[
+							{
+								"full_name":"Administrator",
+								"_module":"Users"
+							},
+							{
+								"full_name":"Mike Larkc",
+								"_module":"Leads"
+							},
+							{
+								"full_name":"Dave Larkd",
+								"_module":"Leads"
+							},
+							{
+								"full_name":"Group Mgr1",
+								"_module":"Users"
+							},
+							{
+								"full_name":"Sales3 Rep3",
+								"_module":"Users"
+							},
+							{
+								"full_name":"Michael Ruffnerb",
+								"_module":"Contacts"
+							},
+							{
+								"full_name":"Sam Ruffnerc",
+								"_module":"Contacts"
+							}
+							
+						]
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Meetings"
+		},
+		{
+			"module":"Contacts"
+		},
+		{
+			"module":"Leads"
+		}
+		
+	]
+}

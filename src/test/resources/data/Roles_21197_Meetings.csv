@@ -1,0 +1,2 @@
+roleName,roleDescription,moduleAccess,relatedToParentType,teams,remindersPopup,remindersEmail,repeatType,repeatOccur,assignedTo,massAssigned
+"FPNotSetAccEnable","Modules permission: Set Access to "Enable" and Field permission: All fields permissions are set to "Read Write"",Enabled,Account,Global,"1 hour prior","1 hour prior",Daily,1,qauser,"Assigned to"

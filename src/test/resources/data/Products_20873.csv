@@ -1,0 +1,6 @@
+defaultPricingFormula,pricingFactor,unitPrice,discountPrice,listPrice
+Fixed Price,,"1,\000.00","$1,\000.00","1,\000.00"
+Profit Margin,5.5,"1,\058.20","$1,\058.20","1,\000.00"
+Markup over Cost,6.5,"1,\065.00","$1,\065.00","1,\000.00"
+Discount from List,17.8,$822.00,$822.00,"1,\000.00"
+Same as List,,"1,\000.00","$1,\000.00","1,\000.00"

@@ -1,0 +1,2 @@
+type,emailType,name,description,subject,bodyText,teamName
+Email,"Campaign","DemoMailAccount","TestEmailCheck","SugarCRM Mail","SugarCRM is one amongst leading CRM",Administrator

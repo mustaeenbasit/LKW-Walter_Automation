@@ -1,0 +1,161 @@
+{
+	"testDocumentation":{
+		"testName":"crudDocuments",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Documents"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Documents",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Documents/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"mytestdoc",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"document_name":"mytestdoc",
+						"doc_id":"",
+						"doc_type":"Sugar",
+						"doc_url":"",
+						"filename":"",
+						"file_mime_type":"",
+						"active_date":"2015-06-04",
+						"status_id":"Active",
+						"status":"",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"document_name":"mytestdoc",
+							"doc_type":"Sugar"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Documents/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Documents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"document_name":"mytestdoc",
+							"doc_type":"Sugar"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Documents/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Documents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"document_name":"changemytestdoc"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"document_name":"changemytestdoc",
+							"doc_type":"Sugar"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Documents/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Documents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Documents/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Documents",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Documents"
+		}
+		
+	]
+}

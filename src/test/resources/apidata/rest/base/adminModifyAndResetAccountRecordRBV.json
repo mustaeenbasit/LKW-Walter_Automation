@@ -1,0 +1,73 @@
+{
+	"testDocumentation":{
+		"testName":"adminModifyAndResetAccountRecordRBV",
+		"testDescription":"Verify the Account Record RBV can be modified for a given Role and tehn reset if the Role User relationship is deleted"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Modify Account Record Layout for Role myNewRoleABC unrelate to Verify RBV no longer applies",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"ACLRoles/roleid/link/users/userid",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Roles",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"roleid"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"userid"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"metadata?module_filter=Accounts&platform=base",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"\"fields\":[\"website\",\"industry\",\"parent_name\",\"account_type\",\"assigned_user_name\",\"phone_office\","
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

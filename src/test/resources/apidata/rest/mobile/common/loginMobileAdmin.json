@@ -1,0 +1,15 @@
+{
+	"grant_type":"password",
+	"username":"admin",
+	"password":"asdf",
+	"client_id":"sugar",
+	"platform":"mobile",
+	"client_secret":"",
+	"client_info":{
+		"app":{
+			"name":"nomad",
+			"isNative":false,
+			"version":"2.9.5"
+		}
+	}
+}

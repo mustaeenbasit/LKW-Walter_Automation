@@ -1,0 +1,7 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+documentName,document_name,,mydocument,span,id,document_name,input,id,document_name,null,null,null,a,css,td:nth-child(4) a,null,null,null,null,null,null
+fileNameFile,doc_url,,DocumentsModuleFields.csv,a,css,#filename a,input,id,filename_file,null,null,null,a,css,td:nth-child(5) a,null,null,null,null,null,null
+status,status_id,,Active,td,xpath,//input[@id='status_id']/..,select,id,status_id,null,null,null,null,null,null,null,null,null,null,null,null
+description,description,,This is the document description,td,xpath,//span[@id='description']/..,textarea,id,description,null,null,null,null,null,null,null,null,null,null,null,null
+categoryID,category_id,,Marketing,td,xpath,//input[@id='category_id']/..,select,id,category_id,null,null,null,td,css,td:nth-child(7),null,null,null,null,null,null
+subCategoryID,sub_category_id,,FAQ,td,xpath,//input[@id='subcategory_id']/..,select,id,subcategory_id,null,null,null,td,css,td:nth-child(8),null,null,null,null,null,null

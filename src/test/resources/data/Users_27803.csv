@@ -1,0 +1,2 @@
+userName,firstName,lastName,fullName,emailAddress,newPassword,confirmPassword,password,timeZone,newUserWizard
+user1,user1,1,user1 1,raj@sugarcrm.com,Test11,Test11,Test11,"America/Los Angeles (GMT",true

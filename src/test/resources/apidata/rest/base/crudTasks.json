@@ -1,0 +1,168 @@
+{
+	"testDocumentation":{
+		"testName":"crudTasks",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Tasks"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Tasks",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Send a follow-up letter",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":1,
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"status":"New",
+						"date_due_flag":false,
+						"date_due":"2016-10-03T05:00:00-07:00",
+						"time_due":"",
+						"date_start_flag":false,
+						"date_start":null,
+						"priority":"High",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Send a follow-up letter"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Tasks",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Send a follow-up letter",
+							"deleted":false,
+							"team_name":[
+								{
+									"id":1,
+									"name":"Global",
+									"name_2":"",
+									"primary":true
+								}							
+							],
+							"status":"New"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Tasks",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Changed Send a follow-up letter"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"status":"New",
+							"name":"Changed Send a follow-up letter"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Tasks",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Tasks/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Tasks",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Tasks"
+		}
+		
+	]
+}

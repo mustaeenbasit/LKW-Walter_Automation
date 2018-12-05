@@ -1,0 +1,2 @@
+filterName,value,operator1,operator2,workPhone
+Office Phone,7,starts with,is,"708-655-0763"

@@ -1,0 +1,4 @@
+name,status,error,errorText
+KB_1,Draft,error,"Error. The Publish Date must occur on a later date than today's date."
+KB_2,Approved,,
+KB_3,Published,,

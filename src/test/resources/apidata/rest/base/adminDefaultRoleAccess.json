@@ -1,0 +1,1341 @@
+{
+	"roleAccessformParameters":[
+		{
+			"name":"accountsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"accountsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"bugsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"callsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"campaignsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"casesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"contactsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"contractsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"documentsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingList",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailMarketingView",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailTemplatesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"emailsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"externalAccountsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"forecastsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseList",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"knowledgeBaseView",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"leadsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"meetingsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"notesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"notificationsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"opportunitiesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerList",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"PDFManagerView",
+			"value":"Not Set"
+		},
+        {
+            "name":"ProcessesAccess",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesAccessType",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesDelete",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesEdit",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesExport",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesImport",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesList",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesMassUpdate",
+            "value":"Not Set"
+        },
+        {
+            "name":"ProcessesView",
+            "value":"Not Set"
+        },
+		{
+			"name":"productCategoriesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"productCategoriesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksList",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectTasksView",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"projectsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotedLineItemsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"quotesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"reportsView",
+			"value":"Not Set"
+		},
+		{
+            "name":"revenueLineItemsAccess",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsAccessType",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsDelete",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsEdit",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsExport",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsImport",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsList",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsMassUpdate",
+            "value":"Not Set"
+        },
+        {
+            "name":"revenueLineItemsView",
+            "value":"Not Set"
+        },
+		{
+			"name":"tagsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"tagsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetListsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"targetsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksList",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"tasksView",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceList",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerPerformanceView",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesList",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerQueriesView",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsList",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackerSessionsView",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersList",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"trackersView",
+			"value":"Not Set"
+		},
+		{
+			"name":"usersTeamsRolesAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksAccess",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksAccessType",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksDelete",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksEdit",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksExport",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksImport",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksList",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksMassUpdate",
+			"value":"Not Set"
+		},
+		{
+			"name":"webLogicHooksView",
+			"value":"Not Set"
+		}
+		
+	]
+}

@@ -1,0 +1,2 @@
+name,body,filterFor,operator,bodyValueToBeSearch
+article1,"bbbb aaaa",Body,"containing these words","bbbb -aaaa"

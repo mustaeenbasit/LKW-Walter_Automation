@@ -1,0 +1,3 @@
+name,likelyCase,forecast,description,assertTotal
+RLI1,100,Include,$300.00,$400.00
+RLI2,200,Include,Exclude

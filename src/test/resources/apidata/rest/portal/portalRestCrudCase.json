@@ -1,0 +1,146 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "portalRestCrudCase",
+      "testDescription": "Verifies the basic Create, Read for Cases via a Portal User"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD Cases in Portal",
+         "requests": 
+         [
+            {
+               "requestUser": "MarleneRuffner1",
+               "requestURL": "Cases/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": "0",
+                  "portal_viewable": 1,
+                  "status": "New",
+                  "priority": "P2",
+                  "type": "User",
+                  "name": "Need to purchase additional licenses",
+                  "description": "This has been added to the Portal"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Need to purchase additional licenses"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "MarleneRuffner1",
+               "requestURL": "Cases/id",
+               "requestType": "put",
+               "requestStatus": 403,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Cases",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Changed Need to purchase additional licenses"
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "MarleneRuffner1",
+               "requestURL": "Cases/id",
+               "requestType": "delete",
+               "requestStatus": 403,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Cases",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "MarleneRuffner1",
+               "requestURL": "Cases/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Cases",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Need to purchase additional licenses",
+                     "type": "User",
+                     "status": "New",
+                     "priority": "P2"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      },
+
+      {
+         "module": "Bugs"
+      },
+
+      {
+         "module": "Contacts"
+      },
+
+      {
+         "module": "Cases"
+      }
+   ]
+}

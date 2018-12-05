@@ -1,0 +1,96 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminRoleDeleteTeamSelected",
+      "testDescription": "Verify a User with Role of Delete and Edit set to Owner then record has selected to True"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Verify a User with Role of Delete and Edit set to Owner",
+         "requests": 
+         [
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+               "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true,
+                        "selected": true
+                     }
+                  ],
+                  "name": "Changed the Team access to selected"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Changed the Team access to selected"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "now a non owner with  the role can update the record"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "now a non owner with  the role can update the record"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      }
+   ]
+}

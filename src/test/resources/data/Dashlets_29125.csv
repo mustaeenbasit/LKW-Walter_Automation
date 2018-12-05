@@ -1,0 +1,4 @@
+listview,displayRows,dashletTitle,filterField,filterOperator,filterValue,filterName
+List View,20,newListview,Status,is any of,New,newFilter
+,5,convertedListview,,,Converted,convertedFilter
+,20,inProcessListview,,,In Process,inProcessFilter

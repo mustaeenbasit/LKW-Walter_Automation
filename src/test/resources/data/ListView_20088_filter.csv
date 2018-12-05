@@ -1,0 +1,2 @@
+dataType,fieldName,fieldLabel,fieldOperator,filterValue
+Integer,custom_integer,custom integer,is equal to,111

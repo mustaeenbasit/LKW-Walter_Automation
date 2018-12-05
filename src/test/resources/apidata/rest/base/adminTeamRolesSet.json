@@ -1,0 +1,49 @@
+{
+  "testDocumentation": {
+    "testName": "adminTeamRolesCRUD",
+    "testDescription": "Verify Team ACL is set"
+  },
+  "testCases": [
+    {
+      "testCaseName": "Set Team based ACL",
+      "requests": [
+        {
+          "requestDescription": "Set Team Based Roles",
+          "requestUser": "admin",
+          "requestURL": "index.php",
+          "requestType": "postForm",
+          "requestStatus": 200,
+          "substitute": [],
+          "requestBody": {
+            "formParameters": [
+              {
+                "name": "module",
+                "value": "Teams"
+              },
+              {
+                "name": "action",
+                "value": "savetbaconfiguration"
+              },
+              {
+                "name": "enabled",
+                "value": "true"
+              },
+              {
+                "name": "disabled_modules",
+                "value": ""
+              },
+              {
+                "name": "to_pdf",
+                "value": "1"
+              }
+            ]
+          },
+          "validation": {
+            "type": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "modules_used": []
+}

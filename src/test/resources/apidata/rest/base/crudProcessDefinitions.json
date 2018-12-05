@@ -1,0 +1,153 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "crudBugs",
+		"testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for Process Definitions"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "CRUD Process Definitions",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"doc_owner": "",
+						"user_favorites": "",
+						"deleted": false,
+						"prj_status": "INACTIVE",
+						"assigned_user_id": "1",
+						"prj_module": "Accounts",
+						"name": "mypd"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"name": "mypd Changed"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd Changed"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "delete",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "get",
+					"requestStatus": 404,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		
+	]
+}

@@ -1,0 +1,2 @@
+name,quantity,unit_price,discount_amount,assert_quantity,assert_string,assert_string_top
+RLI1,0.001,100,100,0.00,Error. The value of this field must be greater than 0.,Error.  Please resolve any error before proceeding.

@@ -1,0 +1,7 @@
+name,forecastValueInclude,warningMessage
+"RLI1","Include","This record was included in a Forecast. It will be removed and you will need to re-commit your Forecast."
+"RLI2",,
+"RLI3",,
+"RLI4",,
+"RLI5",,
+"RLI6",, 

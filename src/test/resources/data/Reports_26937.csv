@@ -1,0 +1,2 @@
+module_field_name,firstName,lastName,custome_field_value,custom_field_group_value,custom_field_decimal_value,report_name
+test_int,test,lead,1492,"1,492","1.492",Custom Lead Report

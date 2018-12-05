@@ -1,0 +1,3 @@
+name,salesStage,forecast
+RLI2,Prospecting,Exclude
+RLI1,Closed Won,Include

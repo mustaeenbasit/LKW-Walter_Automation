@@ -1,0 +1,164 @@
+{
+	"testDocumentation":{
+		"testName":"crudCases",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Cases"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Cases",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Cases/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Need to purchase additional licenses",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"type":"User",
+						"status":"New",
+						"priority":"P2",
+						"system_id":1,
+						"work_log":"",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Need to purchase additional licenses"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Cases/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Cases",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Need to purchase additional licenses",
+							"type":"User",
+							"status":"New",
+							"priority":"P2"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Cases/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Cases",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Changed Need to purchase additional licenses"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Changed Need to purchase additional licenses"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Cases/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Cases",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Cases/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Cases",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Cases"
+		}
+		
+	]
+}

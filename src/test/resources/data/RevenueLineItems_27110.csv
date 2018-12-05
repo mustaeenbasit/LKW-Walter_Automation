@@ -1,0 +1,2 @@
+product_name,quantity,discount_price,discount_amount,tax_class_select_name,discountPrice,likelyCase
+product1,1000,"0.13",10,"Non-Taxable",$13.00,$117.00

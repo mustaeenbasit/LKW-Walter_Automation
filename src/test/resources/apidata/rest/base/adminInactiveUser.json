@@ -1,0 +1,763 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "adminInactiveUser",
+		"testDescription": "Verify the user cannot log when inactive"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Set User to Inactive",
+			"requests": 
+			[
+				{
+					"requestDescription": "Login",
+					"requestUser": "nonadminuser11",
+					"requestURL": "oauth2/token",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"grant_type": "password",
+						"username": "nonadminuser11",
+						"password": "nonadminuser11",
+						"client_id": "sugar",
+						"platform": "base",
+						"client_secret": ""
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"expires_in": 3600,
+							"token_type": "bearer"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "index.php",
+					"requestType": "postFormMultiPart",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "replaceStringID",
+							"module": "Users",
+							"index": 99999,
+							"destination": "requestBody",
+							"fromString": "myUser"
+						}
+					],
+
+					"requestBody": 
+					{
+						"formParameters": 
+						[
+							{
+								"name": "hide_tabs_def",
+								"value": ""
+							},
+
+							{
+								"name": "remove_tabs_def",
+								"value": ""
+							},
+
+							{
+								"name": "module",
+								"value": "Users"
+							},
+
+							{
+								"name": "record",
+								"value": "myUser"
+							},
+
+							{
+								"name": "action",
+								"value": "Save"
+							},
+
+							{
+								"name": "page",
+								"value": "EditView"
+							},
+
+							{
+								"name": "return_module",
+								"value": "Users"
+							},
+
+							{
+								"name": "return_id",
+								"value": "myUser"
+							},
+
+							{
+								"name": "return_action",
+								"value": "DetailView"
+							},
+
+							{
+								"name": "password_change",
+								"value": "false"
+							},
+
+							{
+								"name": "required_password",
+								"value": "0"
+							},
+
+							{
+								"name": "old_user_name",
+								"value": ""
+							},
+
+							{
+								"name": "type",
+								"value": ""
+							},
+
+							{
+								"name": "is_group",
+								"value": "0"
+							},
+
+							{
+								"name": "portal_only",
+								"value": "0"
+							},
+
+							{
+								"name": "is_admin",
+								"value": "0"
+							},
+
+							{
+								"name": "is_current_admin",
+								"value": "1"
+							},
+
+							{
+								"name": "edit_self",
+								"value": ""
+							},
+
+							{
+								"name": "required_email_address",
+								"value": "1"
+							},
+
+							{
+								"name": "isDuplicate",
+								"value": ""
+							},
+
+							{
+								"name": "user_name",
+								"value": "nonadminuser11"
+							},
+
+							{
+								"name": "first_name",
+								"value": "nonadminfirst11"
+							},
+
+							{
+								"name": "status",
+								"value": "Inactive"
+							},
+
+							{
+								"name": "last_name",
+								"value": "nonadminlast11"
+							},
+
+							{
+								"name": "UserType",
+								"value": "RegularUser"
+							},
+
+							{
+								"name": "picture",
+								"value": ""
+							},
+
+							{
+								"name": "employee_status",
+								"value": "Active"
+							},
+
+							{
+								"name": "show_on_employees",
+								"value": "0"
+							},
+
+							{
+								"name": "show_on_employees",
+								"value": "1"
+							},
+
+							{
+								"name": "title",
+								"value": ""
+							},
+
+							{
+								"name": "phone_work",
+								"value": ""
+							},
+
+							{
+								"name": "department",
+								"value": ""
+							},
+
+							{
+								"name": "phone_mobile",
+								"value": ""
+							},
+
+							{
+								"name": "reports_to_name",
+								"value": ""
+							},
+
+							{
+								"name": "reports_to_id",
+								"value": ""
+							},
+
+							{
+								"name": "phone_other",
+								"value": ""
+							},
+
+							{
+								"name": "phone_fax",
+								"value": ""
+							},
+
+							{
+								"name": "phone_home",
+								"value": "true"
+							},
+
+							{
+								"name": "messenger_type",
+								"value": ""
+							},
+
+							{
+								"name": "messenger_id",
+								"value": ""
+							},
+
+							{
+								"name": "address_street",
+								"value": ""
+							},
+
+							{
+								"name": "address_city",
+								"value": ""
+							},
+
+							{
+								"name": "address_state",
+								"value": ""
+							},
+
+							{
+								"name": "address_postalcode",
+								"value": ""
+							},
+
+							{
+								"name": "address_country",
+								"value": ""
+							},
+
+							{
+								"name": "description",
+								"value": ""
+							},
+
+							{
+								"name": "Users_email_widget_id",
+								"value": "0"
+							},
+
+							{
+								"name": "emailAddressWidget",
+								"value": "1"
+							},
+
+							{
+								"name": "Users0emailAddress0",
+								"value": "nonadminfirst11@sugarcrm.com"
+							},
+
+							{
+								"name": "messenger_id",
+								"value": ""
+							},
+
+							{
+								"name": "address_street",
+								"value": ""
+							},
+
+							{
+								"name": "address_city",
+								"value": ""
+							},
+
+							{
+								"name": "address_state",
+								"value": ""
+							},
+
+							{
+								"name": "address_postalcode",
+								"value": ""
+							},
+
+							{
+								"name": "address_country",
+								"value": ""
+							},
+
+							{
+								"name": "description",
+								"value": ""
+							},
+
+							{
+								"name": "Users_email_widget_id",
+								"value": "0"
+							},
+
+							{
+								"name": "emailAddressWidget",
+								"value": "1"
+							},
+
+							{
+								"name": "Users0emailAddress0",
+								"value": "nonadminfirst11@sugarcrm.com"
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestDescription": "Login",
+					"requestUser": "nonadminuser11",
+					"requestURL": "oauth2/token",
+					"requestType": "post",
+					"requestStatus": 401,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"grant_type": "password",
+						"username": "nonadminuser11",
+						"password": "nonadminuser11",
+						"client_id": "sugar",
+						"platform": "base",
+						"client_secret": ""
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"error": "need_login",
+							"error_message": "You must specify a valid username and password."
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "index.php",
+					"requestType": "postFormMultiPart",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "replaceStringID",
+							"module": "Users",
+							"index": 99999,
+							"destination": "requestBody",
+							"fromString": "myUser"
+						}
+					],
+
+					"requestBody": 
+					{
+						"formParameters": 
+						[
+							{
+								"name": "hide_tabs_def",
+								"value": ""
+							},
+
+							{
+								"name": "remove_tabs_def",
+								"value": ""
+							},
+
+							{
+								"name": "module",
+								"value": "Users"
+							},
+
+							{
+								"name": "record",
+								"value": "myUser"
+							},
+
+							{
+								"name": "action",
+								"value": "Save"
+							},
+
+							{
+								"name": "page",
+								"value": "EditView"
+							},
+
+							{
+								"name": "return_module",
+								"value": "Users"
+							},
+
+							{
+								"name": "return_id",
+								"value": "myUser"
+							},
+
+							{
+								"name": "return_action",
+								"value": "DetailView"
+							},
+
+							{
+								"name": "password_change",
+								"value": "false"
+							},
+
+							{
+								"name": "required_password",
+								"value": "0"
+							},
+
+							{
+								"name": "old_user_name",
+								"value": ""
+							},
+
+							{
+								"name": "type",
+								"value": ""
+							},
+
+							{
+								"name": "is_group",
+								"value": "0"
+							},
+
+							{
+								"name": "portal_only",
+								"value": "0"
+							},
+
+							{
+								"name": "is_admin",
+								"value": "0"
+							},
+
+							{
+								"name": "is_current_admin",
+								"value": "1"
+							},
+
+							{
+								"name": "edit_self",
+								"value": ""
+							},
+
+							{
+								"name": "required_email_address",
+								"value": "1"
+							},
+
+							{
+								"name": "isDuplicate",
+								"value": ""
+							},
+
+							{
+								"name": "user_name",
+								"value": "nonadminuser11"
+							},
+
+							{
+								"name": "first_name",
+								"value": "nonadminfirst11"
+							},
+
+							{
+								"name": "status",
+								"value": "Active"
+							},
+
+							{
+								"name": "last_name",
+								"value": "nonadminlast11"
+							},
+
+							{
+								"name": "UserType",
+								"value": "RegularUser"
+							},
+
+							{
+								"name": "picture",
+								"value": ""
+							},
+
+							{
+								"name": "employee_status",
+								"value": "Active"
+							},
+
+							{
+								"name": "show_on_employees",
+								"value": "0"
+							},
+
+							{
+								"name": "show_on_employees",
+								"value": "1"
+							},
+
+							{
+								"name": "title",
+								"value": ""
+							},
+
+							{
+								"name": "phone_work",
+								"value": ""
+							},
+
+							{
+								"name": "department",
+								"value": ""
+							},
+
+							{
+								"name": "phone_mobile",
+								"value": ""
+							},
+
+							{
+								"name": "reports_to_name",
+								"value": ""
+							},
+
+							{
+								"name": "reports_to_id",
+								"value": ""
+							},
+
+							{
+								"name": "phone_other",
+								"value": ""
+							},
+
+							{
+								"name": "phone_fax",
+								"value": ""
+							},
+
+							{
+								"name": "phone_home",
+								"value": "true"
+							},
+
+							{
+								"name": "messenger_type",
+								"value": ""
+							},
+
+							{
+								"name": "messenger_id",
+								"value": ""
+							},
+
+							{
+								"name": "address_street",
+								"value": ""
+							},
+
+							{
+								"name": "address_city",
+								"value": ""
+							},
+
+							{
+								"name": "address_state",
+								"value": ""
+							},
+
+							{
+								"name": "address_postalcode",
+								"value": ""
+							},
+
+							{
+								"name": "address_country",
+								"value": ""
+							},
+
+							{
+								"name": "description",
+								"value": ""
+							},
+
+							{
+								"name": "Users_email_widget_id",
+								"value": "0"
+							},
+
+							{
+								"name": "emailAddressWidget",
+								"value": "1"
+							},
+
+							{
+								"name": "Users0emailAddress0",
+								"value": "nonadminfirst11@sugarcrm.com"
+							},
+
+							{
+								"name": "messenger_id",
+								"value": ""
+							},
+
+							{
+								"name": "address_street",
+								"value": ""
+							},
+
+							{
+								"name": "address_city",
+								"value": ""
+							},
+
+							{
+								"name": "address_state",
+								"value": ""
+							},
+
+							{
+								"name": "address_postalcode",
+								"value": ""
+							},
+
+							{
+								"name": "address_country",
+								"value": ""
+							},
+
+							{
+								"name": "description",
+								"value": ""
+							},
+
+							{
+								"name": "Users_email_widget_id",
+								"value": "0"
+							},
+
+							{
+								"name": "emailAddressWidget",
+								"value": "1"
+							},
+
+							{
+								"name": "Users0emailAddress0",
+								"value": "nonadminfirst11@sugarcrm.com"
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestDescription": "Login",
+					"requestUser": "nonadminuser11",
+					"requestURL": "oauth2/token",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"grant_type": "password",
+						"username": "nonadminuser11",
+						"password": "nonadminuser11",
+						"client_id": "sugar",
+						"platform": "base",
+						"client_secret": ""
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"expires_in": 3600,
+							"token_type": "bearer"
+						}
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		
+	]
+}

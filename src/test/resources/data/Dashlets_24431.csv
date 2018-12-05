@@ -1,0 +1,2 @@
+myDashboard,fromAndToAddress,emailSubject,message,placeholder,dateFormate
+My Dashboard,qa.user.suga@gmail.com,Test email,"a few seconds ago","(Required) yyyy/mm/dd","2010/12/23"

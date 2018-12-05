@@ -1,0 +1,3 @@
+moduleFieldsDropdown,filterCriteria,filterNameField
+Subject,starts with,Filter_Tasks
+Opportunity Name,starts with,Filter_Opps

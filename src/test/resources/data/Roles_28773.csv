@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,bugPriorityDom,firstValue,secondValue,urgent,updatedRoleName,high,medium,low
+myRole,Disabled and Not Set,qauser,bug_priority_dom,firstBug,secondBug,Urgent,"* myRole",High,Medium,Low

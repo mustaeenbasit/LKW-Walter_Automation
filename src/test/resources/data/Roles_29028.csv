@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,action
+newRole,Set 'Edit and 'Delete' actions to NONE for Accounts module,qauser,None

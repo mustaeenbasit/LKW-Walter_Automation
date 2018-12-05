@@ -1,0 +1,203 @@
+{
+	"testDocumentation":{
+		"testName":"pat697ContactEmail",
+		"testDescription":"Verifies issue Pat-697 Using email1 field in API call no longer attaches email to created record"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Pat697",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Marlene",
+						"description":"Marlene descriptive text",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"email1":"qa.sales.support@example.info",
+						"email2":"qa2.sales.support@example.info",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"email_addresses_non_primary":"",
+						"salutation":"",
+						"first_name":"Marlene",
+						"last_name":"Ruffner",
+						"full_name":"Marlene Ruffner",
+						"title":"VP Sales",
+						"do_not_call":false,
+						"phone_home":"(029) 625-4659",
+						"phone_mobile":"(907) 041-9060",
+						"phone_work":"(730) 047-4587",
+						"primary_address_street":"67321 West Siam St.",
+						"primary_address_street_2":"",
+						"primary_address_street_3":"",
+						"primary_address_city":"San Jose",
+						"primary_address_state":"CA",
+						"primary_address_postalcode":"43054",
+						"primary_address_country":"USA",
+						"lead_source":"Employee",
+						"account_name":"Davenport Investing",
+						"portal_name":"MarleneRuffner1",
+						"portal_active":true,
+						"portal_password":true,
+						"portal_password1":null,
+						"sync_contact":false,
+						"mkto_sync":false,
+						"mkto_id":null,
+						"mkto_lead_score":null,
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"email1":"qa.sales.support@example.info",
+							"email2":"qa2.sales.support@example.info",
+							"first_name":"Marlene",
+							"last_name":"Ruffner",
+							"full_name":"Marlene Ruffner"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contacts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Marlene Ruffner",
+							"description":"Marlene descriptive text",
+							"my_favorite":false,
+							"email1":"qa.sales.support@example.info"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contacts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"first_name":"Changed Marlene",
+						"last_name":"Changed Ruffner",
+						"email1":"qa1.sales.support@example.info",
+						"description":"Changed Marlene descriptive text",
+						"my_favorite":true
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"first_name":"Changed Marlene",
+							"email1":"qa1.sales.support@example.info",
+							"last_name":"Changed Ruffner",
+							"description":"Changed Marlene descriptive text",
+							"my_favorite":true
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contacts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Contacts",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Contacts"
+		}
+		
+	]
+}

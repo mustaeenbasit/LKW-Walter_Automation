@@ -1,0 +1,2 @@
+name,subject,mail_to,body,sent_folder,inbox,trash,gmail_server_url
+Sugarcrm,test email,qa.sugar.qa.79@gmail.com,This is a test mail,"[Gmail]/Messages envoy��s",INBOX,"[Gmail]/Trash","http://gmail.com"

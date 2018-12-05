@@ -1,0 +1,531 @@
+{
+	"testDocumentation":{
+		"testName":"forecastsEditOppAdjustMgr",
+		"testDescription":"Verify for middle MGR that adjusted are not updated with Opp updates, if prior adjustments have been made"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Adjusted values are not automatically when Opp is updated",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"TimePeriods?filter[0][end_date][$gte]:=thisdate&filter[1][start_date][$lte]:=thisdate&filter[0][type][$contains]=Quarter",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Dates",
+							"index":1,
+							"destination":"requestURL",
+							"field":"thisdate"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"TimePeriods/",
+						"value":{
+							"type":"Quarter"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"TimePeriods?filter[0][end_date][$gte]:=thisdate&filter[1][start_date][$lte]:=thisdate&filter[0][type][$contains]=Quarter",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Dates",
+							"index":2,
+							"destination":"requestURL",
+							"field":"thisdate"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"TimePeriods/",
+						"value":{
+							"type":"Quarter"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Accounts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"myAccount",
+						"assigned_user_id":"2d808b9f-5acd-1538-f1b4-540f80afea6e"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"myAccount"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Opportunities/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"account_id"
+						},
+						{
+							"type":"id",
+							"module":"Dates",
+							"index":1,
+							"destination":"requestBody",
+							"field":"date_closed"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						}
+						
+					],
+					"requestBody":{
+						"doc_owner":"",
+						"user_favorites":"",
+						"deleted":false,
+						"currency_id":"-99",
+						"sales_stage":"Closed Won",
+						"mkto_sync":false,
+						"assigned_user_id":"749e1992-9512-06d1-9c97-544fffca8647",
+						"amount_usdollar":"12000.000001",
+						"probability":"100",
+						"closed_revenue_line_items":"",
+						"base_rate":1,
+						"team_name":[
+							{
+								"id":"1",
+								"display_name":"Global",
+								"name":"Global",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"name":"my big Opportunity",
+						"amount":"12000.000001",
+						"best_case":"15000.000001",
+						"worst_case":"10000.000001",
+						"date_closed":"2014-10-28",
+						"account_id":"528dc5f8-b489-8f88-e8bf-544fff98828c"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"my big Opportunity"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"sales_rep",
+						"currency_id":"-99",
+						"forecast_type":"Direct",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"sales_rep"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"manager",
+						"currency_id":"-99",
+						"forecast_type":"Rollup",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"manager"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=userID&timeperiod_id=timeperiodID&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"userID"
+						},
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestURL",
+							"field":"timeperiodID"
+						}
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":1,
+						"records":[
+							{
+								"best_case":"12000.000001",
+								"best_case_adjusted":"12000.000001",
+								"likely_case":"12000.000001",
+								"likely_case_adjusted":"12000.000001",
+								"worst_case":"12000.000001",
+								"worst_case_adjusted":"12000.000001"
+							}
+							
+						]
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=userID&timeperiod_id=timeperiodID&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"userID"
+						},
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestURL",
+							"field":"timeperiodID"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"ForecastManagerWorksheets/",
+						"value":{
+							     "name": "SalesMgr Mgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ForecastManagerWorksheets",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"following":false,
+						"name": "SalesMgr Mgr1",
+						"quota":"0.000001",
+						"best_case":"12000.000001",
+						"best_case_adjusted":"12000.000001",
+						"likely_case":"12000.000001",
+						"likely_case_adjusted":"12050.000001",
+						"worst_case":"12000.000001",
+						"worst_case_adjusted":"12000.000001",
+						"currency_id":"-99",
+						"base_rate":1,
+						"draft":true,
+						"is_manager":false,
+						"pipeline_opp_count":0,
+						"pipeline_amount":"0.000001",
+						"closed_amount":"12000.000001",
+						"manager_saved":true,
+						"show_history_log":1,
+						"draft_save_type":"commit"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"likely_case_adjusted":"12050.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"sales_rep",
+						"currency_id":"-99",
+						"forecast_type":"Direct",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"sales_rep"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"manager",
+						"currency_id":"-99",
+						"forecast_type":"Rollup",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"manager"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Opportunities/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"amount":"12100.000001",
+						"best_case":"12100.000001",
+						"worst_case":"12100.000001",
+						"amount_usdollar":"12100.000001"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"amount":"12100.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"sales_rep",
+						"currency_id":"-99",
+						"forecast_type":"Direct",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"likely_case":"12100.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=userID&timeperiod_id=timeperiodID&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"userID"
+						},
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":1,
+							"destination":"requestURL",
+							"field":"timeperiodID"
+						}
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":1,
+						"records":[
+							{
+								"best_case":"12100.000001",
+								"best_case_adjusted":"12000.000001",
+								"likely_case":"12100.000001",
+								"likely_case_adjusted":"12050.000001",
+								"worst_case":"12100.000001",
+								"worst_case_adjusted":"12000.000001"
+								
+							}
+							
+						]
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Opportunities"
+		},
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"TimePeriods"
+		}	
+	]
+}

@@ -1,0 +1,198 @@
+{
+	"testDocumentation":{
+		"testName":"relateCallContact",
+		"testDescription":"Verifies the creation of a Call related to an existing Contact"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Relate Call Contact",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Marlene",
+						"description":"Marlene descriptive text",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":true
+							}
+						],
+						"email":[
+							{
+								"email_address":"qa.sales.support@example.info",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							},
+							{
+								"email_address":"the.vegan.kid@example.info",
+								"primary_address":false,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":true
+							}
+						],
+						"email1":"qa.sales.support@example.info",
+						"email2":"",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"email_addresses_non_primary":"",
+						"salutation":"",
+						"first_name":"Marlene",
+						"last_name":"Ruffner",
+						"full_name":"Marlene Ruffner",
+						"title":"VP Sales",
+						"do_not_call":false,
+						"phone_home":"(029) 625-4659",
+						"phone_mobile":"(907) 041-9060",
+						"phone_work":"(730) 047-4587",
+						"primary_address_street":"67321 West Siam St.",
+						"primary_address_street_2":"",
+						"primary_address_street_3":"",
+						"primary_address_city":"San Jose",
+						"primary_address_state":"CA",
+						"primary_address_postalcode":"43054",
+						"primary_address_country":"USA",
+						"lead_source":"Employee",
+						"account_name":"Davenport Investing",
+						"portal_name":"MarleneRuffner1",
+						"portal_active":true,
+						"portal_password":true,
+						"portal_password1":null,
+						"sync_contact":false,
+						"mkto_sync":false,
+						"mkto_id":null,
+						"mkto_lead_score":null,
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"first_name":"Marlene",
+							"last_name":"Ruffner",
+							"full_name":"Marlene Ruffner"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Calls/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						},
+						{
+							"type":"id",
+							"module":"Contacts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"parent_id"
+						}
+					],
+					"requestBody":{
+						"name":"Left a message",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":true
+							}
+						],
+						"duration_hours":0,
+						"duration_minutes":30,
+						"date_start":"2015-05-25T09:30:00-07:00",
+						"status":"Planned",
+						"direction":"Outbound",
+						"reminder_checked":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"-1",
+						"email_reminder_sent":false,
+						"parent_name":"Marlene",
+						"parent_id":"695ed889-779b-e2b0-80ae-50cb18b5716b",
+						"parent_type":"Contacts",
+						"_acl":{
+							"fields":{
+								
+							}
+						}
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Left a message"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Calls/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Calls",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Left a message",
+							"duration_hours":0,
+							"duration_minutes":30,
+							"status":"Planned",
+							"direction":"Outbound",
+							"contact_name":"Marlene Ruffner"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		{
+			"module":"Contacts"
+		},
+		{
+			"module":"Calls"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+fields,permissions,fieldValues,roleName,roleDescription,access,userName,name
+"annual_revenuelink","flc_guidannual_revenue",12345,myRole,Set all field permissions to Read/Owner Write,Read/Owner Write,qauser,newParentAccount
+"ownershiplink","flc_guidownership",testOwnership
+"ratinglink","flc_guidrating",4
+"ticker_symbollink","flc_guidticker_symbol",TS
+"assigned_user_namelink","flc_guidassigned_user_name",Administrator
+"descriptionlink","flc_guiddescription",testAccount
+"parent_namelink","flc_guidparent_name"
+"twitterlink","flc_guidtwitter",testtwitter
+"billing_addresslink","flc_guidbilling_address",testAddress
+"phone_faxlink","flc_guidphone_fax",987654321
+"sic_codelink","flc_guidsic_code",SIC123
+"websitelink","flc_guidwebsite","http://test.com"
+"account_typelink","flc_guidaccount_type",Integrator
+"campaign_namelink","flc_guidcampaign_name"
+"emaillink","flc_guidemail","test@test.com"
+"employeeslink","flc_guidemployees",testEmp
+"industrylink","flc_guidindustry",Energy
+"namelink","flc_guidname",testName
+"phone_officelink","flc_guidphone_office",12345678
+"team_namelink","flc_guidteam_name"

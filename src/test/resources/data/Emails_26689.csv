@@ -1,0 +1,2 @@
+firstName,lastName,email_address,subject_msg,body_msg,status,from_address,archive_status
+Ashish,Jabble,aj@sugarcrm.com,Test mail,From TC#26689,Sent,qa.sugar.qa.79@gmail.com,Archived

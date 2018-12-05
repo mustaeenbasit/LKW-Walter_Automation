@@ -1,0 +1,92 @@
+{
+	"testDocumentation":{
+		"testName":"adminModifyAccountRecordRBVwithDefaultMod",
+		"testDescription":"Verify the Account Record Layout for RBV is unchanged after the Default has been changed"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Verify Account Record RBV is unchanged after the Default layout has been changed",
+			"requests":[
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"metadata?module_filter=Accounts&platform=mobile",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"modules":{
+								"Accounts":{
+									"views":{
+										"edit":{
+											"meta":{
+												"panels":[
+													{
+														"label":"LBL_PANEL_DEFAULT",
+														"newTab":false,
+														"panelDefault":"expanded",
+														"name":"LBL_PANEL_DEFAULT",
+														"columns":"1",
+														"labelsOnTop":1,
+														"placeholders":1,
+														"fields":[
+															{
+																"name":"name",
+																"displayParams":{
+																	"required":true,
+																	"wireless_edit_only":true
+																}
+															},
+															{
+																"name":"annual_revenue",
+																"comment":"Annual revenue for this company",
+																"label":"LBL_ANNUAL_REVENUE"
+															},
+															"phone_office",
+															{
+																"name":"website",
+																"displayParams":{
+																	"type":"link"
+																}
+															},
+															"email",
+															"billing_address_street",
+															"billing_address_city",
+															"billing_address_state",
+															"billing_address_postalcode",
+															"billing_address_country",
+															"assigned_user_name",
+															"team_name"
+														]
+													}
+													
+												]
+												
+											}
+											
+										}
+										
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

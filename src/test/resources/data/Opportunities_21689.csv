@@ -1,0 +1,2 @@
+salesStage,warningMessage
+Closed Won,"One or more of the selected records has a Revenue Line Item with status of Closed Won or Closed Lost and cannot be deleted."

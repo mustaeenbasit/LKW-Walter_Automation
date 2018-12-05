@@ -1,0 +1,2 @@
+status,recordViewError,publishDateToolTipError,expDateToolTipError,errorColor,
+Published,Error Please resolve any errors before proceeding.,Error. The date of this field must be before date of Expiration Date field.,Error. The Expiration Date must occur on a date after the Publish Date.,"rgba(230, 23, 24, 1)"

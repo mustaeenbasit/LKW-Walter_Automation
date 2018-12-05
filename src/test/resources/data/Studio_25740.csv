@@ -1,0 +1,2 @@
+relationship_name,primary_module,relationship_type,related_module,account_name,account_name_Lbl,account_related_field_lbl
+accounts_cases_1*,Accounts,One to Many,Cases,Aj,Account Name,Accounts

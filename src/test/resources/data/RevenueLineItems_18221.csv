@@ -1,0 +1,11 @@
+salesStage,probability
+Prospecting,10
+Qualification,20
+Needs Analysis,25
+Value Proposition,30
+Id. Decision Makers,40
+Perception Analysis,50
+Proposal,65
+Negotiation,80
+Closed Won,100
+Closed Lost,0

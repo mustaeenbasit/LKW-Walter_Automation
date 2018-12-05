@@ -1,0 +1,211 @@
+{
+	"testDocumentation":{
+		"testName":"portalCrudCase",
+		"testDescription":"Verifies the soap crud calls work for Portal Case"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Portal CRUD Case",
+			"requests":[
+				{
+					"requestDescription":"Create an Account",
+					"requestUser":"admin",
+					"requestURL":"Accounts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Cloud Cover Trust",
+						"description":"Cloud Cover description in text",
+						"deleted":false,
+						"website":"www.supportphone.tw",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"email":[
+							{
+								"email_address":"section.kid.section@example.cn",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							},
+							{
+								"email_address":"sugar.hr@example.info",
+								"primary_address":false,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						],
+						"email1":"section.kid.section@example.cn",
+						"email2":"",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"email_addresses_non_primary":"",
+						"account_type":"Customer",
+						"industry":"Electronics",
+						"billing_address_street":"48920 San Carlos Ave",
+						"billing_address_street_2":"",
+						"billing_address_street_3":"",
+						"billing_address_street_4":"",
+						"billing_address_city":"Persistance",
+						"billing_address_state":"NY",
+						"billing_address_postalcode":"46691",
+						"billing_address_country":"USA",
+						"rating":"",
+						"phone_office":"(777) 954-2070",
+						"phone_alternate":"",
+						"ownership":"",
+						"employees":"",
+						"ticker_symbol":"",
+						"shipping_address_street":"48920 San Carlos Ave",
+						"shipping_address_street_2":"",
+						"shipping_address_street_3":"",
+						"shipping_address_street_4":"",
+						"shipping_address_city":"Persistance",
+						"shipping_address_state":"NY",
+						"shipping_address_postalcode":"46691",
+						"shipping_address_country":"USA",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Cloud Cover Trust"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Contacts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"account_id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Marlene",
+						"description":"Marlene descriptive text",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"email":[
+							{
+								"email_address":"qa.sales.support@example.info",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							},
+							{
+								"email_address":"the.vegan.kid@example.info",
+								"primary_address":false,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":true
+							}
+							
+						],
+						"email1":"qa.sales.support@example.info",
+						"email2":"",
+						"invalid_email":false,
+						"email_opt_out":false,
+						"email_addresses_non_primary":"",
+						"account_id":"74515821-a4dd-3e80-be6d-5419be9d0793",
+						"salutation":"",
+						"first_name":"Marlene",
+						"last_name":"Ruffner",
+						"full_name":"Marlene Ruffner",
+						"title":"VP Sales",
+						"do_not_call":false,
+						"phone_home":"(029) 625-4659",
+						"phone_mobile":"(907) 041-9060",
+						"phone_work":"(730) 047-4587",
+						"primary_address_street":"67321 West Siam St.",
+						"primary_address_street_2":"",
+						"primary_address_street_3":"",
+						"primary_address_city":"San Jose",
+						"primary_address_state":"CA",
+						"primary_address_postalcode":"43054",
+						"primary_address_country":"USA",
+						"lead_source":"Employee",
+						"account_name":"Davenport Investing",
+						"portal_name":"MarleneRuffner1",
+						"portal_active":true,
+						"portal_password":"MarleneRuffner1",
+						"portal_password1":null,
+						"sync_contact":false,
+						"mkto_sync":false,
+						"mkto_id":null,
+						"mkto_lead_score":null,
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"first_name":"Marlene",
+							"last_name":"Ruffner",
+							"full_name":"Marlene Ruffner"
+						}
+						
+					}			
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"Bugs"
+		},
+		{
+			"module":"Contacts"
+		},
+		{
+			"module":"Cases"
+		}
+	]
+}

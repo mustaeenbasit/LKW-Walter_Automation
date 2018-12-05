@@ -1,0 +1,2 @@
+validateTeamMsg,validateRoleMsg,validateDropDownEditorMsg,team
+"Missing required field: Team Name","Missing required field: Name","Invalid Value: Name - Must start with a letter and may only consist of letters, numbers, and underscores. No spaces or other special characters may be used.",West

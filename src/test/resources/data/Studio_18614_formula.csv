@@ -1,0 +1,4 @@
+formula_field_description
+"concat\(related\(\$cases\,\"name\"\)\,related\(\$contacts\,\"description\"\)\)"
+"concat\(related\(\$accounts\,\"name\"\)\,related\(\$cases\,\"name\"\)\)"
+"related\(\$accounts\,\"name\"\)"

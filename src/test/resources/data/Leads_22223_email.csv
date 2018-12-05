@@ -1,0 +1,2 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password,timeZone,mail_smtpserver,mail_smtpport,protocol,name,status,date_start,template_id,inbound_email_id,email_optout,allowAllUsers
+test,test,test,qa.sugar.qa.79@gmail.com,sugarcrm,sugarcrm,sugarcrm,"America/Los Angeles (GMT-7:00)","smtp.gmail.com",465,IMAP,DemoMailAccount,Active,06/20/2014,System-generated password email,SugarCRM,Opted Out,true

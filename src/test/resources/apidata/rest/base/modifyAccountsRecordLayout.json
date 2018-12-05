@@ -1,0 +1,1011 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "modifyAccountsRecordlayout",
+		"testDescription": "Verify the Accounts record layout can be modified in Studio"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Modify Account record layout",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "index.php?to_pdf=1&sugar_body_only=1",
+					"requestType": "postForm",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"formParameters": 
+						[
+							{
+								"name": "module",
+								"value": "ModuleBuilder"
+							},
+
+							{
+								"name": "view_module",
+								"value": "Accounts"
+							},
+
+							{
+								"name": "view",
+								"value": "recordview"
+							},
+
+							{
+								"name": "panels_as_tabs",
+								"value": ""
+							},
+
+							{
+								"name": "tabDefs_LBL_RECORD_BODY_newTab",
+								"value": "0"
+							},
+
+							{
+								"name": "tabDefs_LBL_RECORD_BODY_panelDefault",
+								"value": "expanded"
+							},
+
+							{
+								"name": "tabDefs_LBL_RECORD_SHOWMORE_newTab",
+								"value": "0"
+							},
+
+							{
+								"name": "tabDefs_LBL_RECORD_SHOWMORE_panelDefault",
+								"value": "expanded"
+							},
+
+							{
+								"name": "sync_detail_and_edit",
+								"value": ""
+							},
+
+							{
+								"name": "role",
+								"value": ""
+							},
+
+							{
+								"name": "to_pdf",
+								"value": "1"
+							},
+
+							{
+								"name": "panel-1-name",
+								"value": "Business Card"
+							},
+
+							{
+								"name": "panel-1-label",
+								"value": "LBL_RECORD_BODY"
+							},
+
+							{
+								"name": "slot-1-0-name",
+								"value": "website"
+							},
+
+							{
+								"name": "slot-1-0-label",
+								"value": "LBL_WEBSITE"
+							},
+
+							{
+								"name": "slot-1-1-name",
+								"value": "industry"
+							},
+
+							{
+								"name": "slot-1-1-label",
+								"value": "LBL_INDUSTRY"
+							},
+
+							{
+								"name": "slot-1-2-name",
+								"value": "googleplus"
+							},
+
+							{
+								"name": "slot-1-2-label",
+								"value": "LBL_GOOGLEPLUS"
+							},
+
+							{
+								"name": "slot-1-3-name",
+								"value": "(filler)"
+							},
+
+							{
+								"name": "slot-1-4-name",
+								"value": "parent_name"
+							},
+
+							{
+								"name": "slot-1-4-label",
+								"value": "LBL_MEMBER_OF"
+							},
+
+							{
+								"name": "slot-1-5-name",
+								"value": "account_type"
+							},
+
+							{
+								"name": "slot-1-5-label",
+								"value": "LBL_TYPE"
+							},
+
+							{
+								"name": "slot-1-6-name",
+								"value": "assigned_user_name"
+							},
+
+							{
+								"name": "slot-1-6-label",
+								"value": "LBL_ASSIGNED_TO"
+							},
+
+							{
+								"name": "slot-1-7-name",
+								"value": "phone_office"
+							},
+
+							{
+								"name": "slot-1-7-label",
+								"value": "LBL_PHONE_OFFICE"
+							},
+
+							{
+								"name": "slot-1-8-name",
+								"value": "tag"
+							},
+
+							{
+								"name": "slot-1-8-label",
+								"value": "LBL_TAGS"
+							},
+
+							{
+								"name": "slot-1-9-name",
+								"value": "(empty)"
+							},
+
+							{
+								"name": "panel-2-name",
+								"value": "Show More"
+							},
+
+							{
+								"name": "panel-2-label",
+								"value": "LBL_RECORD_SHOWMORE"
+							},
+
+							{
+								"name": "slot-2-0-name",
+								"value": "billing_address"
+							},
+
+							{
+								"name": "slot-2-0-label",
+								"value": "LBL_BILLING_ADDRESS"
+							},
+
+							{
+								"name": "slot-2-0-fieldset_fields",
+								"value": "Billing Street"
+							},
+
+							{
+								"name": "slot-2-1-name",
+								"value": "shipping_address"
+							},
+
+							{
+								"name": "slot-2-1-label",
+								"value": "LBL_SHIPPING_ADDRESS"
+							},
+
+							{
+								"name": "slot-2-1-fieldset_fields",
+								"value": "Shipping Street"
+							},
+
+							{
+								"name": "slot-2-2-name",
+								"value": "phone_alternate"
+							},
+
+							{
+								"name": "slot-2-2-label",
+								"value": "LBL_PHONE_ALT"
+							},
+
+							{
+								"name": "slot-2-3-name",
+								"value": "email"
+							},
+
+							{
+								"name": "slot-2-3-label",
+								"value": "LBL_ANY_EMAIL"
+							},
+
+							{
+								"name": "slot-2-4-name",
+								"value": "phone_fax"
+							},
+
+							{
+								"name": "slot-2-4-label",
+								"value": "LBL_FAX"
+							},
+
+							{
+								"name": "slot-2-5-name",
+								"value": "campaign_name"
+							},
+
+							{
+								"name": "slot-2-5-label",
+								"value": "LBL_CAMPAIGN"
+							},
+
+							{
+								"name": "slot-2-6-name",
+								"value": "twitter"
+							},
+
+							{
+								"name": "slot-2-6-label",
+								"value": "LBL_TWITTER"
+							},
+
+							{
+								"name": "slot-2-7-name",
+								"value": "(filler)"
+							},
+
+							{
+								"name": "slot-2-8-name",
+								"value": "description"
+							},
+
+							{
+								"name": "slot-2-8-label",
+								"value": "LBL_DESCRIPTION"
+							},
+
+							{
+								"name": "slot-2-9-name",
+								"value": "(empty)"
+							},
+
+							{
+								"name": "slot-2-10-name",
+								"value": "sic_code"
+							},
+
+							{
+								"name": "slot-2-10-label",
+								"value": "LBL_SIC_CODE"
+							},
+
+							{
+								"name": "slot-2-11-name",
+								"value": "ticker_symbol"
+							},
+
+							{
+								"name": "slot-2-11-label",
+								"value": "LBL_TICKER_SYMBOL"
+							},
+
+							{
+								"name": "slot-2-12-name",
+								"value": "annual_revenue"
+							},
+
+							{
+								"name": "slot-2-12-label",
+								"value": "LBL_ANNUAL_REVENUE"
+							},
+
+							{
+								"name": "slot-2-13-name",
+								"value": "employees"
+							},
+
+							{
+								"name": "slot-2-13-label",
+								"value": "LBL_EMPLOYEES"
+							},
+
+							{
+								"name": "slot-2-14-name",
+								"value": "ownership"
+							},
+
+							{
+								"name": "slot-2-14-label",
+								"value": "LBL_OWNERSHIP"
+							},
+
+							{
+								"name": "slot-2-15-name",
+								"value": "rating"
+							},
+
+							{
+								"name": "slot-2-15-label",
+								"value": "LBL_RATING"
+							},
+
+							{
+								"name": "slot-2-16-name",
+								"value": "duns_num"
+							},
+
+							{
+								"name": "slot-2-16-label",
+								"value": "LBL_DUNS_NUM"
+							},
+
+							{
+								"name": "slot-2-17-name",
+								"value": "date_entered_by"
+							},
+
+							{
+								"name": "slot-2-17-label",
+								"value": "LBL_DATE_ENTERED"
+							},
+
+							{
+								"name": "slot-2-17-fieldset_fields",
+								"value": "Date Created"
+							},
+
+							{
+								"name": "slot-2-18-name",
+								"value": "team_name"
+							},
+
+							{
+								"name": "slot-2-18-label",
+								"value": "LBL_TEAMS"
+							},
+
+							{
+								"name": "slot-2-19-name",
+								"value": "date_modified_by"
+							},
+
+							{
+								"name": "slot-2-19-label",
+								"value": "LBL_DATE_MODIFIED"
+							},
+
+							{
+								"name": "slot-2-19-fieldset_fields",
+								"value": "Date Modified"
+							},
+
+							{
+								"name": "action",
+								"value": "saveAndPublishLayout"
+							},
+
+							{
+								"name": "is_synced",
+								"value": "0"
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "metadata?module_filter=Accounts&platform=base",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"modules": 
+							{
+								"Accounts": 
+								{
+									"views": 
+									{
+										"record": 
+										{
+											"meta": 
+											{
+												"panels": 
+												[
+													{
+														"name": "panel_header",
+														"label": "LBL_PANEL_HEADER",
+														"header": true,
+														"fields": 
+														[
+															{
+																"name": "picture",
+																"type": "avatar",
+																"size": "large",
+																"dismiss_label": true,
+																"readonly": true
+															},
+
+															{
+																"name": "name",
+																"events": 
+																{
+																	"keyup": "update:account"
+																}
+															},
+
+															{
+																"name": "favorite",
+																"label": "LBL_FAVORITE",
+																"type": "favorite",
+																"dismiss_label": true
+															},
+
+															{
+																"name": "follow",
+																"label": "LBL_FOLLOW",
+																"type": "follow",
+																"readonly": true,
+																"dismiss_label": true
+															}
+														]
+													},
+
+													{
+														"name": "panel_body",
+														"label": "LBL_RECORD_BODY",
+														"columns": 2,
+														"labelsOnTop": true,
+														"placeholders": true,
+														"newTab": false,
+														"panelDefault": "expanded",
+														"fields": 
+														[
+															"website",
+															"industry",
+															{
+																"name": "googleplus",
+																"comment": "The Google Plus name of the company",
+																"label": "LBL_GOOGLEPLUS"
+															},
+
+															[
+																
+															],
+
+															"parent_name",
+															"account_type",
+															"assigned_user_name",
+															"phone_office",
+															{
+																"name": "tag",
+																"span": 12
+															}
+														]
+													},
+
+													{
+														"name": "panel_hidden",
+														"label": "LBL_RECORD_SHOWMORE",
+														"hide": true,
+														"columns": 2,
+														"labelsOnTop": true,
+														"placeholders": true,
+														"newTab": false,
+														"panelDefault": "expanded",
+														"fields": 
+														[
+															{
+																"name": "billing_address",
+																"type": "fieldset",
+																"css_class": "address",
+																"label": "LBL_BILLING_ADDRESS",
+																"fields": 
+																[
+																	{
+																		"name": "billing_address_street",
+																		"css_class": "address_street",
+																		"placeholder": "LBL_BILLING_ADDRESS_STREET"
+																	},
+
+																	{
+																		"name": "billing_address_city",
+																		"css_class": "address_city",
+																		"placeholder": "LBL_BILLING_ADDRESS_CITY"
+																	},
+
+																	{
+																		"name": "billing_address_state",
+																		"css_class": "address_state",
+																		"placeholder": "LBL_BILLING_ADDRESS_STATE"
+																	},
+
+																	{
+																		"name": "billing_address_postalcode",
+																		"css_class": "address_zip",
+																		"placeholder": "LBL_BILLING_ADDRESS_POSTALCODE"
+																	},
+
+																	{
+																		"name": "billing_address_country",
+																		"css_class": "address_country",
+																		"placeholder": "LBL_BILLING_ADDRESS_COUNTRY"
+																	}
+																]
+															},
+
+															{
+																"name": "shipping_address",
+																"type": "fieldset",
+																"css_class": "address",
+																"label": "LBL_SHIPPING_ADDRESS",
+																"fields": 
+																[
+																	{
+																		"name": "shipping_address_street",
+																		"css_class": "address_street",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_STREET"
+																	},
+
+																	{
+																		"name": "shipping_address_city",
+																		"css_class": "address_city",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_CITY"
+																	},
+
+																	{
+																		"name": "shipping_address_state",
+																		"css_class": "address_state",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_STATE"
+																	},
+
+																	{
+																		"name": "shipping_address_postalcode",
+																		"css_class": "address_zip",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_POSTALCODE"
+																	},
+
+																	{
+																		"name": "shipping_address_country",
+																		"css_class": "address_country",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_COUNTRY"
+																	},
+
+																	{
+																		"name": "copy",
+																		"label": "NTC_COPY_BILLING_ADDRESS",
+																		"type": "copy",
+																		"mapping": 
+																		{
+																			"billing_address_street": "shipping_address_street",
+																			"billing_address_city": "shipping_address_city",
+																			"billing_address_state": "shipping_address_state",
+																			"billing_address_postalcode": "shipping_address_postalcode",
+																			"billing_address_country": "shipping_address_country"
+																		}
+																	}
+																]
+															},
+
+															{
+																"name": "phone_alternate",
+																"label": "LBL_PHONE_ALT"
+															},
+
+															"email",
+															"phone_fax",
+															"campaign_name",
+															{
+																"name": "twitter"
+															},
+
+															[
+																
+															],
+
+															{
+																"name": "description",
+																"span": 12
+															},
+
+															"sic_code",
+															"ticker_symbol",
+															"annual_revenue",
+															"employees",
+															"ownership",
+															"rating",
+															{
+																"name": "duns_num",
+																"readonly": true
+															},
+
+															{
+																"name": "date_entered_by",
+																"readonly": true,
+																"inline": true,
+																"type": "fieldset",
+																"label": "LBL_DATE_ENTERED",
+																"fields": 
+																[
+																	{
+																		"name": "date_entered"
+																	},
+
+																	{
+																		"type": "label",
+																		"default_value": "LBL_BY"
+																	},
+
+																	{
+																		"name": "created_by_name"
+																	}
+																]
+															},
+
+															"team_name",
+															{
+																"name": "date_modified_by",
+																"readonly": true,
+																"inline": true,
+																"type": "fieldset",
+																"label": "LBL_DATE_MODIFIED",
+																"fields": 
+																[
+																	{
+																		"name": "date_modified"
+																	},
+
+																	{
+																		"type": "label",
+																		"default_value": "LBL_BY"
+																	},
+
+																	{
+																		"name": "modified_by_name"
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"requestUser": "salesRep2",
+					"requestURL": "metadata?module_filter=Accounts&platform=base",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"modules": 
+							{
+								"Accounts": 
+								{
+									"views": 
+									{
+										"record": 
+										{
+											"meta": 
+											{
+												"panels": 
+												[
+													{
+														"name": "panel_header",
+														"label": "LBL_PANEL_HEADER",
+														"header": true,
+														"fields": 
+														[
+															{
+																"name": "picture",
+																"type": "avatar",
+																"size": "large",
+																"dismiss_label": true,
+																"readonly": true
+															},
+
+															{
+																"name": "name",
+																"events": 
+																{
+																	"keyup": "update:account"
+																}
+															},
+
+															{
+																"name": "favorite",
+																"label": "LBL_FAVORITE",
+																"type": "favorite",
+																"dismiss_label": true
+															},
+
+															{
+																"name": "follow",
+																"label": "LBL_FOLLOW",
+																"type": "follow",
+																"readonly": true,
+																"dismiss_label": true
+															}
+														]
+													},
+
+													{
+														"name": "panel_body",
+														"label": "LBL_RECORD_BODY",
+														"columns": 2,
+														"labelsOnTop": true,
+														"placeholders": true,
+														"newTab": false,
+														"panelDefault": "expanded",
+														"fields": 
+														[
+															"website",
+															"industry",
+															{
+																"name": "googleplus",
+																"comment": "The Google Plus name of the company",
+																"label": "LBL_GOOGLEPLUS"
+															},
+
+															[
+																
+															],
+
+															"parent_name",
+															"account_type",
+															"assigned_user_name",
+															"phone_office",
+															{
+																"name": "tag",
+																"span": 12
+															}
+														]
+													},
+
+													{
+														"name": "panel_hidden",
+														"label": "LBL_RECORD_SHOWMORE",
+														"hide": true,
+														"columns": 2,
+														"labelsOnTop": true,
+														"placeholders": true,
+														"newTab": false,
+														"panelDefault": "expanded",
+														"fields": 
+														[
+															{
+																"name": "billing_address",
+																"type": "fieldset",
+																"css_class": "address",
+																"label": "LBL_BILLING_ADDRESS",
+																"fields": 
+																[
+																	{
+																		"name": "billing_address_street",
+																		"css_class": "address_street",
+																		"placeholder": "LBL_BILLING_ADDRESS_STREET"
+																	},
+
+																	{
+																		"name": "billing_address_city",
+																		"css_class": "address_city",
+																		"placeholder": "LBL_BILLING_ADDRESS_CITY"
+																	},
+
+																	{
+																		"name": "billing_address_state",
+																		"css_class": "address_state",
+																		"placeholder": "LBL_BILLING_ADDRESS_STATE"
+																	},
+
+																	{
+																		"name": "billing_address_postalcode",
+																		"css_class": "address_zip",
+																		"placeholder": "LBL_BILLING_ADDRESS_POSTALCODE"
+																	},
+
+																	{
+																		"name": "billing_address_country",
+																		"css_class": "address_country",
+																		"placeholder": "LBL_BILLING_ADDRESS_COUNTRY"
+																	}
+																]
+															},
+
+															{
+																"name": "shipping_address",
+																"type": "fieldset",
+																"css_class": "address",
+																"label": "LBL_SHIPPING_ADDRESS",
+																"fields": 
+																[
+																	{
+																		"name": "shipping_address_street",
+																		"css_class": "address_street",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_STREET"
+																	},
+
+																	{
+																		"name": "shipping_address_city",
+																		"css_class": "address_city",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_CITY"
+																	},
+
+																	{
+																		"name": "shipping_address_state",
+																		"css_class": "address_state",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_STATE"
+																	},
+
+																	{
+																		"name": "shipping_address_postalcode",
+																		"css_class": "address_zip",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_POSTALCODE"
+																	},
+
+																	{
+																		"name": "shipping_address_country",
+																		"css_class": "address_country",
+																		"placeholder": "LBL_SHIPPING_ADDRESS_COUNTRY"
+																	},
+
+																	{
+																		"name": "copy",
+																		"label": "NTC_COPY_BILLING_ADDRESS",
+																		"type": "copy",
+																		"mapping": 
+																		{
+																			"billing_address_street": "shipping_address_street",
+																			"billing_address_city": "shipping_address_city",
+																			"billing_address_state": "shipping_address_state",
+																			"billing_address_postalcode": "shipping_address_postalcode",
+																			"billing_address_country": "shipping_address_country"
+																		}
+																	}
+																]
+															},
+
+															{
+																"name": "phone_alternate",
+																"label": "LBL_PHONE_ALT"
+															},
+
+															"email",
+															"phone_fax",
+															"campaign_name",
+															{
+																"name": "twitter"
+															},
+
+															[
+																
+															],
+
+															{
+																"name": "description",
+																"span": 12
+															},
+
+															"sic_code",
+															"ticker_symbol",
+															"annual_revenue",
+															"employees",
+															"ownership",
+															"rating",
+															{
+																"name": "duns_num",
+																"readonly": true
+															},
+
+															{
+																"name": "date_entered_by",
+																"readonly": true,
+																"inline": true,
+																"type": "fieldset",
+																"label": "LBL_DATE_ENTERED",
+																"fields": 
+																[
+																	{
+																		"name": "date_entered"
+																	},
+
+																	{
+																		"type": "label",
+																		"default_value": "LBL_BY"
+																	},
+
+																	{
+																		"name": "created_by_name"
+																	}
+																]
+															},
+
+															"team_name",
+															{
+																"name": "date_modified_by",
+																"readonly": true,
+																"inline": true,
+																"type": "fieldset",
+																"label": "LBL_DATE_MODIFIED",
+																"fields": 
+																[
+																	{
+																		"name": "date_modified"
+																	},
+
+																	{
+																		"type": "label",
+																		"default_value": "LBL_BY"
+																	},
+
+																	{
+																		"name": "modified_by_name"
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		
+	]
+}

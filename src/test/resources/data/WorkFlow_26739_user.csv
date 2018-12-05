@@ -1,0 +1,2 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password
+Test,Test,User,qa.user.suga@gmail.com,Test123!,Test123!,Test123!

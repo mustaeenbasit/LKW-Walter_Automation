@@ -1,0 +1,3 @@
+roleName,roleDescription,dropDownTypeField,fieldName
+qaUser Role,Role without permissions,DropDown,customDropDown
+Chris Role,Role without permissions,,

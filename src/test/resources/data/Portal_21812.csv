@@ -1,0 +1,4 @@
+elem_type,style_color,rgb_value
+border,"#e58f17","rgb(229, 143, 23) 0px 4px 0px 0px"
+navbar,"#104c9f","rgba(16, 76, 159, 1)"
+button,"#17e58f","rgba(23, 229, 143, 1)"

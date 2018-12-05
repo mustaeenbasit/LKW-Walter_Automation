@@ -1,0 +1,3 @@
+name,kbName,filterField,displayName,operator,value
+Calls,firstKB,testFilter,Category,is,Calls
+Meetings,secondKB

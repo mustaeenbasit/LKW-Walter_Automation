@@ -1,0 +1,96 @@
+{
+	"testDocumentation":{
+		"testName":"crudRecurringCalls",
+		"testDescription":"Verifies the basic Create for Recurring Calls"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Create 10 Recurring Calls",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Calls/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Left a message",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"duration_hours":0,
+						"duration_minutes":30,
+						"date_start":"2015-05-25T09:30:00-07:00",
+						"status":"Planned",
+						"direction":"Outbound",
+						"reminder_checked":"",
+						"reminder_time":"-1",
+						"email_reminder_checked":"",
+						"email_reminder_time":"-1",
+						"email_reminder_sent":false,
+						"repeat_count":10,
+						"repeat_type":"Weekly",
+						"repeat_dow":"2",
+						"users":{
+							"add":[
+								"1"
+							]
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Left a message"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Calls",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":10,
+						"value":{
+							"name":"Left a message"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Calls"
+		}
+		
+	]
+}

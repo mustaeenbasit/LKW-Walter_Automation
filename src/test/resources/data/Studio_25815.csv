@@ -1,0 +1,4 @@
+customFieldName,dependentFormula,caseName,descValue,custom1Value,custom2Value,custom3Value
+custom1,"equal\(\$description,\"Jim\"\)",Test,Jim,Sally,Sara,Tom
+custom2,"equal\(\$custom1_c,\"Sally\"\)",Test,Jim,Sally,Sara,Tom
+custom3,"equal\(\$custom2_c,\"Sara\"\)",Test,Jim,Sally,Sara,Tom

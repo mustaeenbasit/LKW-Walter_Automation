@@ -1,0 +1,6 @@
+name,field_name,formula_string,count
+test1,TestField,"count($opportunities)",5
+test2
+test3
+test4
+test5

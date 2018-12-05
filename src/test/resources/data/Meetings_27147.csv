@@ -1,0 +1,2 @@
+name,password,url,meetingType,loginUser,errorMessage
+rkne,rkne,apidemoeu.webex.com,WebEx,Administrator,Error You are not able to join this Meeting because you are not an Invitee.

@@ -1,0 +1,2 @@
+module_plural_name,report_name,filter_name,field,operator,value
+Reports,Target Report1,Targets' reports,Module,is any of,Targets

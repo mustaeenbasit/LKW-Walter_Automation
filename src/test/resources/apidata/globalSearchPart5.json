@@ -1,0 +1,71 @@
+{
+	"testDocumentation":{
+		"testName":"globalSearchPart5",
+		"testDescription":"Verifies the globalsearch with the request Body for GET and POST"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Global search with request body",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"q":"sou",
+						"module_list":"Accounts,Contacts",
+						"limit":5
+					},
+					"validation":{
+						"type":"none",
+						"count":1,
+						"value":{
+							"data":{
+								"name":"Union Bank"
+							}
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"globalsearch?q=union&module_list=Accounts,Contacts",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"data":{
+								"name":"Union Bank"
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Cases"
+		},
+		{
+			"module":"Accounts"
+		}
+	]
+}

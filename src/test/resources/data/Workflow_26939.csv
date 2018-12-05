@@ -1,0 +1,2 @@
+module_field_name,data_type,test_workflow,firstName,lastName
+test,Integer,test_workflow,test,testing

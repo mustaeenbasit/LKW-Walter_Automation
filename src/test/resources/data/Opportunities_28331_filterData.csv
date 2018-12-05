@@ -1,0 +1,5 @@
+fieldName,Condition,Value
+"Opportunity Name","exactly matches",Opp1
+"Account Name","is","Aperture Laboratories"
+"Likely","is greater than",100
+"My Favorites",,

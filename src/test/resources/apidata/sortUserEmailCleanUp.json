@@ -1,0 +1,50 @@
+{
+  "testDocumentation": {
+    "testName": "sortTeamNameCleanUp",
+    "testDescription": "Deletes the Users needed for the main test"
+  },
+  "testCases": [
+    {
+      "testCaseName": "Delete Users",
+      "requests": [
+        {
+          "requestUser": "admin",
+          "requestURL": "Users/id",
+          "requestType": "delete",
+          "requestStatus": 200,
+          "substitute": [
+            {
+              "type": "id",
+              "module": "Users",
+              "index": 1,
+              "destination": "requestURL",
+              "field": "id"
+            }
+          ],
+          "validation": {
+            "type": "none"
+          }
+        },
+        {
+          "requestUser": "admin",
+          "requestURL": "Users/id",
+          "requestType": "delete",
+          "requestStatus": 200,
+          "substitute": [
+            {
+              "type": "id",
+              "module": "Users",
+              "index": 2,
+              "destination": "requestURL",
+              "field": "id"
+            }
+          ],
+          "validation": {
+            "type": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "modules_used": []
+}

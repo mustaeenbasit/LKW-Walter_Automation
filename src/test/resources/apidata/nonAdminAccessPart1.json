@@ -1,0 +1,67 @@
+{
+	"testDocumentation":{
+		"testName":"readUpdateMe",
+		"testDescription":"Verifies Non Admin access documented in the testCaseName"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Non-Admin access verification",
+			"requests":[
+				{
+					"testCaseName":"Read Me ACL verify Modules Accounts and Contacts",
+					"requestUser":"nonadminuser10",
+					"requestURL":"me/?type_filter=module_list",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"Contacts"
+								},
+								{
+									"string":"Accounts"
+								}
+							],
+							"notcontains":[
+								
+							]
+						}
+					}
+				},
+				{
+					"testCaseName":"Verify Usage Reports are not visible to non-admin",
+					"requestUser":"nonadminuser10",
+					"requestURL":"Reports?fields=name&max_num=100",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								
+							],
+							"notcontains":[
+								{
+									"string":"Module Usage"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

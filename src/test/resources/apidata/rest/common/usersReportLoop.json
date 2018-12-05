@@ -1,0 +1,72 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "usersReportLoop",
+      "testDescription": "Try to update a users to create reporting loop"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Create a Reporting loop",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "Users/id",
+               "requestType": "put",
+               "requestStatus": 403,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "fromString": "reportstoID"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "Users",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "reports_to_id": "reportstoID",
+                  "reports_to_name": "salesRep1"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "method": "string",
+                  "value": 
+                  {
+                     "contains": 
+                     [
+                        {
+                           "string": "The system detected a reporting loop."
+                        }
+                     ],
+
+                     "notcontains": 
+                     [
+                        
+                     ]
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

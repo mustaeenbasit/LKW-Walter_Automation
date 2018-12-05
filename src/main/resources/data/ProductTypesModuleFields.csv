@@ -1,0 +1,4 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+name,name,,Devices,input,css,.edit.view [name='name'],input,css,.edit.view [name='name'],null,null,null,a,css,td:nth-child(1) a,null,null,null,null,null,null
+description,description,,Demo product type,textarea,css,.edit.view [name='description'],textarea,css,.edit.view [name='description'],null,null,null,td,css,td:nth-child(2),null,null,null,null,null,null
+order,list_order,,1,input,css,.edit.view [name='list_order'],input,css,.edit.view [name='list_order'],null,null,null,td,css,td:nth-child(3),null,null,null,null,null,null

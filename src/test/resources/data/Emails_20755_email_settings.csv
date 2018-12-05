@@ -1,0 +1,3 @@
+userName,emailAddress,password,trash_folder,subject,bodyText
+DemoMail,qa.user.suga@gmail.com,Nerdapp123,[Gmail]/Trash,"First Mail","this is a first test mail"
+,qa.user.suga@gmail.com,,,"Second Mail","this is a second test mail"

@@ -1,0 +1,570 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminRoleDeleteTeamBWC",
+      "testDescription": "Verify a User with Role of Delete and Edit set to Owner for a BWC owner"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Verify a User with Role of Delete and Edit set to Owner for a BWC module",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "index.php?sugar_body_only=1&module=Teams&subpanel=users&action=SubPanelViewer&inline=1&record=3",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "fromString": "USERID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "fromString": "USERID2"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "subpanel_id[]",
+                        "value": "USERID1"
+                     },
+
+                     {
+                        "name": "subpanel_id[]",
+                        "value": "USERID2"
+                     },
+
+                     {
+                        "name": "value",
+                        "value": "DetailView"
+                     },
+
+                     {
+                        "name": "module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "http_method",
+                        "value": "get"
+                     },
+
+                     {
+                        "name": "return_module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "record",
+                        "value": "3"
+                     },
+
+                     {
+                        "name": "isDuplicate",
+                        "value": "false"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "Save2"
+                     },
+
+                     {
+                        "name": "inline",
+                        "value": "1"
+                     },
+
+                     {
+                        "name": "select_entire_list",
+                        "value": "0"
+                     },
+
+                     {
+                        "name": "child_field",
+                        "value": "Users"
+                     },
+
+                     {
+                        "name": "return_id",
+                        "value": "3"
+                     },
+
+                     {
+                        "name": "return_url",
+                        "value": "index.php"
+                     },
+
+                     {
+                        "name": "subpanel_field_name",
+                        "value": "users"
+                     },
+
+                     {
+                        "name": "subpanel_module_name",
+                        "value": "Users"
+                     },
+
+                     {
+                        "name": "refresh_page",
+                        "value": "0"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "index.php?sugar_body_only=1&module=Teams&subpanel=users&action=SubPanelViewer&inline=1&record=2",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "fromString": "USERID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "fromString": "USERID2"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "subpanel_id[]",
+                        "value": "USERID1"
+                     },
+
+                     {
+                        "name": "subpanel_id[]",
+                        "value": "USERID2"
+                     },
+
+                     {
+                        "name": "value",
+                        "value": "DetailView"
+                     },
+
+                     {
+                        "name": "module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "http_method",
+                        "value": "get"
+                     },
+
+                     {
+                        "name": "return_module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "record",
+                        "value": "2"
+                     },
+
+                     {
+                        "name": "isDuplicate",
+                        "value": "false"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "Save2"
+                     },
+
+                     {
+                        "name": "inline",
+                        "value": "1"
+                     },
+
+                     {
+                        "name": "select_entire_list",
+                        "value": "0"
+                     },
+
+                     {
+                        "name": "child_field",
+                        "value": "Users"
+                     },
+
+                     {
+                        "name": "return_id",
+                        "value": "2"
+                     },
+
+                     {
+                        "name": "return_url",
+                        "value": "index.php"
+                     },
+
+                     {
+                        "name": "subpanel_field_name",
+                        "value": "users"
+                     },
+
+                     {
+                        "name": "subpanel_module_name",
+                        "value": "Users"
+                     },
+
+                     {
+                        "name": "refresh_page",
+                        "value": "0"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "ACLRoles?filter[0][name][$starts]=myNewRoleABC",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "module": "Roles/",
+                  "value": 
+                  {
+                     "name": "myNewRoleABC",
+                     "description": "This is a Default role"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "index.php",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "fromString": "USERID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "fromString": "USERID2"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Roles",
+                     "index": 99999,
+                     "destination": "requestBody",
+                     "fromString": "MYROLEID"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Roles",
+                     "index": 99999,
+                     "destination": "requestBody",
+                     "fromString": "MYROLEIDXYZ"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "subpanel_id[]",
+                        "value": "USERID1"
+                     },
+
+                     {
+                        "name": "subpanel_id[]",
+                        "value": "USERID2"
+                     },
+
+                     {
+                        "name": "value",
+                        "value": "DetailView"
+                     },
+
+                     {
+                        "name": "module",
+                        "value": "ACLRoles"
+                     },
+
+                     {
+                        "name": "http_method",
+                        "value": "get"
+                     },
+
+                     {
+                        "name": "return_module",
+                        "value": "ACLRoles"
+                     },
+
+                     {
+                        "name": "return_id",
+                        "value": "MYROLEID"
+                     },
+
+                     {
+                        "name": "record",
+                        "value": "MYROLEID"
+                     },
+
+                     {
+                        "name": "isDuplicate",
+                        "value": "false"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "Save2"
+                     },
+
+                     {
+                        "name": "inline",
+                        "value": "1"
+                     },
+
+                     {
+                        "name": "select_entire_list",
+                        "value": "0"
+                     },
+
+                     {
+                        "name": "child_field",
+                        "value": "Users"
+                     },
+
+                     {
+                        "name": "return_url",
+                        "value": "index.php?module=ACLRoles&action=SubPanelViewer&subpanel=Users&record=MYROLEIDXYZ&sugar_body_only=1"
+                     },
+
+                     {
+                        "name": "subpanel_field_name",
+                        "value": "users"
+                     },
+
+                     {
+                        "name": "subpanel_module_name",
+                        "value": "Users"
+                     },
+
+                     {
+                        "name": "refresh_page",
+                        "value": "1"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "ACLRoles/id/link/users",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Roles",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 2,
+                  "records": 
+                  [
+                     {
+                        "reports_to_name": "SalesMgr Mgr1"
+                     },
+
+                     {
+                        "reports_to_name": "SalesMgr Mgr1"
+                     }
+                  ]
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Contracts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "fromString": "USERID1"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "assigned_user_id": "USERID1",
+                  "tag": 
+                  [
+                     
+                  ],
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true,
+                        "selected": false
+                     }
+                  ],
+
+                  "name": "contract1"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "contract1"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Contracts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Contracts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "contract1 changed"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "contract1 changed"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Contracts/id",
+               "requestType": "put",
+               "requestStatus": 403,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Contracts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Changed the name again"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "error": "not_authorized"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Contracts"
+      }
+   ]
+}

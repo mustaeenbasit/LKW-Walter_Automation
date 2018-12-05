@@ -1,0 +1,649 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "callsCreateCollection",
+      "testDescription": "Verifies the Collectio api format can be used to Create a Call with Contacts, Users and Leads"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Create Calls using collection API",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "Contacts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Marlene",
+                  "description": "Marlene descriptive text",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "email": 
+                  [
+                     {
+                        "email_address": "Maria.D'Souza@ca.sugarcrm.com",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     },
+
+                     {
+                        "email_address": "the.vegan.kid@example.info",
+                        "primary_address": false,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": true
+                     }
+                  ],
+
+                  "email1": "Maria.D'Souza@ca.sugarcrm.com",
+                  "email2": "",
+                  "invalid_email": false,
+                  "email_opt_out": false,
+                  "email_addresses_non_primary": "",
+                  "salutation": "",
+                  "first_name": "Marlene",
+                  "last_name": "Ruffnera",
+                  "full_name": "Marlene Ruffnera",
+                  "title": "VP Sales",
+                  "do_not_call": false,
+                  "phone_home": "(029) 625-4659",
+                  "phone_mobile": "(907) 041-9060",
+                  "phone_work": "(730) 047-4587",
+                  "primary_address_street": "67321 West Siam St.",
+                  "primary_address_street_2": "",
+                  "primary_address_street_3": "",
+                  "primary_address_city": "San Jose",
+                  "primary_address_state": "CA",
+                  "primary_address_postalcode": "43054",
+                  "primary_address_country": "USA",
+                  "lead_source": "Employee",
+                  "account_name": "Davenport Investing",
+                  "portal_name": "MarleneRuffner1",
+                  "portal_active": true,
+                  "portal_password": true,
+                  "portal_password1": null,
+                  "sync_contact": false,
+                  "mkto_sync": false,
+                  "mkto_id": null,
+                  "mkto_lead_score": null,
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "first_name": "Marlene",
+                     "last_name": "Ruffnera",
+                     "full_name": "Marlene Ruffnera",
+                     "email1": "Maria.D'Souza@ca.sugarcrm.com"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Contacts/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Michael",
+                  "description": "Michael descriptive text",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "email": 
+                  [
+                     {
+                        "email_address": "Michael.D'Souza@ca.sugarcrm.com",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     },
+
+                     {
+                        "email_address": "Michael@example.info",
+                        "primary_address": false,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": true
+                     }
+                  ],
+
+                  "email1": "Michael.D'Souza@ca.sugarcrm.com",
+                  "email2": "Michael@example.info",
+                  "invalid_email": false,
+                  "email_opt_out": false,
+                  "email_addresses_non_primary": "",
+                  "salutation": "",
+                  "first_name": "Michael",
+                  "last_name": "Ruffnerb",
+                  "full_name": "Michael Ruffnerb",
+                  "title": "VP Sales",
+                  "do_not_call": false,
+                  "phone_home": "(029) 625-4659",
+                  "phone_mobile": "(907) 041-9060",
+                  "phone_work": "(730) 047-4587",
+                  "primary_address_street": "67321 West Siam St.",
+                  "primary_address_street_2": "",
+                  "primary_address_street_3": "",
+                  "primary_address_city": "San Jose",
+                  "primary_address_state": "CA",
+                  "primary_address_postalcode": "43054",
+                  "primary_address_country": "USA",
+                  "lead_source": "Employee",
+                  "account_name": "Davenport Investing",
+                  "portal_name": "MichaelRuffner1",
+                  "portal_active": true,
+                  "portal_password": true,
+                  "portal_password1": null,
+                  "sync_contact": false,
+                  "mkto_sync": false,
+                  "mkto_id": null,
+                  "mkto_lead_score": null,
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "first_name": "Michael",
+                     "last_name": "Ruffnerb",
+                     "full_name": "Michael Ruffnerb",
+                     "email1": "Michael.D'Souza@ca.sugarcrm.com"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Leads/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Irvin Lark",
+                  "description": "A good lead for opportunity xyz",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "email": 
+                  [
+                     {
+                        "email_address": "kid.phone@example.tv",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "email1": "kid.phone@example.tv",
+                  "email2": "",
+                  "invalid_email": false,
+                  "email_opt_out": false,
+                  "salutation": "",
+                  "first_name": "Irvin",
+                  "last_name": "Larka",
+                  "full_name": "Irvin Larka",
+                  "title": "VP Operations",
+                  "do_not_call": false,
+                  "phone_home": "(324) 553-9061",
+                  "phone_mobile": "(093) 486-3528",
+                  "phone_work": "(350) 090-6361",
+                  "phone_other": "",
+                  "phone_fax": "",
+                  "primary_address_street": "48920 San Carlos Ave",
+                  "primary_address_street_2": "",
+                  "primary_address_street_3": "",
+                  "primary_address_city": "San Mateo",
+                  "primary_address_state": "NY",
+                  "primary_address_postalcode": "63677",
+                  "primary_address_country": "USA",
+                  "converted": false,
+                  "refered_by": "",
+                  "lead_source": "Conference",
+                  "lead_source_description": "",
+                  "status": "In Process",
+                  "webtolead_email1": 
+                  [
+                     {
+                        "email_address": "kid.phone@example.tv",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "webtolead_email2": 
+                  [
+                     {
+                        "email_address": "kid.phone@example.tv",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Irvin Larka",
+                     "description": "A good lead for opportunity xyz"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Leads/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Ian Lark",
+                  "description": "A good lead for opportunity xyz",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "email": 
+                  [
+                     {
+                        "email_address": "ian.phone@example.tv",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "email1": "ian.phone@example.tv",
+                  "email2": "",
+                  "invalid_email": false,
+                  "email_opt_out": false,
+                  "salutation": "",
+                  "first_name": "Ian",
+                  "last_name": "Larkb",
+                  "full_name": "Ian Larkb",
+                  "title": "VP Operations",
+                  "do_not_call": false,
+                  "phone_home": "(324) 553-9061",
+                  "phone_mobile": "(093) 486-3528",
+                  "phone_work": "(350) 090-6361",
+                  "phone_other": "",
+                  "phone_fax": "",
+                  "primary_address_street": "48920 San Carlos Ave",
+                  "primary_address_street_2": "",
+                  "primary_address_street_3": "",
+                  "primary_address_city": "San Mateo",
+                  "primary_address_state": "NY",
+                  "primary_address_postalcode": "63677",
+                  "primary_address_country": "USA",
+                  "converted": false,
+                  "refered_by": "",
+                  "lead_source": "Conference",
+                  "lead_source_description": "",
+                  "status": "In Process",
+                  "webtolead_email1": 
+                  [
+                     {
+                        "email_address": "ian.phone@example.tv",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "webtolead_email2": 
+                  [
+                     {
+                        "email_address": "ian.phone@example.tv",
+                        "primary_address": true,
+                        "reply_to_address": false,
+                        "invalid_email": false,
+                        "opt_out": false
+                     }
+                  ],
+
+                  "_acl": 
+                  {
+                     "fields": 
+                     {
+                        
+                     }
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Ian Larkb",
+                     "description": "A good lead for opportunity xyz"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Calls/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "date",
+                     "value": "now",
+                     "destination": "requestBody",
+                     "field": "date_start"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Contacts",
+                     "index": 1,
+                     "destination": "requestBody",
+                     "fromString": "contactsID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Contacts",
+                     "index": 2,
+                     "destination": "requestBody",
+                     "fromString": "contactsID2"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Leads",
+                     "index": 1,
+                     "destination": "requestBody",
+                     "fromString": "leadsID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Leads",
+                     "index": 2,
+                     "destination": "requestBody",
+                     "fromString": "leadsID2"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 1,
+                     "destination": "requestBody",
+                     "fromString": "usersID1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 2,
+                     "destination": "requestBody",
+                     "fromString": "usersID2"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Left a message",
+                  "deleted": false,
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": false
+                     }
+                  ],
+
+                  "duration_hours": 0,
+                  "duration_minutes": 30,
+                  "date_start": "2016-05-25T09:30:00-07:00",
+                  "status": "Planned",
+                  "direction": "Outbound",
+                  "reminder_checked": "",
+                  "reminder_time": "-1",
+                  "email_reminder_checked": "",
+                  "email_reminder_time": "-1",
+                  "email_reminder_sent": false,
+                  "contacts": 
+                  {
+                     "add": 
+                     [
+                        "contactsID1",
+                        "contactsID2"
+                     ]
+                  },
+
+                  "leads": 
+                  {
+                     "add": 
+                     [
+                        "leadsID1",
+                        "leadsID2"
+                     ]
+                  },
+
+                  "users": 
+                  {
+                     "add": 
+                     [
+                        "1",
+                        "usersID1",
+                        "usersID2"
+                     ]
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Left a message"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Calls/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Calls",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Left a message",
+                     "status": "Planned",
+                     "direction": "Outbound"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Calls/callID/collection/invitees?fields=id,full_name&module_list=Contacts,Leads,Users&offset[contacts]=0&offset[leads]=0&offset[users]=0&max_num=10&order_by=full_name",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Calls",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "callID"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "arraymany",
+                  "count": 7,
+                  "records": 
+                  [
+                     {
+                        "full_name": "Administrator",
+                        "_module": "Users"
+                     },
+
+                     {
+                        "full_name": "Irvin Larka",
+                        "_module": "Leads"
+                     },
+
+                     {
+                        "full_name": "Ian Larkb",
+                        "_module": "Leads"
+                     },
+
+                     {
+                        "full_name": "Group Mgr1",
+                        "_module": "Users"
+                     },
+
+                     {
+                        "full_name": "Sales3 Rep3",
+                        "_module": "Users"
+                     },
+
+                     {
+                        "full_name": "Marlene Ruffnera",
+                        "_module": "Contacts"
+                     },
+
+                     {
+                        "full_name": "Michael Ruffnerb",
+                        "_module": "Contacts"
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Calls"
+      },
+
+      {
+         "module": "Contacts"
+      },
+
+      {
+         "module": "Leads"
+      }
+   ]
+}

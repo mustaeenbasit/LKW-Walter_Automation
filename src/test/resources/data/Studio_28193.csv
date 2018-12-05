@@ -1,0 +1,4 @@
+dataType,fieldName,data,maxSize,precision,formula,decimalData
+Integer,integer_one,20,,,
+Integer,integer_two,30,,,
+Decimal,decimal_one,"0.1234567891",3,1,"divide($integer_one_c,$integer_two_c)","0.3"

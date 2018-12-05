@@ -1,0 +1,4 @@
+documentName,fileNameFile
+Test,"src/test/resources/data/VoodooFileFieldTests.csv"
+Sugardoc,"src/main/resources/data/DocumentsModuleFields.csv"
+Contracts_19770,"src/test/resources/data/Contracts_19770.csv"

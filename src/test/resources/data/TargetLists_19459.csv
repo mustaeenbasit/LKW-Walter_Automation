@@ -1,0 +1,4 @@
+targetlistName,description,listType
+TL_Sample1,"aTargetList sample description",Default
+TL_Sample2,"bTargetList sample description",Seed
+TL_Sample3,"cTargetList sample description",Test

@@ -1,0 +1,87 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "kbConfigLanguage",
+      "testDescription": "Verifies the basic smoke test for the Creation, Read, Update and Delete of KB Settings language config"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "kbConfigLanguage",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/config",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "category_root",
+                  "module": "categoryRoot/",
+                  "value": 
+                  {
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/config/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "categoryRoot",
+                     "index": 999,
+                     "destination": "requestBody",
+                     "fromString": "categoryRootID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "languages": 
+                  [
+                     {
+                        "primary": true,
+                        "en": "English"
+                     },
+
+                     {
+                        "primary": false,
+                        "fr": "French"
+                     }
+                  ],
+
+                  "category_root": "categoryRootID"
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "value": 
+                  {
+                     "fr": "French"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

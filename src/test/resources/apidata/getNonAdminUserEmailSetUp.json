@@ -1,0 +1,78 @@
+{
+	"testDocumentation":{
+		"testName":"getNonAdminUserEmailSetUp",
+		"testDescription":"Creates the Users needed for the main test"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Non Admin Users set up",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Users/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"user_name":"bob",
+						"user_hash":"bobbo99",
+						"system_generated_password":false,
+						"authenticate_id":"",
+						"sugar_login":true,
+						"picture":"",
+						"first_name":"bob",
+						"last_name":"bo",
+						"full_name":"bob bo",
+						"name":"bob bo",
+						"is_admin":false,
+						"external_auth_only":false,
+						"receive_notifications":true,
+						"description":"",
+						"status":"Active",
+						"default_team":"1",
+						"team_count":"",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"deleted":false,
+						"portal_only":false,
+						"show_on_employees":true,
+						"employee_status":"Active",
+						"email":[
+							{
+								"email_address":"bobbo@sugarcrm.com",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						]
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"user_name":"bob"
+						}
+						
+					}
+					
+				}			
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

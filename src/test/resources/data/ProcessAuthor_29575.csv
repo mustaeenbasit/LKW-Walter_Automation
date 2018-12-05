@@ -1,0 +1,2 @@
+adminUser,dashletName,warningMessage
+"System Administrator User","Process Definitions","There are active processes running against this Process Definition. Updating it could impact these processes. Do you still want to edit this Process Definition?"

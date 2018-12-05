@@ -1,0 +1,5 @@
+filterName,displayFilter,value,operator
+firstName,First Name,"Tom",starts with
+lastName,Last Name,"Zhou",starts with
+relAccountName,Account Name,"Aperture Laboratories",is
+phoneWork,Phone,"+1 408.655.0761",starts with

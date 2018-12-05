@@ -1,0 +1,66 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "deleteUsers1",
+		"testDescription": "Deletes the users creqted using createUsers1"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Delete 2 Users and private Teams",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "Teams?filter[0][name][$starts]=myTeam",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"module": "Teams/",
+						"value": 
+						{
+							"name": "myTeam"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Teams/id",
+					"requestType": "delete",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "Teams",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		
+	]
+}

@@ -1,0 +1,2 @@
+conversionRate,currencySymbol,advanced_grouping_seperator,advanced_decimal_separator,discountPrice,quantity,zeroDiscountPrice,assertZeroInEuro,assertZeroInDollar,greaterThanZeroDiscountPrice,assertGreaterThanZeroInEuro,assertGreaterThanZeroInDollar,lessThanZeroDiscountPrice,assertLessThanZeroInEuro,assertLessThanZeroInDollar
+0.9,E,".",",",1,1000,0,"E0,00","$0,00",7,"E7,00","$7,78",-7,"E-7,00","$-7,78"

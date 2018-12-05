@@ -1,0 +1,2 @@
+decimalName,floatName,decimalValue,floatValue,decimalExpectedValue1,floatExpectedValue1,decimalExpectedValue2,floatExpectedValue2,reportName
+test_decimal,test_float,2941.98,1492,"2,941.98","1,492.00000000","2.941,98","1.492,00000000",myReport

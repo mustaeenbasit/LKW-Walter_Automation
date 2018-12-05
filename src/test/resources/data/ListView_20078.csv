@@ -1,0 +1,2 @@
+dataType,fieldName,fieldLabel,fieldOperator1,fieldOperator2,fieldOperator3,fieldOperator4,fieldOperator5,fieldOperator6,fieldOperator7,fieldOperator8
+Integer,custom_int,custom int,is not equal to,is equal to,is any of,is greater than,is less than,is greater than or equal to,is less than or equal to,is between

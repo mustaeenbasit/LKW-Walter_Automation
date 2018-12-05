@@ -1,0 +1,2 @@
+kb_name,publishDate,status,selectStatusKey,statusApproved,warningMessage
+newKB,"07/07/2015",Draft,Status,Approved,"Error. The Publish Date must occur on a later date than today's date."

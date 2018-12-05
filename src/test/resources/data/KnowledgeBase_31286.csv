@@ -1,0 +1,5 @@
+category,confirmMsg,noDataAvailable
+Test1,"Are you sure you want to delete the category %s?","No data available."
+Test2,"Are you sure you want to delete the category %s? All nested categories will be removed as well",
+Test3
+Test4

@@ -1,0 +1,4 @@
+name,relAssignedTo,forecast,rli_name,rli_assigned_user,rli_likely,userName,password
+OPP1,admin2,Include,RLI1,admin2,100,admin2,asdf
+OPP2,userA,,RLI2,userA,200,,
+OPP3,userB,,RLI3,userB,300,,

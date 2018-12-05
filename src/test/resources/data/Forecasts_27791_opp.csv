@@ -1,0 +1,2 @@
+qualificationSalesStage,qualificationProbability,closedWonSalesStage,closedWonProbability,closedLostSalesStage,closedLostProbability,probability,best,salesStage,likelyValue,commitStageIncluded,commitStageExcluded,bestCaseValue,worstCaseValue,dateFormat
+Qualification,20,Closed Won,100,Closed Lost,0,Probability,Best,Sales Stage,"10,000",Include,Exclude,"11,111","9,999","12/23/2010"

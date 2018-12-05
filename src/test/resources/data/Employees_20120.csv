@@ -1,0 +1,4 @@
+firstName,lastName,email,title,department,phone,description,street,city,state,zipcode,country,IMName,status
+test,employee20120,aaa@sugarcrm.com,title abc,dep abc,1234567890,employee create test,123 street,cupertino,CA,95014,US,,
+test2,em20120,abcd@sugarcrm.com,new title,new dep,1111111111,employee update test,update street,update city,state,12345,U.S.A,IM Name,Terminated
+test3,emupdate20120,ttt@sugarcrm.com,,,,,,,,,,,Leave of Absence

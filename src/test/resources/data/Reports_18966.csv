@@ -1,0 +1,2 @@
+module_plural_name,query_name,query
+Reports,Custom Query,"select name from accounts"

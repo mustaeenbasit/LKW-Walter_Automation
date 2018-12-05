@@ -1,0 +1,8 @@
+{
+	"grant_type":"password",
+	"username":"salesRep2",
+	"password":"salesRep2",
+	"client_id":"sugar",
+	"client_secret":"",
+	"platform":"base"
+}

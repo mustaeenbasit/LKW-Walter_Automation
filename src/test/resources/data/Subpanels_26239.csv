@@ -1,0 +1,2 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword,password,timeZone
+aj,Ashish,Jabble,ajabble@sugarcrm.com,Test123,Test123,Test123,America/Los Angeles (GMT-7:00)

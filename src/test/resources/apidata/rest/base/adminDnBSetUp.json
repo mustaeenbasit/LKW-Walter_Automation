@@ -1,0 +1,135 @@
+{
+	"testDocumentation":{
+		"testName":"adminDnBSetUp",
+		"testDescription":"Verify the admin set up of the DnB connector"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Set up DnB connection paramters",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"index.php",
+					"requestType":"postForm",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"formParameters":[
+							{
+								"name":"modify",
+								"value":"true"
+							},
+							{
+								"name":"module",
+								"value":"Connectors"
+							},
+							{
+								"name":"action",
+								"value":"SaveModifyProperties"
+							},
+							{
+								"name":"source_id",
+								"value":""
+							},
+							{
+								"name":"reset_to_default",
+								"value":""
+							},
+							{
+								"name":"source1",
+								"value":"ext_rest_twitter"
+							},
+							{
+								"name":"source2",
+								"value":"ext_eapm_gotomeeting"
+							},
+							{
+								"name":"source3",
+								"value":"ext_eapm_ibmsmartcloud"
+							},
+							{
+								"name":"source4",
+								"value":"ext_rest_dnb"
+							},
+							{
+								"name":"ext_rest_twitter_oauth_consumer_key",
+								"value":""
+							},
+							{
+								"name":"ext_rest_twitter_oauth_consumer_secret",
+								"value":""
+							},
+							{
+								"name":"ext_rest_dnb_dnb_username",
+								"value":"SugarDemo@dnb.com"
+							},
+							{
+								"name":"ext_rest_dnb_dnb_password",
+								"value":"aFN1Z2FyRGVtbw"
+							},
+							{
+								"name":"ext_rest_dnb_dnb_env",
+								"value":"prod"
+							}							
+						]
+						
+					},
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestDescription":"Search DnB Accounts",
+					"requestUser":"admin",
+					"requestURL":"connector/dnb/Accounts/bal",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"qdata":{
+							"KeywordText":"sugarcrm",
+							"CandidatePerPageMaximumQuantity":20,
+							"CandidateDisplayStartSequenceNumber":1
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"SugarCRM Inc."
+								},
+								{
+									"string":"SugarCRM Deutschland GmbH"
+								},
+								{
+									"string":"SUGARCRM FRANCE"
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

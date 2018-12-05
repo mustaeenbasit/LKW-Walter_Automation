@@ -1,0 +1,4 @@
+name,salesStage,warningMessage
+testRLI1,Closed Lost,Warning One or more of the selected records has a status of Closed Won or Closed Lost and cannot be deleted.
+testRLI2,Closed Won
+testRLI3,Prospecting

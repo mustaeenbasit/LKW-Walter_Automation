@@ -1,0 +1,2 @@
+filterField,operator,filter_value_Held,filter_value_Canceled
+Status,is not any of,Held,Canceled

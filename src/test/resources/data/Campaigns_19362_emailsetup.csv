@@ -1,0 +1,2 @@
+emailAddress,newPassword,confirmPassword,password,timeZone,protocol,name,status,date_start,template_id,text_to_check1,text_to_check2,inbound_email_id,email_optout,allowAllUsers
+qa.user.suga@gmail.com,Nerdapp123,Nerdapp123,Nerdapp123,"America/Los Angeles (GMT-7:00)",IMAP,DemoMailAccount,Active,06/20/2014,"System-generated password email","New account information","Here is your account username and temporary password:",SugarCRM,Opted Out,true

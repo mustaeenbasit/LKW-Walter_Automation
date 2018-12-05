@@ -1,0 +1,2 @@
+confirm_msg,not_exist_message
+"Settings confirmed. Press backup to perform the backup.","Backup Directory does not exist and could not be created & Directory exists"

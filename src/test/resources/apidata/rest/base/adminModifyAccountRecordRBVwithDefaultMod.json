@@ -1,0 +1,46 @@
+{
+	"testDocumentation":{
+		"testName":"adminModifyAccountRecordRBVwithDefaultMod",
+		"testDescription":"Verify the Account Record Layout for RBV is unchanged after the Default has been changed"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Verify Account Record RBV is unchanged after the Default layout has been changed",
+			"requests":[
+				{
+					"requestUser":"salesRep1",
+					"requestURL":"metadata?module_filter=Accounts&platform=base",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"\"fields\":[\"website\",\"industry\",{\"name\":\"facebook\",\"comment\":\"The facebook name of the company\",\"label\":\"LBL_FACEBOOK\""
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

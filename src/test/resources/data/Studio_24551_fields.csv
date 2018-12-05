@@ -1,0 +1,6 @@
+field_name,data_type
+my_currency,Currency
+my_decimal,Decimal
+my_float,Float
+my_int,Integer
+my_formula,TextField

@@ -1,0 +1,2 @@
+read_permission,type,operator,value1,value2,no_permission
+Read Only,Type,is any of,Customer,Analyst,Not Set

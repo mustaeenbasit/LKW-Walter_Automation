@@ -1,0 +1,592 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "processUserOneWay",
+		"testDescription": "Verifies the basic Create of a Process Template for assign user One Way duirng Account creation"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Process Author assign work item",
+			"requests": 
+			[
+				{
+					"requestDescription": "Change the Activity to reassign",
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/ActivityDefinition/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "UIID",
+							"index": 3,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"act_response_buttons": "APPROVE",
+							"act_reassign": true,
+							"act_reassign_team": "1",
+							"act_adhoc": true,
+							"act_adhoc_team": "1",
+							"act_type": "44936186155db62caba85e4029191498",
+							"act_readonly_fields": 
+							[
+								
+							],
+
+							"act_expected_time": 
+							{
+								"time": null,
+								"unit": "hour"
+							},
+
+							"act_required_fields": 
+							[
+								
+							]
+						}
+					},
+
+					"validation": 
+					{
+						"type": "none",
+						"value": 
+						{
+							
+						}
+					}
+				},
+
+				{
+					"requestDescription": "Create an Account",
+					"requestUser": "admin",
+					"requestURL": "Accounts/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"name": "Cloud Cover Trust",
+						"description": "Cloud Cover description in text",
+						"deleted": false,
+						"website": "www.supportphone.tw",
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": false
+							}
+						],
+
+						"email": 
+						[
+							{
+								"email_address": "section.kid.section@example.cn",
+								"primary_address": true,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							},
+
+							{
+								"email_address": "sugar.hr@example.info",
+								"primary_address": false,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							}
+						],
+
+						"email1": "section.kid.section@example.cn",
+						"email2": "",
+						"invalid_email": false,
+						"email_opt_out": false,
+						"email_addresses_non_primary": "",
+						"account_type": "Customer",
+						"industry": "Electronics",
+						"billing_address_street": "48920 San Carlos Ave",
+						"billing_address_street_2": "",
+						"billing_address_street_3": "",
+						"billing_address_street_4": "",
+						"billing_address_city": "Persistance",
+						"billing_address_state": "NY",
+						"billing_address_postalcode": "46691",
+						"billing_address_country": "USA",
+						"rating": "",
+						"phone_office": "(777) 954-2070",
+						"phone_alternate": "",
+						"ownership": "",
+						"employees": "",
+						"ticker_symbol": "",
+						"shipping_address_street": "48920 San Carlos Ave",
+						"shipping_address_street_2": "",
+						"shipping_address_street_3": "",
+						"shipping_address_street_4": "",
+						"shipping_address_city": "Persistance",
+						"shipping_address_state": "NY",
+						"shipping_address_postalcode": "46691",
+						"shipping_address_country": "USA",
+						"_acl": 
+						{
+							"fields": 
+							{
+								
+							}
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "flow_id",
+						"module": "Flow/",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "id2",
+						"module": "Inbox/",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "cas_id",
+						"module": "processID/",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox/AdhocReassign",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "replaceStringID",
+							"module": "Accounts",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "account_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Users",
+							"index": 4,
+							"destination": "requestBody",
+							"fromString": "myUser"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Flow",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "flowID"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "processID",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "processID"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Inbox",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "inboxID"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"cas_id": "processID",
+							"cas_index": "3",
+							"flow_id": "flowID",
+							"inbox_id": "inboxID",
+							"adhoc_user": "myUser",
+							"adhoc_type": "ONE_WAY",
+							"not_content": "",
+							"taskName": "Sales2 Rep2",
+							"user_name": null,
+							"moduleName": "Accounts",
+							"beanId": "account_id",
+							"full_name": "Cloud Cover Trust",
+							"reassign_form": true
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep2",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "flow_id",
+						"module": "Flow/",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep2",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "id2",
+						"module": "Inbox/",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep2",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "cas_id",
+						"module": "processID/",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep2",
+					"requestURL": "pmse_Inbox/engine_route",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "replaceStringID",
+							"module": "Accounts",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "account_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Flow",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "flow_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "processID",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "processID"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Inbox",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "inbox_id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"id": "account_id",
+						"my_favorite": false,
+						"following": false,
+						"name": "Cloud Cover Trust",
+						"modified_user_id": "1",
+						"modified_by_name": "Administrator",
+						"created_by": "1",
+						"created_by_name": "Administrator",
+						"description": "Cloud Cover description in text",
+						"assigned_user_id": "",
+						"assigned_user_name": "",
+						"team_name": 
+						[
+							{
+								"id": 1,
+								"name": "Global",
+								"name_2": "",
+								"primary": true
+							}
+						],
+
+						"email": 
+						[
+							{
+								"email_address": "section.kid.section@example.cn",
+								"invalid_email": false,
+								"opt_out": false,
+								"primary_address": true,
+								"reply_to_address": false
+							},
+
+							{
+								"email_address": "sugar.hr@example.info",
+								"invalid_email": false,
+								"opt_out": false,
+								"primary_address": false,
+								"reply_to_address": false
+							}
+						],
+
+						"twitter": "",
+						"account_type": "Customer",
+						"industry": "Electronics",
+						"annual_revenue": "",
+						"phone_fax": "",
+						"billing_address_street": "48920 San Carlos Ave",
+						"billing_address_city": "Persistance",
+						"billing_address_state": "NY",
+						"billing_address_postalcode": "46691",
+						"billing_address_country": "USA",
+						"rating": "",
+						"phone_office": "(777) 954-2070",
+						"phone_alternate": "",
+						"website": "www.supportphone.tw",
+						"ownership": "",
+						"employees": "",
+						"ticker_symbol": "",
+						"shipping_address_street": "48920 San Carlos Ave",
+						"shipping_address_city": "Persistance",
+						"shipping_address_state": "NY",
+						"shipping_address_postalcode": "46691",
+						"shipping_address_country": "USA",
+						"parent_id": "",
+						"sic_code": "",
+						"duns_num": "",
+						"parent_name": "",
+						"campaign_id": "",
+						"campaign_name": "",
+						"_acl": 
+						{
+							"fields": 
+							{
+								
+							}
+						},
+
+						"_module": "Accounts",
+						"frm_action": "Approve",
+						"idFlow": "flow_id",
+						"idInbox": "inbox_id",
+						"cas_id": "processID",
+						"cas_index": "3",
+						"moduleName": "Accounts",
+						"beanId": "account_id",
+						"taskName": "Activity # 1"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Inbox/casesList?max_num=1",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"value": 
+						{
+							"name": "Cloud Cover Trust",
+							"cas_status": "COMPLETED"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Inbox/historyLog/id",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "processID",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"method": "string",
+						"value": 
+						{
+							"contains": 
+							[
+								{
+									"string": "[APPROVED]"
+								}
+							],
+
+							"notcontains": 
+							[
+								
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		{
+			"module": "Accounts"
+		}
+	]
+}

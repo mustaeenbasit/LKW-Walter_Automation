@@ -1,0 +1,3 @@
+langKey,langValue,revisionName,localizationName,status,popUpError,toolTipError,warningMessage,kbCreateSuccessMessage
+de,Deutch,Revision1,Localization1,Published,"Error Please resolve any errors before proceeding.","Error. The Publish Date must occur on a later date than today's date.","Unable to create a new localization as a localization version exists for all available languages.","Success You successfully created the knowledge base article"
+fr,French,Revision2,Localization2,Approved,,,,

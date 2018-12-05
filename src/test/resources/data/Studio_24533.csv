@@ -1,0 +1,2 @@
+name,module_checkbox_name,module_field_name,formula_name,formula_name1,formula_name2,formula_field,formula_validation,invalid_chars
+"Gabbar Singh",mycheckbox,myformula,ifElse,strToUpper,strToLower,name,contains,"*"

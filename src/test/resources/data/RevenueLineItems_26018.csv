@@ -1,0 +1,4 @@
+name,likelyCase,bestCase,worstCase,salesStage
+testRLI1,25,50,20,Closed Won
+testRLI2,25,50,20,Closed Lost
+testRLI3,25,50,20,Qualification

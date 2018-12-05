@@ -1,0 +1,2 @@
+rate,symbol,code,name,cost,unitPrice,listPrice,newRate,listPriceUSD,listPriceE,defaultCurrency
+0.9,E,EUR,testPC,200,1000,100,0.75,$100.00,E75.00,US Dollar : $

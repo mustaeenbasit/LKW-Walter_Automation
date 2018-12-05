@@ -1,0 +1,4 @@
+RLI_NAME,RLI_LIKELY,RLI_DATE,RLI_SALES_STAGE,OPP_STATUS
+rli1,200,01/29/2014,"Closed Won","Closed Won"
+rli2,300,01/30/2014,"Closed Won","Closed Lost"
+rli3,400,01/31/2014,"Qualification","In Progress"

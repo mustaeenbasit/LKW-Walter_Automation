@@ -1,0 +1,5 @@
+fieldName,displayName,matchType
+accountName,Account Name,starts with
+phoneWork,Phone,is
+status,Status,is not any of
+date_entered_date,Date Created,is equal to

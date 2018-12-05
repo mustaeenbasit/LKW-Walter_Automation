@@ -1,0 +1,58 @@
+{
+	"testDocumentation":{
+		"testName":"createSearchManufacturers",
+		"testDescription":"Creates Manufacturers to be searched"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Create Manufacturers",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Manufacturers/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"abcd factory inc",
+						"status":"Active"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"abcd factory inc"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Manufacturers/",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"name":"abcd factory inc"
+						}
+						
+					}			
+				}
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Manufacturers"
+		}	
+	]
+}

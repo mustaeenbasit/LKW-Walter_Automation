@@ -1,0 +1,3 @@
+package_name,key,module_name,plural_label,singular_label,relation_type,relationship_module
+Test,test1,Test,Tests,Test,Many to One,Tests
+Test,Demo1,Demo,Demos,Demo,Many to One,Accounts

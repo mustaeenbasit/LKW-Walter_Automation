@@ -1,0 +1,2 @@
+userName,password,allowAllUsers,mail_smtpssl,mail_smtpport,mail_smtpserver
+qa.user.suga@gmail.com,Nerdapp123,true,TLS,25,test_smtp_server

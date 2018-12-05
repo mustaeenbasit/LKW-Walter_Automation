@@ -1,0 +1,4 @@
+name,sales_stage,warningMessage
+Opp1,Prospecting,Warning One or more of the selected records has a sales stage of Closed Won or Closed Lost and cannot be deleted.
+Opp2,Closed Won
+Opp3,Closed Lost

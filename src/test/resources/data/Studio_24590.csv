@@ -1,0 +1,2 @@
+name,module_field_name,formula_string,display_name,custom_field_value
+myOpp1,myfield,"rollupAve\(\$opportunities,\"amount\"\)",myfield_c,1000

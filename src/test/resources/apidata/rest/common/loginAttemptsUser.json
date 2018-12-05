@@ -1,0 +1,8 @@
+{
+	"grant_type":"password",
+	"username":"nonadminuser11",
+	"password":"nonadminuser11",
+	"client_id":"sugar",
+	"client_secret":"",
+	"platform":"base"
+}

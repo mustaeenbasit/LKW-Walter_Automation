@@ -1,0 +1,69 @@
+{
+	"testDocumentation":{
+		"testName":"sortTeamNameSetUp",
+		"testDescription":"Creates the Teams needed for the main test"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Sort Team Names set up",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Teams/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"North",
+						"id":"NorthsortTeamName1",
+						"description":"North Globally Visible",
+						"deleted":false,
+						"name_2":"",
+						"associated_user_id":"",
+						"private":false
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"North"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Teams/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"South",
+						"id":"SouthsortTeamName1",
+						"description":"South Globally Visible",
+						"deleted":false,
+						"name_2":"",
+						"associated_user_id":"",
+						"private":false
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"South"
+						}
+						
+					}
+					
+				}			
+			]
+			
+		}
+		
+	],
+	"modules_used":[	
+	]
+}

@@ -1,0 +1,4 @@
+name,status,relAccountName,relAssignedTo
+Case1,Assigned,Toyota Motors,admin2
+Case2,Duplicate,Lego Inc.,Administrator
+Case3,Rejected,Bridgestone,qauser

@@ -1,0 +1,69 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminTeamRolesUnset",
+      "testDescription": "Unsets the Team ACL"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Un set Team ACL",
+         "requests": 
+         [
+            {
+               "requestDescription": "UnSet Team Based Roles",
+               "requestUser": "admin",
+               "requestURL": "index.php",
+               "requestType": "postForm",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "formParameters": 
+                  [
+                     {
+                        "name": "module",
+                        "value": "Teams"
+                     },
+
+                     {
+                        "name": "action",
+                        "value": "savetbaconfiguration"
+                     },
+
+                     {
+                        "name": "enabled",
+                        "value": "false"
+                     },
+
+                     {
+                        "name": "disabled_modules",
+                        "value": ""
+                     },
+
+                     {
+                        "name": "to_pdf",
+                        "value": "1"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

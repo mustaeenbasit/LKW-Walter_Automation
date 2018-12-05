@@ -1,0 +1,163 @@
+{
+	"testDocumentation":{
+		"testName":"crudBugs",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Bugs"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Bugs",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Bugs/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Syntax error appears when running old reports",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}							
+						],
+						"type":"Feature",
+						"status":"Assigned",
+						"priority":"Low",
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Syntax error appears when running old reports",
+							"type":"Feature",
+							"status":"Assigned",
+							"priority":"Low"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Bugs/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Bugs",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Syntax error appears when running old reports",
+							"type":"Feature",
+							"status":"Assigned",
+							"priority":"Low"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Bugs/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Bugs",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Changed Syntax error appears when running old reports",
+						"type":"Feature",
+						"status":"Assigned",
+						"priority":"High"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Changed Syntax error appears when running old reports",
+							"type":"Feature",
+							"status":"Assigned",
+							"priority":"High"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Bugs/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Bugs",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Bugs/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Bugs",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Bugs"
+		}
+		
+	]
+}

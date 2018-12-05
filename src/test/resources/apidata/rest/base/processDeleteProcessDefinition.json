@@ -1,0 +1,1009 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "processAssignUser1",
+		"testDescription": "Verifies the basic Create of a Process Template for assign user duirng Account creation"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "CRUD Process Definitions",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"doc_owner": "",
+						"user_favorites": "",
+						"deleted": false,
+						"prj_status": "INACTIVE",
+						"assigned_user_id": "1",
+						"prj_module": "Accounts",
+						"name": "mypd"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"name": "mypd Changed"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd Changed"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"prj_status": "ACTIVE"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "mypd Changed",
+							"prj_status": "ACTIVE"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "project_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 1,
+							"destination": "requestBody",
+							"fromString": "MYUID1"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"activities": 
+							{
+								
+							},
+
+							"gateways": 
+							{
+								
+							},
+
+							"events": 
+							{
+								"MYUID1": 
+								{
+									"evn_uid": "MYUID1",
+									"evn_name": "Start Event # 1",
+									"evn_type": "START",
+									"evn_marker": "MESSAGE",
+									"evn_is_interrupting": true,
+									"evn_cancel_activity": false,
+									"evn_activity_ref": null,
+									"evn_wait_for_completion": false,
+									"evn_error_name": null,
+									"evn_error_code": null,
+									"evn_escalation_name": null,
+									"evn_escalation_code": null,
+									"evn_message": "",
+									"evn_operation_name": null,
+									"evn_operation_implementation": null,
+									"evn_time_date": null,
+									"evn_time_cycle": null,
+									"evn_time_duration": null,
+									"evn_behavior": "CATCH",
+									"bou_x": 188,
+									"bou_y": 102,
+									"bou_width": 33,
+									"bou_height": 33,
+									"bou_container": "bpmnDiagram",
+									"element_id": "107843199557f3f38d75fc3026240419",
+									"action": "CREATE"
+								}
+							},
+
+							"artifacts": 
+							{
+								
+							},
+
+							"flows": 
+							{
+								
+							},
+
+							"prj_uid": "project_id"
+						},
+
+						"id": "project_id",
+						"operation": "update",
+						"wrapper": "Project"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/EventDefinition/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "UIID",
+							"index": 1,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"evn_module": "Accounts",
+							"evn_params": "new",
+							"evn_criteria": null
+						}
+					},
+
+					"validation": 
+					{
+						"type": "none",
+						"value": 
+						{
+							
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "project_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 2,
+							"destination": "requestBody",
+							"fromString": "MYUID2"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"activities": 
+							{
+								
+							},
+
+							"gateways": 
+							{
+								
+							},
+
+							"events": 
+							{
+								"MYUID2": 
+								{
+									"evn_uid": "MYUID2",
+									"evn_name": "End Event # 1",
+									"evn_type": "END",
+									"evn_marker": "EMPTY",
+									"evn_is_interrupting": true,
+									"evn_cancel_activity": false,
+									"evn_activity_ref": null,
+									"evn_wait_for_completion": false,
+									"evn_error_name": null,
+									"evn_error_code": null,
+									"evn_escalation_name": null,
+									"evn_escalation_code": null,
+									"evn_message": "",
+									"evn_operation_name": null,
+									"evn_operation_implementation": null,
+									"evn_time_date": null,
+									"evn_time_cycle": null,
+									"evn_time_duration": null,
+									"evn_behavior": "THROW",
+									"bou_x": 551,
+									"bou_y": 103,
+									"bou_width": 33,
+									"bou_height": 33,
+									"bou_container": "bpmnDiagram",
+									"element_id": "727387207557f5688a87088055747310",
+									"action": "CREATE"
+								}
+							},
+
+							"artifacts": 
+							{
+								
+							},
+
+							"flows": 
+							{
+								
+							},
+
+							"prj_uid": "project_id"
+						},
+
+						"id": "project_id",
+						"operation": "update",
+						"wrapper": "Project"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "project_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 3,
+							"destination": "requestBody",
+							"fromString": "MYUID3"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"activities": 
+							{
+								"MYUID3": 
+								{
+									"act_uid": "MYUID3",
+									"act_name": "Action # 1",
+									"act_type": "TASK",
+									"act_task_type": "SCRIPTTASK",
+									"act_is_for_compensation": false,
+									"act_start_quantity": 1,
+									"act_completion_quantity": 0,
+									"act_implementation": "",
+									"act_instantiate": false,
+									"act_script_type": "ASSIGN_USER",
+									"act_script": "",
+									"act_loop_type": "NONE",
+									"act_test_before": null,
+									"act_loop_maximum": 0,
+									"act_loop_condition": null,
+									"act_loop_cardinality": 0,
+									"act_loop_behavior": null,
+									"act_is_adhoc": false,
+									"act_is_collapsed": false,
+									"act_completion_condition": null,
+									"act_ordering": null,
+									"act_cancel_remaining_instances": true,
+									"act_protocol": null,
+									"act_method": null,
+									"act_is_global": false,
+									"act_referer": null,
+									"act_default_flow": 0,
+									"act_master_diagram": null,
+									"bou_x": 367,
+									"bou_y": 102,
+									"bou_width": 35,
+									"bou_height": 35,
+									"bou_container": "bpmnDiagram",
+									"element_id": "303993909557f5dc31d4a41053062318",
+									"action": "CREATE"
+								}
+							},
+
+							"gateways": 
+							{
+								
+							},
+
+							"events": 
+							{
+								
+							},
+
+							"artifacts": 
+							{
+								
+							},
+
+							"flows": 
+							{
+								
+							},
+
+							"prj_uid": "project_id"
+						},
+
+						"id": "project_id",
+						"operation": "update",
+						"wrapper": "Project"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/ActivityDefinition/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "replaceStringID",
+							"module": "Users",
+							"index": 99999,
+							"destination": "requestBody",
+							"fromString": "MYUSERID"
+						},
+
+						{
+							"type": "id",
+							"module": "UIID",
+							"index": 3,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"act_assign_user": "MYUSERID",
+							"act_update_record_owner": true
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/project/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "pmse_Project",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "project_id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 1,
+							"destination": "requestBody",
+							"fromString": "MYUID1"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 2,
+							"destination": "requestBody",
+							"fromString": "MYUID2"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 3,
+							"destination": "requestBody",
+							"fromString": "MYUID3"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 4,
+							"destination": "requestBody",
+							"fromString": "MYUID4"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "UIID",
+							"index": 5,
+							"destination": "requestBody",
+							"fromString": "MYUID5"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"activities": 
+							{
+								
+							},
+
+							"gateways": 
+							{
+								
+							},
+
+							"events": 
+							{
+								
+							},
+
+							"artifacts": 
+							{
+								
+							},
+
+							"flows": 
+							{
+								"MYUID4": 
+								{
+									"flo_uid": "MYUID4",
+									"flo_type": "SEQUENCE",
+									"flo_name": null,
+									"flo_element_origin": "MYUID1",
+									"flo_element_origin_type": "bpmnEvent",
+									"flo_element_dest": "MYUID3",
+									"flo_element_dest_type": "bpmnActivity",
+									"flo_is_inmediate": null,
+									"flo_condition": null,
+									"flo_state": 
+									[
+										{
+											"x": 221,
+											"y": 119
+										},
+
+										{
+											"x": 293,
+											"y": 119
+										},
+
+										{
+											"x": 293,
+											"y": 118
+										},
+
+										{
+											"x": 365,
+											"y": 118
+										}
+									],
+
+									"action": "CREATE"
+								},
+
+								"MYUID5": 
+								{
+									"flo_uid": "MYUID5",
+									"flo_type": "SEQUENCE",
+									"flo_name": null,
+									"flo_element_origin": "MYUID3",
+									"flo_element_origin_type": "bpmnActivity",
+									"flo_element_dest": "MYUID2",
+									"flo_element_dest_type": "bpmnEvent",
+									"flo_is_inmediate": null,
+									"flo_condition": null,
+									"flo_state": 
+									[
+										{
+											"x": 404,
+											"y": 118
+										},
+
+										{
+											"x": 477,
+											"y": 118
+										},
+
+										{
+											"x": 477,
+											"y": 120
+										},
+
+										{
+											"x": 551,
+											"y": 120
+										}
+									],
+
+									"action": "CREATE"
+								}
+							},
+
+							"prj_uid": "project_id"
+						},
+
+						"id": "project_id",
+						"operation": "update",
+						"wrapper": "Project"
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestDescription": "Create an Account",
+					"requestUser": "admin",
+					"requestURL": "Accounts/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"name": "Cloud Cover Trust",
+						"description": "Cloud Cover description in text",
+						"deleted": false,
+						"website": "www.supportphone.tw",
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": false
+							}
+						],
+
+						"email": 
+						[
+							{
+								"email_address": "section.kid.section@example.cn",
+								"primary_address": true,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							},
+
+							{
+								"email_address": "sugar.hr@example.info",
+								"primary_address": false,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							}
+						],
+
+						"email1": "section.kid.section@example.cn",
+						"email2": "",
+						"invalid_email": false,
+						"email_opt_out": false,
+						"email_addresses_non_primary": "",
+						"account_type": "Customer",
+						"industry": "Electronics",
+						"billing_address_street": "48920 San Carlos Ave",
+						"billing_address_street_2": "",
+						"billing_address_street_3": "",
+						"billing_address_street_4": "",
+						"billing_address_city": "Persistance",
+						"billing_address_state": "NY",
+						"billing_address_postalcode": "46691",
+						"billing_address_country": "USA",
+						"rating": "",
+						"phone_office": "(777) 954-2070",
+						"phone_alternate": "",
+						"ownership": "",
+						"employees": "",
+						"ticker_symbol": "",
+						"shipping_address_street": "48920 San Carlos Ave",
+						"shipping_address_street_2": "",
+						"shipping_address_street_3": "",
+						"shipping_address_street_4": "",
+						"shipping_address_city": "Persistance",
+						"shipping_address_state": "NY",
+						"shipping_address_postalcode": "46691",
+						"shipping_address_country": "USA",
+						"_acl": 
+						{
+							"fields": 
+							{
+								
+							}
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "Cloud Cover Trust"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Inbox/casesList?max_num=1",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"value": 
+						{
+							"name": "Cloud Cover Trust",
+							"cas_status": "COMPLETED"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/id",
+					"requestType": "delete",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "pmse_Project",
+							"index": 1,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestDescription": "Create another Account",
+					"requestUser": "admin",
+					"requestURL": "Accounts/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"name": "ABC Cloud Cover Trust",
+						"description": "ABC Cloud Cover description in text",
+						"deleted": false,
+						"website": "www.supportphone.tw",
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": false
+							}
+						],
+
+						"email": 
+						[
+							{
+								"email_address": "section.kid.section@example.cn",
+								"primary_address": true,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							},
+
+							{
+								"email_address": "sugar.hr@example.info",
+								"primary_address": false,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							}
+						],
+
+						"email1": "section.kid.section@example.cn",
+						"email2": "",
+						"invalid_email": false,
+						"email_opt_out": false,
+						"email_addresses_non_primary": "",
+						"account_type": "Customer",
+						"industry": "Electronics",
+						"billing_address_street": "48920 San Carlos Ave",
+						"billing_address_street_2": "",
+						"billing_address_street_3": "",
+						"billing_address_street_4": "",
+						"billing_address_city": "Persistance",
+						"billing_address_state": "NY",
+						"billing_address_postalcode": "46691",
+						"billing_address_country": "USA",
+						"rating": "",
+						"phone_office": "(777) 954-2070",
+						"phone_alternate": "",
+						"ownership": "",
+						"employees": "",
+						"ticker_symbol": "",
+						"shipping_address_street": "48920 San Carlos Ave",
+						"shipping_address_street_2": "",
+						"shipping_address_street_3": "",
+						"shipping_address_street_4": "",
+						"shipping_address_city": "Persistance",
+						"shipping_address_state": "NY",
+						"shipping_address_postalcode": "46691",
+						"shipping_address_country": "USA",
+						"_acl": 
+						{
+							"fields": 
+							{
+								
+							}
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "ABC Cloud Cover Trust"
+						}
+					}
+				},
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Inbox/casesList?max_num=1",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"value": 
+						{
+							"name": "Cloud Cover Trust",
+							"cas_status": "COMPLETED"
+						}
+					}
+				}
+			]
+		}
+	],
+	"modules_used": 
+	[
+		{
+			"module": "Accounts"
+		}
+	]
+}

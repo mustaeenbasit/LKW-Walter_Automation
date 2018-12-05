@@ -1,0 +1,250 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudKBContentsRevision",
+      "testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for KBContents Revisions"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD KBContents Revisions",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "active_rev": 0,
+                  "is_external": 0,
+                  "status": "published",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontent",
+                  "kbdocument_body": "Here is the kbcontent body"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent"
+                  }
+               }
+            },
+
+ {
+               "requestUser": "admin",
+               "requestURL": "KBContents",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "kbdocument_id",
+                  "module": "KBDocuments/",
+                  "value": 
+                  {
+                     "name": "mykbcontent"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "kbarticle_id",
+                  "module": "KBArticles/",
+                  "value": 
+                  {
+                     "name": "mykbcontent"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents?viewed=1&picture_duplicateBeanId=id&team_name_duplicateBeanId=id",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "KBDocuments",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "kbdocument_id"
+                  },
+
+                  {
+                     "type": "id",
+                     "module": "KBArticles",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "field": "kbarticle_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "doc_owner": "",
+                  "user_favorites": "",
+                  "deleted": false,
+                  "viewcount": 0,
+                  "revision": "0",
+                  "useful": "0",
+                  "notuseful": "0",
+                  "kbdocument_id": "3ab668ff-2e19-6443-71ea-561bfff76186",
+                  "active_rev": 1,
+                  "kbarticle_id": "93aa9992-b09c-23e6-fce6-561bff91d121",
+                  "is_external": 0,
+                  "status": "published",
+                  "language": "en",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "mykbcontent",
+                  "kbdocument_body": "Here is the kbcontent body Revision 1"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent",
+                     "kbdocument_body": "Here is the kbcontent body Revision 1"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 1,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent",
+                     "kbdocument_body": "Here is the kbcontent body",
+                     "revision": 1,
+                     "status": "expired"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "KBContents",
+                     "index": 2,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mykbcontent",
+                     "kbdocument_body": "Here is the kbcontent body Revision 1",
+                      "revision": 2,
+                       "active_rev": 1                  
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "KBContents"
+      }
+   ]
+}

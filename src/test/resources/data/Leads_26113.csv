@@ -1,0 +1,2 @@
+fieldName,fieldType,currencyAmount,changedCurrencyAmount,date,likelyValue,moduleName,currencyName
+RLI_Lead_currency,Currency,100.00,90.00,"03/25/2020",1000,Revenue Line Items,E (EUR)

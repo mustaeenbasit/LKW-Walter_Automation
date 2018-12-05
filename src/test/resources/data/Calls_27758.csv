@@ -1,0 +1,4 @@
+userName,firstName,lastName,emailAddress,newPassword,confirmPassword
+chris,chris,user1,qa.user.suga@gmail.com,Chris123!,Chris123!
+test,test,user2,testacc425@gmail.com,Test123!,Test123!
+new,new,user3,testacc426@gmail.com,User123!,User123!

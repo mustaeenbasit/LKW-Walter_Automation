@@ -1,0 +1,153 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "createUsers1",
+		"testDescription": "Create 2 unique users with ids, user1 and user2"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Create User1 and User2",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "Users/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"user_name": "user1",
+						"user_hash": "user1",
+						"id": "user1",
+						"system_generated_password": false,
+						"authenticate_id": "",
+						"sugar_login": true,
+						"picture": "",
+						"first_name": "User",
+						"last_name": "One",
+						"full_name": "User One",
+						"name": "User One",
+						"is_admin": false,
+						"external_auth_only": false,
+						"receive_notifications": true,
+						"description": "",
+						"status": "Active",
+						"default_team": "1",
+						"team_count": "",
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": false
+							}
+						],
+
+						"deleted": false,
+						"portal_only": false,
+						"show_on_employees": true,
+						"employee_status": "Active",
+						"email": 
+						[
+							{
+								"email_address": "userOne@sugarcrm.com",
+								"primary_address": true,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"user_name": "user1"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Users/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"user_name": "user2",
+						"user_hash": "user2",
+						"id": "user2",
+						"system_generated_password": false,
+						"authenticate_id": "",
+						"sugar_login": true,
+						"picture": "",
+						"first_name": "User",
+						"last_name": "Two",
+						"full_name": "User Two",
+						"name": "User Two",
+						"is_admin": false,
+						"external_auth_only": false,
+						"receive_notifications": true,
+						"description": "",
+						"status": "Active",
+						"default_team": "1",
+						"team_count": "",
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": false
+							}
+						],
+
+						"deleted": false,
+						"portal_only": false,
+						"show_on_employees": true,
+						"employee_status": "Active",
+						"email": 
+						[
+							{
+								"email_address": "userTwo@sugarcrm.com",
+								"primary_address": true,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"user_name": "user2"
+						}
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		
+	]
+}

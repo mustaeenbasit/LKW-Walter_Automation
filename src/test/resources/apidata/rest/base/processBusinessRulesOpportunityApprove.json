@@ -1,0 +1,686 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "processBusinessRulesQuoteApprove",
+      "testDescription": "Verifies the basic Process Business Rules for Quote Approve"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Process with Business Rules for Quote Approve",
+         "requests": 
+         [
+            {
+               "requestDescription": "Create a Business Rule",
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "rst_type": "single",
+                  "rst_editable": "0",
+                  "assigned_user_id": "1",
+                  "rst_module": "Opportunities",
+                  "name": "mybropp"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mybropp"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mybropp"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "rst_source_definition": "{\"base_module\":\"Opportunities\",\"type\":\"single\",\"columns\":{\"conditions\":[{\"module\":\"Opportunities\",\"field\":\"amount\"}],\"conclusions\":[\"\"]},\"ruleset\":[{\"id\":1,\"conditions\":[{\"value\":[{\"expType\":\"CONSTANT\",\"expSubtype\":\"number\",\"expLabel\":\"10000\",\"expValue\":10000}],\"variable_name\":\"amount\",\"condition\":\">=\",\"variable_module\":\"Opportunities\"}],\"conclusions\":[{\"value\":[{\"expType\":\"CONSTANT\",\"expSubtype\":\"string\",\"expLabel\":\"\\\"OK\\\"\",\"expValue\":\"OK\"}],\"conclusion_value\":\"result\",\"conclusion_type\":\"return\"}]}]}"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mybropp"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project",
+               "requestType": "postImportProcessDefinition",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "fileLocation": "src/test/resources/apidata/processdefinitions/myBusinessRulesOpp.bpm"
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "value": 
+                  {
+                     "name": "myBusinessRulesOpp"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "module": "pmse_Project/",
+                  "value": 
+                  {
+                     "name": "myBusinessRulesOpp"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Project",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "prj_status": "ACTIVE"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myBusinessRulesOpp",
+                     "prj_status": "ACTIVE"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnActivity/filter?filter=[{\"act_script_type\":\"BUSINESS_RULE\"}]",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "act_uid",
+                  "module": "pmse_BpmnActivity/",
+                  "value": 
+                  {
+                     "act_script_type": "BUSINESS_RULE"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project/ActivityDefinition/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_BpmnActivity",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "fromString": "pmse_Business_Rules_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "data": 
+                  {
+                     "act_fields": "pmse_Business_Rules_id",
+                     "act_field_module": "Opportunities"
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "success": true
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnGateway",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "gat_uid",
+                  "module": "pmse_BpmnGateway/",
+                  "value": 
+                  {
+                     "name": "Exclusive Gateway1"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnFlow/filter?filter=[{\"flo_element_origin_type\":\"bpmnGateway\"}]&order_by=flo_condition:desc&max_num=1",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "flo_uid",
+                  "module": "pmse_BpmnFlow/",
+                  "value": 
+                  {
+                     "flo_type": "SEQUENCE"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnFlow/filter?filter=[{\"flo_element_origin_type\":\"bpmnGateway\"}]&order_by=flo_condition&max_num=1",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "flo_uid",
+                  "module": "pmse_BpmnFlow/",
+                  "value": 
+                  {
+                     "flo_type": "SEQUENCE"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnFlow/filter?filter=[{\"flo_element_dest_type\":\"bpmnGateway\"}]",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "flo_element_origin",
+                  "module": "pmse_BpmnOrigin/",
+                  "value": 
+                  {
+                     "flo_type": "SEQUENCE"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project/GatewayDefinition/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_BpmnGateway",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "pmse_BpmnFlow",
+                     "index": 2,
+                     "destination": "requestBody",
+                     "fromString": "pmse_BpmnFlow_id_1"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "pmse_BpmnFlow",
+                     "index": 1,
+                     "destination": "requestBody",
+                     "fromString": "pmse_BpmnFlow_id_2"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "pmse_BpmnOrigin",
+                     "index": 999999,
+                     "destination": "requestBody",
+                     "fromString": "pmse_BpmnOrigin_id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "data": 
+                  [
+                     {
+                        "flo_uid": "pmse_BpmnFlow_id_1",
+                        "flo_condition": "[{\"expType\":\"BUSINESS_RULES\",\"expLabel\":\"Actionbr is equal to \\\"OK\\\"\",\"expValue\":\"OK\",\"expOperator\":\"equals\",\"expField\":\"pmse_BpmnOrigin_id\"}]"
+                     },
+
+                     {
+                        "flo_uid": "pmse_BpmnFlow_id_2",
+                        "flo_condition": "[{\"expType\":\"BUSINESS_RULES\",\"expLabel\":\"Actionbr is not equal to \\\"OK\\\"\",\"expValue\":\"OK\",\"expOperator\":\"not_equals\",\"expField\":\"pmse_BpmnOrigin_id\"}]"
+                     }
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "success": true
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnActivity/filter?filter=[{\"name\":\"Action1\"}]",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "act_uid",
+                  "module": "pmse_BpmnActivity/",
+                  "value": 
+                  {
+                     "name": "Action1"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project/ActivityDefinition/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_BpmnActivity",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 5,
+                     "destination": "requestBody",
+                     "fromString": "MYUSERID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "data": 
+                  {
+                     "act_assign_user": "MYUSERID",
+                     "act_update_record_owner": true
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "success": true
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_BpmnActivity/filter?filter=[{\"name\":\"Action2\"}]",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "validation": 
+               {
+                  "type": "arrayone",
+                  "count": 1,
+                  "extractID": "yes",
+                  "whichID": "act_uid",
+                  "module": "pmse_BpmnActivity/",
+                  "value": 
+                  {
+                     "name": "Action2"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Project/ActivityDefinition/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_BpmnActivity",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  },
+
+                  {
+                     "type": "replaceStringID",
+                     "module": "Users",
+                     "index": 4,
+                     "destination": "requestBody",
+                     "fromString": "MYUSERID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "data": 
+                  {
+                     "act_assign_user": "MYUSERID",
+                     "act_update_record_owner": true
+                  }
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "success": true
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "amount": "20000.000000",
+                  "sales_stage": "Prospecting",
+                  "sales_status": "New",
+                  "best_case": "",
+                  "worst_case": "",
+                  "mkto_sync": false,
+                  "currency_id": "-99",
+                  "assigned_user_id": "1",
+                  "base_rate": "1.000000",
+                  "probability": "10",
+                  "commit_stage": "exclude",
+                  "tag": 
+                  [
+                     
+                  ],
+
+                  "opportunity_type": "",
+                  "lead_source": "",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "myoppOK",
+                  "amount_usdollar": "20000.000000",
+                  "date_closed": "2017-12-25"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myoppOK",
+                     "assigned_user_name": "Sales1 Rep1"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "Opportunities/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "amount": "3000.000000",
+                  "sales_stage": "Prospecting",
+                  "sales_status": "New",
+                  "best_case": "",
+                  "worst_case": "",
+                  "mkto_sync": false,
+                  "currency_id": "-99",
+                  "assigned_user_id": "1",
+                  "base_rate": "1.000000",
+                  "probability": "10",
+                  "commit_stage": "exclude",
+                  "tag": 
+                  [
+                     
+                  ],
+
+                  "opportunity_type": "",
+                  "lead_source": "",
+                  "team_name": 
+                  [
+                     {
+                        "id": "1",
+                        "display_name": "Global",
+                        "name": "Global",
+                        "name_2": "",
+                        "primary": true
+                     }
+                  ],
+
+                  "name": "myoppNOTOK",
+                  "amount_usdollar": "3000.000000",
+                  "date_closed": "2017-12-25"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "myoppNOTOK",
+                     "assigned_user_name": "Sales2 Rep2"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "pmse_Business_Rules"
+      },
+
+      {
+         "module": "pmse_BpmnActivity"
+      },
+
+      {
+         "module": "pmse_BpmnGateway"
+      },
+
+      {
+         "module": "pmse_BpmnFlow"
+      },
+
+      {
+         "module": "Opportunities"
+      }
+   ]
+}

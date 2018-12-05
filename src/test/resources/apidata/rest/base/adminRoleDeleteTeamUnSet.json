@@ -1,0 +1,86 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "adminRolesDeleteTeamUnset",
+      "testDescription": "Verify the resetting for module TBACL to Owner"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "Verify the resetting fo module TBACL does not enforce previous team ACL settings",
+         "requests": 
+         [
+            
+            {
+               "requestUser": "salesRep1",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Changed the name again"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "Changed the name again"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "salesRep2",
+               "requestURL": "Accounts/id",
+               "requestType": "put",
+               "requestStatus": 403,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "Accounts",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "name": "Changed the name again and again"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "error": "not_authorized"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "Accounts"
+      }
+   ]
+}

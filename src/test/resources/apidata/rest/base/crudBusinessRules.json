@@ -1,0 +1,149 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "crudBusinessRules",
+      "testDescription": "Verifies the basic Create, Read Update and Delete - CRUD - for Process Business Rules"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "CRUD Business Rules",
+         "requests": 
+         [
+            {
+               "requestDescription": "Create a Business Rule",
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  
+               ],
+
+               "requestBody": 
+               {
+                  "deleted": false,
+                  "rst_type": "single",
+                  "rst_editable": "0",
+                  "assigned_user_id": "1",
+                  "rst_module": "Accounts",
+                  "name": "mbr"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mbr"
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/id",
+               "requestType": "get",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mbr"
+                  }
+               }
+            },
+
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/id",
+               "requestType": "put",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "rst_source_definition": "{\"base_module\":\"Accounts\",\"type\":\"single\",\"columns\":{\"conditions\":[{\"module\":\"Accounts\",\"field\":\"description\"}],\"conclusions\":[\"\"]},\"ruleset\":[{\"id\":1,\"conditions\":[{\"value\":[{\"expType\":\"CONSTANT\",\"expSubtype\":\"string\",\"expLabel\":\"\\\"OK\\\"\",\"expValue\":\"OK\"}],\"variable_name\":\"description\",\"condition\":\"==\",\"variable_module\":\"Accounts\"}],\"conclusions\":[{\"value\":[{\"expType\":\"CONSTANT\",\"expSubtype\":\"boolean\",\"expLabel\":\"TRUE\",\"expValue\":true}],\"conclusion_value\":\"result\",\"conclusion_type\":\"return\"}]}]}"
+               },
+
+               "validation": 
+               {
+                  "type": "single",
+                  "value": 
+                  {
+                     "name": "mbr"
+                  }
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/id",
+               "requestType": "delete",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+               "validation": 
+               {
+                  "type": "none"
+               }
+            },
+            {
+               "requestUser": "admin",
+               "requestURL": "pmse_Business_Rules/id",
+               "requestType": "get",
+               "requestStatus": 404,
+               "substitute": 
+               [
+                  {
+                     "type": "id",
+                     "module": "pmse_Business_Rules",
+                     "index": 999999,
+                     "destination": "requestURL",
+                     "field": "id"
+                  }
+               ],
+               "validation": 
+               {
+                  "type": "none"
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      {
+         "module": "pmse_Business_Rules"
+      }
+   ]
+}

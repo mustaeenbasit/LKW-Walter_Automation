@@ -1,0 +1,2 @@
+moduleName,reportName,filterName,field,operator,value
+Reports,Contact Report1,Contacts' reports,Module,is any of,Contacts

@@ -1,0 +1,2 @@
+filter_name,field_name,operator,value
+cases,Status,is any of,New

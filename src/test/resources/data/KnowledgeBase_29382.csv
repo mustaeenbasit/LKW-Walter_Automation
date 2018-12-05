@@ -1,0 +1,2 @@
+status,published,expiration_date,warningMessage
+Status,Published,Expiration Date,"Error The Expiration Date must occur on a date after the Publish Date."

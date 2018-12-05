@@ -1,0 +1,2 @@
+field_name,display_name,formula,opportunityName,convertedBadge
+DateTest,datetest_c,today(),myOpportunity,Converted

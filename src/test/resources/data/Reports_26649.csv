@@ -1,0 +1,4 @@
+conversionRate,currencySymbol,rliName,currencyAmount,currencyInDollar,AmountInPreferredCurrency,currency_in_yen
+1.00,$,testOne,200,"266.67","Y600.00","Y600.00"
+2.00,E,testTwo,700,"933.33","Y1,050.00","Y1,050.00"
+3.00,Y,testThree,300,"379.75","Y300.00","Y300.00"

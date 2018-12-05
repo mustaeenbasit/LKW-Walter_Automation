@@ -1,0 +1,70 @@
+{
+	"testDocumentation":{
+		"testName":"deleteLoginAttemptsUser",
+		"testDescription":"Deletes the user for the multiple login attempts test"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Delete the User for the multiple login attempts tests",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Users/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Teams?filter[0][name][$starts]=nonadmin",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"Teams/",
+						"value":{
+							"name":"nonadminfirst11"
+						}
+					}
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Teams/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Teams",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

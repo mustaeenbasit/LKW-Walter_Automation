@@ -1,0 +1,34 @@
+{
+	"testDocumentation":{
+		"testName":"deleteUsersPortal",
+		"testDescription":"Deletes the Portal Support User"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Delete Portal Support User",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Users/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+					],
+					"validation":{
+						"type":"none"
+					}
+				}
+			]
+		}
+	],
+	"modules_used":[
+		
+	]
+}

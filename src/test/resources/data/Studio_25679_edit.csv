@@ -1,0 +1,12 @@
+"Dataset","Data Type","Field Name","Field Label","Help Text","Drop Down List","Default Value","Min Value","Max Value","Max Size",Precision,"Mass Update",HTML,"Required Field",Reportable,Audit,"Duplicate Merge"
+"Edit Dataset 1 - Text",varchar,property_name,"Property Name","Property Name Help",,"Property Name Default Value",,,255,,,,Checked,Checked,Checked,Disabled
+"Edit Dataset 2 - Integer",int,property_id,"Property ID","Property ID Help",,1,0,100,11,,,,Checked,Checked,Checked,Disabled
+"Edit Dataset 3 - Decimal",decimal,property_cost,"Property Cost","Property Cost Help",,100.00,,,11,2,,,Checked,Checked,Checked,Disabled
+"Edit Dataset 4 - Checkbox",bool,property_owner_occupied,"Owner Occupied","Owner Occupied Help",,Checked,,,,,,,,Checked,Checked,Enabled
+"Edit Dataset 5  Drop Down",enum,property_resources,,,"Leave as default","Leave as default",,,,,,,Checked,Checked,Checked,Disabled
+"Edit Dataset 6 - Date",date,date_property,"Listing Date","Listing Date Help",,,,,,,Checked,,Checked,Checked,Checked,Disabled
+"Dataset 7  Multiple Select",multienum,property_ms,,,lead_source_dom,"Cold Call",,,,,Checked,,Checked,Checked,Checked,Enabled
+"Dataset 8  Phone",phone,property_phone,,,,"(021)12345678",,,15,,,,Checked,Checked,Checked,Enabled
+"Dataset 9  Currency",currency,property_currency,,,,1000,,,,,,,Checked,Checked,Checked,Enabled
+"Dataset 10  HTML",html,property_html,html_label,html_help,,,,,,,,"&lt;html&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt; test this buddy &lt;/td&gt;&lt;td&gt; &lt;b&gt; test this buddy &lt;/b&gt; &lt;/td&gt;&lt;td&gt; &lt;i&gt; test this buddy &lt;/i&gt; &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt; test this buddy-1 &lt;/td&gt;&lt;td&gt; &lt;b&gt; test this buddy-1 &lt;/b&gt; &lt;/td&gt;&lt;td&gt; &lt;i&gt; test this buddy-1 &lt;/i&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/html&gt;",Enabled,,Enabled,Enabled
+"Dataset 11 Radio",radioenum,property_radio,,,lead_source_dom,"Cold Call",,,,,Checked,,Checked,Checked,Checked,Enabled

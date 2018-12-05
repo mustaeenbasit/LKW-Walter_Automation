@@ -1,0 +1,3 @@
+field,operator,value,filter_name
+Subject,starts with,test,testFilter1
+Status,is not any of,Closed,

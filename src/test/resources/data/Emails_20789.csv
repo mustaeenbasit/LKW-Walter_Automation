@@ -1,0 +1,2 @@
+mail_smtpserver,mail_smtpssl,mail_smtpport,userName,password,server_url,port,ssl,protocol
+smtp.gmail.com,2,587,qa.user.suga@gmail.com,Nerdapp123,imap.gmail.com,993,1,imap

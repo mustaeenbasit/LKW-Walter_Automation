@@ -1,0 +1,118 @@
+{
+	"testDocumentation":{
+		"testName":"forecastsConfig",
+		"testDescription":"A common json to Configure Forecasts"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Config Forecasts",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Forecasts/config/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"pipeline_opp_count":0,
+						"pipeline_amount":0,
+						"closed_amount":0,
+						"currency_id":"-99",
+						"is_setup":true,
+						"is_upgrade":0,
+						"has_commits":0,
+						"forecast_by":"RevenueLineItems",
+						"timeperiod_type":"chronological",
+						"timeperiod_interval":"Annual",
+						"timeperiod_leaf_interval":"Quarter",
+						"timeperiod_start_date":"2014-01-01",
+						"timeperiod_fiscal_year":"",
+						"timeperiod_shown_forward":"2",
+						"timeperiod_shown_backward":"2",
+						"forecast_ranges":"show_binary",
+						"buckets_dom":"commit_stage_binary_dom",
+						"show_binary_ranges":{
+							"include":{
+								"min":70,
+								"max":100
+							},
+							"exclude":{
+								"min":0,
+								"max":69
+							}
+							
+						},
+						"show_buckets_ranges":{
+							"include":{
+								"min":85,
+								"max":100
+							},
+							"upside":{
+								"min":70,
+								"max":84
+							},
+							"exclude":{
+								"min":0,
+								"max":69
+							}
+							
+						},
+						"show_custom_buckets_ranges":{
+							"include":{
+								"min":85,
+								"max":100
+							},
+							"upside":{
+								"min":70,
+								"max":84
+							},
+							"exclude":{
+								"min":0,
+								"max":69
+							}
+							
+						},
+						"commit_stages_included":[
+							"include"
+						],
+						"sales_stage_won":[
+							"Closed Won"
+						],
+						"sales_stage_lost":[
+							"Closed Lost"
+						],
+						"show_worksheet_likely":1,
+						"show_worksheet_best":1,
+						"show_worksheet_worst":0,
+						"show_projected_likely":1,
+						"show_projected_best":1,
+						"show_projected_worst":0,
+						"show_forecasts_commit_warnings":true,
+						"worksheet_columns":[
+							"commit_stage",
+							"parent_name",
+							"likely_case"
+						]
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"forecast_by":"RevenueLineItems"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

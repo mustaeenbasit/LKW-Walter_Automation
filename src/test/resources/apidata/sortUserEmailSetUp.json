@@ -1,0 +1,136 @@
+{
+	"testDocumentation":{
+		"testName":"sortUserEmailSetUp",
+		"testDescription":"Creates the Users needed for the main test"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Sort Users set up",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Users/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"user_name":"jim",
+						"user_hash":"Jimbo99",
+						"system_generated_password":false,
+						"authenticate_id":"",
+						"sugar_login":true,
+						"picture":"",
+						"first_name":"jim",
+						"last_name":"bo",
+						"full_name":"jim bo",
+						"name":"jim bo",
+						"is_admin":false,
+						"external_auth_only":false,
+						"receive_notifications":true,
+						"description":"",
+						"status":"Active",
+						"default_team":"1",
+						"team_count":"",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+							
+						],
+						"deleted":false,
+						"portal_only":false,
+						"show_on_employees":true,
+						"employee_status":"Active",
+						"email":[
+							{
+								"email_address":"zzjim@sugarcrm.com",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+							
+						]
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"user_name":"jim"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Users/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"user_name":"sal",
+						"user_hash":"salbo99",
+						"system_generated_password":false,
+						"authenticate_id":"",
+						"sugar_login":true,
+						"picture":"",
+						"first_name":"sal",
+						"last_name":"bo",
+						"full_name":"sal bo",
+						"name":"sal bo",
+						"is_admin":false,
+						"external_auth_only":false,
+						"receive_notifications":true,
+						"description":"",
+						"status":"Active",
+						"default_team":"1",
+						"team_count":"",
+						"team_name":[
+							{
+								"id":"1",
+								"name":"Global",
+								"name_2":"",
+								"primary":false
+							}
+						],
+						"deleted":false,
+						"portal_only":false,
+						"show_on_employees":true,
+						"employee_status":"Active",
+						"email":[
+							{
+								"email_address":"ddsal@sugarcrm.com",
+								"primary_address":true,
+								"reply_to_address":false,
+								"invalid_email":false,
+								"opt_out":false
+							}
+						]
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"user_name":"sal"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

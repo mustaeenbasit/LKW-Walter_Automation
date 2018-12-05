@@ -1,0 +1,2 @@
+dateFieldName,intFieldName,formula_field_description,daysUntil_Today,daysUntil_Tomorrow,daysUntil_Yesterday
+end_day,days_until,"subtract(daysUntil($end_day_c),daysUntil(today()))",0,1,-1

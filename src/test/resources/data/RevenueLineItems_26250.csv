@@ -1,0 +1,7 @@
+input,input_err
+abc,Error. This field requires a valid number.
+12.12a.12,Error. This field requires a valid number.
+10b%,Error. This field requires a valid number.
+2ddd5,Error. This field requires a valid number.
+A@B3,Error. This field requires a valid number.
+$%^,Error. This field requires a valid number.

@@ -1,0 +1,9 @@
+quantity,errorText
+123,"Error. The value of this field must be greater than 0."
+0.12,"Error. This field requires a valid number."
+5.12,
+"-123",
+test,
+1test,
+test1test,
+test1,

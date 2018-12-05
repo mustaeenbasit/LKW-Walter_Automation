@@ -1,0 +1,792 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "processRejectUpdateReadOnlyContracts",
+		"testDescription": "Verifies the basic Create of a Process Template for assign user duirng Contract Updates"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Process Author assign work item with Read Only fields",
+			"requests": 
+			[
+				{
+					"requestDescription": "Change the event to Contracts Updates",
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/EventDefinition/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "UIID",
+							"index": 1,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"evn_module": "Contracts",
+							"evn_params": "allupdates",
+							"evn_criteria": null
+						}
+					},
+
+					"validation": 
+					{
+						"type": "none",
+						"value": 
+						{
+							
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/ActivityDefinition/id?module=Contracts",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "UIID",
+							"index": 3,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "act_type",
+						"module": "acttype_id/",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestDescription": "Change the activity to contain Read Only fields",
+					"requestUser": "admin",
+					"requestURL": "pmse_Project/ActivityDefinition/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "UIID",
+							"index": 3,
+							"destination": "requestURL",
+							"field": "id"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "acttype_id",
+							"index": 999999,
+							"destination": "requestBody",
+							"fromString": "acttype_id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"data": 
+						{
+							"act_response_buttons": "APPROVE",
+							"act_reassign": false,
+							"act_reassign_team": "1",
+							"act_adhoc": false,
+							"act_adhoc_team": "1",
+							"act_type": "acttype_id",
+							"act_readonly_fields": 
+							[
+								"description"
+							],
+
+							"act_expected_time": 
+							{
+								"time": null,
+								"unit": "hour"
+							},
+
+							"act_required_fields": 
+							[
+								
+							]
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"success": true
+						}
+					}
+				},
+
+				{
+					"requestDescription": "Create an Account",
+					"requestUser": "admin",
+					"requestURL": "Accounts/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "milliseconds",
+							"prefix": "Account",
+							"destination": "requestBody",
+							"field": "name"
+						}
+					],
+
+					"requestBody": 
+					{
+						"name": "Cloud Cover Trust",
+						"description": "Cloud Cover description in text",
+						"deleted": false,
+						"website": "www.supportphone.tw",
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": false
+							}
+						],
+
+						"email": 
+						[
+							{
+								"email_address": "section.kid.section@example.cn",
+								"primary_address": true,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							},
+
+							{
+								"email_address": "sugar.hr@example.info",
+								"primary_address": false,
+								"reply_to_address": false,
+								"invalid_email": false,
+								"opt_out": false
+							}
+						],
+
+						"email1": "section.kid.section@example.cn",
+						"email2": "",
+						"invalid_email": false,
+						"email_opt_out": false,
+						"email_addresses_non_primary": "",
+						"account_type": "Customer",
+						"industry": "Electronics",
+						"billing_address_street": "48920 San Carlos Ave",
+						"billing_address_street_2": "",
+						"billing_address_street_3": "",
+						"billing_address_street_4": "",
+						"billing_address_city": "Persistance",
+						"billing_address_state": "NY",
+						"billing_address_postalcode": "46691",
+						"billing_address_country": "USA",
+						"rating": "",
+						"phone_office": "(777) 954-2070",
+						"phone_alternate": "",
+						"ownership": "",
+						"employees": "",
+						"ticker_symbol": "",
+						"shipping_address_street": "48920 San Carlos Ave",
+						"shipping_address_street_2": "",
+						"shipping_address_street_3": "",
+						"shipping_address_street_4": "",
+						"shipping_address_city": "Persistance",
+						"shipping_address_state": "NY",
+						"shipping_address_postalcode": "46691",
+						"shipping_address_country": "USA",
+						"_acl": 
+						{
+							"fields": 
+							{
+								
+							}
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"website": "www.supportphone.tw"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Contracts/",
+					"requestType": "post",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "Accounts",
+							"index": 999999,
+							"destination": "requestBody",
+							"field": "account_id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"name": "IT Tech Support for UK Datacenter",
+						"description": "This is a sub-contract for a very large project.",
+						"account_name": "45t234t34t",
+						"account_id": "account_id",
+						"deleted": false,
+						"team_name": 
+						[
+							{
+								"id": "1",
+								"name": "Global",
+								"name_2": "",
+								"primary": true
+							}
+						],
+
+						"reference_code": "EMP-9802",
+						"start_date": "2010-05-17",
+						"end_date": "2020-08-15",
+						"currency_id": "-99",
+						"base_rate": 1,
+						"currency_name": "",
+						"total_contract_value": "500600.010000",
+						"total_contract_value_usdollar": "500600.010000",
+						"status": "signed",
+						"customer_signed_date": "2010-03-16",
+						"company_signed_date": "2010-03-15",
+						"_acl": 
+						{
+							"fields": 
+							{
+								
+							}
+						}
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "IT Tech Support for UK Datacenter",
+							"description": "This is a sub-contract for a very large project."
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"next_offset": -1,
+							"records": 
+							[
+								
+							]
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "Contracts/id",
+					"requestType": "put",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "Contracts",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"requestBody": 
+					{
+						"description": "Changed This is a sub-contract for a very large project."
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"name": "IT Tech Support for UK Datacenter",
+							"description": "Changed This is a sub-contract for a very large project."
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "flow_id",
+						"module": "Flow/",
+						"value": 
+						{
+							"name": "IT Tech Support for UK Datacenter"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "id2",
+						"module": "Inbox/",
+						"value": 
+						{
+							"name": "IT Tech Support for UK Datacenter"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"extractID": "yes",
+						"whichID": "cas_id",
+						"module": "processID/",
+						"value": 
+						{
+							"name": "IT Tech Support for UK Datacenter"
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "pmse_Inbox/case/id2/flow_id",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "processID",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id2"
+						},
+
+						{
+							"type": "id",
+							"module": "Flow",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "flow_id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"case": 
+							{
+								"readonly": 
+								[
+									"description"
+								]
+							}
+						}
+					}
+				},
+
+				{
+					"requestUser": "salesRep1",
+					"requestURL": "index.php?module=pmse_Inbox&action=routeCase",
+					"requestType": "postForm",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "replaceStringID",
+							"module": "processID",
+							"index": 1,
+							"destination": "requestBody",
+							"fromString": "myCasID"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Contracts",
+							"index": 1,
+							"destination": "requestBody",
+							"fromString": "contractsID"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Users",
+							"index": 5,
+							"destination": "requestBody",
+							"fromString": "myUser"
+						},
+
+						{
+							"type": "replaceStringID",
+							"module": "Accounts",
+							"index": 1,
+							"destination": "requestBody",
+							"fromString": "accountsID"
+						}
+					],
+
+					"requestBody": 
+					{
+						"formParameters": 
+						[
+							{
+								"name": "cas_id",
+								"value": "myCasID"
+							},
+
+							{
+								"name": "team_id",
+								"value": ""
+							},
+
+							{
+								"name": "moduleName",
+								"value": "Contracts"
+							},
+
+							{
+								"name": "beanId",
+								"value": "contractsID"
+							},
+
+							{
+								"name": "cas_index",
+								"value": "3"
+							},
+
+							{
+								"name": "cas_current_user_id",
+								"value": "myUser"
+							},
+
+							{
+								"name": "act_adhoc_behavior",
+								"value": ""
+							},
+
+							{
+								"name": "act_adhoc_assignment",
+								"value": ""
+							},
+
+							{
+								"name": "taskContinue",
+								"value": ""
+							},
+
+							{
+								"name": "name",
+								"value": "IT Tech Support for UK Datacenter"
+							},
+
+							{
+								"name": "status",
+								"value": "signed"
+							},
+							{
+								"name": "reference_code",
+								"value": "EMP-9802"
+							},
+
+							{
+								"name": "start_date",
+								"value": "2010-05-17"
+							},
+
+							{
+								"name": "account_name",
+								"value": "Cloud Cover Trust"
+							},
+
+							{
+								"name": "account_id",
+								"value": "accountsID"
+							},
+
+							{
+								"name": "end_date",
+								"value": "2020-08-15"
+							},
+
+							{
+								"name": "opportunity_name:",
+								"value": ""
+							},
+
+							{
+								"name": "opportunity_id",
+								"value": ""
+							},
+
+							{
+								"name": "type",
+								"value": ""
+							},
+
+							{
+								"name": "customer_signed_date",
+								"value": "2010-03-16"
+							},
+
+							{
+								"name": "currency_id",
+								"value": "-99"
+							},
+
+							{
+								"name": "company_signed_date",
+								"value": "2010-03-15"
+							},
+
+							{
+								"name": "total_contract_value",
+								"value": "500,600.01"
+							},
+
+							{
+								"name": "expiration_notice",
+								"value": ""
+							},
+
+							{
+								"name": "assigned_user_name",
+								"value": ""
+							},
+
+							{
+								"name": "assigned_user_id",
+								"value": ""
+							},
+
+							{
+								"name": "update_fields_team_name_collection",
+								"value": ""
+							},
+
+							{
+								"name": "team_name_new_on_update",
+								"value": "false"
+							},
+
+							{
+								"name": "team_name_allow_update",
+								"value": "1"
+							},
+
+							{
+								"name": "team_name_allow_new",
+								"value": "true"
+							},
+
+							{
+								"name": "team_name",
+								"value": "team_name"
+							},
+
+							{
+								"name": "team_name_field",
+								"value": "team_name_table"
+							},
+
+							{
+								"name": "arrow_team_name",
+								"value": "hide"
+							},
+
+							{
+								"name": "team_name_new_on_update",
+								"value": "false"
+							},
+
+							{
+								"name": "team_name_collection_0",
+								"value": "Global"
+							},
+
+							{
+								"name": "team_name_allow_new",
+								"value": "true"
+							},
+
+							{
+								"name": "id_team_name_collection_0",
+								"value": "1"
+							},
+
+							{
+								"name": "primary_team_name_collection",
+								"value": "0"
+							},
+
+							{
+								"name": "Type",
+								"value": "Reject"
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Inbox/casesList?max_num=1",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"validation": 
+					{
+						"type": "arrayone",
+						"count": 1,
+						"value": 
+						{
+							"name": "IT Tech Support for UK Datacenter",
+							"cas_status": "COMPLETED"
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "pmse_Inbox/historyLog/id",
+					"requestType": "get",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						{
+							"type": "id",
+							"module": "processID",
+							"index": 999999,
+							"destination": "requestURL",
+							"field": "id"
+						}
+					],
+
+					"validation": 
+					{
+						"type": "single",
+						"method": "string",
+						"value": 
+						{
+							"contains": 
+							[
+								{
+									"string": "[REJECTED]"
+								}
+							],
+
+							"notcontains": 
+							[
+								
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		{
+			"module": "Contracts"
+		},
+		{
+			"module": "Accounts"
+		}
+	]
+}

@@ -1,0 +1,98 @@
+{
+	"testDocumentation":{
+		"testName":"adminDnBSetUp",
+		"testDescription":"Verify th DnB connector retrieval of Account information"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Set up DnB connection paramters",
+			"requests":[
+				{
+					"requestDescription":"Search DnB Accounts",
+					"requestUser":"admin",
+					"requestURL":"connector/dnb/Accounts/bal",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"qdata":{
+							"KeywordText":"sugarcrm",
+							"CandidatePerPageMaximumQuantity":20,
+							"CandidateDisplayStartSequenceNumber":1
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"SugarCRM Inc."
+								},
+								{
+									"string":"SugarCRM Deutschland GmbH"
+								},
+								{
+									"string":"SUGARCRM FRANCE"
+								}
+								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				},
+				{
+					"requestDescription":"Search DnB Accounts",
+					"requestUser":"admin",
+					"requestURL":"connector/dnb/firmographic",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"qdata":{
+							"duns_num":"168338536",
+							"prod_code":"DCP_BAS"
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"method":"string",
+						"value":{
+							"contains":[
+								{
+									"string":"Cupertino"
+								},
+								{
+									"string":"Larry M. Augustin"
+								}								
+							],
+							"notcontains":[
+								
+							]
+							
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		
+	]
+}

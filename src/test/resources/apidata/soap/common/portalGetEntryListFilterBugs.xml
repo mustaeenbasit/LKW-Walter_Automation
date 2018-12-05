@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sug="http://www.sugarcrm.com/sugarcrm" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sug:portal_get_entry_list_filter soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <session xsi:type="xsd:string">mySessionID</session>
+         <module_name xsi:type="xsd:string">Bugs</module_name>
+         <!--order_by xsi:type="xsd:string">name</order_by>
+         <select_fields xsi:type="sug:select_fields" soapenc:arrayType="xsd:string[]"/>
+         <row_offset xsi:type="xsd:int">0</row_offset>
+         <limit xsi:type="xsd:int">21</limit>
+         <filter xsi:type="sug:name_value_operator_list" soapenc:arrayType="sug:name_value_operator[]">
+             <item xsi:type="tns:name_value_operator">
+                <name xsi:type="xsd:string">portal_viewable</name>
+                <value xsi:type="xsd:string">1</value>
+                <name xsi:type="xsd:string">name</name>
+                <value xsi:type="xsd:string">MYNEW Bug ABC</value>
+                <operator xsi:type="xsd:string">=</operator>
+             </item>
+         </filter-->
+      </sug:portal_get_entry_list_filter>
+   </soapenv:Body>
+</soapenv:Envelope>

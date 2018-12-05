@@ -1,0 +1,2 @@
+fieldName,fieldType,fieldName,dropdownOption,parentDropdownOption,roleNameWithAsterisk,typeReseller
+custom_field,DropDown,testfield,campaign_type_dom,Parent Dropdown,"* myRole",Reseller

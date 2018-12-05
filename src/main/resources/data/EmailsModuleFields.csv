@@ -1,0 +1,8 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+fromAddress,,select,,null,null,null,a,css,.layout_Emails.drawer.active .fld_email_config.edit a,null,null,null,null,null,null,null,null,null,null,null,null
+toAddress,,,,null,null,null,input,css,.layout_Emails.drawer.active .fld_to_addresses.edit input,null,null,null,null,null,null,null,null,null,null,null,null
+subject,,,,null,null,null,input,css,.layout_Emails.drawer.active .fld_subject.edit input,null,null,null,null,null,null,null,null,null,null,null,null
+body,,,,null,null,null,body,css,#tinymce,null,null,null,null,null,null,null,null,null,null,null,null
+teams,,select,,null,null,null,a,css,.layout_Emails.drawer.active .fld_team_name.edit a,null,null,null,null,null,null,null,null,null,null,null,null
+parentModule,,select,,null,null,null,a,css,.layout_Emails.drawer.active .fld_parent_name.edit div a,null,null,null,null,null,null,null,null,null,null,null,null
+parentRecord,,select,,null,null,null,a,css,.layout_Emails.drawer.active .fld_parent_name.edit div:nth-of-type(2) a,null,null,null,null,null,null,null,null,null,null,null,null

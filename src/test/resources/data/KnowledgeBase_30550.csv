@@ -1,0 +1,2 @@
+tooltipAttribute,tooltipColorValue,languageCodeTooltipText,languageLabelToolTipText,errorMessage
+color,"rgba(230, 23, 24, 1)","The Language Code field is empty, please enter values before saving.","The Language Label field is empty, please enter values before saving.",Error Please resolve any errors before proceeding.

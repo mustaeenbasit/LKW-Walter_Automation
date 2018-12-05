@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,access_type,import
+myRole,"set Access Type = Admin & Import = None",qauser,Admin,None

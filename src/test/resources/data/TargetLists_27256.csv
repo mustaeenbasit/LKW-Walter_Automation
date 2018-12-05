@@ -1,0 +1,2 @@
+admin_username,filterHeader,module,isAnyOf,record_1,record_2,record_3,record_4
+admin,"Users' reports",Module,"is any of",admin2,qauser,Administrator,Email Archiving user

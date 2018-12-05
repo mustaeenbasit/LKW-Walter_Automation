@@ -1,0 +1,63 @@
+{
+   "testDocumentation": 
+   {
+      "testName": "kbConfigRemoveLanguage",
+      "testDescription": "Verifies the basic smoke test for the Delete of KB Settings language config"
+   },
+
+   "testCases": 
+   [
+      {
+         "testCaseName": "kbConfigRemoveLanguage",
+         "requests": 
+         [
+            {
+               "requestUser": "admin",
+               "requestURL": "KBContents/config/",
+               "requestType": "post",
+               "requestStatus": 200,
+               "substitute": 
+               [
+                  {
+                     "type": "replaceStringID",
+                     "module": "categoryRoot",
+                     "index": 999,
+                     "destination": "requestBody",
+                     "fromString": "categoryRootID"
+                  }
+               ],
+
+               "requestBody": 
+               {
+                  "languages": 
+                  [
+                     {
+                        "primary": true,
+                        "en": "English"
+                     }
+                  ],
+                  "category_root": "categoryRootID",
+                  "deleted_languages": 
+                  [
+                     "fr"
+                  ]
+               },
+
+               "validation": 
+               {
+                  "type": "none",
+                  "value": 
+                  {
+                     "fr": "French"
+                  }
+               }
+            }
+         ]
+      }
+   ],
+
+   "modules_used": 
+   [
+      
+   ]
+}

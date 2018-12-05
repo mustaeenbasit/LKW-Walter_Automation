@@ -1,0 +1,83 @@
+
+Automating automation...
+How about a little utility that auto-generates a test, pulling relevant fields
+from test case tracking (Testopia or otherwise) and auto-inserting them as
+comments?  Maybe it could even be embedded in Testopia as a button, "Automate
+this test!"  It would grab the template for an automated test, attempt to guess
+the correct class name (and/or prompt the user for it), and save it to a
+properly-named .java file.  The user just has to drop it into the right folder
+and customize it for the test. 
+
+Sugar object methods
+login();  // Logs in as the default user, i.e. admin.
+login(String user, String pass);
+login(Login loginUser);
+
+What belongs where?
+As a rule of thumb, all non-Sugar-specific tasks belong at the Voodoo level.
+All Sugar-specific behavior belongs at the library or test level.
+Direct page interactions belong at the library level.
+General tasks belong at the test level.
+
+DataSource is an array of fieldsets
+Configuration file for DataSource, etc. at the Voodoo level.
+FieldSet fieldSet = new FieldSet();
+fieldSet.put("name", Data.get("name"));
+fieldSet.put("address_street", null);
+
+Data = new HashMap<String, DataSource>();
+Data.put("environment", new DataSource(DataSource.SourceType.CSV, "environment", /* location */));
+Data.put(testName, new DataSource(DataSource.SourceType.CSV, testName, /* location */));
+
+Data.get("Accounts_0001") returns a FieldSet (a String/String hash).
+
+Accessing env data:
+sugar.login(Data.get("environment").get("username"), Data.get("environment").get("password"));  // Logs into SugarCRM
+
+Here's how we iterate over a dataset:
+		for(FieldSet i : Data.get("Accounts_0001_notes"))
+		{
+			Sugar.Accounts.create(i); // Creates a new account with overriden data from a CSV using the UI
+			Sugar.Accounts.DetailView.name.assert_value(i.get("name");
+		}
+
+So I'm thinking when you instantiate a DataSource, you pass in a type (e.g. CSV, XML, DB), which is
+an enum defined in the DataSource object.  You can either pass in details for the location or there can be a method call.
+Need a way to set the path globally for the run.  Config file?  Env vars?
+The DataSource can then have methods for configuration.  So SugarTest.java can call
+Data = new DataSource(DataSource.SourceType.FILE) as the constructor, followed
+by DataSource.setPath("/path/to/CSV/dir/"); to tell it where to find the files.
+That way the test doesn't need to know about files, it just loads the generic datasource.
+
+ * DataSource use cases:
+ * - Default data set w/ common values (url, logins, etc)
+ * - Load one data set in a test.
+ * - Load two or more data sets in a test.
+ * - Iteration over multiple records in a data set.
+ * - Independent iteration over multiple data sets.
+ * - Nested iteration over multiple data sets.
+
+"CSV overrides"
+Fieldset objects can be passed into create() and edit() methods to override
+default data.
+
+2.0 feature: some data from files, some from DB?  Each "data label" could have its own source and type.
+
+// Pass the name of the current class to the superclass's constructor
+// to get the CSV (or other) data.  I'm envisioning every test's data
+// will be stored in either a CSV file named <TestName>.csv or in a
+// database using a key of <TestName> to identify the values.  In
+// either event, the class name passed here will be used to load the
+// data in the superclass, which will then be available in an object
+// named Data.
+//
+// The superclass's constructor will also launch a web browser and
+// point it at the SugarCRM instance under test.  An interface to the
+// browser and SugarCRM instance object will be made available in a var
+// called sugar.
+
+---
+Suggested from Conrad:
+- static objects
+- use Builder pattern
+- use Fluid pattern

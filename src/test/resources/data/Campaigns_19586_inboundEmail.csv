@@ -1,0 +1,2 @@
+name,email,password,protocol,team,assertText
+Test Inbound,qa.user.suga@gmail.com,Nerdapp123,IMAP,Global,"Mail account(s) with bounce handling were detected. You do not need to create a new one, but you can still do so below."

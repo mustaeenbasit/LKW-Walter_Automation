@@ -1,0 +1,2 @@
+closedateRollup,salesStage,line1,line2,line3,line4,line5,line6
+"Set the Expected Close Date field on the resulting Opportunity records to be the earliest or latest close dates of the existing Revenue Line Items",Sales Stage,"If all Revenue Line Items are closed and at least one was won,","the Opportunity Sales Stage is set to "Closed Won".","If all Revenue Line Items are in the "Closed Lost" Sales Stage,","the Opportunity Sales Stage is set to "Closed Lost".","If any Revenue Line Items are still open,","the Opportunity will be marked with the least-advanced Sales Stage."

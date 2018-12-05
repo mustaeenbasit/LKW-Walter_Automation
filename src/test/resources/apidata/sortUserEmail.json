@@ -1,0 +1,64 @@
+{
+  "testDocumentation": {
+    "testName": "sortUserEmail",
+    "testDescription": "Verifies the sorting by Email in Users"
+  },
+  "testCases": [
+    {
+      "testCaseName": "Sort Eamils in Users",
+      "requests": [
+        {
+          "requestUser": "admin",
+          "requestURL": "Users?order_by=email:asc",
+          "requestType": "get",
+          "requestStatus": 200,
+          "substitute": [],
+          "validation": {
+            "type": "none",
+            "count": 4,
+            "records": [
+              {
+                "user_name": "admin"
+              },
+              {
+                "user_name": "qauser"
+              },
+              {
+                "user_name": "sal"
+              },
+              {
+                "user_name": "jim"
+              }
+            ]
+          }
+        },
+        {
+          "requestUser": "admin",
+          "requestURL": "Users?order_by=email:desc",
+          "requestType": "get",
+          "requestStatus": 200,
+          "substitute": [],
+          "validation": {
+            "type": "none",
+            "count": 4,
+            "records": [
+              {
+                "user_name": "jim"
+              },
+              {
+                "user_name": "sal"
+              },
+              {
+                "user_name": "qauser"
+              },
+              {
+                "user_name": "admin"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "modules_used": []
+}

@@ -1,0 +1,2 @@
+post,assert
+&lt;script&gt;alert("Hi!")&lt;/script&gt;,<script>alert("Hi!")</script>

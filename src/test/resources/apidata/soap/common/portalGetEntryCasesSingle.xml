@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sug="http://www.sugarcrm.com/sugarcrm" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sug:portal_get_entry soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <session xsi:type="xsd:string">mySessionID</session>
+         <module_name xsi:type="xsd:string">Cases</module_name>
+         <id xsi:type="xsd:string">myCaseID</id>
+         <select_fields xsi:type="sug:select_fields" soapenc:arrayType="xsd:string[]"/>
+      </sug:portal_get_entry>
+   </soapenv:Body>
+</soapenv:Envelope>

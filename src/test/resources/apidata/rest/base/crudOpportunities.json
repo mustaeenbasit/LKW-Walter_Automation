@@ -1,0 +1,179 @@
+{
+	"testDocumentation":{
+		"testName":"crudOpportunities",
+		"testDescription":"Verifies the basic Create, Read Update and Delete - CRUD - for Opportunities"
+	},
+	"testCases":[
+		{
+			"testCaseName":"CRUD Opportunities",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"requestBody":{
+						"name":"Trait Institute Inc - 158 Units",
+						"description":"Opp description details",
+						"deleted":false,
+						"team_name":[
+							{
+								"id":"East",
+								"name":"East",
+								"name_2":"",
+								"primary":false
+							},
+							{
+								"id":"West",
+								"name":"West",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"opportunity_type":"",
+						"account_name":"",
+						"account_id":"",
+						"campaign_id":"",
+						"campaign_name":"",
+						"lead_source":"",
+						"base_rate":1,
+						"currency_id":"-99",
+						"currency_name":"",
+						"currency_symbol":"",
+						"sales_stage":"Negotiation/Review",
+						"sales_status":"New",
+						"probability":80,
+						"commit_stage":"include",
+						"total_revenue_line_items":3,
+						"closed_revenue_line_items":1,
+						"contact_role":"",
+						"mkto_sync":false,
+						"mkto_id":null,
+						"_acl":{
+							"fields":{
+								
+							}
+							
+						}
+						
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Trait Institute Inc - 158 Units"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"sales_stage":"Negotiation/Review",
+							"sales_status":"New",
+							"probability":80,
+							"commit_stage":"include"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+							"name":"ABC Trait Institute Inc - 158 Units"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"ABC Trait Institute Inc - 158 Units"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/id",
+					"requestType":"delete",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Opportunities/id",
+					"requestType":"get",
+					"requestStatus":404,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"none"
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Opportunities"
+		}
+		
+	]
+}

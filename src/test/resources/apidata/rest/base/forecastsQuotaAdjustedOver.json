@@ -1,0 +1,339 @@
+{
+	"testDocumentation":{
+		"testName":"forecastsQuotaAdjustedOver",
+		"testDescription":"Verify The additional Quota set by direct manager can be seen by the group manager"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Set quoata over by middle manager",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"TimePeriods?filter[0][end_date][$gte]:=today&filter[1][start_date][$lte]:=today&filter[0][type][$contains]=Quarter",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"justdate",
+							"value":"now",
+							"destination":"requestURL",
+							"field":"today"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"TimePeriods/",
+						"value":{
+							"type":"Quarter"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"groupMgr1",
+					"requestURL":"ForecastManagerWorksheets/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":1,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"user_id"
+						}
+						
+					],
+					"requestBody":{
+						"assigned_user_id":"8efc0586-fe37-60e5-bc2a-542edd73e088",
+						"base_rate":"1",
+						"best_case":"0",
+						"best_case_adjusted":"0",
+						"currency_id":"-99",
+						"draft":"1",
+						"draft_save_type":"commit",
+						"likely_case":"0",
+						"likely_case_adjusted":"0",
+						"name":"SalesMgr Mgr1",
+						"quota":"100.000001",
+						"show_history_log":"0",
+						"timeperiod_id":"ec5765d6-4046-455e-3373-542ed5d73afd",
+						"user_id":"30c68fe5-8b85-0166-6f13-542edd82c1e5",
+						"worst_case":"0",
+						"worst_case_adjusted":"0"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"SalesMgr Mgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"groupMgr1",
+					"requestURL":"Forecasts",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"pipeline_opp_count":"0",
+						"pipeline_amount":"0",
+						"closed_amount":"0",
+						"currency_id":"-99",
+						"commit_type":"manager",
+						"timeperiod_id":"e0db70d1-58a6-a6fb-0d6a-5463c65837c7",
+						"forecast_type":"Rollup"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"quota":"100.000001"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"ForecastManagerWorksheets/",
+						"value":{
+							"name":"SalesMgr Mgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"ForecastManagerWorksheets",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"quota":"120.000001",
+						"draft_save_type":"commit"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"SalesMgr Mgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":5,
+							"destination":"requestBody",
+							"field":"user_id"
+						},
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"quota":"20.000001",
+						"best_case":"0",
+						"best_case_adjusted":"0",
+						"likely_case":"0",
+						"likely_case_adjusted":"0",
+						"worst_case":"0",
+						"worst_case_adjusted":"0",
+						"show_history_log":0,
+						"currency_id":"-99",
+						"base_rate":1,
+						"user_id":"746d67dd-2695-ee47-2c21-5463e4c35f3b",
+						"assigned_user_id":"d49a46d2-c67d-2317-57f6-5463e40b2a3f",
+						"draft":1,
+						"name":"Sales1 Rep1",
+						"timeperiod_id":"e0db70d1-58a6-a6fb-0d6a-5463c65837c7",
+						"draft_save_type":"commit"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Sales1 Rep1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"pipeline_opp_count":"0",
+						"pipeline_amount":"0",
+						"closed_amount":"0",
+						"currency_id":"-99",
+						"commit_type":"manager",
+						"timeperiod_id":"ef8c6adc-1d26-3c75-48a9-54640460da65",
+						"forecast_type":"Rollup"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"quota":"140.000002"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets&order_by=name:asc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":2,
+						"records":[
+							{
+								"name":"Sales1 Rep1",
+								"quota":"20.000001"
+							},
+							{
+								"name":"SalesMgr Mgr1",
+								"quota":"120.000001"
+							}
+							
+						]
+						
+					}
+					
+				},
+				{
+					"requestUser":"groupMgr1",
+					"requestURL":"ForecastManagerWorksheets/chart/ida/idb?no_data=1&target_quota=1",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"ida"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"idb"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"quota":"140.000002",
+							"target_quota":"100.000001"
+						}
+						
+					}	
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Opportunities"
+		},
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"RevenueLineItems"
+		},
+		{
+			"module":"TimePeriods"
+		}	
+	]
+}

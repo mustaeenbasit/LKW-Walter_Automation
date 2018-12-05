@@ -1,0 +1,18 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+userName,user_name,,Chris,,css,#user_name,input,id,user_name,null,null,null,null,null,null,null,null,null,null,null,null
+firstName,first_name,,Chris,,null,null,input,id,first_name,null,null,null,null,null,null,null,null,null,null,null,null
+lastName,last_name,,Oliver,,null,null,input,id,last_name,null,null,null,null,null,null,null,null,null,null,null,null
+fullName,null,,Chris Oliver,,css,#full_name,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+emailAddress,null,,chris.oliver@example.com,,css,#email_span a,input,id,Users0emailAddress0,null,null,null,null,null,null,null,null,null,null,null,null
+newPassword,user_hash,,Chris123!,,null,null,input,id,new_password,null,null,null,null,null,null,null,null,null,null,null,null
+confirmPassword,null,,Chris123!,,null,null,input,id,confirm_pwd,null,null,null,null,null,null,null,null,null,null,null,null
+password,null,,Chris123!,,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+formatDate,null,,12/23/2010,null,null,null,select,css,[name='dateformat'],null,null,null,null,null,null,null,null,null,null,null,null
+timeZone,null,,America/Los Angeles (GMT-7:00),,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+reportsTo,null,bwcrelate,,span,id,reports_to_id,button,id,btn_reports_to_name,null,null,null,null,null,null,null,null,null,null,null,null
+preferred_language,preferred_language,,English (US),null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+status,status,,Active,input,id,status,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+newUserWizard,,,false,null,null,null,input,name,ut,null,null,null,null,null,null,null,null,null,null,null,null
+title,title,,Senior Account Rep,span,id,title,input,id,title,null,null,null,null,null,null,null,null,null,null,null,null
+department,department,,Engineering,span,id,department,input,id,department,null,null,null,null,null,null,null,null,null,null,null,null
+phoneWork,phone_work,,1234567890,null,null,null,input,id,phone_work,null,null,null,null,null,null,null,null,null,null,null,null

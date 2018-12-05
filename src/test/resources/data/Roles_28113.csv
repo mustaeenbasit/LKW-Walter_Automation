@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,access
+myRole,For Account module Set Name to Read Only,qauser,Read Only

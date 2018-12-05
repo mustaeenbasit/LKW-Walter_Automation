@@ -1,0 +1,691 @@
+{
+	"testDocumentation": 
+	{
+		"testName": "adminRLoginAttempts",
+		"testDescription": "Verify the user cannot log in after 2 failed log in attempts"
+	},
+
+	"testCases": 
+	[
+		{
+			"testCaseName": "Set login attempts to 2",
+			"requests": 
+			[
+				{
+					"requestUser": "admin",
+					"requestURL": "index.php",
+					"requestType": "postForm",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"formParameters": 
+						[
+							{
+								"name": "action",
+								"value": "PasswordManager"
+							},
+
+							{
+								"name": "module",
+								"value": "Administration"
+							},
+
+							{
+								"name": "saveConfig",
+								"value": "1"
+							},
+
+							{
+								"name": "save",
+								"value": "Save"
+							},
+
+							{
+								"name": "passwordsetting_minpwdlength",
+								"value": "6"
+							},
+
+							{
+								"name": "passwordsetting_maxpwdlength",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_oneupper",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_oneupper",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_onelower",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_onelower",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_onenumber",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_onenumber",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_onespecial",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_customregex",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_regexcomment",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_SystemGeneratedPasswordON",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_forgotpasswordON",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_forgotpasswordON",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_linkexpiration",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_linkexpirationtime",
+								"value": "24"
+							},
+
+							{
+								"name": "passwordsetting_linkexpirationtype",
+								"value": "60"
+							},
+
+							{
+								"name": "captcha_on",
+								"value": "0"
+							},
+
+							{
+								"name": "honeypot_on",
+								"value": "0"
+							},
+
+							{
+								"name": "captcha_public_key",
+								"value": ""
+							},
+
+							{
+								"name": "captcha_private_key",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_generatepasswordtmpl",
+								"value": "d076e4d4-d13a-4724-37c5-55e6278ed185"
+							},
+
+							{
+								"name": "passwordsetting_lostpasswordtmpl",
+								"value": "e05e7d49-1ae0-3b8e-bf6c-55e627a28ebd"
+							},
+
+							{
+								"name": "passwordsetting_userexpiration",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_userexpirationtime",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_userexpirationtype",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_userexpirationlogin",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpiration",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpirationlogin",
+								"value": "2"
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpirationtime",
+								"value": "2"
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpirationtype",
+								"value": "1"
+							},
+
+							{
+								"name": "ldap_hostname",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_port",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_base_dn",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_regexcomment",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_login_filter",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_bind_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_login_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_dn",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_name",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_user_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_admin_user",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_admin_password",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_auto_create_users",
+								"value": "0"
+							},
+
+							{
+								"name": "ldap_enc_key",
+								"value": ""
+							},
+
+							{
+								"name": "SAML_loginurl",
+								"value": ""
+							},
+
+							{
+								"name": "SAML_SLO",
+								"value": ""
+							},
+
+							{
+								"name": "SAML_X509Cert",
+								"value": ""
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				},
+
+				{
+					"requestDescription": "Login",
+					"requestUser": "admin",
+					"requestURL": "oauth2/token",
+					"requestType": "post",
+					"requestStatus": 401,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"grant_type": "password",
+						"username": "nonadminuser11",
+						"password": "nonadminuser1",
+						"client_id": "sugar",
+						"platform": "base",
+						"client_secret": ""
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"error": "need_login",
+							"error_message": "You must specify a valid username and password."
+						}
+					}
+				},
+
+				{
+					"requestDescription": "Login",
+					"requestUser": "admin",
+					"requestURL": "oauth2/token",
+					"requestType": "post",
+					"requestStatus": 401,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"grant_type": "password",
+						"username": "nonadminuser11",
+						"password": "nonadminuser1",
+						"client_id": "sugar",
+						"platform": "base",
+						"client_secret": ""
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"error": "need_login",
+							"error_message": "You must specify a valid username and password."
+						}
+					}
+				},
+
+				{
+					"requestDescription": "Login",
+					"requestUser": "admin",
+					"requestURL": "oauth2/token",
+					"requestType": "post",
+					"requestStatus": 401,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"grant_type": "password",
+						"username": "nonadminuser11",
+						"password": "nonadminuser1",
+						"client_id": "sugar",
+						"platform": "base",
+						"client_secret": ""
+					},
+
+					"validation": 
+					{
+						"type": "single",
+						"value": 
+						{
+							"error": "need_login",
+							"error_message": "Too many failed login attempts. You can try logging in again in  2min."
+						}
+					}
+				},
+
+				{
+					"requestUser": "admin",
+					"requestURL": "index.php",
+					"requestType": "postForm",
+					"requestStatus": 200,
+					"substitute": 
+					[
+						
+					],
+
+					"requestBody": 
+					{
+						"formParameters": 
+						[
+							{
+								"name": "action",
+								"value": "PasswordManager"
+							},
+
+							{
+								"name": "module",
+								"value": "Administration"
+							},
+
+							{
+								"name": "saveConfig",
+								"value": "1"
+							},
+
+							{
+								"name": "save",
+								"value": "Save"
+							},
+
+							{
+								"name": "passwordsetting_minpwdlength",
+								"value": "6"
+							},
+
+							{
+								"name": "passwordsetting_maxpwdlength",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_oneupper",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_oneupper",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_onelower",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_onelower",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_onenumber",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_onenumber",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_onespecial",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_customregex",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_regexcomment",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_SystemGeneratedPasswordON",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_forgotpasswordON",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_forgotpasswordON",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_linkexpiration",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_linkexpirationtime",
+								"value": "24"
+							},
+
+							{
+								"name": "passwordsetting_linkexpirationtype",
+								"value": "60"
+							},
+
+							{
+								"name": "captcha_on",
+								"value": "0"
+							},
+
+							{
+								"name": "honeypot_on",
+								"value": "0"
+							},
+
+							{
+								"name": "captcha_public_key",
+								"value": ""
+							},
+
+							{
+								"name": "captcha_private_key",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_generatepasswordtmpl",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_lostpasswordtmpl",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_userexpiration",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_userexpirationtime",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_userexpirationtype",
+								"value": "1"
+							},
+
+							{
+								"name": "passwordsetting_userexpirationlogin",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpiration",
+								"value": "0"
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpirationlogin",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpirationtime",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_lockoutexpirationtype",
+								"value": "1"
+							},
+
+							{
+								"name": "ldap_hostname",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_port",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_base_dn",
+								"value": ""
+							},
+
+							{
+								"name": "passwordsetting_regexcomment",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_login_filter",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_bind_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_login_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_dn",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_name",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_user_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_group_attr",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_admin_user",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_admin_password",
+								"value": ""
+							},
+
+							{
+								"name": "ldap_auto_create_users",
+								"value": "0"
+							},
+
+							{
+								"name": "ldap_enc_key",
+								"value": ""
+							},
+
+							{
+								"name": "SAML_loginurl",
+								"value": ""
+							},
+
+							{
+								"name": "SAML_SLO",
+								"value": ""
+							},
+
+							{
+								"name": "SAML_X509Cert",
+								"value": ""
+							}
+						]
+					},
+
+					"validation": 
+					{
+						"type": "none"
+					}
+				}
+			]
+		}
+	],
+
+	"modules_used": 
+	[
+		
+	]
+}

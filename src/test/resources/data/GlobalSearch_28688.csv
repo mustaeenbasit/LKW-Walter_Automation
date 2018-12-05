@@ -1,0 +1,2 @@
+toolTipMsg
+Recommended setting is below 50 for acceptable performance levels. As additional fields are added to the listview, this number should be at the lower end of the recommended setting. This setting is also used for the number of search results that display on the global search page.

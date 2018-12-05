@@ -1,0 +1,7 @@
+label,value
+Name:,Demo Report
+Type:,Rows and Columns Report
+Modules:,Contacts
+Teams:,Global
+Display Columns:,First Name, Last Name
+Assigned to:,Administrator

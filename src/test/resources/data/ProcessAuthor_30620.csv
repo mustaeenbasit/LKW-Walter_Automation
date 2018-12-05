@@ -1,0 +1,2 @@
+dataType,fieldName,displayLabel,dashletTitle,processStatus
+Datetime,test_datetime,"Test DateTime","Processes",COMPLETED

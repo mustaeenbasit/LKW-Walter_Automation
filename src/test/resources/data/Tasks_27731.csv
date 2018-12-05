@@ -1,0 +1,5 @@
+status,rgb_color_val
+In Progress,rgba(255, 255, 255, 1)
+Pending Input,rgba(255, 255, 255, 1)
+Deferred,rgba(255, 255, 255, 1)
+Not Started,rgba(255, 255, 255, 1)

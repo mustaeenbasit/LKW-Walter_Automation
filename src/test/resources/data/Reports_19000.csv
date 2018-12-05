@@ -1,0 +1,2 @@
+module_field_name,display_name,data_type,related_module,report_name
+myField,myfield_c,Relate,Contacts,My report

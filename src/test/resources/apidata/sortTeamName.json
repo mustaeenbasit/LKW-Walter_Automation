@@ -1,0 +1,168 @@
+{
+	"testDocumentation":{
+		"testName":"sortTeamName",
+		"testDescription":"Verifies the sorting by Team Names in Meetings"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Sort Team Names",
+			"requests":[
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Demo Meeting North 1",
+						"team_name":[
+							{
+								"id":"NorthsortTeamName1",
+								"name":"North",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"duration_hours":0,
+						"duration_minutes":"15",
+						"date_start":"2014-07-14T16:15:00-07:00",
+						"date_end":"2017-07-14T16:30:00-07:00",
+						"parent_type":"Accounts",
+						"status":"Planned",
+						"type":"Sugar",
+						"direction":"",
+						"parent_id":"",
+						"reminder_checked":"",
+						"reminder_time":"1800",
+						"email_reminder_checked":"",
+						"email_reminder_time":"-1",
+						"email_reminder_sent":false
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Demo Meeting North 1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_start"
+						}
+						
+					],
+					"requestBody":{
+						"name":"Demo Meeting South 1",
+						"team_name":[
+							{
+								"id":"SouthsortTeamName1",
+								"name":"South",
+								"name_2":"",
+								"primary":true
+							}
+							
+						],
+						"duration_hours":0,
+						"duration_minutes":"15",
+						"date_start":"2014-07-14T16:15:00-07:00",
+						"date_end":"2017-07-14T16:30:00-07:00",
+						"parent_type":"Accounts",
+						"status":"Planned",
+						"type":"Sugar",
+						"direction":"",
+						"parent_id":"",
+						"reminder_checked":"",
+						"reminder_time":"1800",
+						"email_reminder_checked":"",
+						"email_reminder_time":"-1",
+						"email_reminder_sent":false
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"Demo Meeting South 1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings?order_by=team_name:asc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":2,
+						"records":[
+							{
+								"name":"Demo Meeting North 1"
+							},
+							{
+								"name":"Demo Meeting South 1"
+							}
+							
+						]
+						
+					}
+					
+				},
+				{
+					"requestUser":"admin",
+					"requestURL":"Meetings?order_by=team_name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":2,
+						"records":[
+							{
+								"name":"Demo Meeting South 1"
+							},
+							{
+								"name":"Demo Meeting North 1"
+							}
+							
+						]
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Meetings"
+		}
+		
+	]
+}

@@ -1,0 +1,2 @@
+filterName,operator1,value1,operator2,value2,value3
+Status,"is any of",Assigned,"is not any of",Recycled,Dead

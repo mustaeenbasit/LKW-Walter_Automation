@@ -1,0 +1,10 @@
+sugarField,restName,type,defaultValue,detailHookTag,detailHookStrategy,detailHookValue,editHookTag,editHookStrategy,editHookValue,previewTag,previewStrategy,previewValue,listViewDetailTag,listViewDetailStrategy,listViewDetailValue,listViewEditTag,listViewEditStrategy,listViewEditValue,massUpdateTag,massUpdateStrategy,massUpdateValue
+name,name,,QA Test Inbound,slot,css,.detail.view table tr:nth-of-type(2) td:nth-of-type(2) slot,input,id,name,null,null,null,null,null,null,null,null,null,null,null,null
+url,server_url,,imap.gmail.com,slot,css,.detail.view table tr:nth-of-type(3) td:nth-of-type(2) slot,input,id,server_url,null,null,null,null,null,null,null,null,null,null,null,null
+userName,email_user,,qa.sugar.qa.79@gmail.com,slot,css,.detail.view table tr:nth-of-type(3) td:nth-of-type(4) slot,input,id,email_user,null,null,null,null,null,null,null,null,null,null,null,null
+password,email_password,,sugarcrm,null,null,null,input,id,email_password,null,null,null,null,null,null,null,null,null,null,null,null
+trashFolder,trashFolder,,[Gmail]/Trash,slot,css,.detail.view table tr:nth-of-type(6) td:nth-of-type(4) slot,input,id,trashFolder,null,null,null,null,null,null,null,null,null,null,null,null
+sentFolder,sentFolder,,[Gmail]/Sent Mail,slot,css,.detail.view table tr:nth-of-type(7) td:nth-of-type(4) slot,input,id,sentFolder,null,null,null,null,null,null,null,null,null,null,null,null
+teams,,,Global,slot,css,.detail.view table:nth-of-type(2) tr:nth-of-type(2) td:nth-of-type(2) slot,input,id,EditView_team_name_collection_0,null,null,null,null,null,null,null,null,null,null,null,null
+ssl,,,true,null,null,null,input,id,ssl,null,null,null,null,null,null,null,null,null,null,null,null
+fromAddress,from_addr,,qa.sugar.qa.79@gmail.com,slot,css,.detail.view table:nth-of-type(2) tr:nth-of-type(3) td:nth-of-type(4) slot,input,id,from_addr,null,null,null,null,null,null,null,null,null,null,null,null

@@ -1,0 +1,3 @@
+roleName,roleDescription,userName,set_access,massUpdateField,warningMessage
+firstRole,Read/Owner Write,qauser,Read/Owner Write,Account Name,"Mass Update incomplete. 2 record(s) remain unchanged."
+secondRole,Read/Write,Chris,Read/Write

@@ -1,0 +1,2 @@
+roleName,roleDescription,userName,roleNone,noAccess,emailAddress
+fieldPermissionNone,Accounts -> Email field -> None,qauser,None,No access,qa@qauser.com

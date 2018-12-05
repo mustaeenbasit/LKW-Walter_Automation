@@ -1,0 +1,483 @@
+{
+	"testDocumentation":{
+		"testName":"forecastsEditRLIQuotaAdjust",
+		"testDescription":"Verify when there is a quta the adjusted amount does not change when RLI is edited"
+	},
+	"testCases":[
+		{
+			"testCaseName":"Create and edit a RLI",
+			"requests":[
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Accounts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"myAccount - salesMgr1",
+						"assigned_user_id":"2d808b9f-5acd-1538-f1b4-540f80afea6e"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"myAccount - salesMgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Opportunities/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"account_id"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"my big Opportunity salesMgr1",
+						"account_id":"c410185d-ca5d-2fa6-a74e-539a202e70c5",
+						"assigned_user_id":"2d808b9f-5acd-1538-f1b4-540f80afea6e"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"my big Opportunity salesMgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"RevenueLineItems",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"account_id"
+						},
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_closed"
+						},
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"opportunity_id"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"myRLI salesmgr",
+						"account_id":"7e953a9f-0ac4-5839-2dea-539a2639a924",
+						"total_amount":"0.000000",
+						"best_case":"1800.000000",
+						"likely_case":"1600.000000",
+						"worst_case":"1400.000000",
+						"date_closed":"2017-07-25",
+						"commit_stage":"include",
+						"assigned_user_id":"2d808b9f-5acd-1538-f1b4-540f80afea6e",
+						"sales_stage":"Prospecting",
+						"probability":10,
+						"opportunity_id":"7849f406-70ce-6346-c169-539a27939b23"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"myRLI salesmgr"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Opportunities/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"amount":"1600.000000",
+							"best_case":"1800.000000",
+							"worst_case":"1400.000000"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"RevenueLineItems",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Accounts",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"account_id"
+						},
+						{
+							"type":"date",
+							"value":"now",
+							"destination":"requestBody",
+							"field":"date_closed"
+						},
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"opportunity_id"
+						},
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestBody",
+							"field":"assigned_user_id"
+						}
+						
+					],
+					"requestBody":{
+						"name":"myRLIA salesMgr1",
+						"account_id":"7e953a9f-0ac4-5839-2dea-539a2639a924",
+						"total_amount":"0.000000",
+						"best_case":"2000.000000",
+						"likely_case":"1700.000000",
+						"worst_case":"1300.000000",
+						"date_closed":"2017-07-25",
+						"sales_stage":"Prospecting",
+						"probability":10,
+						"opportunity_id":"7849f406-70ce-6346-c169-539a27939b23",
+						"assigned_user_id":"2d808b9f-5acd-1538-f1b4-540f80afea6e"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"name":"myRLIA salesMgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Opportunities/id",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Opportunities",
+							"index":999999,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"validation":{
+						"type":"single",
+						"value":{
+							"amount":"3300.000000",
+							"best_case":"3800.000000",
+							"worst_case":"2700.000000"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastWorksheets?user_id=ida&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"ida"
+						}
+						
+					],
+					"validation":{
+						"type":"arraymany",
+						"count":2,
+						"records":[
+							{
+								"commit_stage":"exclude",
+								"likely_case":"1700.000000",
+								"best_case":"2000.000000",
+								"worst_case":"1300.000000",
+								"name":"myRLIA salesMgr1"
+							},
+							{
+								"likely_case":"1600.000000",
+								"best_case":"1800.000000",
+								"worst_case":"1400.000000",
+								"commit_stage":"include",
+								"name":"myRLI salesmgr"
+							}
+							
+						]
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"sales_rep",
+						"currency_id":"-99",
+						"forecast_type":"Direct",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"sales_rep"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"manager",
+						"currency_id":"-99",
+						"forecast_type":"Rollup",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"none",
+						"value":{
+							"commit_type":"manager"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=ida&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"ida"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"extractID":"yes",
+						"module":"ForecastManagerWorksheets/",
+						"value":{
+							"name":"SalesMgr Mgr1"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"RevenueLineItems/id",
+					"requestType":"put",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"RevenueLineItems",
+							"index":1,
+							"destination":"requestURL",
+							"field":"id"
+						}
+						
+					],
+					"requestBody":{
+						"likely_case":"1800.000000"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"likely_case":"1800.000000"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"Forecasts/",
+					"requestType":"post",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"TimePeriods",
+							"index":999999,
+							"destination":"requestBody",
+							"field":"timeperiod_id"
+						}
+						
+					],
+					"requestBody":{
+						"closed_amount":"0",
+						"commit_type":"sales_rep",
+						"currency_id":"-99",
+						"forecast_type":"Direct",
+						"pipeline_amount":"0",
+						"pipeline_opp_count":"0",
+						"timeperiod_id":"2f0c6738-6377-ba4e-64d1-5412125c0413"
+					},
+					"validation":{
+						"type":"single",
+						"value":{
+							"amount":"1800.000000"
+						}
+						
+					}
+					
+				},
+				{
+					"requestUser":"salesMgr1",
+					"requestURL":"ForecastManagerWorksheets?user_id=ida&order_by=name:desc",
+					"requestType":"get",
+					"requestStatus":200,
+					"substitute":[
+						{
+							"type":"id",
+							"module":"Users",
+							"index":3,
+							"destination":"requestURL",
+							"field":"ida"
+						}
+						
+					],
+					"validation":{
+						"type":"arrayone",
+						"count":1,
+						"value":{
+							"best_case":"1800.000000",
+							"best_case_adjusted":"1800.000000",
+							"likely_case":"1800.000000",
+							"likely_case_adjusted":"1600.000000",
+							"worst_case":"1400.000000",
+							"worst_case_adjusted":"1400.000000"
+						}
+						
+					}
+					
+				}
+				
+			]
+			
+		}
+		
+	],
+	"modules_used":[
+		{
+			"module":"Opportunities"
+		},
+		{
+			"module":"Accounts"
+		},
+		{
+			"module":"RevenueLineItems"
+		},
+		{
+			"module":"TimePeriods"
+		}	
+	]
+}

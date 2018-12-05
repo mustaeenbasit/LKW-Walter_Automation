@@ -1,0 +1,4 @@
+firstName,lastName,leadSource,filterField,operator
+PartnerFN,PartnerLN,Partner,leadSource,is any of
+EmailFN,EmailLN,Email,Lead Source
+OtherFN,OtherLN,Other

@@ -1,0 +1,2 @@
+default_currency,likelyCase,bestCase,worstCase,convertedCurrency
+"US Dollar : $",200.00,210,190,"€180.00"
